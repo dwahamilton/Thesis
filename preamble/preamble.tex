@@ -1,0 +1,78 @@
+% Packages
+\usepackage[T1]{fontenc} % Allows for 8-bit font encoding
+\usepackage{setspace} % Sets space between lines
+\usepackage{animate,pdfpages} % Allow for animated figures, importing PDF figures, and converting EPS to PDF
+\usepackage[space]{grffile} % Extended file name support for graphics
+\usepackage{float} % Improved interface for floating objects
+\usepackage{subcaption} % Allows for subfigures within figures
+\usepackage[font=small,labelfont=bf]{caption} % Captions in floating environments
+\usepackage{array} % Extending the array and tabular environments
+\usepackage{multirow} % Create tabular cells spanning multiple rows
+\usepackage{gensymb} % Generic symbols for both text and math mode
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathrsfs,mathtools} % Various packages for math typesetting
+\usepackage{adjustbox,relsize} % Set font size relative to the current font size
+\usepackage[notrig]{physics} % Physics symbols and units
+\usepackage{siunitx} % Physics units
+\usepackage{cancel,slashed} % Place lines through math and slashes through characters
+\usepackage{xparse} % Generic document command parser
+\usepackage{tikz,tikz-3dplot,circuitikz,pgfplots,tikz-cd,tikz-feynman} % Drawing environments
+\usepackage{centernot} % Centered \not command
+\usepackage{xcolor} % Color extensions for LaTeX and pdfLaTeX
+\usepackage{listings} % Typeset text in WYSIWYG style and source code listings
+\usepackage{fancyvrb} % Sophisticated verbatim text
+%\usepackage{inconsolata} % Changes monospace font to inconsolata
+\usepackage{lastpage} % Reference last page for Page N of M type footers
+\usepackage[percent]{overpic} % Combine LaTeX commands over included graphics
+\usepackage{empheq} % Emphasizing equations
+\usepackage{comment} % Allows for commenting out large blocks of code
+\usepackage[title]{appendix} % Customization of appendices
+\usepackage{simpler-wick} % Allows for Wick contractions
+\usepackage[htt]{hyphenat} % Enables hyphenation in \texttt environments
+\usepackage{url} % Allows for \path command for long file paths
+\usepackage[hidelinks,colorlinks=true,urlcolor=blue,bookmarks=true]{hyperref} % Allow for hyperlinks
+\usepackage{bookmark} % Automatically create bookmarks
+
+% Add bibliography
+%\addbibresource{bib/books.bib}
+
+% Configure TikZ
+\input{preamble/tikz.tex}
+
+% Configure listings
+\input{preamble/listings.tex}
+
+% Enable bold math in section titles
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
+
+% Commands
+\renewcommand\qedsymbol{$\blacksquare$} % Change QED symbol to solid black box
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}} % Number equations in align* environments
+
+\sisetup{inter-unit-product=\ensuremath{{}\cdot{}}} % Change symbol for products of physical units
+\newcommand{\unit}{~\si} % Define physical unit command with proper spacing
+
+% Redefine command for unit vectors to add space
+\let\oldvu\vu
+\makeatletter
+\renewcommand{\vu}{\@ifstar{\mathop{}\!\oldvu*}\mathop{}\!\oldvu}
+\makeatother
+
+% Create spacing for equals sign in align environments
+\newcommand{\equad}{\mathrel{\phantom{=}}}
+
+% Alphabet for blackboard bold numbers
+\newcommand{\bbfamily}{\fontencoding{U}\fontfamily{bbold}\selectfont}
+\DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
+
+\newcommand{\C}{\mathbb{C}} % Complex numbers
+\newcommand{\R}{\mathbb{R}} % Real numbers
+\newcommand{\Q}{\mathbb{Q}} % Rational numbers
+\newcommand{\Z}{\mathbb{Z}} % Integers
+\newcommand{\N}{\mathbb{N}} % Natural numbers
+\newcommand{\1}{\mathbbold{1}} % Identity matrix
+\newcommand{\diag}{\operatorname{diag}} % Diagonal matrix
+\renewcommand{\curl}{\grad\times} % Curl operator
+\renewcommand{\div}{\grad\cdot} % Divergence operator
+\newcommand{\cov}{\operatorname{cov}} % Covariance operator

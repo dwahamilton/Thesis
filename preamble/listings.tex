@@ -1,0 +1,66 @@
+% Command for setting number of lines for code
+\newlength{\numwidth}
+\makeatletter
+\newcommand{\setlinenum}[1]
+{
+  \setlength{\numwidth}{\widthof{\footnotesize{\lst@numberstyle{#1}}}}
+  \def\lst@PlaceNumber{%
+    \makebox[\numwidth+1em][l]{%
+      \makebox[\numwidth][r]{\footnotesize\lst@numberstyle{\thelstnumber}}
+    }
+  }
+}
+\makeatother
+\setlinenum{9} % Set to 9 lines of code by default
+
+% Default style
+\lstdefinestyle{default}
+{
+  showstringspaces=false,
+  breaklines=true,
+  frame=lines,
+  basicstyle=\footnotesize\ttfamily,
+  numbers=none,
+}
+
+% Plain style
+\lstdefinestyle{plain}
+{
+  showstringspaces=false,
+  breaklines=true,
+  basicstyle=\footnotesize\ttfamily,
+  numbers=none,
+}
+
+% LaTeX style
+\lstdefinestyle{latex}
+{
+  language=LaTeX,
+  showstringspaces=false,
+  breaklines=true,
+  frame=lines,
+  basicstyle=\footnotesize\ttfamily,
+  numberstyle=\footnotesize\ttfamily,
+}
+
+% Python style
+\lstdefinestyle{python}
+{
+  language=Python,
+  showstringspaces=false,
+  breaklines=true,
+  frame=lines,
+  basicstyle=\footnotesize\ttfamily,
+  numberstyle=\footnotesize\ttfamily,
+}
+
+% C++ style
+\lstdefinestyle{cpp}
+{
+  language=C++,
+  showstringspaces=false,
+  breaklines=true,
+  frame=lines,
+  basicstyle=\footnotesize\ttfamily,
+  numberstyle=\footnotesize\ttfamily,
+}
