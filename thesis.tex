@@ -3,11 +3,11 @@
 \input{preamble/preamble.tex}
 
 \title{
-Reconstructing Muons in Real Time\\
-at the High Luminosity LHC\\
-and\\
 Search for a Heavy Diboson Resonance\\
-Produced via Vector Boson Fusion
+Produced via Vector Boson Fusion\\
+and\\
+Reconstructing Muons in Real Time\\
+at the High Luminosity LHC
 }
 
 \author{David Warren Hamilton}
@@ -67,23 +67,14 @@ UCLA}
 
 \makeintropages
 
-\part{Reconstructing Muons in Real Time at the High Luminosity LHC}
-\input{chapters/TPS/TPSIntroduction.tex}
-\input{chapters/TPS/CMS.tex}
-\input{chapters/TPS/TPS.tex}
-\input{chapters/TPS/TPSResults.tex}
+\input{chapters/introduction.tex}
+\input{chapters/theory.tex}
+\input{chapters/experiment.tex}
+\input{chapters/VBF.tex}
+\appendix
+\input{chapters/TPSAppendix.tex}
 
-\part{Search for a Heavy Diboson Resonance Produced via Vector Boson Fusion}
-\input{chapters/VBF/VBFIntroduction.tex}
-\input{chapters/VBF/theory.tex}
-\input{chapters/VBF/eventSelection.tex}
-\input{chapters/VBF/backgroundModeling.tex}
-\input{chapters/VBF/signalModeling.tex}
-\input{chapters/VBF/fitValidation.tex}
-\input{chapters/VBF/VBFResults.tex}
-%\appendix
-
-\bibliography{bib/books}{}
+\bibliography{bib/books}
 \bibliographystyle{plain}
 %\bibliographystyle{uclathes}
 
