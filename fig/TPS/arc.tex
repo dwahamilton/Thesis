@@ -1,0 +1,21 @@
+% !TEX root = ../../thesis.tex
+
+\begin{tikzpicture}
+  % Axes
+  \draw[->,thick] (-4,0) -- (4,0) node[below] {$x$};
+  \draw[->,thick] (0,-4) -- (0,4) node[left] {$y$};
+
+  % Arc
+  \coordinate (q) at ($(0,2.5)+(15:2.5)$);
+  \draw[red] (0,0) arc (-90:15:2.5);
+  \draw[->,thick,red] (q) -- ($(q)+(105:1)$) node[left,red] {\pt};
+
+  % Angles
+  \draw[cyan] (1,0) arc (0:52.5:1) node[pos=0.75,right,cyan] {$\Delta\phi$};
+  \draw[cyan,dashed] (q) -- ($(q)+(52.5:1)$);
+  \draw[red] ($(q)+(52.5:0.5)$) arc (52.5:105:0.5) node[pos=0.25,above,red] {$\phi_b$};
+
+  % Charge
+  \draw[cyan] (0,0) -- (q);
+  \draw[fill=cyan] (q) circle (2.5pt) node [right,cyan] {$q$};
+\end{tikzpicture}

@@ -1,6 +1,7 @@
 % Load TikZ libraries
 \usetikzlibrary{patterns,plotmarks,arrows,decorations.pathmorphing,decorations.markings,shapes.geometric,calc,shapes.misc,3d}
 
+\tikzset{>=latex}
 \tikzset{pics/particle/.style n args={6}{code={
   \draw[rounded corners,fill=#1] (-1,-1) rectangle (1,1);
   \node at (0,0) [scale=2,anchor=mid] {#2};

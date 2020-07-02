@@ -1,9 +1,16 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Reconstructing Muons in Real Time at the High Luminosity LHC}
+\chapter{Reconstructing Muons in Real Time at the High Luminosity Large Hadron Collider}
 \label{chap:TPSAppendix}
 
 \section{Introduction}
+
+% Paragraph about the importance of using muons in the detector
+In chapter~\ref{chap:exp}, we explored the main characteristics of the CMS detector, and in particular, the various subsystems devoted to detecting muons that are produced in collision events.
+
+In this appendix, we present work towards the implementation of a novel algorithm for reconstructing muon tracks in real time at the LHC.
+In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
+Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, which will allow for the reconstruction of muon tracks in real time at the L1 trigger level.
 
 \section{Future Upgrades to CMS}
 \label{sec:CMSUpgrade}
@@ -11,8 +18,54 @@
 \section{The Tracks Plus Stubs Algorithm}
 \label{sec:TPS}
 
+The upgrades to CMS as described in section~\ref{sec:CMSUpgrade} allow for using the new track trigger to provide the initial information about particle transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
+As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$ (only in DTs) in the chamber for which the stub was created.
+
+The Tracks Plus Stubs (TPS) algorithm combines the information from the track trigger and the detection stubs in the chambers to create a candidate track that will later be reconstructed as a muon in the detector.
+By using the initial information from the track trigger, the algorithm propagates the initial muon track to the outer layers of the detector.
+The propagated values for the angular variables $\phi$ and $\phi_b$ are then compared to those as recorded by the stub measurements.
+From this, the algorithm can construct a candidate muon track, which is a combined object consisting of a track from the inner tracker, and a collection of stubs associated to the track.
+
 \subsection{Muon Track Propagation}
 \label{subsec:prop}
+
+One of the defining characteristics of the CMS detector is the 3.8 T solenoidal magnetic field that is aligned with the beam axis.
+In a uniform magnetic field $B$, a charged particle of charge $q$ with momentum transverse to the magnetic field \pt will experience an induced centripetal force due to the Lorentz force that the magnetic field exerts on the charge.
+This in turn defines a radius of orbit $R$ for the charge, which is related to the transverse momentum \pt by the relation $\pt=qBR$. It is typical in particle physics to convert the units of the elementary charge so that in terms of $B$ and $R$, we have
+\begin{equation}\label{eq:pt}
+  \pt=0.3BR\unit{GeV/\clight}.
+\end{equation}
+
+However, it is too computationally expensive to use the exact formula for a circular arc in the L1 trigger hardware in order to model the trajectory that a charged particle takes through the detector.
+Moreover, the transverse momenta for muons that result in a typical collision event of interest are such that a parabolic approximation is accurate enough to describe the track of the particle.
+
+Assuming that the track starts in the center of the beamline as in Fig.~\ref{fig:arc}, we may approximate the circular arc that the charged particle follows through the detector by
+\begin{equation}
+  y=\frac{x^2}{2R}+bx,
+\end{equation}
+where $R$ is the radius of curvature as in Eq.~\ref{eq:pt}, and $b$ is a constant to be determined.
+The first derivative evaluated at the position of the stub $x_\mathrm{stub}$ corresponds to the tangent of the change in the angle between $x=0$ and $x=x_\mathrm{stub}$.
+Defining $\Delta=\phi-\phi_0$, where $\phi$ is the angle of the stub and $\phi_0$ is the initial angle at $x=0$, we have that
+\begin{equation}
+  \eval{\dv{y}{x}}_{x=x_\mathrm{stub}}=\tan\Delta\phi=\frac{x_\mathrm{stub}}{R}+b.
+\end{equation}
+For high \pt charged particles, the change in angle $\Delta\phi$ will be small since the curvature radius $R$ is large, from which we may make the approximation
+\begin{equation}
+  \tan\Delta\phi\approx\Delta\phi
+\end{equation}
+
+The bending angle is the angle made between radial line pointing to the location of the charged particle from the origin and the \pt vector. Again we use the first derivative to obtain
+\begin{equation}
+  \eval{\dv{y}{x}}_{x=x_\mathrm{stub}}=\Delta\phi+\phi_b
+\end{equation}
+
+\begin{figure}[htbp]
+  \centering
+  \input{fig/TPS/arc.tex}
+  \caption{Illustration of the trajectory taken by a particle with charge $q$ in a uniform magnetic field. }
+  \label{fig:arc}
+\end{figure}
+
 
 \subsection{Pull Distributions and Stub Matching}
 \label{subsec:pulls}
