@@ -2,20 +2,30 @@
 
 \begin{tikzpicture}
   % Axes
-  \draw[->,thick] (-4,0) -- (4,0) node[below] {$x$};
-  \draw[->,thick] (0,-4) -- (0,4) node[left] {$y$};
+  \draw[->] (0,0) -- (2,0) node[below] {$x$};
+  \draw[->] (0,0) -- (0,2) node[left] {$y$};
 
   % Arc
-  \coordinate (q) at ($(0,2.5)+(15:2.5)$);
-  \draw[red] (0,0) arc (-90:15:2.5);
+  \coordinate (q) at ($(120:5)+(15:5)$);
+  \draw[fill=black] (120:5) circle (1pt);
+  \draw[red] (0,0) arc (-60:15:5);
   \draw[->,thick,red] (q) -- ($(q)+(105:1)$) node[left,red] {\pt};
+  \draw[red,dashed] (0,0) -- (30:2);
+
+  % Lines
+  \draw[dashed] (0,0) -- (120:5) node[pos=0.5,left] {$R$};
+  \draw[dashed] (120:5) -- (q) node[pos=0.5,above] {$R$};
+  \draw[dashed] (67.5:3.044) -- ($(120:5)+(-22.5:5)$) node[pos=0.5,above] {$s$};
 
   % Angles
-  \draw[cyan] (1,0) arc (0:52.5:1) node[pos=0.75,right,cyan] {$\Delta\phi$};
-  \draw[cyan,dashed] (q) -- ($(q)+(52.5:1)$);
-  \draw[red] ($(q)+(52.5:0.5)$) arc (52.5:105:0.5) node[pos=0.25,above,red] {$\phi_b$};
+  \draw[red] (0.75,0) arc (0:30:0.75) node[pos=0.75,right,red] {$\phi_0$};
+  \draw[cyan] (0.5,0) arc (0:67.5:0.5) node[pos=0.8,above right,cyan] {$\phi$};
+  \draw (30:1.25) arc (30:67.5:1.25) node[pos=0.8,above right] {$\Delta\phi$};
+  \draw[cyan,dashed] (q) -- ($(q)+(67.5:1)$);
+  \draw[red] ($(q)+(67.5:0.5)$) arc (67.5:105:0.5) node[pos=0.35,above,red] {$\phi_b$};
 
   % Charge
-  \draw[cyan] (0,0) -- (q);
+  \draw[cyan] (0,0) -- (q) node[pos=0.5,left,cyan] {$L$}; % 6.088
   \draw[fill=cyan] (q) circle (2.5pt) node [right,cyan] {$q$};
+  \draw ($(q)+(1.25,-0.5)$) node {$(x_\mathrm{stub},y_\mathrm{stub})$};
 \end{tikzpicture}

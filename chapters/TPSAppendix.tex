@@ -7,6 +7,7 @@
 
 % Paragraph about the importance of using muons in the detector
 In chapter~\ref{chap:exp}, we explored the main characteristics of the CMS detector, and in particular, the various subsystems devoted to detecting muons that are produced in collision events.
+% More about chapter 3 here
 
 In this appendix, we present work towards the implementation of a novel algorithm for reconstructing muon tracks in real time at the LHC.
 In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
@@ -40,29 +41,45 @@ However, it is too computationally expensive to use the exact formula for a circ
 Moreover, the transverse momenta for muons that result in a typical collision event of interest are such that a parabolic approximation is accurate enough to describe the track of the particle.
 
 Assuming that the track starts in the center of the beamline as in Fig.~\ref{fig:arc}, we may approximate the circular arc that the charged particle follows through the detector by
-\begin{equation}
-  y=\frac{x^2}{2R}+bx,
+\begin{equation}\label{eq:para}
+  y(x)=\frac{x^2}{2R}+bx,
 \end{equation}
 where $R$ is the radius of curvature as in Eq.~\ref{eq:pt}, and $b$ is a constant to be determined.
-The first derivative evaluated at the position of the stub $x_\mathrm{stub}$ corresponds to the tangent of the change in the angle between $x=0$ and $x=x_\mathrm{stub}$.
-Defining $\Delta=\phi-\phi_0$, where $\phi$ is the angle of the stub and $\phi_0$ is the initial angle at $x=0$, we have that
+First, observe that at the origin, the tangent of the initial angle $\phi_0$ corresponds to the first derivative of~\ref{eq:para} evaluated at $x=0$. Therefore,
 \begin{equation}
-  \eval{\dv{y}{x}}_{x=x_\mathrm{stub}}=\tan\Delta\phi=\frac{x_\mathrm{stub}}{R}+b.
+  \eval{\dv{y}{x}}_{x=0}=\tan\phi_0=b,
 \end{equation}
-For high \pt charged particles, the change in angle $\Delta\phi$ will be small since the curvature radius $R$ is large, from which we may make the approximation
+and hence
 \begin{equation}
-  \tan\Delta\phi\approx\Delta\phi
+  y(x)=\frac{x^2}{2R}+x\tan\phi_0.
+\end{equation}
+At the position of the charge $q$, we also have that the tangent of the position angle $\phi$ is given by
+\begin{equation}
+  \tan\phi=\frac{y(x_\mathrm{stub})}{x_\mathrm{stub}}=\frac{x_\mathrm{stub}}{2R}+\tan\phi_0,
+\end{equation}
+which we may rearrange to obtain
+\begin{equation}
+  \tan\phi-\tan\phi_0=\frac{x_\mathrm{stub}}{2R}.
+\end{equation}
+Since the \pt of a muon that passes through the threshold of the detector is high enough such that the radius $R$ is large, $\Delta\phi\equiv\phi-\phi_0$ is small, and hence we may make the approximation that $\tan\phi-\tan\phi_0\approx\phi-\phi_0$.
+Thus,
+\begin{align*}\label{eq:phi}
+  \phi &= \frac{x_\mathrm{stub}}{2R}+\phi_0\\
+  &= ck+\phi_0,
+  \numberthis
+\end{align*}
+where we have used the fact that $k=1/R$ and $c$ is a constant to be determined based on the position of the stub.
+Furthermore, in Fig.~\ref{fig:arc}, we can see that due to the symmetry of the circular arc traced by the track of the particle, the bending angle $\phi_b$ must be equal to the change in the position angle $\Delta\phi$, and hence we immediately obtain
+\begin{equation}\label{eq:phib}
+  \phi_b=ck.
 \end{equation}
 
-The bending angle is the angle made between radial line pointing to the location of the charged particle from the origin and the \pt vector. Again we use the first derivative to obtain
-\begin{equation}
-  \eval{\dv{y}{x}}_{x=x_\mathrm{stub}}=\Delta\phi+\phi_b
-\end{equation}
+With equations~\ref{eq:phi} and~\ref{eq:phib} in hand, we may now propagate the tracks based on the initial information about the curvature $k$ and angle $\phi_0$.
 
 \begin{figure}[htbp]
   \centering
   \input{fig/TPS/arc.tex}
-  \caption{Illustration of the trajectory taken by a particle with charge $q$ in a uniform magnetic field. }
+  \caption{Illustration of the circular trajectory taken by a particle with charge $q$ positioned at $(x_\mathrm{stub},y_\mathrm{stub})$ in a uniform magnetic field. The track starts at the origin with an initial angle $\phi_0$ tangent to the track of the particle, and ends with a final angle of $\phi$ for a total change in angle $\Delta\ph\equiv\phi-\phi_0$. The charged particle covers a radial distance $L$ with respect to the origin of the track, and the perpendicular distance between the mid-point of the track and the radial line $L$ is denoted by the sagitta $s$. The vector corresponding to the \pt of the charge is labeled, with the bending angle $\phi_b$ drawn with respect to the radial line $L$.}
   \label{fig:arc}
 \end{figure}
 
