@@ -1,0 +1,51 @@
+% !TEX root = ../../thesis.tex
+
+\begin{tikzpicture}
+  % Tracks Case 1
+  \draw[red] (0,0) arc (-80:-20:3);
+  \draw[orange] (0,0) arc (-100:-10:3.5);
+
+  % Tracks Case 2
+  \draw[red] (8,0) arc (-80:-10:3.25);
+  \draw[orange] (8,0) arc (-100:-10:3.5);
+
+  % Stubs Case 1
+  \draw[fill=black] (10:1) circle (1pt);
+  \draw[fill=black] (16:2) circle (1pt);
+  \draw[fill=black] (22:3) circle (1pt);
+  \draw[fill=black] (28:4) circle (1pt);
+
+  % Stubs case 2
+  \draw[fill=black] ($(8,0)+(7:1)$) circle (1pt);
+  \draw[fill=black] ($(8,0)+(12:2)$) circle (1pt);
+  \draw[fill=black] ($(8,0)+(20:3)$) circle (1pt);
+  \draw[fill=black] ($(8,0)+(27:4)$) circle (1pt);
+
+  % Labels Case 1
+  \draw (2,3.25) node {Case 1:};
+
+  \draw[red,->] (0,1) -- (10:1);
+  \draw[red,->] (0,1) -- (16:2);
+  \draw (0,1) node[red,fill=white,inner sep=2pt] {Track 1 Stubs};
+
+  \draw[orange,->] (4,0) -- (10:1);
+  \draw[orange,->] (4,0) -- (16:2);
+  \draw[orange,->] (4,0) -- (22:3);
+  \draw[orange,->] (4,0) -- (28:4);
+  \draw (4,0) node[orange,fill=white,inner sep=2pt] {Track 2 Stubs};
+
+  % Labels Case 2
+  \draw (10,3.25) node {Case 2:};
+
+  \draw[red,->] (8,1) -- ($(8,0)+(7:1)$);
+  \draw[red,->] (8,1) -- ($(8,0)+(12:2)$);
+  \draw[red,->] (8,1) -- ($(8,0)+(20:3)$);
+  \draw[red,->] (8,1) -- ($(8,0)+(27:4)$);
+  \draw (8,1) node[red,fill=white,inner sep=2pt] {Track 1 Stubs};
+
+  \draw[orange,->] (12,0) -- ($(8,0)+(7:1)$);
+  \draw[orange,->] (12,0) -- ($(8,0)+(12:2)$);
+  \draw[orange,->] (12,0) -- ($(8,0)+(20:3)$);
+  \draw[orange,->] (12,0) -- ($(8,0)+(27:4)$);
+  \draw (12,0) node[orange,fill=white,inner sep=2pt] {Track 2 Stubs};
+\end{tikzpicture}

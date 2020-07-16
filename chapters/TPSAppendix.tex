@@ -25,7 +25,7 @@ As muons produced in collision events move throughout the detector, they create 
 The Tracks Plus Stubs (TPS) algorithm combines the information from the track trigger and the detection stubs in the chambers to create a candidate track that will later be reconstructed as a muon in the detector.
 By using the initial information from the track trigger, the algorithm propagates the initial muon track to the outer layers of the detector.
 The propagated values for the angular variables $\phi$ and $\phi_b$ are then compared to those as recorded by the stub measurements.
-From this, the algorithm can construct a candidate muon track, which is a combined object consisting of a track from the inner tracker, and a collection of stubs associated to the track.
+From this, the algorithm can construct a candidate muon track, which is a combined object consisting of a track from the track trigger, and a collection of stubs associated to the track.
 
 \subsection{Muon Track Propagation}
 \label{subsec:prop}
@@ -74,21 +74,94 @@ Furthermore, in Fig.~\ref{fig:arc}, we can see that due to the symmetry of the c
   \phi_b=ck.
 \end{equation}
 
-With equations~\ref{eq:phi} and~\ref{eq:phib} in hand, we may now propagate the tracks based on the initial information about the curvature $k$ and angle $\phi_0$.
-
 \begin{figure}[htbp]
   \centering
   \input{fig/TPS/arc.tex}
-  \caption{Illustration of the circular trajectory taken by a particle with charge $q$ positioned at $(x_\mathrm{stub},y_\mathrm{stub})$ in a uniform magnetic field. The track starts at the origin with an initial angle $\phi_0$ tangent to the track of the particle, and ends with a final angle of $\phi$ for a total change in angle $\Delta\ph\equiv\phi-\phi_0$. The charged particle covers a radial distance $L$ with respect to the origin of the track, and the perpendicular distance between the mid-point of the track and the radial line $L$ is denoted by the sagitta $s$. The vector corresponding to the \pt of the charge is labeled, with the bending angle $\phi_b$ drawn with respect to the radial line $L$.}
+  \caption{Illustration of the circular trajectory taken by a particle with charge $q$ positioned at $(x_\mathrm{stub},y_\mathrm{stub})$ in a uniform magnetic field. The track starts at the origin with an initial angle $\phi_0$ tangent to the track of the particle, and ends with a final angle of $\phi$ for a total change in angle $\Delta\phi\equiv\phi-\phi_0$. The charged particle covers a radial distance $L$ with respect to the origin of the track, and the perpendicular distance between the mid-point of the track and the radial line $L$ is denoted by the sagitta $s$. The vector corresponding to the \pt of the charge is labeled, with the bending angle $\phi_b$ drawn with respect to the radial line $L$.}
   \label{fig:arc}
 \end{figure}
 
+With equations~\ref{eq:phi} and~\ref{eq:phib} in hand, we may now propagate the tracks based on the initial information about the curvature $k$ and angle $\phi_0$.
+The CMS detector consists of multiple layers of detection chambers, each chamber requires its own propagation constant $c(\eta,d)$, as the relevant variables to consider for $c$ based on the geometry of the detector is the pseudorapidity of the track $\eta$ and the station depth $d$.
+Rather than obtaining these constants analytically, they are obtained by using simulation data. % Elaborate on the simulation samples used later
+
+To do this, we divide the detector into separate $\eta$ regions and depths, and treat each section as a separate detector with its own propagation constant $c(\eta,d)$.
+We then look at two-dimensional histograms of $\Delta\phi$ and $\phi_b$ from simulated detection stubs as functions of $k$ for each section of the detector based on simulated detection stubs.
+An example of this can be seen in Fig.~\ref{fig:deltaPhiHist}.
+For every bin in curvature $k$, the distribution of $\Delta\phi$ or $\phi_b$ is roughly Gaussian, and hence we fit Gaussians to the vertical slices of these histograms.
+We then consider the mean of these Gaussians and make linear fits for $\Delta\phi$ and $\phi_b$ in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.
+These then define the propagation constants $c(\eta,d)$ for each detector, thereby allowing us to predict where a muon produced at the beamline during a collision event will end up in the detection chambers.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_2D.pdf}
+  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_mean.pdf}
+  \caption{Two-dimensional distribution of $\Delta\phi$ from simulated detection stubs as a function of curvature $k$ (left), and linear fit for the mean values of Gaussians fitted to the vertical slices of the two-dimensional histogram (right). Propagation constants $c(\eta,d)$ for $\Delta\phi$ and $\phi_b$ for each section of the detector are obtained through these linear fits, in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.}
+  \label{fig:deltaPhiHist}
+\end{figure}
 
 \subsection{Pull Distributions and Stub Matching}
 \label{subsec:pulls}
 
+Once the propagation constants are obtained, the information for a candidate muon obtained from the track trigger can be used to predict where the muon detection stubs will be found in the detector based on the initial information about the curvature of the track $k$ and the initial angle $\phi_0$.
+One of the main considerations in matching a track to detection stubs is the position resolution for the stub measurements.
+The standard deviation of the Gaussian fits for $\Delta\phi$ and $\phi_b$ as described in the previous subsection corresponds to the position resolution of the measurements, and has a quadratic form
+\begin{equation}
+  \sigma=\sqrt{\alpha k^2+\beta},
+\end{equation}
+where $\alpha$ is a multiple scattering term that dominates for high curvature tracks (i.e., low $p_\mathrm{T}$ tracks), and $\beta$ is a constant term corresponding to the position uncertainty of the detector.
+
+However, this form for $\sigma$, as with the analytic forms for the propagated $\phi$ and $\phi_b$ values, is too computationally expensive to implement into the hardware.
+Instead, we approximate the position resolution using
+\begin{equation}\label{eq:posRes}
+  \sigma\approx a|k|+b,
+\end{equation}
+where $a$ and $b$ are constants analogous to $\alpha$ and $\beta$.
+Fig.~\ref{fig:deltaPhiRes} shows an example of the position resolution from one of the Gaussian fits for $\Delta\phi$ and the fit obtained for equation~\ref{eq:posRes}.
+As with the propagation coefficients $c(\eta,d)$, the position resolution constants $a(\eta,d)$ and $b(\eta,d)$ are also specific to each detector based on the $\eta$ region and depth.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_res.pdf}
+  \caption{}
+  \label{fig:deltaPhiRes}
+\end{figure}
+
+With the means to propagate the tracks from the track trigger and determine the resolution of the stub measurements, we may now proceed with determining whether or not a stub is suitable for being matched with a candidate muon.
+To do this, we consider the pull distributions for each stub with respect to a track.
+For each track, we check the pull values of every stub that may get matched with the track, which are given by
+\begin{equation}
+  P_\phi=\frac{\phi_\mathrm{prop}-\phi_\mathrm{stub}}{\sigma}=\frac{\phi_\mathrm{prop}-\phi_\mathrm{stub}}{a|k|+b}.
+\end{equation}
+The distributions made by sampling these pull values from simulation are Gaussian distributed, and an example may be seen in Fig.~\ref{fig:deltaPhiPull}.
+We then match stubs to tracks by considering the absolute value of the pulls for each stub.
+If $|P_\phi|$ for a stub is below a certain threshold for a track, then the stub will be matched to the track.
+Stubs that exceed the threshold for $|P_\phi|$ will instead be discarded.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_pull.pdf}
+  \caption{}
+  \label{fig:deltaPhiPull}
+\end{figure}
+
+
 \subsection{Track Cleaning and Isolation}
 \label{subsec:cleaning}
+
+\begin{figure}[htbp]
+  \centering
+  \input{fig/TPS/clean.tex}
+  \caption{}
+  \label{fig:clean}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \input{fig/TPS/isol.tex}
+  \caption{}
+  \label{fig:isol}
+\end{figure}
 
 \subsection{Trigger Efficiencies and Rates}
 \label{subsec:rates}
