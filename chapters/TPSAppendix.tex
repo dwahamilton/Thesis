@@ -9,6 +9,8 @@
 In chapter~\ref{chap:exp}, we explored the main characteristics of the CMS detector, and in particular, the various subsystems devoted to detecting muons that are produced in collision events.
 % More about chapter 3 here
 
+% Paragraph about the existing BMTF and KBMTF here
+
 In this appendix, we present work towards the implementation of a novel algorithm for reconstructing muon tracks in real time at the LHC.
 In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
 Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, which will allow for the reconstruction of muon tracks in real time at the L1 trigger level.
@@ -85,7 +87,7 @@ With equations~\ref{eq:phi} and~\ref{eq:phib} in hand, we may now propagate the 
 The CMS detector consists of multiple layers of detection chambers, each chamber requires its own propagation constant $c(\eta,d)$, as the relevant variables to consider for $c$ based on the geometry of the detector is the pseudorapidity of the track $\eta$ and the station depth $d$.
 Rather than obtaining these constants analytically, they are obtained by using simulation data. % Elaborate on the simulation samples used later
 
-To do this, we divide the detector into separate $\eta$ regions and depths, and treat each section as a separate detector with its own propagation constant $c(\eta,d)$.
+To do this, we divide the detector into separate $\eta$ regions and depths, as seen in Fig.~\ref{fig:barrelEta}, and treat each section as a separate detector with its own propagation constant $c(\eta,d)$.
 We then look at two-dimensional histograms of $\Delta\phi$ and $\phi_b$ from simulated detection stubs as functions of $k$ for each section of the detector based on simulated detection stubs.
 An example of this can be seen in Fig.~\ref{fig:deltaPhiHist}.
 For every bin in curvature $k$, the distribution of $\Delta\phi$ or $\phi_b$ is roughly Gaussian, and hence we fit Gaussians to the vertical slices of these histograms.
@@ -93,6 +95,13 @@ We then consider the mean of these Gaussians and make linear fits for $\Delta\ph
 These then define the propagation constants $c(\eta,d)$ for each detector, thereby allowing us to predict where a muon produced at the beamline during a collision event will end up in the detection chambers.
 
 \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig/TPS/barrelEta.pdf}
+  \caption{Cross section of the CMS detector in the $r$-$z$ plane illustrating how the detector is separated into different $\eta$ regions. Each $\eta$ region and depth is treated as a separate detector for the TPS algorithm.}
+  \label{fig:barrelEta}
+\end{figure}
+
+\begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_2D.pdf}
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_mean.pdf}
@@ -109,7 +118,7 @@ The standard deviation of the Gaussian fits for $\Delta\phi$ and $\phi_b$ as des
 \begin{equation}
   \sigma=\sqrt{\alpha k^2+\beta},
 \end{equation}
-where $\alpha$ is a multiple scattering term that dominates for high curvature tracks (i.e., low $p_\mathrm{T}$ tracks), and $\beta$ is a constant term corresponding to the position uncertainty of the detector.
+where $\alpha$ is a multiple scattering term that dominates for high curvature tracks (i.e., low $p_\mathrm{T}$ tracks), and $\beta$ is a constant term corresponding to the position uncertainty of the detector \cite{PhysRevD.98.030001}.
 
 However, this form for $\sigma$, as with the analytic forms for the propagated $\phi$ and $\phi_b$ values, is too computationally expensive to implement into the hardware.
 Instead, we approximate the position resolution using
@@ -120,17 +129,17 @@ where $a$ and $b$ are constants analogous to $\alpha$ and $\beta$.
 Fig.~\ref{fig:deltaPhiRes} shows an example of the position resolution from one of the Gaussian fits for $\Delta\phi$ and the fit obtained for equation~\ref{eq:posRes}.
 As with the propagation coefficients $c(\eta,d)$, the position resolution constants $a(\eta,d)$ and $b(\eta,d)$ are also specific to each detector based on the $\eta$ region and depth.
 
-\begin{figure}[htbp]
+\begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_res.pdf}
-  \caption{}
+  \caption{Plot of the resolution for the stub measurements based on the Gaussian fits obtained from the two-dimensional distributions of $\Delta\phi$. The resolution is fitted using the linear approximation of equation~\ref{eq:posRes}.}
   \label{fig:deltaPhiRes}
 \end{figure}
 
 With the means to propagate the tracks from the track trigger and determine the resolution of the stub measurements, we may now proceed with determining whether or not a stub is suitable for being matched with a candidate muon.
 To do this, we consider the pull distributions for each stub with respect to a track.
 For each track, we check the pull values of every stub that may get matched with the track, which are given by
-\begin{equation}
+\begin{equation}\label{eq:pull}
   P_\phi=\frac{\phi_\mathrm{prop}-\phi_\mathrm{stub}}{\sigma}=\frac{\phi_\mathrm{prop}-\phi_\mathrm{stub}}{a|k|+b}.
 \end{equation}
 The distributions made by sampling these pull values from simulation are Gaussian distributed, and an example may be seen in Fig.~\ref{fig:deltaPhiPull}.
@@ -138,33 +147,109 @@ We then match stubs to tracks by considering the absolute value of the pulls for
 If $|P_\phi|$ for a stub is below a certain threshold for a track, then the stub will be matched to the track.
 Stubs that exceed the threshold for $|P_\phi|$ will instead be discarded.
 
-\begin{figure}[htbp]
+\begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_pull.pdf}
-  \caption{}
+  \caption{Example of a pull distribution for a single section of the detector based on the depth and $\eta$ region. The histogram is made by sampling the pull values of all tracks in simulation based on equation~\ref{eq:pull}. By construction, the pull distribution is a Gaussian with a mean of 0 and a standard deviation of 1.}
   \label{fig:deltaPhiPull}
 \end{figure}
 
+% Put figures and explanation for how the pull distributions are highly correlated with signal and uncorrelated with background
 
 \subsection{Track Cleaning and Isolation}
 \label{subsec:cleaning}
 
+One issue that arises in the course of matching stubs to tracks is the possibility of having more than one detection stub shared between tracks.
+As a stub can only come from a single muon track, the algorithm requires a process by which tracks are discarded if they share one or more stubs.
+To deal with this, the TPS algorithm cleans tracks by checking if there are stubs shared between tracks after all the candidate tracks are obtained.
+
+There are two cases that are considered during the cleaning process.
+The first is case 1 in Fig.~\ref{fig:clean}, in which two or more tracks share one or more detection stubs. In this case, the track with the most detection stubs is retained and all others are discarded.
+For case 2, if two tracks have the same number of stubs, we instead consider the difference in the propagated values of $\phi$ versus the values as measured by the detection stubs.
+We evaluate the sum of the difference in these values by evaluating
+\begin{equation}\label{eq:phiDev}
+  \Delta\phi_{\mathrm{prop,sum}}=\sum_i|\phi_{\mathrm{prop},i}-\phi_{\mathrm{stub},i}|,
+\end{equation}
+where $i$ denotes the depth in the detector, for each candidate track.
+The track with the smallest sum $\Delta\phi_{\mathrm{prop,sum}}$ of the deviation in $\phi$ between the propagated and stub measured value is retained, while all others are discarded.
+
 \begin{figure}[htbp]
   \centering
   \input{fig/TPS/clean.tex}
-  \caption{}
+  \caption{Illustration of the two different cases that are considered when cleaning candidate tracks that share detection stubs. In case 1 there are two tracks that share stubs but one track has more stubs than the other. In case 2, the tracks share the same number of stubs, but one track has a smaller sum of the deviation in the propagated $\phi$ values as given in equation~\ref{eq:phiDev}.}
   \label{fig:clean}
 \end{figure}
+
+The TPS algorithm also allows for track isolation when considering muon candidates in order to reduce heavy flavor contributions from QCD processes, which allows for reducing background.
+For each candidate track, the algorithm checks to see if there are any additional tracks whose origin is within $dz<0.2$ cm along the beamline of the candidate track's origin, and if these tracks are within a cone of radius $\Delta R$ centered around the candidate track, as seen in Fig.~\ref{fig:isol}.
+The algorithm then evaluates the sum of the individual transverse momenta $p_{\mathrm{T},i}$ given by
+\begin{equation}\label{eq:ptCone}
+  p_\mathrm{T,cone}=\sum_{i\in\mathrm{cone}}p_{\mathrm{T},i},
+\end{equation}
+where we exclude the candidate track for which the cone is centered upon.
+If $p_\mathrm{T,cone}$ exceeds the threshold set for the algorithm, then the candidate track being evaluated is discarded.
 
 \begin{figure}[htbp]
   \centering
   \input{fig/TPS/isol.tex}
-  \caption{}
+  \caption{Illustration of the track isolation process used by the algorithm. A cone is defined about the origin of the candidate track TPS $\mu$ and the algorithm checks if there are any adjacent tracks whose origin is within $dz$ of the TPS $\mu$ origin, and if the track is within a cone of radius $\Delta R$ centered about TPS $\mu$. Tracks for which $p_\mathrm{T,cone}$ as defined by equation~\ref{eq:ptCone} exceeds the threshold set for the algorithm are discarded.}
   \label{fig:isol}
 \end{figure}
 
 \subsection{Trigger Efficiencies and Rates}
-\label{subsec:rates}
+\label{subsec:effRates}
 
-\section{Results and Future Implementation}
+To assess the effectiveness in the algorithm, efficiency studies were performed to see how well the algorithm matches stubs to real muon tracks in simulation.
+For a given event, the efficiency is defined by
+\begin{equation}\label{eq:eff}
+  \epsilon=\frac{N_\mathrm{TPS}}{N_\mathrm{gen}},
+\end{equation}
+where $N_\mathrm{TPS}$ is the number of TPS tracks obtained by the algorithm, and $N_\mathrm{gen}$ is the number of real muons generated in the simulation event.
+Fig.~\ref{fig:eff} shows the results obtained when evaluating the efficiency for all events in a simulation sample of muons passing through the detector as a function of muon $\eta$ (left) and \pt (right).
+The performance of the TPS algorithm is compared to the existing BMTF, K-BMTF, and Technical Proposal (TP) algorithms.
+For these efficiency studies, we required that a TPS track has at least two stubs.
+A notable feature of the TPS algorithm is its performance in the gap region of $|\eta|\in[0.15,0.35]$ between wheels 1 and $-1$.
+While other algorithms suffer significant losses in efficiency in the gap region, the TPS algorithm performs especially well by comparison on this region.
+
+\begin{figure}[htbp] % Need to update figure
+  \centering
+  \includegraphics[width=0.48\textwidth]{fig/TPS/effEta20GeV.pdf}
+  \includegraphics[width=0.48\textwidth]{fig/TPS/effPt20GeV.pdf}
+  \caption{Comparison of the efficiencies defined by equation~\ref{eq:eff} for simulated muon $\eta$ (left) and \pt (right). The TPS algorithm is required to have two or more stubs associated to muon tracks, and is compared to the existing BMTF, proposed K-BMTF and TP algorithms. The TPS algorithm offers better overall efficiency in comparison to the other algorithms.}
+  \label{fig:eff}
+\end{figure}
+
+One of the main upgrades to the L1 trigger will be the ability to record events at 750 kHz.
+The bandwidth needed to record events is a precious resource, and as such it is desirable for a muon tracking algorithm to devote as much of it as possible to recording signal events.
+This problem is further exacerbated by pileup, the high luminosity LHC could see up to 100-200 collision events at a time along the beam line.
+To study the effect of pileup on the trigger rate, we used a simulated background-only sample in which there are no muons present to test how often the TPS algorithm will trigger on false tracks.
+The trigger rates are computed according to
+\begin{equation}\label{eq:rate} % Check equation
+  \mathrm{Rate}(\pt)=\frac{f}{N_\mathrm{event}}\sum_{p=\pt}^\infty\mathrm{Max}(p)
+\end{equation}
+
+A comparison of the trigger rate at different trigger thresholds can be see in Fig.~\ref{fig:rates}.
+The TPS algorithm performance is similar to the TP algo ($\sim8$ kHz at 20 GeV), and both are significantly lower than the K-BMTF.
+Moreover, allowing for track isolation with a maximum $p_{\mathrm{T},cone}$ of 5 GeV and a minimum $p_{\mathrm{T,i}}$ of 2 GeV results in a decrease in the rate by a factor of 2 at 20 GeV, thereby demonstrating the effectiveness of using track isolation to suppress background.
+These results also show that the TPS algorithm is well-suited for handling background noise while also efficiently matching detection stubs to real muon tracks.
+
+\begin{figure}[htbp] % Need to update figure
+  \centering
+  \includegraphics[width=0.48\textwidth]{fig/TPS/rate.pdf}
+  \caption{Comparison of the trigger rates at different \pt thresholds for TPS (with and without track isolation), TP, and K-BMTF algorithms when running on a background-only sample in which there are no muons present. Both the TPS and TP algorithms perform better at suppressing fake tracks compared to the K-BMTF over the full \pt threshold range.}
+  \label{fig:rates}
+\end{figure}
+
+\section{Future Implementation}
 \label{subsec:TPSResults}
+
+While initially tested as software, the TPS algorithm will eventually be implemented into the CMS detector through hardware to allow for fast processing.
+As of this writing, the UCLA CMS research group is currently in the process of designing and testing a custom OCEAN Blade board with a field-programmable gate array (FPGA) that will allow for the TPS algorithm to be implemented as firmware.
+% More up-to-date information on resource usage and performance results here
+
+\begin{figure}[htbp] % Need to update figure
+  \centering
+  \includegraphics[width=0.48\textwidth]{fig/TPS/ocean.png}
+  \caption{Render of the OCEAN Blade board that will be implemented into the CMS detector hardware. The onboard FPGA will allow for the TPS algorithm to be implemented directly as firmware into the muon trigger in the detector.}
+  \label{fig:ocean}
+\end{figure}
