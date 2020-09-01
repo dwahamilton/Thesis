@@ -6,68 +6,148 @@
 \section{Introduction}
 
 The search for new particles has been an ongoing endeavor since the first accelerators came online in the mid-20th century.
-
 % More history here
 
-Today, the Standard Model remains as the dominant theory describing three of the four known forces, with gravity excluded due to its inability to be renormalized when approached as a quantum field theory.
+Today, the Standard Model (SM) remains as the dominant theory describing three of the four known forces, with gravity excluded due to its inability to be renormalized when approached as a quantum field theory.
 The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs completing the family after being discovered in the summer of 2012.
 However, despite the success of this theory, many fundamental questions of physics still remain unanswered.
 As previously mentioned, the theory does not include gravity, as it only accounts for the electromagnetic, strong, and weak nuclear forces.
 It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory currently is incapable of addressing, such as the hierarchy problem.
 The theory is therefore regarded as incomplete, and efforts to find physics beyond the Standard Model are ongoing.
 
-In this chapter, we briefly explore the main aspects of the Standard Model in section~\ref{sec:SM}, looking at its mathematical foundations and the fundamental particles that it describes.
+In this chapter, we briefly explore the main aspects of the Standard Model in section~\ref{sec:SM}, looking at the fundamental particles that it describes and its mathematical foundations.
 Later, in section~\ref{sec:VBF}, we describe the theoretical background relevant to the search for a new fundamental particle beyond the Standard Model that this thesis presents.
 
 \section{The Standard Model of Particle Physics}
 \label{sec:SM}
 
-The Standard Model is the prevailing theory in particle physics that classifies all known elementary particles, and describes how the interact with each other via the electromagnetic, weak, and strong forces.
+The Standard Model is the prevailing theory in particle physics that classifies all known elementary particles, and describes how they interact with each other via the electromagnetic, weak, and strong forces.
 The theory came about during the 1960's in order to explain observations made during early collision experiments\footnotemark.
+% More history here
 
 \footnotetext{While the theory itself was developed in the 1960's, the term ``Standard Model'' was coined by Pais and Treiman in 1975~\cite{CaoFieldTheory}.} % Citation needed
+
+\subsection{The Elementary Particles}
+\label{subsec:particles}
+
+The Standard Model describes the interactions between 17 elementary particles, which are classified by quarks, leptons, gauge bosons, and scalar bosons.
+A table of all particles classified by the theory can be seen in Fig.~\ref{fig:standardModel}, labeled with their masses, charges, and spins~\cite{PhysRevD.98.030001}.
+Each particle listed has a corresponding antiparticle, which has the same mass as its particle counterpart, but with opposite physical charges.
+% More explanation here
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/standardModel.tex}
-  \caption{Table of all standard model particles grouped by generation and type, labeled with mass, charge, and spin~\cite{PhysRevD.98.030001}. Particle types are colored green for quarks, red for leptons, blue for gauge bosons, and yellow for the Higgs.}
+  \caption{Table of all Standard Model particles grouped by generation and type, labeled with mass, charge, and spin. Particle types are colored green for quarks, red for leptons, blue for gauge bosons, and orange for scalar bosons.}
   \label{fig:standardModel}
+\end{figure}
+
+Quarks are spin-1/2 particles that interact via the strong and weak nuclear forces, as well as the electromagnetic force.
+The up and down quarks make up the protons and neutrons of everyday matter that we see and interact with.
+For example, a proton is made up of two $u$'s and one $d$ ($uud$), while a neutron is made of two $d$'s and one $u$ ($ddu$).
+These are just two of the many different combinations of composite particles that can be formed by quarks.
+There are two main combinations of quarks to consider: mesons and baryons.
+Mesons are composed of one quark and an antiquark, and baryons are composed of three quarks or three antiquarks. % Mention recently observed pentaquark?
+For example, pions ($\pi^0$/$\pi^\pm$) were the first mesons to be observed, and can be electrically charged when comprised only of up or down quark-antiquark pairs (i.e., a $\pi^+$ is made from the combination $u\bar{d}$, and a $\pi^-$ is made from $d\bar{u}$), or it can be electrically neutral (i.e., a $\pi^0$ is made from $u\bar{u}$ or $d\bar{d}$). % Citation about observation
+On the other hand, protons and neutrons are examples of baryons, as they are each made of three quarks.
+% Possibly elaborate more
+
+Leptons, like quarks, are also spin-1/2 particles that can be electrically charged. Unlike quarks, they only interact via the electromagnetic and weak nuclear forces.
+The electron is the most familiar lepton, as it is a component of the atoms that are found in everyday interactions.
+However, it also has two heavier cousins: the muon and the tau.
+Both of these particles have the same charge as the electron, but their masses are much larger.
+Finally, leptons also include neutrinos, which are extremely light particles that have no electric charge, and therefore only interact via the weak force.
+% Elaborate here
+
+The gauge bosons include the gluon, the photon, and the $W$ and $Z$ bosons.
+Each gauge boson is a spin-1 particle that mediates the three fundamental interactions that the Standard Model describes.
+Gluons are massless particles that mediate the strong nuclear force, and they only interact with quarks since they are the only particles to carry color charge.
+Photons are the most familiar example of the gauge bosons, as we can quite literally see them since light is made of photons.
+They are masses particles that mediate the electromagnetic force, and they interact with any particle that is electrically charged.
+Finally, the $Z$ and $W$ bosons are massive particles that mediate the weak nuclear force, which is responsible for radioactive decay.
+% Elaborate here
+
+The last category of bosons to consider is the scalar bosons, which are spin-0 particles.
+This family contains only one member: the Higgs boson.
+The Higgs boson is responsible for giving all massive Standard Model particles their masses, with the exception of the neutrinos.
+% More on the Higgs mechanism here
+% Discovery of the Higgs in 2012~\cite{20121,201230,Chatrchyan_2013}
+
+\subsection{Mathematical Structure of the Standard Model}
+
+\subsection{Beyond the Standard Model}
+
+As previously mentioned, despite the success of the Standard Model in making predictions about three of the four known fundamental forces of nature, there are many observations that it cannot currently explain.
+One major outstanding issue is the inability of the Standard Model to deal with the hierarchy problem.
+Using three fundamental constants, one may define the Planck mass as
+\begin{equation}
+  m_P=\sqrt{\frac{\hbar c}{G}}\approx1.22\times10^{19}\unit{MeV/\clight^2},
+\end{equation}
+where $\hbar$ is the reduced Planck constant, $c$ is the speed of light, and $G$ is Newton's gravitational constant.
+This defines an energy scale at which effects due to gravity would become apparent in particle physics experiments~\cite{QFTNutshell}.
+However, this energy scale is vastly larger than what can be obtained in contemporary accelerators.
+Fig.~\ref{fig:hierarchy} shows the comparison between the Planck scale, the electroweak symmetry breaking scale, and the current center of mass energy $\sqrt{s}$ at the Large Hadron Collider.
+
+Multiple beyond the Standard Model (BSM) mechanisms have been proposed to deal with the hierarchy problem.
+
+
+\begin{figure}[htbp]
+  \centering
+  \input{fig/theory/hierarchy.tex}
+  \caption{Comparison between the electroweak scale, LHC center of mass energy $\sqrt{s}$, and Planck scale in eV. The hierarchy problem arises due to the unexplained difference between the Planck scale at which gravitational effects become apparent and the energy scale at which electroweak symmetry breaking occurs, which is 17 orders of magnitude.}
+  \label{fig:hierarchy}
 \end{figure}
 
 \section{Search for a Heavy Diboson Resonance and Vector Boson Fusion Production Method}
 \label{sec:VBF}
 
+In this work, we present results on the search for a new heavy $X$ boson.
+% Elaborate more
+
+\subsection{Candidate Bosons}
+
+The search is model independent, and covers the following three possibilities:
+
+\paragraph{Spin-0 Kaluza-Klein Radion}
+A neutral scalar boson that appears in Randall-Sundrum (RS) models that can decay to the vector bosons $W$ and $Z$ via $\mathrm{Rad}\to WW$ and $\mathrm{Rad}\to ZZ$~\cite{Goldberger_1999,Goldberger_2000}.
+
+\paragraph{Spin-1 $W'$/$Z'$ Boson}
+A heavier version of the spin-1 $W$ and $Z$ bosons that can decay via $W'\to WZ$ and $Z'\to WW$~\cite{Pappadopulo_2014}.
+
+\paragraph{Spin-2 Bulk Graviton}
+A spin-2 resonance from a bulk RS model that decays via $G_\mathrm{bulk}\to WW$ or $G_\mathrm{bulk}\to ZZ$~\cite{Fitzpatrick_2007,PhysRevD.76.036006}.
+
+Each possibility for the $X$ boson couples to the massive $V=W,Z$ vector bosons, and each are expected to have masses above 1 TeV.
+The decay process is $X\to WV$ with a semi-leptonic final state in which one of the vector bosons is a $W$ that decays leptonically via $W\to\ell\nu$, while the other $V$ boson is either a $W$ or a $Z$ that undergoes $V\to q\bar{q}^{(\prime)}$.
+This process was selected due to the fact that one-lepton events are ideal for such an analysis, as the events that are generated provide a clean signal that suppresses background events.
+The complete Feynman diagram for the process can be seen in Fig.~\ref{fig:vbfFeynman}.
+
+\subsection{Expected Event Structure}
+
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/vbf.tex}
-  \caption{Feynman diagram for the production of a generic resonance $X$ via vector boson fusion and decaying to the final state $\ell\nu q\bar{q}'$, with additional forward-facing jets due to the VBF production process.}
+  \caption{Feynman diagram for the production of a generic resonance $X$ via vector boson fusion and decaying to the final state $\ell\nu q\bar{q}'$, with additional forward-facing jets due to the VBF production process. The search for the $X$ boson will involve looking for a final state in which there are jets from the VBF production process present, along with a single merged jet from the $V$ boson, and a lepton $\ell$ with its corresponding neutrino $\nu$ produced from the $W$ decay.}
   \label{fig:vbfFeynman}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/eventTop.tex}
-  \caption{Illustration of event topology for VBF collision events in the CMS detector. The semi-leptonic final state produces a $W$ boson that decays via $W\to\ell\nu$ and produces the lepton-neutrino pair. Opposite to that is a single massive jet with two-pronged substructure that is produced via $V\to q\bar{q}^{(\prime)}$. Finally, the VBF production process results in two forward facing jets, each labeled by $q^{(\prime)}$. Selection cuts for the analysis are made in order to search for events with such topology.}
+  \caption{Illustration of event topology for VBF collision events of interest in the CMS detector. The semi-leptonic final state produces a $W$ boson that decays via $W\to\ell\nu$ and produces the lepton-neutrino pair. Opposite to that is a single massive jet with two-pronged substructure that is produced via $V\to q\bar{q}^{(\prime)}$. Finally, the VBF production process results in two forward facing jets, each labeled by $q^{(\prime)}$. Selection cuts for the analysis are made in order to search for events with such topology.}
   \label{fig:eventTop}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \input{fig/theory/hierarchy.tex}
-  \caption{Comparison between the electroweak scale, LHC center of mass energy $\sqrt{s}$, and Planck scale in eV.}
-  \label{fig:hierarchy}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
   \input{fig/theory/bkg.tex}
-  \caption{}
-  \label{fig:hierarchy}
+  \caption{Feynman diagrams of the two main SM sources of background to consider for the search. Both cases produce a final state that is similar to the expected final state produced by the VBF signal process. The most common background is the $W$+jets process (left), followed by the $W$+$V$/$t$ process (right).}
+  \label{fig:bkgFeynman}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/jet.tex}
-  \caption{}
-  \label{fig:hierarchy}
+  \caption{Illustration of jet substructure for a two-pronged jet with axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$.}
+  \label{fig:jet}
 \end{figure}
