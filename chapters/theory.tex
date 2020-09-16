@@ -5,27 +5,36 @@
 
 \section{Introduction}
 
-The search for new particles has been an ongoing endeavor since the first accelerators came online in the mid-20th century.
-% More history here
+Prior to the development of the Standard Model, attempts to reconcile quantum mechanics with special relativity resulted in the foundations for quantum field theory.
+The first example of a successful quantum field theory is quantum electrodynamics (QED), which was principally developed by Richard Feynman and Julian Schwinger.
+For their work in QED, they shared the 1965 Nobel Prize along with Sin-Itiro Tomonaga~\cite{NobelPrize:1965-Physics}.
+To this day, it stands as one of the most precisely tested theories of physics, with quantities such as the anomalous magnetic dipole moment of the electron $a_e$ as predicted by QED agreeing with experiment by more than 10 significant digits~\cite{Aoyama_2015}.
+
+However, while QED on its own is successful within its own domain of modeling electromagnetic interactions, it does not concern itself with the other two interactions of the Standard Model: the strong and weak nuclear forces.
+The description of these two forces proved to be more mathematically complicated than QED, and the development of the quantum field theories that describe them did not come about until the 1960's and 1970's with the electroweak (EW) theory of Weinberg, Glashow, and Salam, and the theory of quantum chromodynamics (QCD) of Gell-Mann and Zweig.
+EW theory and QCD also have their roots in Yang-Mills theory developed by Chen Ning Yang and Robert Mills in the 1950's~\cite{1954PhRv...96..191Y}, as they are both examples of non-abelian gauge theories.
+The Standard Model is the resulting theory that came about by combining EW theory with QCD\footnotemark.
+
+\footnotetext{While the theory itself began development in the 1960's, the term ``Standard Model'' was coined by Pais and Treiman in 1975~\cite{CaoFieldTheory}.}
 
 Today, the Standard Model remains as the dominant theory describing three of the four known forces, with gravity excluded due to its inability to be renormalized when approached as a quantum field theory.
-The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs completing the family after being discovered in the summer of 2012.
+The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs completing the family after being discovered in the summer of 2012. % Perhaps reword
 However, despite the success of this theory, many fundamental questions of physics still remain unanswered.
-As previously mentioned, the theory does not include gravity, as it only accounts for the electromagnetic, strong, and weak nuclear forces.
-It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory currently is incapable of addressing, such as the hierarchy problem.
+As previously mentioned in chapter~\ref{chap:intro}, the theory does not include gravity, as it only accounts for the electromagnetic, strong, and weak nuclear forces.
+It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory currently is incapable of addressing, such as the hierarchy problem~\cite{krippendorf2010cambridge}.
 The theory is therefore regarded as incomplete, and efforts to find physics beyond the Standard Model are ongoing.
 
-In this chapter, we briefly explore the main aspects of the Standard Model in section~\ref{sec:SM}, looking at the fundamental particles that it describes and its mathematical foundations.
-Later, in section~\ref{sec:VBF}, we describe the theoretical background relevant to the search for a new fundamental particle beyond the Standard Model that this thesis presents.
+In this chapter, we briefly explore the main aspects of the Standard Model in section~\ref{sec:SM}, looking at the fundamental particles that it describes and some of its mathematical foundations.
+Later, in section~\ref{sec:VBF}, we describe the theoretical background relevant to the search for a new fundamental particle beyond the Standard Model that this work presents.
 
 \section{The Standard Model of Particle Physics}
 \label{sec:SM}
 
 The Standard Model is the prevailing theory in particle physics that classifies all known elementary particles, and describes how they interact with each other via the electromagnetic, weak, and strong forces.
-The theory came about during the 1960's in order to explain observations made during early collision experiments\footnotemark.
-% More history here
-
-\footnotetext{While the theory itself was developed in the 1960's, the term ``Standard Model'' was coined by Pais and Treiman in 1975~\cite{CaoFieldTheory}.}
+Mathematically, the Standard Model is a quantum field theory resulting from the combination of both EW theory and QCD.
+Each elementary particle is associated with a field, and individual particles are treated as excitations of the field.
+Individual particles and antiparticles are both excitations of the same field within the theory, and the interaction between two or more fields allows for the creation and annihilation of particles.
+% Explanation of the necessity of the field viewpoint
 
 \subsection{The Elementary Particles}
 \label{subsec:particles}
@@ -73,10 +82,11 @@ The Higgs boson is responsible for giving all massive Standard Model particles t
 % More on the Higgs mechanism here
 
 \subsection{Mathematical Structure of the Standard Model}
+%The Standard Model is the theory resulting from combining EW theory and QCD, both of which are non-abelian gauge theories.
 
 \subsection{Beyond the Standard Model}
 
-As previously mentioned, despite the success of the Standard Model in making predictions about three of the four known fundamental forces of nature, there are many observations that it cannot currently explain.
+Despite the success of the Standard Model in making predictions about three of the four known fundamental forces of nature, there are many observations that it cannot currently explain. % Consider rewording
 One major outstanding issue is the inability of the Standard Model to deal with the hierarchy problem.
 Using three fundamental constants, one may define the Planck mass as
 \begin{equation}
@@ -121,8 +131,6 @@ The decay process is $X\to WV$ with a semi-leptonic final state in which one of 
 This process was selected due to the fact that one-lepton events are ideal for such an analysis, as the events that are generated provide a clean signal that suppresses background events.
 The complete Feynman diagram for the process can be seen in Fig.~\ref{fig:vbfFeynman}.
 
-\subsection{Expected Event Structure}
-
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/vbf.tex}
@@ -130,23 +138,11 @@ The complete Feynman diagram for the process can be seen in Fig.~\ref{fig:vbfFey
   \label{fig:vbfFeynman}
 \end{figure}
 
+\subsection{Expected Event Structure}
+
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/eventTop.tex}
   \caption{Illustration of event topology for VBF collision events of interest in the CMS detector. The semi-leptonic final state produces a $W$ boson that decays via $W\to\ell\nu$ and produces the lepton-neutrino pair. Opposite to that is a single massive jet with two-pronged substructure that is produced via $V\to q\bar{q}^{(\prime)}$. Finally, the VBF production process results in two forward facing jets, each labeled by $q^{(\prime)}$. Selection cuts for the analysis are made in order to search for events with such topology.}
   \label{fig:eventTop}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \input{fig/theory/bkg.tex}
-  \caption{Feynman diagrams of the two main SM sources of background to consider for the search. Both cases produce a final state that is similar to the expected final state produced by the VBF signal process. The most common background is the $W$+jets process (left), followed by the $W$+$V$/$t$ process (right).}
-  \label{fig:bkgFeynman}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \input{fig/theory/jet.tex}
-  \caption{Illustration of jet substructure for a two-pronged jet with axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$.}
-  \label{fig:jet}
 \end{figure}

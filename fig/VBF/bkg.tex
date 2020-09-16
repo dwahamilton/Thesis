@@ -1,0 +1,75 @@
+% !TEX root = ../../thesis.tex
+
+\begin{tikzpicture}
+  \begin{feynman}
+    % Vertices
+    \coordinate (q1) at (135:2.25);
+    \coordinate (q2) at (0,0);
+    \coordinate (q3) at (225:2.25);
+    \coordinate (l1) at ($(q3)+(5,0)$);
+    \coordinate (l2) at ($(l1)+(-25:-1.5)$);
+    \coordinate (l3) at ($(l2)+(25:1.5)$);
+    \coordinate (g1) at (135:0.5625);
+    \coordinate (q4) at ($(q1)+(5,0)$);
+    \coordinate (q5) at ($(q4)+(25:-1.5)$);
+    \coordinate (q6) at ($(q5)+(-25:1.5)$);
+
+    \coordinate (g2) at ($(7,0)+(135:1.5)$);
+    \coordinate (g3) at (7,0);
+    \coordinate (g4) at ($(7,0)+(225:1.5)$);
+    \coordinate (q7) at (8.5,0);
+    \coordinate (q8) at ($(q7)+(55:1.5)$);
+    \coordinate (q9) at ($(q7)+(-55:1.5)$);
+    \coordinate (q10) at ($(q8)+(-15:1.5)$);
+    \coordinate (l4) at ($(q9)+(15:1.5)$);
+    \coordinate (q11) at ($(q8)+(15:1.5)$);
+    \coordinate (q12) at ($(q9)+(-15:1.5)$);
+    \coordinate (q13) at ($(q10)+(15:1.5)$);
+    \coordinate (q14) at ($(q10)+(-15:1.5)$);
+    \coordinate (l5) at ($(l4)+(15:1.5)$);
+    \coordinate (l6) at ($(l4)+(-15:1.5)$);
+
+    % Lines
+    \draw[fermion] (q1) -- (q2);
+    \draw[fermion] (q2) -- (q3);
+    \draw[gluon] (g1) -- (q5) node[pos=0.5,above] {$g$};
+    \draw[boson] (q2) -- (l2) node[pos=0.5,below] {$W$};
+    \draw[fermion] (q5) -- (q4);
+    \draw[fermion] (q6) -- (q5);
+    \draw[fermion] (l2) -- (l1);
+    \draw[fermion] (l3) -- (l2);
+
+    \draw[gluon] (g2) -- (g3);
+    \draw[gluon] (g3) -- (g4);
+    \draw[gluon] (g3) -- (q7) node[pos=0.5,below] {$g$};
+    \draw[fermion] (q7) -- (q8) node[pos=0.5,left] {$q$};
+    \draw[fermion] (q9) -- (q7) node[pos=0.5,left] {$\bar{q}$};
+    \draw[boson] (q8) -- (q10) node[pos=0.5,below] {$W$};
+    \draw[boson] (q9) -- (l4) node[pos=0.5,above] {$W$};
+    \draw[fermion] (q8) -- (q11);
+    \draw[fermion] (q12) -- (q9);
+    \draw[fermion] (q10) -- (q13);
+    \draw[fermion] (q14) -- (q10);
+    \draw[fermion] (l4) -- (l5);
+    \draw[fermion] (l6) -- (l4);
+
+    % Labels
+    \node[anchor=mid,left] at (q1) {$q$};
+    \node[anchor=mid,left] at (q3) {$\bar{q}'$};
+    \node[anchor=mid,right] at (q4) {$q$};
+    \node[anchor=mid,right] at (q6) {$\bar{q}$};
+    \node[anchor=mid,right] at (l1) {$\ell$};
+    \node[anchor=mid,right] at (l3) {$\bar{\nu}$};
+    \node at (0.909,2.75) {$W$+jets};
+
+    \node[anchor=mid,left] at (g2) {$g$};
+    \node[anchor=mid,left] at (g4) {$g$};
+    \node[anchor=mid,right] at (q11) {$b$};
+    \node[anchor=mid,right] at (q12) {$\bar{b}$};
+    \node[anchor=mid,right] at (q13) {$q''$};
+    \node[anchor=mid,right] at (q14) {$\bar{q}'$};
+    \node[anchor=mid,right] at (l5) {$\ell$};
+    \node[anchor=mid,right] at (l6) {$\bar{\nu}$};
+    \node at (9.099,2.75) {$W$+$V$/$t$};
+  \end{feynman}
+\end{tikzpicture}
