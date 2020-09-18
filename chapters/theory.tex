@@ -5,11 +5,13 @@
 
 \section{Introduction}
 
+% History of QFT
 Prior to the development of the Standard Model, attempts to reconcile quantum mechanics with special relativity resulted in the foundations for quantum field theory.
 The first example of a successful quantum field theory is quantum electrodynamics (QED), which was principally developed by Richard Feynman and Julian Schwinger.
 For their work in QED, they shared the 1965 Nobel Prize along with Sin-Itiro Tomonaga~\cite{NobelPrize:1965-Physics}.
 To this day, it stands as one of the most precisely tested theories of physics, with quantities such as the anomalous magnetic dipole moment of the electron $a_e$ as predicted by QED agreeing with experiment by more than 10 significant digits~\cite{Aoyama_2015}.
 
+% Development of the SM
 However, while QED on its own is successful within its own domain of modeling electromagnetic interactions, it does not concern itself with the other two interactions of the Standard Model: the strong and weak nuclear forces.
 The description of these two forces proved to be more mathematically complicated than QED, and the development of the quantum field theories that describe them did not come about until the 1960's and 1970's with the electroweak (EW) theory of Weinberg, Glashow, and Salam, and the theory of quantum chromodynamics (QCD) of Gell-Mann and Zweig.
 EW theory and QCD also have their roots in Yang-Mills theory developed by Chen Ning Yang and Robert Mills in the 1950's~\cite{1954PhRv...96..191Y}, as they are both examples of non-abelian gauge theories.
@@ -17,6 +19,7 @@ The Standard Model is the resulting theory that came about by combining EW theor
 
 \footnotetext{While the theory itself began development in the 1960's, the term ``Standard Model'' was coined by Pais and Treiman in 1975~\cite{CaoFieldTheory}.}
 
+% Problems with the SM
 Today, the Standard Model remains as the dominant theory describing three of the four known forces, with gravity excluded due to its inability to be renormalized when approached as a quantum field theory.
 The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs completing the family after being discovered in the summer of 2012. % Perhaps reword
 However, despite the success of this theory, many fundamental questions of physics still remain unanswered.
@@ -24,6 +27,7 @@ As previously mentioned in chapter~\ref{chap:intro}, the theory does not include
 It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory currently is incapable of addressing, such as the hierarchy problem~\cite{krippendorf2010cambridge}.
 The theory is therefore regarded as incomplete, and efforts to find physics beyond the Standard Model are ongoing.
 
+% Chapter overview
 In this chapter, we briefly explore the main aspects of the Standard Model in section~\ref{sec:SM}, looking at the fundamental particles that it describes and some of its mathematical foundations.
 Later, in section~\ref{sec:VBF}, we describe the theoretical background relevant to the search for a new fundamental particle beyond the Standard Model that this work presents.
 
@@ -31,18 +35,17 @@ Later, in section~\ref{sec:VBF}, we describe the theoretical background relevant
 \label{sec:SM}
 
 The Standard Model is the prevailing theory in particle physics that classifies all known elementary particles, and describes how they interact with each other via the electromagnetic, weak, and strong forces.
-Mathematically, the Standard Model is a quantum field theory resulting from the combination of both EW theory and QCD.
-Each elementary particle is associated with a field, and individual particles are treated as excitations of the field.
-Individual particles and antiparticles are both excitations of the same field within the theory, and the interaction between two or more fields allows for the creation and annihilation of particles.
-% Explanation of the necessity of the field viewpoint
+Mathematically, the Standard Model is a gauge quantum field theory resulting from the combination of both EW theory and QCD.
+Attempts at simply quantizing relativistic particles in the same way that nonrelativistic particles were quantized gives rise to problems such as negative-energy states and violations of causality~\cite{Peskin:257493}.
+The need for the field description therefore arises from requiring that our theory obeys causality in the context of relativity, and that our theory allows for the creation and annihilation of particles.
+Each elementary particle and antiparticle is associated with a field, individual particles are treated as excitations of the field, and the interactions between each of the different fields allow for the creation and annihilation of particles.
 
 \subsection{The Elementary Particles}
 \label{subsec:particles}
 
 The Standard Model describes the interactions between 17 elementary particles, which are classified by quarks, leptons, gauge bosons, and scalar bosons.
-A table of all particles classified by the theory can be seen in Fig.~\ref{fig:standardModel}, labeled with their masses, charges, and spins~\cite{PhysRevD.98.030001}.
-Each particle listed has a corresponding antiparticle, which has the same mass as its particle counterpart, but with opposite physical charges.
-% More explanation here
+A table of all particles described by the theory can be seen in Fig.~\ref{fig:standardModel}, labeled with their masses, charges, and spins~\cite{PhysRevD.98.030001}, with the fermions grouped by generation.
+Quarks and leptons are classified as fermions since they have half-integer values for their spin, while the scalar and gauge bosons are eponymously named for the fact that they are bosons and therefore have integer values for their spin. % Check wording
 
 \begin{figure}[htbp]
   \centering
@@ -51,38 +54,112 @@ Each particle listed has a corresponding antiparticle, which has the same mass a
   \label{fig:standardModel}
 \end{figure}
 
+\subsubsection{Quarks}
 Quarks are spin-1/2 particles that interact via the strong and weak nuclear forces, as well as the electromagnetic force.
 The up and down quarks make up the protons and neutrons of everyday matter that we see and interact with.
 For example, a proton is made up of two $u$'s and one $d$ ($uud$), while a neutron is made of two $d$'s and one $u$ ($ddu$).
 These are just two of the many different combinations of composite particles that can be formed by quarks.
 There are two main combinations of quarks to consider: mesons and baryons.
 Mesons are composed of one quark and an antiquark, and baryons are composed of three quarks or three antiquarks. % Mention recently observed pentaquark?
-For example, pions ($\pi^0$/$\pi^\pm$) were the first mesons to be observed, and can be electrically charged when comprised only of up or down quark-antiquark pairs (i.e., a $\pi^+$ is made from the combination $u\bar{d}$, and a $\pi^-$ is made from $d\bar{u}$), or it can be electrically neutral (i.e., a $\pi^0$ is made from $u\bar{u}$ or $d\bar{d}$). % Citation about observation
+For example, pions ($\pi^0$/$\pi^\pm$) were the first mesons to be observed, and can be electrically charged when comprised only of up or down quark-antiquark pairs (i.e., a $\pi^+$ is made from the combination $u\bar{d}$, and a $\pi^-$ is made from $d\bar{u}$), or it can be electrically neutral (i.e., a $\pi^0$ is made from $u\bar{u}$ or $d\bar{d}$).
 On the other hand, protons and neutrons are examples of baryons, as they are each made of three quarks.
-% Possibly elaborate more
+Both baryons and mesons are examples of hadrons: bound states of quarks.
 
+One unique aspect of quarks is that they carry color charge, and all hadrons are considered `colorless' states.
+The three quarks in a baryon have red, green, and blue (or antired, antigreen, and antiblue) charge to form a colorless combination, and mesons can come in pairs of red and antired, green and antigreen, and blue and antiblue.
+This phenomenon is known as color confinement, and while there is currently no analytic proof of color confinement in QCD, no colorless configuration of quarks has been observed. % Citation
+
+\subsubsection{Leptons}
 Leptons, like quarks, are also spin-1/2 particles that can be electrically charged. Unlike quarks, they only interact via the electromagnetic and weak nuclear forces.
 The electron is the most familiar lepton, as it is a component of the atoms that are found in everyday interactions.
 However, it also has two heavier cousins: the muon and the tau.
 Both of these particles have the same charge as the electron, but their masses are much larger.
 Finally, leptons also include neutrinos, which are extremely light particles that have no electric charge, and therefore only interact via the weak force.
-% Elaborate here
+% Possibly elaborate
 
+\subsubsection{Gauge Bosons}
 The gauge bosons include the gluon, the photon, and the $W$ and $Z$ bosons.
 Each gauge boson is a spin-1 particle that mediates the three fundamental interactions that the Standard Model describes.
 Gluons are massless particles that mediate the strong nuclear force, and they only interact with quarks since they are the only particles to carry color charge.
 Photons are the most familiar example of the gauge bosons, as we can quite literally see them since light is made of photons.
 They are masses particles that mediate the electromagnetic force, and they interact with any particle that is electrically charged.
 Finally, the $Z$ and $W$ bosons are massive particles that mediate the weak nuclear force, which is responsible for radioactive decay.
-% Elaborate here
+% Possibly elaborate
 
+\subsubsection{Scalar Bosons}
 The last category of bosons to consider is the scalar bosons, which are spin-0 particles.
 This family contains only one member: the Higgs boson.
 The Higgs boson is responsible for giving all massive Standard Model particles their masses, with the exception of the neutrinos.
-% More on the Higgs mechanism here
+This occurs through the Higgs mechanism, in which spontaneous symmetry breaking and gauge invariance cause the Higgs field to interact with the other fields in the Standard model, thereby imparting the observed masses onto the particles. % Check wording
 
 \subsection{Mathematical Structure of the Standard Model}
-%The Standard Model is the theory resulting from combining EW theory and QCD, both of which are non-abelian gauge theories.
+As the Standard Model is a quantum field theory, it has a Lagrangian density $\mathcal{L}_\mathrm{SM}$ that contains all the information about the fields corresponding to each field and how they interact with each other.
+Each term in this Lagrangian must be Lorentz invariant in order for the Lagrangian to remain the same under gauge transformations or boosts and rotations.
+The terms present in $\mathcal{L}_\mathrm{SM}$ allow us to compute probability amplitudes for particle production and decay processes through the method of Feynman diagrams.
+The Standard Model is also a non-abelian gauge theory, in which the internal symmetry group is $SU(3)_C\times SU(2)_L\times U(1)_Y$. % Citation
+The $SU(3)_C$ symmetry group corresponds to the QCD interactions of the quarks and gluons, while the $SU(2)_L\times U(1)_Y$ group corresponds to the electroweak interactions.
+The symmetries of these groups lead to conservation of color charge $C$, isospin $L$, and weak hypercharge $Y$. % Check wording
+
+\subsubsection{Lagrangian Formalism}
+A simple yet illustrative example of a Lagrangian for a quantum field theory is that of QED for a spin-1/2 field:
+\begin{equation}\label{eq:QED}
+  \mathcal{L}_\mathrm{QED}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\bar{\psi}(i\gamma^\mu D_\mu-m)\psi.
+\end{equation}
+Here, $\psi$ is a spin-1/2 field, $\bar{\psi}\equiv\psi^\dagger\gamma^0$ is the Dirac adjoint for $\psi$, $F_{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$ is the electromagnetic field strength tensor, $D_\mu=\partial_\mu+ieA_\mu$ is the gauge covariant derivative, $\gamma^\mu$ is the set of Dirac matrices, and $m$ is the mass of the particle corresponding to the field $\psi$.
+
+The classical equations of motion for the fields can be obtained through the Euler-Lagrange equation for a field $\phi$, which is given by
+\begin{equation}\label{eq:EL}
+  \pdv{\mathcal{L}}{\phi}-\partial_\mu\pqty{\pdv{\mathcal{L}}{(\partial_\mu\phi)}}=0.
+\end{equation}
+Applying equation~\ref{eq:EL} to the spin-1/2 field $\psi$ yields
+\begin{equation}
+  i\gamma^\mu D_\mu\psi-m\psi=0
+\end{equation}
+which is the Dirac equation with the gauge covariant derivative in place of the usual partial derivative.
+On the other hand, for $A^\mu$, we get
+\begin{equation}
+  \partial_\mu F^{\mu\nu}=e\bar{\psi}\gamma^\mu\psi,
+\end{equation}
+which are the inhomogeneous Maxwell equations for the electromagnetic field.
+
+\subsubsection{Feynman Diagrams}
+Feynman diagrams are pictorial representations of the terms in present in the Dyson series, which is a perturbative expansion of the time evolution operator in the interaction picture.
+Through the process of canonical quantization, one may obtain a quantum field theory starting from a Lagrangian $\mathcal{L}$~\cite{Lancaster:1629337}.
+The Lagrangian contains all the information about how the fields interact with one another, and from this we may obtain the Feynman rules to compute scattering amplitudes and cross-sections.
+
+For example, given the QED Lagrangian $\mathcal{L}_\mathrm{QED}$ in equation~\ref{eq:QED}, we obtain the following Feynman rules~\cite{Schwartz:2013pla}:
+\begin{align}
+  \input{fig/theory/QEDprop1.tex} &= \frac{-ig_{\mu\nu}}{p^2+i\epsilon},\\
+  \input{fig/theory/QEDprop2.tex} &= \frac{i(\slashed{p}+m)}{p^2-m^2+i\epsilon},\\
+  \input{fig/theory/QEDvert.tex} &= -ie\gamma^\mu.
+\end{align}
+These rules may then immediately be applied to a process such as $e^-e^+\to\mu^-\mu^+$ to obtain the first-order scattering amplitude,
+\begin{equation}
+  i\mathcal{M}=\input{fig/theory/QEDfeyn.tex}=\frac{ie^2}{(p_1+p_2)^2}\bqty{\bar{v}(p_2)\gamma^\mu u(p_1)}\bqty{\bar{u}(p_3)\gamma_\mu v(p_4)}.
+\end{equation}
+This can then be used to compute the scattering cross-section. For a process in the center-of-mass frame with two particles in the initial state with momenta $\mathbf{p}_1=-\mathbf{p_2}$, and two particles in the final state with momenta $\mathbf{p}_3=-\mathbf{p}_4$.
+The cross-section assuming unpolarized scattering is
+\begin{align*}
+  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega} &= \frac{1}{64\pi^2E^2_\mathrm{CM}}\frac{|\mathbf{p}_f|}{|\mathbf{p}_i|}\sum_\mathrm{spins}|\mathcal{M}|^2\\
+  &= \frac{\alpha^2}{4E_\mathrm{CM}^2}\sqrt{1-\frac{m_\mu^2}{E^2}}\bqty{1+\frac{m_\mu^2}{E^2}+\pqty{1-\frac{m_\mu^2}{E^2}}\cos^2\theta},
+  \numberthis
+\end{align*}
+where $|\mathbf{p}_i|\equiv|\mathbf{p}_1|=|\mathbf{p}_2|$ and $|\mathbf{p}_f|\equiv|\mathbf{p}_3|=|\mathbf{p}_4|$, $E_\mathrm{CM}$ is the total energy in the center-of-mass frame, $E=E_\mathrm{CM}/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
+
+The process for obtaining scattering cross-sections for other field theories with a specified Lagrangian $\mathcal{L}$ is similar.
+Thus, applying this machinery to the SM Lagrangian allows us to use to construct the diagrams necessary to compute scattering amplitudes and cross-sections for any particular process of interest. Some examples of SM vertices may be seen in Fig.~\ref{fig:SMVert}~\cite{Romao_2012}.
+
+\begin{figure}[htbp]
+  \centering
+  \input{fig/theory/SMverts.tex} % Consider fixing vertical alignment for neutrino
+  \caption{Examples of vertices for constructing Feynman diagrams in the Standard Model, where $f$ is any fermion, $f_Q$ is any electrically charged fermion, $\ell$ is any lepton that is not a neutrino, $q_u$ is an up-type quark ($u$, $c$, $t$), and $q_d$ is a down-type quark ($d$, $s$, $b$). For the quartic electroweak vertex, the two particles interacting with the $W$'s must be chosen such that charge conservation holds.}
+  \label{fig:SMVert}
+\end{figure}
+
+\subsubsection{Gauge Theory}
+% Gauge bosons as generators of the symmetry group
+
+\subsubsection{The Higgs Mechanism}
 
 \subsection{Beyond the Standard Model}
 
@@ -98,7 +175,6 @@ However, this energy scale is vastly larger than what can be obtained in contemp
 Fig.~\ref{fig:hierarchy} shows the comparison between the Planck scale, the electroweak symmetry breaking scale, and the current center of mass energy $\sqrt{s}$ at the Large Hadron Collider.
 
 Multiple BSM mechanisms have been proposed to deal with the hierarchy problem.
-
 
 \begin{figure}[htbp]
   \centering
@@ -117,15 +193,16 @@ In this work, we present results on the search for a new heavy $X$ boson.
 
 The search is model independent, and covers the following three possibilities:
 
-\paragraph{Spin-0 Kaluza-Klein Radion}
+\subsubsection{Spin-0 Kaluza-Klein Radion}
 A neutral scalar boson that appears in Randall-Sundrum (RS) models that can decay to the vector bosons $W$ and $Z$ via $\mathrm{Rad}\to WW$ and $\mathrm{Rad}\to ZZ$~\cite{Goldberger_1999,Goldberger_2000}.
 
-\paragraph{Spin-1 $W'$/$Z'$ Boson}
+\subsubsection{Spin-1 $W'$/$Z'$ Boson}
 A heavier version of the spin-1 $W$ and $Z$ bosons that can decay via $W'\to WZ$ and $Z'\to WW$~\cite{Pappadopulo_2014}.
 
-\paragraph{Spin-2 Bulk Graviton}
+\subsubsection{Spin-2 Bulk Graviton}
 A spin-2 resonance from a bulk RS model that decays via $G_\mathrm{bulk}\to WW$ or $G_\mathrm{bulk}\to ZZ$~\cite{Fitzpatrick_2007,PhysRevD.76.036006}.
 
+\subsection{Production Method}
 Each possibility for the $X$ boson couples to the massive $V=W,Z$ vector bosons, and each are expected to have masses above 1 TeV.
 The decay process is $X\to WV$ with a semi-leptonic final state in which one of the vector bosons is a $W$ that decays leptonically via $W\to\ell\nu$, while the other $V$ boson is either a $W$ or a $Z$ that undergoes $V\to q\bar{q}^{(\prime)}$.
 This process was selected due to the fact that one-lepton events are ideal for such an analysis, as the events that are generated provide a clean signal that suppresses background events.
