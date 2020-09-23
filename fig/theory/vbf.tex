@@ -2,20 +2,20 @@
 \begin{tikzpicture}
   \begin{feynman}
     % Vertices
-    \coordinate (q1) at (-2.25,1);
+    \coordinate (q1) at (-2.25,1.5);
     \coordinate (q2) at (0,1);
-    \coordinate (q3) at ($(q2)+(25:2.25)$);
-    \coordinate (q4) at (-2.25,-1);
+    \coordinate (q3) at ($(q2)+(11.5:5.25)$);
+    \coordinate (q4) at (-2.25,-1.5);
     \coordinate (q5) at (0,-1);
-    \coordinate (q6) at ($(q5)+(-25:2.25)$);
-    \coordinate (v1) at (1.5,0);
-    \coordinate (x) at (3.75,0);
-    \coordinate (v2) at (5.25,1);
-    \coordinate (v3) at (5.25,-1);
-    \coordinate (q7) at ($(v2)+(25:1.5)$);
-    \coordinate (q8) at ($(v2)+(-25:1.5)$);
-    \coordinate (l1) at ($(v3)+(25:1.5)$);
-    \coordinate (l2) at ($(v3)+(-25:1.5)$);
+    \coordinate (q6) at ($(q5)+(-11.5:5.25)$);
+    \coordinate (v1) at (1,0);
+    \coordinate (x) at (2.5,0);
+    \coordinate (v2) at (3.75,0.75);
+    \coordinate (v3) at (3.75,-0.75);
+    \coordinate (q7) at ($(v2)+(15:1.5)$);
+    \coordinate (q8) at ($(v2)+(-15:1.5)$);
+    \coordinate (l1) at ($(v3)+(15:1.5)$);
+    \coordinate (l2) at ($(v3)+(-15:1.5)$);
 
     % Lines
     \draw[fermion] (q1) -- (q2);
@@ -25,18 +25,24 @@
     \draw[boson] (q2) -- (v1) node[pos=0.65,xshift=-0.5cm] {$V$};
     \draw[boson] (q5) -- (v1) node[pos=0.65,xshift=-0.5cm] {$V$};
     \draw[boson] (v1) -- (x) node[pos=0.5,above] {$X$};
-    \draw[boson] (x) -- (v2) node[pos=0.5,xshift=-0.5cm] {$V$};
-    \draw[boson] (x) -- (v3) node[pos=0.5,xshift=-0.5cm] {$W$};
+    \draw[boson] (x) -- (v2) node[pos=0.9,xshift=-0.5cm] {$V$};
+    \draw[boson] (x) -- (v3) node[pos=0.9,xshift=-0.5cm] {$W$};
     \draw[fermion] (v2) -- (q7);
     \draw[fermion] (q8) -- (v2);
     \draw[fermion] (v3) -- (l1);
     \draw[fermion] (l2) -- (v3);
 
+    % Blobs
+    \fill[white] (v1) circle (0.2);
+    \fill[white] (x) circle (0.2);
+    \draw[pattern=north west lines] (v1) circle (0.2);
+    \draw[pattern=north west lines] (x) circle (0.2);
+
     % Labels
-    \node[anchor=mid,left] at (q1) {$q$};
-    \node[anchor=mid,left] at (q4) {$q$};
-    \node[anchor=mid,right] at (q3) {$q^{(\prime)}$};
-    \node[anchor=mid,right] at (q6) {$q^{(\prime)}$};
+    \node[anchor=mid,left] at (q1) {$q''$};
+    \node[anchor=mid,left] at (q4) {$q'''$};
+    \node[anchor=mid,right] at (q3) {$q^{(\prime)\prime\prime}$};
+    \node[anchor=mid,right] at (q6) {$q^{(\prime)\prime\prime\prime}$};
     \node[anchor=mid,right] at (q7) {$q$};
     \node[anchor=mid,right] at (q8) {$\bar{q}^{(\prime)}$};
     \node[anchor=mid,right] at (l1) {$\ell$};

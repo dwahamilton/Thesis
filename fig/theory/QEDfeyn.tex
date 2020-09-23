@@ -11,9 +11,9 @@
 
     % Lines
     \draw[fermion] (f1) -- (b1);
-    \draw[fermion] (b1) -- (f2);
+    \draw[anti fermion] (f2) -- (b1);
     \draw[boson] (b1) -- (b2) node[pos=0.5,above] {$\gamma$};
-    \draw[fermion] (b2) -- (f3);
+    \draw[anti fermion] (f3) -- (b2);
     \draw[fermion] (f4) -- (b2);
     \draw[->] ($(135:1.25)+(45:0.25)$) -- ($(135:0.25)+(45:0.25)$) node[pos=0.5,above right] {$p_1$};
     \draw[->] ($(225:1.25)+(-45:0.25)$) -- ($(225:0.25)+(-45:0.25)$) node[pos=0.5,below right] {$p_2$};
