@@ -31,7 +31,7 @@ In this case, given two beams with energies $E_{L,1}$ and $E_{L,2}$ as measured 
   E_\mathrm{CM}=E_{L,1}+E_{L,2},
 \end{equation}
 and if $E_{L,1}=E_{L,2}=E_L$, this reduces to $E_\mathrm{CM}=2E_L$.
-Thus, colliders have the advantage that they depend linearly on beam energy and therefore have higher gains in energy compared to fixed-target accelerators.
+Thus, colliders have the advantage that they depend linearly on beam energy and therefore have higher gains in $E_\mathrm{CM}$ compared to fixed-target accelerators.
 
 % Luminosity
 Another key parameter of an accelerator is the luminosity $\mathcal{L}$.
@@ -44,15 +44,30 @@ In some cases it is useful to instead consider the time integral of the luminosi
 \begin{equation}
   \mathcal{L}_\mathrm{int}=\int\mathcal{L}\dd{t}.
 \end{equation}
-This can then be used with equation~\ref{eq:evtRate} to obtain the number of collision events for a process $N_\mathrm{evt}$:
+This can then be used with equation~\ref{eq:evtRate} to obtain the number of collision events $N_\mathrm{event}$ for a process:
 \begin{equation}
-  N_\mathrm{evt}=\mathcal{L}_\mathrm{int}\sigma.
+  N_\mathrm{event}=\mathcal{L}_\mathrm{int}\sigma.
 \end{equation}
 Thus, by increasing the luminosity (and hence the integrated luminosity), we may increase the number of collision events of interest for a given process.
 The luminosity may also be expressed in terms of parameters relevant to the beam, as it is essentially an instantaneous measure of particle flux. % Check wording
-
+For example, given the number of particles per bunch for two Gaussian beams $N_1$ and $N_2$, revolution frequency $f$, and number of bunches $N_b$, the luminosity is
+\begin{equation}
+  \mathcal{L}=f\frac{N_1N_2N_b}{4\pi\sigma_x\sigma_y},
+\end{equation}
+where $\sigma_x$ and $\sigma_y$ are the standard deviations in the $x$ and $y$ directions for the beam distributions~\cite{Herr:941318}.
 
 % Discoveries at colliders
+The search for new physics has driven advances in accelerator center-of-mass energies and luminosities that allow for discovering exotic collision events.
+Fig.~\ref{fig:ECMplot} shows the constituent center-of-mass energies for various accelerator facilities as a function of the year in which they came online~\cite{Panofsky}.
+These advances have resulted in the discovery of massive particles that the first accelerators in the 1960's were not capable of producing, such as the $W$ and $Z$ bosons, or the top quark. % Check wording
+Even following the success of the Higgs boson discovery in 2012 and the ongoing search for new particles at the LHC, there are still upgrades being installed on the LHC to increase its luminosity, and there are proposals for new accelerator facilities with higher center-of-mass energies~\cite{Bicer_2014}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig/experiment/ecm_livingston.pdf}
+  \caption{Plot of the constituent center-of-mass energies for hadronic and $e^+e^-$ colliders since 1960. The discovery of massive particles such as the $W$ and $Z$ bosons or the top quark was made possible thanks to advances in accelerator technology that allowed for higher center-of-mass energies and luminosities.}
+  \label{fig:ECMplot}
+\end{figure}
 
 % Chapter overview
 This chapter explores the main features of the Large Hadron Collider facility at CERN in section~\ref{sec:LHC}, where collision events used in the search were obtained.
