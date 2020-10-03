@@ -14,7 +14,8 @@ Another is that the projectile type in the beam may be chosen in order to select
 Finally, the interactions take place at a specified location where detectors may be located.
 
 % Fixed-target accelerators
-The center-of-mass energy $E_\mathrm{CM}$ is a defining feature of an accelerator, as it is a measure of the energy available to produce particles in collision events~\cite{martin2008particle}.
+The center-of-mass energy $E_\mathrm{CM}$\footnotemark{} is a defining feature of an accelerator, as it is a measure of the energy available to produce particles in collision events~\cite{martin2008particle}.
+\footnotetext{Sometimes instead written in terms of the Mandelstam variable $s$ as $\sqrt{s}=E_\mathrm{CM}$~\cite{Perelstein_2011}.}
 There are two types of accelerators to consider: fixed-target and colliders. % Check terms
 A key distinction between them is how they differ their center-of-mass energies based on the parameters of the accelerator.
 Fixed-target accelerators involve a single beam that is directed to a stationary target in the lab frame, with a center-of-mass energy given by
@@ -71,12 +72,46 @@ Even following the success of the Higgs boson discovery in 2012 and the ongoing 
 
 % Chapter overview
 This chapter explores the main features of the Large Hadron Collider facility at CERN in section~\ref{sec:LHC}, where collision events used in the search were obtained.
+A complete documentation of the LHC machine can be found in Ref.~\cite{Evans:1129806}.
 We then turn our attention to the Compact Muon Solenoid detector in section~\ref{sec:CMS} and briefly go over some of the main components of the device, which was used to record the collision events at the LHC.
+This overview is based off of documents concerning CMS in Ref.~\cite{Chatrchyan:1129810}.
 
-\section{The Large Hadron Collider} % \cite{Evans:1129806}
+\section{The Large Hadron Collider}
 \label{sec:LHC}
 
-\section{The Compact Muon Solenoid} % \cite{Chatrchyan:1129810}
+The Large Hadron Collider is a circular collider accelerator facility with two superconducting rings that accelerate protons to relativistic speeds, and it is located just outside of Geneva on the French-Swiss border.
+It is the largest and most powerful collider in the world, with plans to extend its service life into the 2030's and 2040's.
+It has a circumference of 26.7 km and was built into an existing tunnel that was used for the Large Electron-Positron (LEP) collider, which was used from 1989 to 2000.
+Various detectors used to study collision events are placed along the beamline, such as ALICE, ATLAS, CMS, and LHCb.
+Fig.~\ref{fig:CERN} shows the complete CERN accelerator complex with all of its components.
+The ATLAS and CMS facilities are general-purpose detectors for studying the Higgs and searching new physics arising from proton-proton collision, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions ($^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig/experiment/CCC-v2018-print-v2.pdf}
+  \caption{Layout of the CERN accelerator complex. The LHC is one of several accelerators present at the facility, with multiple detectors along the beamline such as ATLAS, CMS, ALICE, and LHCb. ATLAS and CMS are both general-purpose detectors for studying properties of the Higgs and searching for new physics. ALICE is designed to study heavy-ion collisions with lead ions to investigate quark-gluon plasma. LHCb is meant to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions. The LHC is injected with protons and lead ions through a multi-stage process. Protons starting at the Linac2 facility, which are then fed through the Proton Synchrotron Booster (PSB), then to the Proton Synchrotron (PS), and then to the Super Proton Synchrotron (SPS) before finally being injected into the LHC itself. The lead ions undergo a similar process, starting at Linac3 and then being transferred to the Low Energy Ion Ring (LEIR), then going through the PS and SPS before being injected into the LHC.}
+  \label{fig:CERN}
+\end{figure}
+
+% Beam injection for LHC
+The LHC beam is fed through a multi-stage process in which protons are stripped off of hydrogen atoms and are first accelerated through a series of preaccelerators before being injected into the LHC beam.
+Protons start at the Linac2 facility, where they are initially accelerated to $50\unit{MeV}$ before being transferred to the Proton Synchrotron Booster (PSB) and reach $1.4\unit{GeV}$.
+They are then sent to the Proton Synchrotron (PS) where they reach energies of $25\unit{GeV}$, and then they are accelerated further to $450\unit{GeV}$ at the Super Proton Synchrotron (SPS).
+The protons then reach the LHC where they are accelerated to $6.5\unit{TeV}$ each.
+The process is similar for lead ions, where they instead start at Linac3 with $4.2\unit{MeV/n}$, then move through the Low Energy Ion Ring (LEIR) before being transferred to the PS, then the SPS, then injected into the LHC.
+
+% Center-of-mass energy and luminosity
+While the LHC was built with the intent of achieving center-of-mass energies of $\sqrt{s}=14\unit{TeV}$ in proton-proton collisions, the data collected for this work was over a period in which the center-of-mass energy was $\sqrt{s}=13\unit{TeV}$.
+It also has a specific expression for the luminosity $\mathcal{L}$ given by
+\begin{equation}
+  \mathcal{L}=\frac{N_b^2n_bf_\mathrm{rev}\gamma_r}{4\pi\epsilon_n\beta^*}F,
+\end{equation}
+where $N_b$ is the number of particles per bunch, $n_b$ is the number of bunches per beam, $f_\mathrm{rev}$ is the revolution frequency, $\gamma_r$ is the Lorentz factor, $\epsilon_n$ is the normalized transverse beam emittance, $\beta^*$ is the beta function at the collision point, and $F$ is the geometric luminosity reduction factor.
+Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$ recorded at CMS over the Run 2 years 2016, 2017, and 2018.
+This corresponds to a total integrated luminosity of $137.1\unit{fb^{-1}}$ at CMS over Run 2.
+% Perhaps put a plot of luminosity here and elaborate
+
+\section{The Compact Muon Solenoid}
 \label{sec:CMS}
 
 \begin{figure}[htbp] % https://cds.cern.ch/record/2665537/
