@@ -33,6 +33,7 @@ Later, in section~\ref{sec:VBF}, we describe the theoretical background relevant
 \section{The Standard Model of Particle Physics}
 \label{sec:SM}
 
+% The standard model
 The Standard Model is the prevailing theory in particle physics that classifies all known elementary particles, and describes how they interact with each other via the electromagnetic, weak, and strong forces.
 Mathematically, the Standard Model is a gauge quantum field theory resulting from the combination of both EW theory and QCD.
 Attempts at simply quantizing relativistic particles in the same way that nonrelativistic particles were quantized gives rise to problems such as negative-energy states and violations of causality~\cite{Peskin:257493}.
@@ -42,6 +43,7 @@ Each elementary particle and antiparticle is associated with a field, individual
 \subsection{The Elementary Particles}
 \label{subsec:particles}
 
+% The elementary particles
 The Standard Model describes the interactions between 17 elementary particles, which are classified by quarks, leptons, gauge bosons, and scalar bosons.
 A table of all particles described by the theory can be seen in Fig.~\ref{fig:standardModel}, labeled with their masses, charges, and spins~\cite{PhysRevD.98.030001}, with the fermions grouped by generation.
 Quarks and leptons are classified as fermions since they have half-integer values for their spin, while the scalar and gauge bosons are eponymously named for the fact that they are bosons and therefore have integer values for their spin. % Check wording
@@ -49,29 +51,36 @@ Quarks and leptons are classified as fermions since they have half-integer value
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/standardModel.tex}
-  \caption{Table of all Standard Model particles grouped by generation and type, labeled with mass, charge, and spin. Particle types are colored green for quarks, red for leptons, blue for gauge bosons, and orange for scalar bosons.}
+  \caption{
+    Table of all Standard Model particles grouped by generation and type, labeled with mass, charge, and spin.
+    Particle types are colored green for quarks, red for leptons, blue for gauge bosons, and orange for scalar bosons.
+  }
   \label{fig:standardModel}
 \end{figure}
 
 \subsubsection{Quarks}
 
+% Quarks
 Quarks are spin-1/2 particles that interact via the strong and weak nuclear forces, as well as the electromagnetic force.
 The up and down quarks make up the protons and neutrons of everyday matter that we see and interact with.
 For example, a proton is made up of two $u$'s and one $d$ ($uud$), while a neutron is made of two $d$'s and one $u$ ($ddu$).
 These are just two of the many different combinations of composite particles that can be formed by quarks.
 
+% Combinations of quarks
 There are two main combinations of quarks to consider: mesons and baryons.
 Mesons are composed of one quark and an antiquark, and baryons are composed of three quarks or three antiquarks. % Mention recently observed pentaquark?
 For example, pions ($\pi^0$/$\pi^\pm$) were the first mesons to be observed, and can be electrically charged when comprised only of up or down quark-antiquark pairs (i.e., a $\pi^+$ is made from the combination $u\bar{d}$, and a $\pi^-$ is made from $d\bar{u}$), or it can be electrically neutral (i.e., a $\pi^0$ is made from $u\bar{u}$ or $d\bar{d}$).
 On the other hand, protons and neutrons are examples of baryons, as they are each made of three quarks.
 Both baryons and mesons are examples of hadrons: bound states of quarks.
 
+% Color charge
 One unique aspect of quarks is that they carry color charge, and all hadrons are considered `colorless' states.
 The three quarks in a baryon have red, green, and blue (or antired, antigreen, and antiblue) charge to form a colorless combination, and mesons can come in pairs of red and antired, green and antigreen, and blue and antiblue.
 This phenomenon is known as color confinement, and while there is currently no analytic proof of color confinement in QCD, no colorless configuration of quarks has been observed~\cite{muta2010foundations}.
 
 \subsubsection{Leptons}
 
+% leptons
 Leptons, like quarks, are also spin-1/2 particles that can be electrically charged. Unlike quarks, they only interact via the electromagnetic and weak nuclear forces.
 The electron is the most familiar lepton, as it is a component of the atoms that are found in everyday interactions.
 However, it also has two heavier cousins: the muon and the tau.
@@ -81,6 +90,7 @@ Finally, leptons also include neutrinos, which are extremely light particles tha
 
 \subsubsection{Gauge Bosons}
 
+% Gauge bosons
 The gauge bosons include the gluon, the photon, and the $W$ and $Z$ bosons.
 Each gauge boson is a spin-1 particle that mediates the three fundamental interactions that the Standard Model describes.
 Gluons are massless particles that mediate the strong nuclear force, and they only interact with quarks since they are the only particles to carry color charge.
@@ -91,6 +101,7 @@ Finally, the $Z$ and $W$ bosons are massive particles that mediate the weak nucl
 
 \subsubsection{Scalar Bosons}
 
+% Scalar bosons
 The last category of bosons to consider is the scalar bosons, which are spin-0 particles.
 This family contains only one member: the Higgs boson.
 The need for the Higgs boson arises due to the fact that all of the previously mentioned particles do not have intrinsic masses.
@@ -99,6 +110,7 @@ This occurs through the Higgs mechanism, in which spontaneous symmetry breaking 
 
 \subsection{Mathematical Structure of the Standard Model}
 
+% The mathematical structure of the standard model
 As the Standard Model is a quantum field theory, it has a Lagrangian density $\mathcal{L}_\mathrm{SM}$ that contains all the information about the fields corresponding to each particle and how they interact with each other.
 Each term in this Lagrangian must be Lorentz invariant in order for the Lagrangian to remain the same under gauge transformations or boosts and rotations.
 The terms present in $\mathcal{L}_\mathrm{SM}$ allow us to compute probability amplitudes for particle production and decay processes through the method of Feynman diagrams.
@@ -109,12 +121,14 @@ The symmetries of these groups lead to conservation of color charge $C$, weak is
 
 \subsubsection{Lagrangian Formalism}
 
+% The QED Lagrangian
 A simple yet illustrative example of a Lagrangian for a quantum field theory is that of QED for a spin-1/2 field~\cite{Klauber:2013ipa}:
 \begin{equation}\label{eq:QED}
   \mathcal{L}_\mathrm{QED}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\bar{\psi}(i\gamma^\mu D_\mu-m)\psi.
 \end{equation}
 Here, $\psi$ is a spin-1/2 field, $\bar{\psi}\equiv\psi^\dagger\gamma^0$ is the Dirac adjoint for $\psi$, $F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$ is the electromagnetic field strength tensor, $D_\mu=\partial_\mu+ieA_\mu$ is the gauge covariant derivative, $\gamma^\mu$ is the set of Dirac matrices, and $m$ is the mass of the particle corresponding to the field $\psi$.
 
+% Equations of motion
 The classical equations of motion for the fields can be obtained through the Euler-Lagrange equation for a field $\phi$, which is given by
 \begin{equation}\label{eq:EL}
   \pdv{\mathcal{L}}{\phi}-\partial_\mu\pqty{\pdv{\mathcal{L}}{(\partial_\mu\phi)}}=0.
@@ -132,10 +146,12 @@ which are the inhomogeneous Maxwell equations for the electromagnetic field.
 
 \subsubsection{Feynman Diagrams}
 
+% Feynman diagrams
 Feynman diagrams are pictorial representations of the terms in present in the Dyson series, which is a perturbative expansion of the time evolution operator in the interaction picture.
 Through the process of canonical quantization, one may obtain a quantum field theory starting from a Lagrangian $\mathcal{L}$~\cite{Lancaster:1629337}.
 The Lagrangian contains all the information about how the fields interact with one another, and from this we may obtain the Feynman rules to compute scattering amplitudes and cross-sections.
 
+% Example with QED Lagrangian
 For example, given the QED Lagrangian $\mathcal{L}_\mathrm{QED}$ in equation~\ref{eq:QED}, we obtain the following Feynman rules~\cite{Schwartz:2013pla}:
 \begin{equation}
   \begin{aligned}
@@ -157,22 +173,28 @@ The cross-section assuming unpolarized scattering is
 \end{align*}
 where $|\mathbf{p}_i|\equiv|\mathbf{p}_1|=|\mathbf{p}_2|$ and $|\mathbf{p}_f|\equiv|\mathbf{p}_3|=|\mathbf{p}_4|$, $E_\mathrm{CM}$ is the total energy in the center-of-mass frame, $E=E_\mathrm{CM}/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
 
+% Feynman diagrams generalized to the standard model
 The process for obtaining scattering cross-sections for other field theories with a specified Lagrangian $\mathcal{L}$ is similar.
 Thus, applying this machinery to the SM Lagrangian allows us to construct the diagrams necessary to compute scattering amplitudes and cross-sections for any particular process of interest. Some examples of SM vertices may be seen in Fig.~\ref{fig:SMVert}~\cite{Romao_2012}.
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/SMverts.tex}
-  \caption{Examples of vertices for constructing Feynman diagrams in the Standard Model, where $f$ is any fermion, $f_Q$ is any electrically charged fermion, $\ell$ is any lepton that is not a neutrino, $q_u$ is an up-type quark ($u$, $c$, $t$), and $q_d$ is a down-type quark ($d$, $s$, $b$). For the quartic electroweak vertex, the two particles interacting with the $W$'s must be chosen such that charge conservation holds.}
+  \caption{
+    Examples of vertices for constructing Feynman diagrams in the Standard Model, where $f$ is any fermion, $f_Q$ is any electrically charged fermion, $\ell$ is any lepton that is not a neutrino, $q_u$ is an up-type quark ($u$, $c$, $t$), and $q_d$ is a down-type quark ($d$, $s$, $b$).
+    For the quartic electroweak vertex, the two particles interacting with the $W$'s must be chosen such that charge conservation holds.
+  }
   \label{fig:SMVert}
 \end{figure}
 
 \subsubsection{Gauge Theory}
 
+% Gauge theory
 One of the most foundational aspects of the Standard Model is the notion of gauge invariance, which means that the Lagrangian $\mathcal{L}$ remains invariant under a set of transformations.
 The invariance of the Lagrangian under these transformations leads to conservation laws as a consequence of Noether's theorem.
 This is at the heart of the Standard Model and why it is a $SU(3)_C\times SU(2)_L\times U(1)_Y$ gauge theory.
 
+% Example with Dirac Lagrangian
 To see this, consider the Dirac Lagrangian for a spin-1/2 field given by
 \begin{equation}
   \mathcal{L}_\mathrm{Dirac}=\bar{\psi}(i\gamma^\mu\partial_\mu-m)\psi.
@@ -187,6 +209,7 @@ and hence
   \mathcal{L}\to\mathcal{L}-\bar{\psi}\gamma^\mu[\partial_\mu\alpha(x)]\psi.
 \end{equation}
 
+% Introducing the gauge field
 However, the symmetry can be restored by adding an interaction term with a gauge field $A_\mu$ in the Lagrangian and demanding that it transform along with $\psi$ according to
 \begin{equation}
   A_\mu\to A_\mu-\frac{1}{e}\partial_\mu\alpha(x),
@@ -208,6 +231,7 @@ where $D_\mu=\partial_\mu+ieA_\mu$ is the usual gauge covariant derivative.
 This is in fact the QED Lagrangian of equation~\ref{eq:QED}.
 Thus, $\mathcal{L}_\mathrm{QED}$ is exhibits a local $U(1)$ symmetry, and applying Noether's theorem to the $U(1)$ gauge transformations reveals that the conserved quantity under this symmetry is electric charge.
 
+% Gauge theory applied to the standard model
 This same process can be applied to the overall $SU(3)_C\times SU(2)_L\times U(1)_Y$ gauge group to obtain conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$.
 The method of introducing a gauge field and replacing ordinary derivatives with gauge covariant derivatives to obtain local gauge symmetry is known as the minimal coupling rule~\cite{cheng1984}.
 While the example of local $U(1)$ symmetry with the QED Lagrangian is simpler due to the fact that $U(1)$ is an abelian group, the process is similar for the non-abelian groups such as $SU(3)$ and $SU(2)$.
@@ -217,10 +241,12 @@ Thus, the gauge bosons are named for the fact that their fields naturally arise 
 
 \subsubsection{The Higgs Mechanism}
 
+% The need for the Higgs mechanism
 One lingering issue arising from introducing the gauge fields is that the fields are required to be massless, otherwise the mass terms arising from the fields would spoil the gauge invariance.
 For QCD this is not an issue since gluons are massless.
 However, for EW theory this is a problem since the photon is massless, but the $W^\pm$ and $Z$ bosons are not.
 
+% Example with a simple model
 The Higgs mechanism solves this through spontaneous symmetry breaking by introducing a scalar field that interacts with the gauge fields in such a way that the masses are imparted onto them.
 To see this mechanism in action, we may consider a simple model with a complex scalar field $\phi=\phi_1+i\phi_2$ with the following Lagrangian~\cite{GriffithsParticle}:
 \begin{equation}
@@ -242,10 +268,12 @@ and the Lagrangian is now
 \end{equation}
 Reading off the quadradic terms in $\mathcal{L}$ reveals that the fields have acquired masses $m_\eta=\sqrt{2}\mu$ and $m_\xi=0$.
 
+% Spontaneous symmetry breaking
 However, the Lagrangian no longer exhibits the global $U(1)$ symmetry that was present when written in terms of $\phi$ and $\phi^*$, and there is now a massless field $\xi$ present.
 This phenomenon in which the original symmetry is no longer present is known as spontaneous symmetry breaking, and the introduction of a massless scalar field is a consequence of Goldstone's theorem, which states that the spontaneous breaking of a continuous global symmetry is accompanied by the presence of a massless Goldstone boson~\cite{PhysRev.127.965}.
 Evidently, $\xi$ is the Goldstone boson present in the theory.
 
+% Local gauge symmetry revisted
 We may repeat this process but instead promote the original global $U(1)$ symmetry to a local symmetry and take the usual approach of introducing a gauge field $A^\mu$ and gauge covariant derivative $D_\mu=\partial_\mu+ieA_\mu$.
 Our Lagrangian is now
 \begin{equation}
@@ -263,6 +291,7 @@ Again we have a massive $\eta$ field, and now the gauge field $A^\mu$ has acquir
 But there are two problems: the Goldstone boson $\xi$ is still present, and there is now a term in $\mathcal{L}$ of the form $(\partial_\mu\xi)A^\mu$.
 Any term in the Lagrangian that is bilinear in two different fields indicates that $\mathcal{L}$ is not written in terms of fields corresponding to physical particles.
 
+% The Higgs mechanism in action
 Both issues are resolved by applying a gauge transformation to the original fields $\phi$ and $\phi^*$ so that $\phi\to e^{i\theta}\phi$ and $\phi^*\to e^{-i\theta}\phi^*$, with $\theta=-\arctan(\phi_2/\phi_1)$.
 This is equivalent to setting $\phi_2=0$, which means that $\xi=0$ as well.
 Since the Lagrangian is invariant under the $U(1)$ gauge transformation, we are left with all terms that do not contain $\xi$, and hence
@@ -274,6 +303,7 @@ Since the Lagrangian is invariant under the $U(1)$ gauge transformation, we are 
 \end{equation}
 Thus, the Goldstone boson is eliminated, we are left with the massive scalar field $\eta$ and the massive gauge field $A^\mu$, and the gauge field has also acquired a longitudinal polarization state in the process.
 
+% The Higgs mechanism applied to the standard model
 The Higgs mechanism is ultimately the result of combining spontaneous symmetry breaking and local gauge invariance~\cite{Higgs:1964ia}, and applying this process to the $SU(2)_L\times U(1)_Y$ EW theory accounts for the masses of the electroweak $W^\pm$ and $Z$ bosons, while also introducing the Higgs field itself.
 It is for this reason that discovering the Higgs was of the utmost importance in verifying the Standard Model's description of the electroweak sector.
 Meanwhile, the fermions gain their masses through a Yukawa interaction with the Higgs field. % Citation
@@ -281,12 +311,14 @@ Meanwhile, the fermions gain their masses through a Yukawa interaction with the 
 \subsection{Beyond the Standard Model}
 \label{subsec:BSM}
 
+% Overview of BSM
 The incompleteness of the Standard Model has driven theoretical developments of alternative models that resolve its shortcomings~\cite{2010arXiv1005.1676L}.
 A few examples are Grand Unified Theories, supersymmetry (SUSY), and models based on extra spatial dimensions.
 While such theories are currently of high interest due to the prospect of superseding the Standard Model, some are based on developments that predate the Standard Model itself.
 
 \subsubsection{The Hierarchy Problem}
 
+% The hierarchy problem
 One major outstanding issue of interest relevant to this work is the inability of the Standard Model to deal with the hierarchy problem.
 Using three fundamental constants, one may define the Planck mass as
 \begin{equation}
@@ -300,10 +332,14 @@ Fig.~\ref{fig:hierarchy} shows the comparison between the Planck scale, the elec
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/hierarchy.tex}
-  \caption{Comparison between the electroweak scale, LHC center of mass energy $\sqrt{s}$, and Planck scale in eV. The hierarchy problem arises due to the unexplained difference between the Planck scale at which gravitational effects become apparent and the energy scale at which electroweak symmetry breaking occurs, which is 17 orders of magnitude.}
+  \caption{
+    Comparison between the electroweak scale, LHC center of mass energy $\sqrt{s}$, and Planck scale in eV.
+    The hierarchy problem arises due to the unexplained difference between the Planck scale at which gravitational effects become apparent and the energy scale at which electroweak symmetry breaking occurs, which is 17 orders of magnitude
+  }
   \label{fig:hierarchy}
 \end{figure}
 
+% Addressing the hierarchy problem
 In the absence of some mechanism that resolves this problem, we are left with having to fine-tune parameters of the Standard Model in order to account for the large difference between the EW scale and the Planck scale. % Check wording
 On the other hand, some BSM theories seek to address this problem in a more natural manner that does not require such fine-tuning.
 Such theories result in new physics that may be experimentally verified, with some predicting the existence of new heavy particles that could be detected in collision events at the LHC.
@@ -312,6 +348,7 @@ Such theories result in new physics that may be experimentally verified, with so
 % Possibly irrelevant and may need to comment out
 \subsubsection{Supersymmetric Theories}
 
+% Supersymmetry
 Supersymmetry extends the notion of local symmetry to fermionic and bosonic fields, suggesting that there are symmetry transformations that mix the fields into each other~\cite{Wess197452}.
 SUSY theories suggest that every known fermion has a corresponding bosonic partner, and every known boson has a corresponding fermionic partner.
 For example, the electron would have a spin-0 supersymmetric partner known as the `selectron', and there would be other supersymmetric partners such as `squarks' and `sneutrinos'~\cite{Martin_1998}.
@@ -322,6 +359,7 @@ This suggests that if there is a supersymmetric theory that turns out to be corr
 
 \subsubsection{Grand Unified Theories}
 
+% Grand unified theories
 Grand Unified Theories are largely inspired by the success of the electroweak unification.
 In the same way that the electromagnetic and weak forces become a single interaction at a particular energy scale, GUTs aim to unify the strong force with the other two forces of the Standard Model.
 This requires a symmetry group that contains the $SU(3)_C\times SU(2)_L\times U(1)_Y$ group as a subgroup.
@@ -334,11 +372,13 @@ Despite this, there are still other models based on more complex groups, such as
 
 \subsubsection{Warped Extra Dimensions}
 
+% Warped extra dimensions
 There are many BSM theories that suggest that there are extra spatial dimensions, some of which are based on work done well before the formulation of the Standard Model.
 Classical Kaluza-Klein theory has its roots in the early 20th century, and like RS models, its main feature is the addition of a fourth spatial dimension~\cite{1921spaw966K}.
 It is a unified field theory that combines gravity and electromagnetism, and it rests on the idea that the extra spatial dimension is compactified in such a way that makes it experimentally difficult to observe.
 The integration of electromagnetism into the theory neatly follows from symmetry considerations due to the extra spatial dimension. % Citation
 
+% Randall-Sundrum models
 Such work involving extra dimensions has paved the way for later theoretical developments in the field.
 Randall-Sundrum (RS) models are examples of this, which propose that there is an extra fourth spatial dimension that has a strongly warped geometry~\cite{PhysRevLett.83.4690}.
 These models are based on the idea that the spatial dimensions of the universe are restricted to a brane embedded within a higher-dimensional space known as the ``bulk.''
@@ -349,16 +389,19 @@ The warped geometry is such that there are two branes in these models: the Tevbr
 \section{Search for a Heavy Diboson Resonance}
 \label{sec:VBF}
 
+% Search for a heavy diboson resonance
 This thesis presents results on the search for a new heavy $X$ resonance produced through vector boson fusion (VBF), with the resonance then decaying into a pair of vector bosons as part of efforts to explore BSM physics at the LHC.
 The decay of interest is $X\to WV$, where $V=W,Z$ is any of the two massive electroweak vector bosons.
 We consider semileptonic final event states in which the $W$ decays leptonically via $W\to \ell\nu$, the other vector boson decays hadronically through the process $V\to q\bar{q}^{(\prime)}$ and is reconstructed as a single massive jet, and there are two forward-facing jets resulting from the VBF production process.
 
+% Previous work
 This work is motivated in part by models such as those mentioned in subsection~\ref{subsec:BSM}, and is a continuation of a previous search using the 2016 data collected by the LHC during Run 2~\cite{Sirunyan_2018}.
 The previous analysis was conducted using only two benchmark signal models, and it was agnostic to the method of production for the $X$ resonance.
 This work instead uses four benchmark signal models and is specific to a VBF production mode for the heavy resonance.
 
 \subsection{Benchmark Models}
 
+% List of signal models used
 The search conducted in this work is model independent---it is not specific to a signal model and can cover many possibilities for the $X$ resonance.
 However, benchmark models based on the BSM theories described in subsection~\ref{subsec:BSM} are used in order to model hypothetical collision events in the LHC that result in the final event states of interest.
 The structure of these events then informs us about making our selection cuts for our search, as will be discussed in chapter~\ref{chap:search}.
@@ -369,12 +412,14 @@ This search covers spin-0, spin-1, and spin-2 bosonic resonances, and is based o
   \item \textbf{Spin-2 Bulk Graviton:} A spin-2 resonance from a bulk RS model that decays via $G_\mathrm{bulk}\to WW$ or $G_\mathrm{bulk}\to ZZ$~\cite{Fitzpatrick_2007,PhysRevD.76.036006}.
 \end{enumerate}
 
+% Motivation for using signal models
 These benchmarks cover a wide range of possibilities for candidate BSM bosonic resonances to be discovered.
 Despite the variety in signal models, they may all result in similar semileptonic final states, thereby allowing the analysis to be model independent.
 Furthermore, based on previous searches that have been conducted, they are all expected to be in the TeV mass range. % Citations (check 2018 paper that references this in the introduction)
 
 \subsection{Expected Event Structure}
 
+% Event structure
 The decay process $X\to WV\to\ell\nu q\bar{q}^{(\prime)}$ was selected due to the fact that one-lepton events are ideal for such an analysis, as the events that are generated provide a clean signal that suppresses background events.
 The VBF production channel was also selected to further suppress background and identify signal events since the VBF process uniquely results in forward-facing jets~\cite{rauch2016vectorboson}.
 The complete Feynman diagram for the VBF production process for the $X$ resonance with the resulting final state can be seen in Fig.~\ref{fig:vbfFeynman}.
@@ -383,10 +428,14 @@ Such a process has been used in the past as one of the discovery channels for th
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/vbf.tex}
-  \caption{Feynman diagram for the production of a generic resonance $X$ via vector boson fusion and decaying to the final state $\ell\nu q\bar{q}^{(\prime)}$, with additional forward-facing jets due to the VBF production process. The search for the $X$ boson will involve looking for a final state in which there are jets from the VBF production process present, along with a single merged jet from the $V$ boson, and a lepton $\ell$ with its corresponding neutrino $\nu$ produced from the $W$ decay.}
+  \caption{
+    Feynman diagram for the production of a generic resonance $X$ via vector boson fusion and decaying to the final state $\ell\nu q\bar{q}^{(\prime)}$, with additional forward-facing jets due to the VBF production process.
+    The search for the $X$ boson will involve looking for a final state in which there are jets from the VBF production process present, along with a single merged jet from the $V$ boson, and a lepton $\ell$ with its corresponding neutrino $\nu$ produced from the $W$ decay.
+  }
   \label{fig:vbfFeynman}
 \end{figure}
 
+% Event topology
 Because the expected mass of the bosonic resonance lies in the TeV range, the final event state has a highly boosted topology, which is illustrated in Fig.~\ref{fig:eventTop}
 The two initial state quarks from the VBF process in the diagram of Fig.~\ref{fig:vbfFeynman} result in two forward jets in the final state that are highly energetic and collimated.
 Meanwhile, the lepton-neutrino pair from the $W\to\ell\nu$ decay will have momenta opposite to that of the jet that results from the hadronic of the other $V$ boson.
@@ -396,6 +445,11 @@ Lastly, both the lepton-neutrino pair and the jet will be highly collimated sinc
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/eventTop.tex}
-  \caption{Illustration of event topology for VBF collision events of interest in the CMS detector. The semi-leptonic final state produces a $W$ boson that decays via $W\to\ell\nu$ and produces the lepton-neutrino pair. Opposite to that is a single massive jet with two-pronged substructure that is produced via $V\to q\bar{q}^{(\prime)}$. Finally, the VBF production process results in two forward facing jets, labeled by $q^{(\prime)\prime\prime}$ and $q^{(\prime)\prime\prime\prime}$.}
+  \caption{
+    Illustration of event topology for VBF collision events of interest in the CMS detector.
+    The semi-leptonic final state produces a $W$ boson that decays via $W\to\ell\nu$ and produces the lepton-neutrino pair.
+    Opposite to that is a single massive jet with two-pronged substructure that is produced via $V\to q\bar{q}^{(\prime)}$.
+    Finally, the VBF production process results in two forward facing jets, labeled by $q^{(\prime)\prime\prime}$ and $q^{(\prime)\prime\prime\prime}$.
+  }
   \label{fig:eventTop}
 \end{figure}

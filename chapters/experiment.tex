@@ -66,7 +66,10 @@ Even following the success of the Higgs boson discovery in 2012 and the ongoing 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{fig/experiment/ecm_livingston.pdf}
-  \caption{Plot of the constituent center-of-mass energies for hadronic and $e^+e^-$ colliders since 1960. The discovery of massive particles such as the $W$ and $Z$ bosons or the top quark was made possible thanks to advances in accelerator technology that allowed for higher center-of-mass energies and luminosities.}
+  \caption{
+    Plot of the constituent center-of-mass energies for hadronic and $e^+e^-$ colliders since 1960.
+    The discovery of massive particles such as the $W$ and $Z$ bosons or the top quark was made possible thanks to advances in accelerator technology that allowed for higher center-of-mass energies and luminosities.
+  }
   \label{fig:ECMplot}
 \end{figure}
 
@@ -79,17 +82,27 @@ This overview is based off of documents concerning CMS in Ref.~\cite{Chatrchyan:
 \section{The Large Hadron Collider}
 \label{sec:LHC}
 
+% The Large Hadron Collider
 The Large Hadron Collider is a circular collider accelerator facility with two superconducting rings that accelerate protons to relativistic speeds, and it is located just outside of Geneva on the French-Swiss border.
 It is the largest and most powerful collider in the world, with plans to extend its service life into the 2030's and 2040's.
 It has a circumference of 26.7 km and was built into an existing tunnel that was used for the Large Electron-Positron (LEP) collider, which was used from 1989 to 2000.
 Various detectors used to study collision events are placed along the beamline, such as ALICE, ATLAS, CMS, and LHCb.
-Fig.~\ref{fig:CERN} shows the complete CERN accelerator complex with all of its components.
-The ATLAS and CMS facilities are general-purpose detectors for studying the Higgs and searching new physics arising from proton-proton collision, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions ($^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
+Fig.~\ref{fig:CERN} shows the complete CERN accelerator complex with all of its components~\cite{Mobs:2636343}.
+The ATLAS and CMS facilities are general-purpose detectors for studying the Higgs and searching new physics arising from proton-proton collisions, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions ($^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\textwidth]{fig/experiment/CCC-v2018-print-v2.pdf}
-  \caption{Layout of the CERN accelerator complex. The LHC is one of several accelerators present at the facility, with multiple detectors along the beamline such as ATLAS, CMS, ALICE, and LHCb. ATLAS and CMS are both general-purpose detectors for studying properties of the Higgs and searching for new physics. ALICE is designed to study heavy-ion collisions with lead ions to investigate quark-gluon plasma. LHCb is meant to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions. The LHC is injected with protons and lead ions through a multi-stage process. Protons starting at the Linac2 facility, which are then fed through the Proton Synchrotron Booster (PSB), then to the Proton Synchrotron (PS), and then to the Super Proton Synchrotron (SPS) before finally being injected into the LHC itself. The lead ions undergo a similar process, starting at Linac3 and then being transferred to the Low Energy Ion Ring (LEIR), then going through the PS and SPS before being injected into the LHC.}
+  \caption{
+    Layout of the CERN accelerator complex.
+    The LHC is one of several accelerators present at the facility, with multiple detectors along the beamline such as ATLAS, CMS, ALICE, and LHCb.
+    ATLAS and CMS are both general-purpose detectors for studying properties of the Higgs and searching for new physics.
+    ALICE is designed to study heavy-ion collisions with lead ions to investigate quark-gluon plasma.
+    LHCb is meant to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
+    The LHC is injected with protons and lead ions through a multi-stage process.
+    Protons starting at the Linac2 facility, which are then fed through the Proton Synchrotron Booster (PSB), then to the Proton Synchrotron (PS), and then to the Super Proton Synchrotron (SPS) before finally being injected into the LHC itself.
+    The lead ions undergo a similar process, starting at Linac3 and then being transferred to the Low Energy Ion Ring (LEIR), then going through the PS and SPS before being injected into the LHC.
+  }
   \label{fig:CERN}
 \end{figure}
 
@@ -107,35 +120,89 @@ It also has a specific expression for the luminosity $\mathcal{L}$ given by
   \mathcal{L}=\frac{N_b^2n_bf_\mathrm{rev}\gamma_r}{4\pi\epsilon_n\beta^*}F,
 \end{equation}
 where $N_b$ is the number of particles per bunch, $n_b$ is the number of bunches per beam, $f_\mathrm{rev}$ is the revolution frequency, $\gamma_r$ is the Lorentz factor, $\epsilon_n$ is the normalized transverse beam emittance, $\beta^*$ is the beta function at the collision point, and $F$ is the geometric luminosity reduction factor.
-Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$ recorded at CMS over the Run 2 years 2016, 2017, and 2018.
+Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$ recorded at CMS over the Run 2 years 2016, 2017, and 2018 respectively.
 This corresponds to a total integrated luminosity of $137.1\unit{fb^{-1}}$ at CMS over Run 2.
 % Perhaps put a plot of luminosity here and elaborate
 
 \section{The Compact Muon Solenoid}
 \label{sec:CMS}
 
-\begin{figure}[htbp] % https://cds.cern.ch/record/2665537/
-  \centering
-  \includegraphics[width=0.85\textwidth]{fig/experiment/cms_cutaway.pdf}
-  \caption{}
-  \label{fig:CMSCut}
-\end{figure}
+% The Compact Muon Solenoid
+The Compact Muon Solenoid is one of the main general-purpose detectors at the LHC, and it along with ATLAS obtained independent results for the discovery of the Higgs boson in 2012.
+The CMS detector is located 100 meters underground on the French side of the border near the village of Cessy.
+It is a cylindrical apparatus with a solenoidal magnet that is coaxial with the beamline of the LHC, with a diameter of $14.6\unit{m}$ and a length of $21.6\unit{m}$, and it is surrounded by various detection systems.
+The coordinate system used by CMS is defined such that $z$-axis is defined to lie along the LHC beam, with the $y$-axis pointing vertically upward and the $x$-axis pointing radially inward.
+This leads to the azimuthal angle $\phi$ being measured from the $x$-axis in the $x$-$y$ plane, with the radial coordinate denoted by $r$.
+The polar angle $\theta$ is defined with respect to the $z$-axis, but in practice one typically uses pseudorapidity defined by $\eta=-\ln\tan(\theta/2)$.
+
+% Function and design overview
+One of its primary functions is to accurately identify the charge and momentum of muons emerging from collision events as their trajectories are bent through the magnetic field.
+Muons are ideal for reconstructing collisions due to their relatively long lifetime ($\tau_\mu=2.2\unit{\micro s}$), large mass ($m_\mu=105.7\unit{MeV/\clight^2}$), and low radiation losses when propagating through matter~\cite{peskin2019}.
+This makes muons the most penetrative and easily identifiable charged particles that can be found in collision events. % Check wording
+In addition to identifying muons, the CMS detector also has other components for detecting electrons, photons, and hadrons.
+These detection systems are designed in order to meet the demands that come with the LHC's high luminosity, as there are more than 20 proton-proton interactions every $25\unit{ns}$, which results in around 1000 particles emerging for each bunch crossing. % Check numbers
+A cutaway diagram of the detector with various components labeled may be seen in Fig.~\ref{fig:CMScut}~\cite{Sakuma:2665537}.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{fig/experiment/cms_crosssec.pdf}
-  \caption{}
-  \label{fig:CMSCrosssec}
+  \includegraphics[width=0.85\textwidth]{fig/experiment/cms_cutaway.pdf}
+  \caption{
+    Cutaway diagram of the CMS detector with components labeled as configured in 2018 for Run 2.
+    The detector is coaxial with the LHC beam and gives wide geometric coverage over the interaction point where the collisions are produced.
+    The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
+    Outside of the tracker is the preshower detector that identifies neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
+    The electromagnetic calorimeter is encased by the hadronic calorimeter which detects hadron jets and neutrinos or exotic particles through missing transverse energy, which is supplemented by the Cerenkov-based forward calorimeter that has both an electromagnetic and hadronic section.
+    Finally, the calorimeters are surrounded by the muon detection chambers embedded within the return yoke that are used to identify muon charges and momenta. % Check wording
+  }
+  \label{fig:CMScut}
 \end{figure}
+
+% Details on solenoid
+One of the central components of the detector is the superconducting solenoid, a $13\unit{m}$ long and $6\unit{m}$ inner diameter magnet that provides a $4\unit{T}$ magnetic field for bending charged particles.
+The field generated by the solenoid has a nominal current of $19.14\unit{kA}$, an inductance of $14.2\unit{H}$, and a stored energy of $2.6\unit{GJ}$.
+The solenoid is supplemented by a $12,500\unit{t}$ flux return yoke that pulls the magnetic field lines back into the muon chambers to allow for high resolution detection of muons produced in collision events.
+There are five wheels and two endcaps that comprise this return yoke, with four layers of detection chambers in both the wheels and the endcaps.
 
 \subsection{Inner Tracking System}
 \label{subsec:tracking}
 
+% The inner tracker
+The inner tracking system measures the trajectories of charged particles emerging from collisions and is used to reconstruct secondary vertices for events.
+It is $5.8\unit{m}$ long and has a diameter of $2.5\unit{m}$, surrounding the interaction point where collisions occur.
+In order to meet the demands that come with the severe radiation damage that occurs from the large particle flux, the need for efficient cooling,  and the level of granularity necessary to measure the tracks of charged particles, the tracking system is based entirely on silicon detectors.
+The tracker has a pixel detector with three barrel layers that span radii from $4.4\unit{cm}$ to $10.2\unit{cm}$, as well as a silicon strip tracker with ten layers that extends to a radius of $1.1\unit{m}$.
+Both the pixel detector and silicon strip tracker have endcaps that allow for an acceptance of $|\eta|<2.5$.
+
+% The pixel detector
+
+% The silicon strip tracker
+
 \subsection{Calorimeters}
 \label{subsec:calorimeter}
 
+\subsubsection{Electromagnetic Calorimeter}
+
+\subsubsection{Hadron Calorimeter}
+
+\subsubsection{Forward Calorimeter}
+
 \subsection{Muon Tracking System}
 \label{subsec:muonTrack}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig/experiment/cms_crosssec.pdf}
+  \caption{
+    % Caption
+  }
+  \label{fig:CMScrosssec}
+\end{figure}
+
+\subsubsection{Drift Tubes}
+
+\subsubsection{Cathode Strip Chambers}
+
+\subsubsection{Resistive Plate Chambers}
 
 \subsection{Trigger System and Data Acquisition}
 \label{subsec:trigger}
