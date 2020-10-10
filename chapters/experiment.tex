@@ -77,7 +77,7 @@ Even following the success of the Higgs boson discovery in 2012 and the ongoing 
 This chapter explores the main features of the Large Hadron Collider facility at CERN in section~\ref{sec:LHC}, where collision events used in the search were obtained.
 A complete documentation of the LHC machine can be found in Ref.~\cite{Evans:1129806}.
 We then turn our attention to the Compact Muon Solenoid detector in section~\ref{sec:CMS} and briefly go over the main components of the device, which was used to record the collision events at the LHC.
-This overview is based off of documents concerning CMS in Ref.~\cite{Chatrchyan:1129810}.
+This overview is based off of documents concerning CMS in Refs.~\cite{Chatrchyan:1129810,taylor_2011}.
 
 \section{The Large Hadron Collider}
 \label{sec:LHC}
@@ -124,7 +124,7 @@ Both ATLAS and CMS are the main high luminosity experiments, with integrated lum
 This corresponds to a total integrated luminosity of $137.1\unit{fb^{-1}}$ at CMS over Run 2.
 % Perhaps put a plot of luminosity here and elaborate
 
-\section{The Compact Muon Solenoid} % http://cms.web.cern.ch/news/detector-overview
+\section{The Compact Muon Solenoid}
 \label{sec:CMS}
 
 % The Compact Muon Solenoid
@@ -248,20 +248,67 @@ For this reason, quartz fibers were used as the scintillation material and the s
 \subsection{Muon Tracking System}
 \label{subsec:muonTrack}
 
+% The muon system
+The muon system is of central importance to the CMS detector.
+From its inception as a detector, it was recognized that muons would be one of the primary tools for reconstructing collision events.
+One reason for this is the fact that final states with muons present offer some of the best results for mass resolution, thereby increasing the discovery potential for new physics.
+This was one of the considerations taken into account when designing the CMS detector to optimize for the observation of the Higgs before it was discovered.
+The so-called $H\to ZZ^*\to 4\ell$ ``golden channel'' has the cleanest signal when all four of the leptons in the final state are muons. % Citation
+Moreover, muons are expected to be produced in many decay events for exotic particle from BSM theories.
+As such, the muon system is designed to provide robust and accurate muon identification, momentum measurement, and triggering for events.
+This is achieved thanks to the combination of the strong solenoidal magnetic field and the flux return yoke.
+The return yoke allows for pulling the magnetic field lines from the solenoid to the outer region where the muon detection chambers are located, and it also screens out hadrons by absorbing them.
+The detection hits in the layers of the muon chambers then allow for reconstructing the charge and momentum of the muons.
+
+% Detection chambers
+There are three kinds of gaseous detection chambers that are used to identify and measure muons: drift tubes (DTs), cathode strip chambers (CSCs), and resistive plate chambers (RPCs).
+The outer region of CMS has 250 DTs in the barrel region covering pseudorapidities of $|\eta|<1.2$, while the endcaps on both ends of CMS have 540 CSCs covering the region $0.9<|\eta|<2.4$.
+The RPCs are distributed throughout both regions of CMS, with 480 in the barrel and 576 in the endcaps.
+In total, there are 1846 muon chambers present on the detector, with the chambers distributed among four layers in both the barrel and endcap regions to allow for track reconstruction. % Check numbers
+The barrel region is split up into five concentric wheels that are numbered from $-2$ to $+2$, with wheel 0 centered at the interaction point.
+Fig.~\ref{fig:CMScrosssec} shows a cross-section of the CMS detector in the $r$-$z$ plane as configured during Run 2, with DTs, CSCs, and RPCs labeled~\cite{Sirunyan_2018_CMS}.
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\textwidth]{fig/experiment/cms_crosssec.pdf}
   \caption{
-    % Caption
+    Cross-section of the CMS detector in the $r$-$z$ plane as configured during Run 2.
+    The barrel region contains a combination of drift tubes and resistive plate chambers distributed among five concentric wheels surrounding the detector, covering a pseudorapidity range of $|\eta|<1.2$.
+    The endcaps on either side cover the range $0.9<|\eta|<2.4$, and have combinations of cathode strip chambers and resistive plate chambers present.
+    There are 250 drift tubes and 480 resistive plate chambers in the barrel, and 540 cathode strip chambers and 576 resistive plate chambers in the endcaps, making a total of 1846 muon chambers distributed throughout CMS.
+    Both the barrel and endcaps have four layers of muon chambers to allow for track reconstruction.
   }
   \label{fig:CMScrosssec}
 \end{figure}
 
 \subsubsection{Drift Tubes}
 
+% The DT system
+The DT system in the barrel region is distributed among the four layers present in each wheel surrounding the interaction point, with the layers referred to as stations.
+The stations are numbered according to how close they are to the interaction point, with station 1 being the innermost layer and station 4 being the outermost.
+Each drift tube contains a gaseous mix of Ar (85\%) and CO$_2$ (15\%), with sensitive wires inside of the tubes held at a specified potential.
+As muons pass through the gas, they impart enough ionization energy to knock off electrons from the atoms of the gas, which are then attracted to the wire and cause a cascade of additional electrons from the gas to be deposited onto the wire and cause a current.
+The muon's position can then be inferred from where the electrons hit the wire, and how far the muon was from the wire.
+Additionally, the muon track and momentum can be reconstructed by using multiple detection hits from different stations in the barrel.
+Each DT allows for a position resolution of $0.25\unit{mm}$.
+
 \subsubsection{Cathode Strip Chambers}
 
+% The CSC system
+The CSCs in the endcaps operate under a similar principle to that of the DTs in the barrel region.
+They are made of trapezoidal panels and have a gas mix of Ar (40\%), CO$_2$ (50\%), and CF$_4$ (10\%).
+Inside of the CSCs are arrays of positively-charged anode wires and negatively-charged cathode copper strips that are perpendicular to each other.
+When muons ionize the gas after passing through the chamber, they cause an avalanche of electrons to deposit onto the wire and generate a current, but they also cause an induced charge on the copper strips.
+This allows for a precise measurement of $\phi$ for the passing muons and a coarse measurement of $r$ from the anode wires, resulting in a $0.2\unit{mm}$ resolution position measurement, as well as a fast time measurement.
+
 \subsubsection{Resistive Plate Chambers}
+
+% RPCs
+RPCs are used to supplement the DTs in the barrel and the CSCs in the endcaps.
+They are gaseous detectors that consist of two parallel plastic plates with high resistivity, one being a positively-charged anode and the other a negatively-charged cathode.
+The gaseous mix in the RPCs is C$_2$H$_2$F$_4$ (95.2\%), isoC$_4$H$_{10}$ (4.5\%), and SF$_6$ (0.3\%).
+The electron cascade caused by the ionization of a passing muon generates a signal on external detecting strips, which allows for a coarse spatial measurement, but a very fast time measurement ($1\unit{ns}$) that is shorter than the $25\unit{ns}$ between each bunch crossing.
+Their fast time response is used in the trigger system in order to determine whether or not event data should be saved based on the measured muon momentum.
 
 \subsection{Trigger System and Data Acquisition}
 \label{subsec:trigger}
