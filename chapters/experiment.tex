@@ -312,3 +312,25 @@ Their fast time response is used in the trigger system in order to determine whe
 
 \subsection{Trigger System and Data Acquisition}
 \label{subsec:trigger}
+
+% Motivation for the trigger system
+One of the unique challenges facing detectors at the LHC is the large amount of collision events that occur at the interaction points.
+Proton-proton collisions occur every $25\unit{ns}$, corresponding to a rate of $40\unit{MHz}$.
+With 20 simultaneous $pp$ collisions for every bunch crossing, this corresponds to $8\times10^8$ interactions every second.
+It is not possible to meet the hardware demands for recording every single collision event, nor would it be prudent to do so since most events are soft collisions between protons that do not reveal any new physics.
+Thus, the trigger system is needed in order to select for high-energy events of interest, while also recording them at a reasonable rate that allows for long-term storage.
+
+% Trigger system overview
+The trigger system has two levels, consisting of a Level-1 (L1) Trigger, and a High-Level Trigger (HLT).
+The L1 Trigger is hardware-based and is comprised of custom-designed electronics that uses data from the calorimeters and muon system.
+The HLT is software-based and consists of a conventional CPU farm, which has access to a complete readout from the L1 Trigger and is able to perform more advanced calculations with the data.
+The trigger system as whole reduces the rate by a factor of $10^6$, with the L1 Trigger designed to have an output rate of 100 kHz.
+In practice, the L1 Trigger is not operated at its maximum output and instead runs at 30 kHz as a safety measure.
+
+\subsubsection{Level-1 Trigger}
+
+% Level 1 trigger
+
+\subsubsection{High Level Trigger}
+
+% High level trigger
