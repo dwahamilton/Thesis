@@ -5,26 +5,40 @@
 
 \section{Introduction}
 
-% Paragraph about the importance of using muons in the detector
+% Recap of hardware overview in experiment chapter
 In chapter~\ref{chap:exp}, we explored the main characteristics of the CMS detector, and in particular, the various subsystems devoted to detecting muons that are produced in collision events.
-From its inception, it was recognized that the CMS detector would receive various upgrades over its operational lifetime, and to that end it has already had upgrades installed during long shutdown periods~\cite{Battilana:2017mrm,Kreis:2103853}.
+From its inception, it was recognized that the CMS detector would receive various upgrades over its operational lifetime, and to that end it has already had upgrades installed during its first Long Shutdown (LS1) period~\cite{Battilana:2017mrm,Kreis:2103853}.
+At the time of this writing, the LHC is in its Long Shutdown 2 (LS2) phase that began on December 10, 2018, and is projected to resume taking data in 2022~\cite{LHCsched}.
 
-% Paragraph about the existing BMTF and KBMTF here
+% The existing BMTF
+In section~\ref{subsec:trigger} of chapter 3, a brief overview of the CMS trigger system was provided, and the basic architecture of the L1 Trigger was described.
+One component of the muon system in the L1 Trigger is the Barrel Muon Track Finder (BMTF), which sorts muon candidates and was commissioned in 2016 for data taking during Run 2~\cite{Ero:2102885}.
+The architecture for the BMTF is based on custom processors mounted onto Field Programmable Gate Arrays (FPGAs), with the capability of measuring the transverse momenta of muons in the barrel region.
+It was conceived as a replacement for the legacy Drift Tube Track Finder (DTTF), which only received information from the DTs.
+The BMTF instead receives superprimitives made from a combination of DT and RPC primitives, which provides better resolution and trigger rates compared to the DTTF.
+However, as with other components of the CMS detector, the BMTF is slated to be replaced by newer hardware that offers improvements in performance.
 
 % Appendix overview
 In this appendix, we present work towards the implementation of a novel algorithm for reconstructing muon tracks in real time at the LHC.
-In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
+In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector for Phase 2 that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
 Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, which will allow for the reconstruction of muon tracks in real time at the L1 Trigger level.
 
 \section{Future Upgrades to CMS}
 \label{sec:CMSUpgrade}
+
+% Phase-2 Upgrades
+The High-Luminosity Large Hadron Collider (HL-LHC) is scheduled to come online in 2027, with the Phase-1 period ending in 2024.
+During the Long Shutdown 3 (LS3) period in 2025, the CMS detector will undergo major upgrades to its L1 Trigger system~\cite{CERN-LHCC-2020-004}.
+Such upgrades are necessary in order to take advantage of the large number of collision events that the HL-LHC will offer, as it will aim for a peak luminosity of $7.5\times10^{34}\unit{cm^{-2}s^{-1}}$. 
+
+%\cite{Bachtis:2648953}
 
 \section{The Tracks Plus Stubs Algorithm}
 \label{sec:TPS}
 
 % Muon detection
 The upgrades to CMS as described in section~\ref{sec:CMSUpgrade} allow for using the new track trigger to provide the initial information about particle transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
-As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnotemark in the chamber for which the stub was created.
+As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnotemark{} in the chamber for which the stub was created.
 \footnotetext{The bending angle $\phi_b$ is only measured in DTs.}
 
 % The tracks plus stubs algorithm
@@ -263,7 +277,7 @@ These results also show that the TPS algorithm is well-suited for handling backg
 
 % Implementation on the OCEAN board
 While initially tested as software, the TPS algorithm will eventually be implemented into the CMS detector through hardware to allow for fast processing.
-As of this writing, the UCLA CMS research group is currently in the process of designing and testing a custom OCEAN Blade board with a field-programmable gate array (FPGA) that will allow for the TPS algorithm to be implemented as firmware.
+As of this writing, the UCLA CMS research group is currently in the process of designing and testing a custom OCEAN Blade board with an FPGA that will allow for the TPS algorithm to be implemented as firmware.
 % More up-to-date information on resource usage and performance results here
 
 \begin{figure}[htbp] % Need to update figure
