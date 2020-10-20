@@ -29,23 +29,51 @@ Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, w
 % Phase-2 Upgrades
 The High-Luminosity Large Hadron Collider (HL-LHC) is scheduled to come online in 2027, with the Phase-1 period ending in 2024.
 During the Long Shutdown 3 (LS3) period in 2025, the CMS detector will undergo major upgrades to its L1 Trigger system~\cite{CERN-LHCC-2020-004}.
-Such upgrades are necessary in order to take advantage of the large number of collision events that the HL-LHC will offer, as it will aim for a peak luminosity of $7.5\times10^{34}\unit{cm^{-2}s^{-1}}$. 
+Such upgrades are necessary in order to take advantage of the large number of collision events that the HL-LHC will offer, as it will aim for a peak luminosity of $7.5\times10^{34}\unit{cm^{-2}s^{-1}}$.
+This will result in up to 200 simultaneous proton-proton collisions per bunch crossing, for which the existing L1 Trigger system is unequipped to handle.
+The new L1 Trigger system will have its latency extended from $3.2\unit{\micro s}$ to $12.5\unit{\micro s}$, and it will also have its maximum output bandwidth increased from $100\unit{kHz}$ to $750\unit{kHz}$.
+A unique aspect of these upgrades is that the L1 Trigger system will also take information from the inner tracker as input in addition to the muon and calorimeter systems.
+This will allow for using the new track finder to provide the initial information about particle transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
+Figure~\ref{fig:P2L1trigger} shows the new architecture of the L1 Trigger that includes the track finder.
 
-%\cite{Bachtis:2648953}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig/TPS/P2L1trigger.pdf}
+  \caption{
+    Architecture of the new L1 Trigger.
+    In addition to taking inputs from the calorimeter and muon triggers, the Phase-2 upgrades will include a track finder in the L1 Trigger that takes input from the inner tracker.
+  }
+  \label{fig:P2L1trigger}
+\end{figure}
+
+% The need for new muon trigger algorithms
+The prospect of more interactions per bunch crossing is also met with the demand for improvements to muon track reconstruction and resolution.
+New algorithms are being developed in order to take advantage of the higher maximum bandwidth and the new track finder in the L1 Trigger.
+Some make use of techniques such as Kalman Filters, with an algorithm that can be implemented onto FPGAs for the track trigger~\cite{Amstutz:2194514}, or another for the muon trigger known as the Kalman Barrel Muon Track Finder (KBMTF)~\cite{Bachtis:2648953}.
+The work presented in this appendix instead relies on a novel approach to reconstructing muon tracks that uses both the track finder and the muon trigger.
 
 \section{The Tracks Plus Stubs Algorithm}
 \label{sec:TPS}
 
-% Muon detection
-The upgrades to CMS as described in section~\ref{sec:CMSUpgrade} allow for using the new track trigger to provide the initial information about particle transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
-As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnotemark{} in the chamber for which the stub was created.
-\footnotetext{The bending angle $\phi_b$ is only measured in DTs.}
-
 % The tracks plus stubs algorithm
+As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnotemark{} in the chamber for which the stub was created.
+\footnotetext{The bending angle $\phi_b$ is only measured in the DTs.}
+Figure~\ref{fig:CMSslice} shows a slice of the CMS detector in the $r$-$\phi$ plane, with an example of a process in which a muon passes through the DT chambers~\cite{Barney:2120661}.
 The Tracks Plus Stubs (TPS) algorithm combines the information from the track trigger and the detection stubs in the chambers to create a candidate track that will later be reconstructed as a muon in the detector.
 By using the initial information from the track trigger, the algorithm propagates the initial muon track to the outer layers of the detector.
 The propagated values for the angular variables $\phi$ and $\phi_b$ are then compared to those as recorded by the stub measurements.
 From this, the algorithm can construct a candidate muon track, which is a combined object consisting of a track from the track trigger, and a collection of stubs associated to the track.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig/TPS/CMSslice_whiteBackground.pdf}
+  \caption{
+    Slice of the CMS detector for a process in which a muon is produced.
+    As the muon passes through the silicon tracker and the muon chambers, the electronics obtain measurements of the muon's transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
+    Such information is used by the L1 Trigger to decide whether or not to save an event for analysis.
+  }
+  \label{fig:CMSslice}
+\end{figure}
 
 \subsection{Muon Track Propagation}
 \label{subsec:prop}
@@ -252,7 +280,7 @@ While other algorithms suffer significant losses in efficiency in the gap region
 % The need for higher trigger bandwidth
 One of the main upgrades to the L1 Trigger will be the ability to record events at $750\unit{kHz}$.
 The bandwidth needed to record events is a precious resource, and as such it is desirable for a muon tracking algorithm to devote as much of it as possible to recording signal events.
-This problem is further exacerbated by pileup, the high luminosity LHC could see up to 100-200 collision events at a time along the beam line.
+This problem is further exacerbated by pileup, as the HL-LHC could see up to 100-200 collision events at a time along the beam line.
 To study the effect of pileup on the trigger rate, we used a simulated background-only sample in which there are no muons present to test how often the TPS algorithm will trigger on false tracks.
 The trigger rates are computed according to
 \begin{equation}\label{eq:rate} % Check equation
