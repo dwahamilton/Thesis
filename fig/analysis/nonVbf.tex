@@ -1,0 +1,74 @@
+% !TEX root = ../../thesis.tex
+\begin{tikzpicture}
+  \begin{feynman}
+    % Vertices
+    \coordinate (g1) at (135:2.25);
+    \coordinate (g2) at (225:2.25);
+    \coordinate (x1) at (0,0);
+    \coordinate (x2) at (1.5,0);
+    \coordinate (v1) at ($(x2)+(45:1.5)$);
+    \coordinate (v2) at ($(x2)+(-45:1.5)$);
+    \coordinate (q1) at ($(v1)+(25:1.5)$);
+    \coordinate (q2) at ($(v1)+(-25:1.5)$);
+    \coordinate (l1) at ($(v2)+(25:1.5)$);
+    \coordinate (l2) at ($(v2)+(-25:1.5)$);
+
+    \coordinate (q3) at ($(g1)+(8,0)$);
+    \coordinate (q4) at ($(g2)+(8,0)$);
+    \coordinate (x3) at ($(x1)+(8,0)$);
+    \coordinate (x4) at ($(x2)+(8,0)$);
+    \coordinate (v3) at ($(v1)+(8,0)$);
+    \coordinate (v4) at ($(v2)+(8,0)$);
+    \coordinate (q5) at ($(q1)+(8,0)$);
+    \coordinate (q6) at ($(q2)+(8,0)$);
+    \coordinate (l3) at ($(l1)+(8,0)$);
+    \coordinate (l4) at ($(l2)+(8,0)$);
+
+    % Lines
+    \draw[gluon] (x1) -- (g1);
+    \draw[gluon] (x1) -- (g2);
+    \draw[boson] (x1) -- (x2) node[pos=0.5,above] {$X$};
+    \draw[boson] (x2) -- (v1) node[pos=0.75,xshift=-0.5cm] {$W$};
+    \draw[boson] (x2) -- (v2) node[pos=0.75,xshift=-0.5cm] {$W$};
+    \draw[fermion] (v1) -- (q1);
+    \draw[fermion] (q2) -- (v1);
+    \draw[fermion] (v2) -- (l1);
+    \draw[fermion] (l2) -- (v2);
+
+    \draw[fermion] (q3) -- (x3);
+    \draw[fermion] (x3) -- (q4);
+    \draw[boson] (x3) -- (x4) node[pos=0.5,above] {$X$};
+    \draw[scalar] (x4) -- (v3) node[pos=0.75,xshift=-0.5cm] {$H$};
+    \draw[boson] (x4) -- (v4) node[pos=0.75,xshift=-0.5cm] {$W$};
+    \draw[fermion] (v3) -- (q5);
+    \draw[fermion] (q6) -- (v3);
+    \draw[fermion] (v4) -- (l3);
+    \draw[fermion] (l4) -- (v4);
+
+    % Blobs
+    \fill[white] (x1) circle (0.2);
+    \fill[white] (x2) circle (0.2);
+    \draw[pattern=north west lines] (x1) circle (0.2);
+    \draw[pattern=north west lines] (x2) circle (0.2);
+
+    \fill[white] (x3) circle (0.2);
+    \fill[white] (x4) circle (0.2);
+    \draw[pattern=north west lines] (x3) circle (0.2);
+    \draw[pattern=north west lines] (x4) circle (0.2);
+
+    % Label
+    \node[anchor=mid,left] at (g1) {$g$};
+    \node[anchor=mid,left] at (g2) {$g$};
+    \node[anchor=mid,right] at (q1) {$q$};
+    \node[anchor=mid,right] at (q2) {$\bar{q}'$};
+    \node[anchor=mid,right] at (l1) {$\ell$};
+    \node[anchor=mid,right] at (l2) {$\bar{\nu}$};
+
+    \node[anchor=mid,left] at (q3) {$q$};
+    \node[anchor=mid,left] at (q4) {$\bar{q}'$};
+    \node[anchor=mid,right] at (q5) {$b$};
+    \node[anchor=mid,right] at (q6) {$\bar{b}$};
+    \node[anchor=mid,right] at (l3) {$\ell$};
+    \node[anchor=mid,right] at (l4) {$\bar{\nu}$};
+  \end{feynman}
+\end{tikzpicture}
