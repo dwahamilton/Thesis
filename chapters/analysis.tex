@@ -11,15 +11,15 @@ We also enumerated some of the benchmark models from BSM theories, which were th
 Additionally, we discussed the VBF production mode that this work focuses on, and the final state that is produced.
 
 % Previous searches
-Previous searches have been conducted for dibosonic resonances at both CMS and ATLAS, although none have found evidence of such a resonance being observed at the LHC~\cite{Aaboud_2018,Aaboud_2018_2,Aad_2015,Khachatryan_2014,Sirunyan_2017,Sirunyan_2017_2,atlas2020}.
-Some of these searches also considered different production modes, as well as intermediate and final states, such as a $ZZ$/$ZH$ resonance with fully leptonic or hadronic final states.
+Previous searches have been conducted for dibosonic resonances at both CMS and ATLAS, although none have found evidence of such a resonance being observed at the LHC~\cite{Sirunyan_18,Aaboud_18,Aaboud_18_2,Aad_15,Khachatryan_14,Sirunyan_17,Sirunyan_17_2,atlas20}.
+Some of these searches also considered different production modes, as well as other intermediate and final states, such as a $ZZ$/$ZH$ resonance with fully leptonic or hadronic final states.
 As mentioned in chapter~\ref{chap:theory}, this analysis is itself a continuation of a previous search by the CMS collaboration for a dibosonic resonance using data from 2016.
 
 % VBF analysis as part of the main analysis
 While this work focuses on the VBF production mode, it is one of three modes considered for the full diboson analysis using the Run 2 data.
 The other two modes considered involve gluon-gluon fusion and Drell-Yan processes.
-These additional modes may produce an identical semileptonic final state, but without the VBF jets in the forward regions of the detector.
-For completeness, we include the full diboson analysis with the non-VBF production categories.
+These additional modes produce identical $\ell\nu q\bar{q}^{(\prime)}$ and $\ell\nu b\bar{b}$ semileptonic final states, but without the VBF jets in the forward regions of the detector.
+For completeness, we include the full diboson analysis with the non-VBF production categories in this chapter.
 Figure~\ref{fig:nonVbf} shows some example Feynman diagrams of other processes that were considered for the full analysis.
 
 \begin{figure}[htbp]
@@ -27,13 +27,28 @@ Figure~\ref{fig:nonVbf} shows some example Feynman diagrams of other processes t
   \input{fig/analysis/nonVbf.tex}
   \caption{
     Examples of additional production processes considered in the full analysis that includes non-VBF production modes.
-    We also consider a gluon-gluon fusion process such as $G_\mathrm{bulk}\to WW$ (left), and a Drell-yan process such as $W'\to WH$ (right).
+    We also consider a gluon-gluon fusion process such as a neutral spin-2 resonance decaying to $WW$ (left), and a Drell-yan process such as a charged spin-1 resonance decaying to $WH$ (right).
   }
   \label{fig:nonVbf}
 \end{figure}
 
+% Details of reconstructing events
+In section~\ref{subsec:expEvent} we discussed the expected event structure for the decay events of interest, in which the leptonic decay of the $W$ boson results in an $e\nu$ or $\mu\nu$ pair with large missing transverse energy from the neutrino, the hadronic decay of the $V$/$H$ boson results in a large single jet with substructure, and VBF processes produce forward-facing jets.
+The boosted topology is a result of the fact that the resonances considered have masses in the TeV range, which causes the $W$ and $V$/$H$ bosons to have transverse momenta on the order of several hundred GeV.
+This requires the use of specialized techniques to identify and reconstruct the individual $W$ and $V$/$H$ bosons based on information from the reconstructed lepton, missing transverse energy of the neutrino, and two-pronged substructure of the jet.
+Additionally, the signal models used for the analysis assume that the resonance width is narrow, meaning that the decay width of the resonance in the $WV$/$WH$ diboson mass spectrum is smaller than the experimental resolution.
+
+% Details on modeling background
+A unique aspect of the previous analysis that this work inherits is a novel signal extraction method, in which the SM background contribution is estimated from the data using a two-dimensional (2D) maximum likelihood fit.
+This process is performed in the plane formed by the mass of the jet from the $V$/$H$ decay $m_\mathrm{jet}$, and the invariant mass of the $WV$/$WH$ diboson system $m_\mathrm{diboson}$.
+Two classes of SM background events are considered for this analysis.
+The first is a $W$+$V$/$t$ background that is resonant in the $m_\mathrm{jet}$ spectrum, and the second is a $W$+jets contribution that is non-resonant in $m_\mathrm{jet}$.
+One advantage of using a 2D fit is the ability to retain more events for modeling background in the sideband regions within the 2D $m_\mathrm{jet}$-$m_\mathrm{diboson}$ plane, as opposed to looking at the sidebands in the $m_\mathrm{jet}$ and $m_\mathrm{diboson}$ spectra separately.
+This also allows for conducting a simultaneous search of $WW$, $WZ$, and $WH$ resonances as opposed to performing separate analyses in pre-defined $m_\mathrm{jet}$ windows.
+
 % Chapter overview
 For this chapter, we examine the complete analysis process of the search for a dibosonic resonance produced in proton-proton collisions at the LHC with center-of-mass energies of $\sqrt{s}=13\unit{TeV}$.
+The data used in this analysis were collected over 2016, 2017, and 2018 with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$, respectively.
 Section~\ref{sec:samples} provides an overview of the data and simulation samples that were used for the analysis.
 In section~\ref{sec:events}, we discuss the selection cuts used to determine which events are used from the data and simulation samples.
 We then go over the SM sources of background and how they are taken into account for the analysis in section~\ref{sec:bkg}, followed by the signal modeling process in section~\ref{sec:sig}.

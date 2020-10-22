@@ -27,7 +27,8 @@
     % Lines
     \draw[gluon] (x1) -- (g1);
     \draw[gluon] (x1) -- (g2);
-    \draw[boson] (x1) -- (x2) node[pos=0.5,above] {$X$};
+    \draw[boson] ($(x1)+(0,-0.025)$) -- ($(x2)+(0,-0.025)$);
+    \draw[boson] ($(x1)+(0,0.025)$) -- ($(x2)+(0,0.025)$) node[pos=0.5,above] {$X$};
     \draw[boson] (x2) -- (v1) node[pos=0.75,xshift=-0.5cm] {$W$};
     \draw[boson] (x2) -- (v2) node[pos=0.75,xshift=-0.5cm] {$W$};
     \draw[fermion] (v1) -- (q1);
