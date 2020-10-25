@@ -13,12 +13,12 @@ Additionally, we discussed the VBF production mode that this work focuses on, an
 % Previous searches
 Previous searches have been conducted for dibosonic resonances at both CMS and ATLAS, although none have found evidence of such a resonance being observed at the LHC~\cite{Sirunyan_18,Aaboud_18,Aaboud_18_2,Aad_15,Khachatryan_14,Sirunyan_17,Sirunyan_17_2,atlas20}.
 Some of these searches also considered different production modes, as well as other intermediate and final states, such as a $ZZ$/$ZH$ resonance with fully leptonic or hadronic final states.
-As mentioned in chapter~\ref{chap:theory}, this analysis is itself a continuation of a previous search by the CMS collaboration for a dibosonic resonance using data from 2016.
+As mentioned in section~\ref{sec:VBF}, this analysis is itself a continuation of a previous search by the CMS collaboration for a dibosonic resonance using data from 2016.
 
 % VBF analysis as part of the main analysis
 While this work focuses on the VBF production mode, it is one of three modes considered for the full diboson analysis using the Run 2 data.
-The other two modes considered involve gluon-gluon fusion and Drell-Yan processes.
-These additional modes produce identical $\ell\nu q\bar{q}^{(\prime)}$ and $\ell\nu b\bar{b}$ semileptonic final states, but without the VBF jets in the forward regions of the detector.
+The other two modes considered involve gluon-gluon fusion (\ggF) and Drell-Yan (\DY) processes.
+These additional modes produce identical \lnuqqbarprp and \lnubbbar semileptonic final states, but without the VBF jets in the forward regions of the detector.
 For completeness, we include the full diboson analysis with the non-VBF production categories in this chapter.
 Figure~\ref{fig:nonVbf} shows some example Feynman diagrams of other processes that were considered for the full analysis.
 
@@ -33,18 +33,18 @@ Figure~\ref{fig:nonVbf} shows some example Feynman diagrams of other processes t
 \end{figure}
 
 % Details of reconstructing events
-In section~\ref{subsec:expEvent} we discussed the expected event structure for the decay events of interest, in which the leptonic decay of the $W$ boson results in an $e\nu$ or $\mu\nu$ pair with large missing transverse energy from the neutrino, the hadronic decay of the $V$/$H$ boson results in a large single jet with substructure, and VBF processes produce forward-facing jets.
+In subsection~\ref{subsec:expEvent} we discussed the expected event structure for the decay events of interest, in which the leptonic decay of the $W$ boson results in an $e\nu$ or $\mu\nu$ pair with large missing transverse energy from the neutrino, the hadronic decay of the $V$/$H$ boson results in a large single jet with substructure, and VBF processes produce forward-facing jets.
 The boosted topology is a result of the fact that the resonances considered have masses in the TeV range, which causes the $W$ and $V$/$H$ bosons to have transverse momenta on the order of several hundred GeV.
 This requires the use of specialized techniques to identify and reconstruct the individual $W$ and $V$/$H$ bosons based on information from the reconstructed lepton, missing transverse energy of the neutrino, and two-pronged substructure of the jet.
 Additionally, the signal models used for the analysis assume that the resonance width is narrow, meaning that the decay width of the resonance in the $WV$/$WH$ diboson mass spectrum is smaller than the experimental resolution.
 
 % Details on modeling background
 A unique aspect of the previous analysis that this work inherits is a novel signal extraction method, in which the SM background contribution is estimated from the data using a two-dimensional (2D) maximum likelihood fit.
-This process is performed in the plane formed by the mass of the jet from the $V$/$H$ decay $m_\mathrm{jet}$, and the invariant mass of the $WV$/$WH$ diboson system $m_\mathrm{diboson}$.
+This process is performed in the plane formed by the mass of the jet from the $V$/$H$ decay \MJ, and the invariant mass of the $WV$/$WH$ diboson system \MVV.
 Two classes of SM background events are considered for this analysis.
-The first is a $W$+$V$/$t$ background that is resonant in the $m_\mathrm{jet}$ spectrum, and the second is a $W$+jets contribution that is non-resonant in $m_\mathrm{jet}$.
-One advantage of using a 2D fit is the ability to retain more events for modeling background in the sideband regions within the 2D $m_\mathrm{jet}$-$m_\mathrm{diboson}$ plane, as opposed to looking at the sidebands in the $m_\mathrm{jet}$ and $m_\mathrm{diboson}$ spectra separately.
-This also allows for conducting a simultaneous search of $WW$, $WZ$, and $WH$ resonances as opposed to performing separate analyses in pre-defined $m_\mathrm{jet}$ windows.
+The first is a \WVt background that is resonant in the \MJ spectrum, and the second is a \Wjets contribution that is non-resonant in \MJ.
+One advantage of using a 2D fit is the ability to retain more events for modeling background in the sideband regions within the 2D \MJ-\MVV plane, as opposed to looking at the sidebands in the \MJ and \MVV spectra separately.
+This also allows for conducting a simultaneous search of $WW$, $WZ$, and $WH$ resonances as opposed to performing separate analyses in pre-defined \MJ windows.
 
 % Chapter overview
 For this chapter, we examine the complete analysis process of the search for a dibosonic resonance produced in proton-proton collisions at the LHC with center-of-mass energies of $\sqrt{s}=13\unit{TeV}$.
@@ -56,6 +56,141 @@ The fit validation and bias testing procedures are described in section~\ref{sec
 
 \section{Data and Simulation Samples}
 \label{sec:samples}
+
+% The need for simulation samples of signal and background
+This search uses the proton-proton collision data collected by the CMS detector during Run 2.
+The data are collected and stored for analysis after events generate trigger primitives in the detector subsystems, and get passed through the HLT as described in chapter~\ref{chap:exp}.
+We also list the signal samples used in the analysis that are based on the BSM models of subsection~\ref{subsec:benchmark}.
+Additionally, we list the samples that model SM background contributions to the search.
+
+\subsection{Data Samples}
+
+% Data samples
+The data used for this work are based on three different sets over the three Run 2 years of 2016, 2017, and 2018.
+% Additional explanation on data certification
+\begin{itemize}
+  \item 2016 Rereco (Re-MiniAOD 03Feb2017) for Run2016B-H with $35.9\unit{fb^{-1}}$ as seen in Table~\ref{tab:dataSamples2016}
+  \begin{table}[htbp]
+    \centering
+    \input{tab/analysis/data2016Samples.tex}
+    \caption{
+      2016 data samples for Run2016B-H with $35.9\unit{fb^{-1}}$.
+    }
+    \label{tab:dataSamples2016}
+  \end{table}
+  \item 2017 Rereco (31Feb2018) for Run2017B-F with $41.5\unit{fb^{-1}}$ as seen in Table~\ref{tab:dataSamples2017}
+  \begin{table}[htbp]
+    \centering
+    \input{tab/analysis/data2017Samples.tex}
+    \caption{
+      2017 data samples for Run2017B-F with $41.5\unit{fb^{-1}}$.
+    }
+    \label{tab:dataSamples2017}
+  \end{table}
+  \item 2018 Rereco (17Sep2018 for Run2018A-C, 22Jan2019 for Run2018D) for Run2017B-F with $59.7\unit{fb^{-1}}$ as seen in Table~\ref{tab:dataSamples2018}
+  \begin{table}[htbp]
+    \centering
+    \input{tab/analysis/data2018Samples.tex}
+    \caption{
+      2018 data samples for Run2018A-C and Run2018D with $59.7\unit{fb^{-1}}$.
+    }
+    \label{tab:dataSamples2018}
+  \end{table}
+\end{itemize}
+
+\subsection{Simulation Samples}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/ggFGBulkToWWSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:ggFGBulkToWWSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/VBFGBulkToWWSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:VBFGBulkToWWSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/ggFRadToWWSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:ggFRadToWWSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/VBFRadToWWSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:VBFRadToWWSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/DYWprToWZSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:DYWprToWZSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/VBFWprToWZSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:VBFWprToWZSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/DYWprToWHSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:DYWprToWHSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/VBFWprToWHSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:VBFWprToWHSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/DYZprToWWSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:DYZprToWWSamples}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/VBFZprToWWSamples.tex}
+  \caption{
+    %
+  }
+  \label{tab:VBFZprToWWSamples}
+\end{table}
+
+\subsection{Background Samples}
 
 \section{Event Selection}
 \label{sec:events}
@@ -73,7 +208,7 @@ The fit validation and bias testing procedures are described in section~\ref{sec
 \begin{figure}[htbp]
   \centering
   \input{fig/analysis/bkg.tex}
-  \caption{Feynman diagrams of the two main SM sources of background to consider for the search. Both cases produce a final state that is similar to the expected final state produced by the VBF signal process. The most common background is the $W$+jets process (left), followed by the $W$+$V$/$t$ process (right).}
+  \caption{Feynman diagrams of the two main SM sources of background to consider for the search. Both cases produce a final state that is similar to the expected final state produced by the VBF signal process. The most common background is the \Wjets process (left), followed by the \WVt process (right).}
   \label{fig:bkgFeynman}
 \end{figure}
 
