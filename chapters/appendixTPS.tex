@@ -56,8 +56,7 @@ The work presented in this appendix instead relies on a novel approach to recons
 \label{sec:TPS}
 
 % The tracks plus stubs algorithm
-As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnotemark{} in the chamber for which the stub was created.
-\footnotetext{The bending angle $\phi_b$ is only measured in the DTs.}
+As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnote{The bending angle $\phi_b$ is only measured in the DTs.} in the chamber for which the stub was created.
 Figure~\ref{fig:CMSslice} shows a slice of the CMS detector in the $r$-$\phi$ plane, with an example of a process in which a muon passes through the DT chambers~\cite{Barney:2120661}.
 The Tracks Plus Stubs (TPS) algorithm combines the information from the track trigger and the detection stubs in the chambers to create a candidate track that will later be reconstructed as a muon in the detector.
 By using the initial information from the track trigger, the algorithm propagates the initial muon track to the outer layers of the detector.

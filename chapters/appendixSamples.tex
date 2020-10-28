@@ -9,8 +9,7 @@
 The data used for this work are based on three different sets over the three Run 2 years of 2016, 2017, and 2018.
 The 2016 Rereco (Re-MiniAOD 03Feb2017) set for Run2016B-H with an integrated luminosity of $35.9\unit{fb^{-1}}$ is listed in table~\ref{tab:dataSamples2016}.
 For 2017, the Rereco (31Mar2018) set for Run2017B-F with $41.5\unit{fb^{-1}}$ is listed in table~\ref{tab:dataSamples2017}.
-Finally, the 2018 Rereco (17Sep2018 for Run2018A-C, 22Jan2019 for Run2018D) with $59.7\unit{fb^{-1}}$ is listed in table~\ref{tab:dataSamples2018}\footnotemark.
-\footnotetext{This set excludes the PromptReco for MET 2018D.}
+Finally, the 2018 Rereco (17Sep2018 for Run2018A-C, 22Jan2019 for Run2018D) with $59.7\unit{fb^{-1}}$ is listed in table~\ref{tab:dataSamples2018}\footnote{This set excludes the PromptReco for MET 2018D.}.
 The golden data JSON certificates used are the following:
 \begin{itemize}
   \item[2016:]
@@ -74,30 +73,18 @@ These samples are listed in tables~\ref{tab:ggFGBulkToWWSamples}-\ref{tab:VBFZpr
 Each signal has separate samples with 50,000 events for the following resonance masses: 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, and $4.5\unit{TeV}$.
 The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ samples do not have mass values below $1.2\unit{TeV}$, and some samples have masses that extend from $4.5\unit{TeV}$ to $8\unit{TeV}$ in increments of $0.5\unit{TeV}$.
 These samples were generated as part of the \texttt{RunIISummer16MiniAODv2}, \texttt{RunIIFall17MiniAODv2}, and \texttt{RunIIAutumn18MiniAOD} campaigns.
-The parameters for each signal model can be found at the following links\footnotemark~\footnotemark~\footnotemark~\footnotemark.
-\addtocounter{footnote}{-4}
-\stepcounter{footnote}\footnotetext{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-2/BulkGraviton_WW_WlepWhad}}
-\stepcounter{footnote}\footnotetext{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-1/Wprime_WZ_WlepZhad}}
-\stepcounter{footnote}\footnotetext{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-1/Wprime_Wh_Wlephinc}}
-\stepcounter{footnote}\footnotetext{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-0/Radion_VBF_WW_inclu}}
+The parameters for each signal model can be found at the following links\footnote{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-2/BulkGraviton_WW_WlepWhad}}~\footnote{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-1/Wprime_WZ_WlepZhad}}~\footnote{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-1/Wprime_Wh_Wlephinc}}~\footnote{\url{https://github.com/cms-sw/genproductions/tree/mg242legacy/bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/exo_diboson/Spin-0/Radion_VBF_WW_inclu}}.
 
 % GbulktoWW details
-The \ggF\GBulktoWW model assumes a curvature of $\tilde{k}=0.5$, and the NLO QCD predicted cross section is taken to be 25 times larger than the number at the following link\footnotemark{} where $\tilde{k}=0.1$, then multiplied by the branching fraction of \GBulktoWW in the ``$WW$'' column of this link\footnotemark.
-\addtocounter{footnote}{-2}
-\stepcounter{footnote}\footnotetext{\url{https://github.com/CrossSectionsLHC/WED/blob/master/KKGraviton\_Bulk/GF\_NLO\_13TeV\_ktilda_0p1.txt}} % Link doesn't work
-\stepcounter{footnote}\footnotetext{\url{https://github.com/CrossSectionsLHC/WED/blob/master/KKGraviton\_Bulk/Decay\_long.txt}} % Link doesn't work
+The \ggF\GBulktoWW model assumes a curvature of $\tilde{k}=0.5$, and the NLO QCD predicted cross section is taken to be 25 times larger than the number at the following link\footnote{\url{https://github.com/CrossSectionsLHC/WED/blob/master/KKGraviton\_Bulk/GF\_NLO\_13TeV\_ktilda_0p1.txt}} where $\tilde{k}=0.1$, then multiplied by the branching fraction of \GBulktoWW in the ``$WW$'' column of this link\footnote{\url{https://github.com/CrossSectionsLHC/WED/blob/master/KKGraviton\_Bulk/Decay\_long.txt}}. % Links don't work
 
 % DY ZprtoWW, DY WprtoWZ, and DY WprtoWH details
-The LO cross sections in the Heavy Vector Triplet (HVT) model B\footnotemark{} for \DY\ZprtoWW, \DY\WprtoWZ, and \DY\WprtoWH from this link\footnotemark{} are used.
-\addtocounter{footnote}{-1}
-\stepcounter{footnote}\footnotetext{As discussed in reference~\cite{Pappadopulo_2014}.}
-\stepcounter{footnote}\footnotetext{\url{https://github.com/jngadiub/Cross\_Sections\_HVT/blob/master/13TeV.txt}} % Link doesn't work
+The LO cross sections in the Heavy Vector Triplet (HVT) model B\footnote{As discussed in reference~\cite{Pappadopulo_2014}.} for \DY\ZprtoWW, \DY\WprtoWZ, and \DY\WprtoWH from this link\footnote{\url{https://github.com/jngadiub/Cross\_Sections\_HVT/blob/master/13TeV.txt}} are used. % Link doesn't work
 For the \Zpr cross section, we use the values from the ``CX0(pb)'' column and multiply them with the branching fraction to $WW$ in the ``BRWW'' column.
 The \Wpr cross section values are obtained by taking the sum of the numbers from the ``CX+(pb)'' and ``CX-(pb)'' columns and multiplying the result by the branching fraction to either $WZ$ or $WH$, which are found in the ``BRZW'' and ``BRWh'' columns.
 
 % VBF ZprtoWW and DY WprtoWZ details
-The \VBF\ZprtoWW and \DY\WprtoWZ samples use cross sections from the HVT model C with $c_\mathrm{H}=3$, which are taken from this link\footnotemark.
-\footnotetext{\url{https://github.com/zucchett/HVT/blob/master/dataframe.csv}}
+The \VBF\ZprtoWW and \DY\WprtoWZ samples use cross sections from the HVT model C with $c_\mathrm{H}=3$, which are taken from this link\footnote{\url{https://github.com/zucchett/HVT/blob/master/dataframe.csv}}.
 The \Zpr cross section is obtained from the ``Zprim\_cH3'' column and multiplied with the branching fraction to $WW$ in the ``BrZprimeToWW'' column.
 Similarly for the \Wpr cross section, we take the values from the ``Wprime\_cH3'' column and multiply them with the branching fraction to $WW$ in the ``BrWprimeToWZ'' column.
 
