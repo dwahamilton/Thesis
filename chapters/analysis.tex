@@ -59,138 +59,28 @@ The fit validation and bias testing procedures are described in section~\ref{sec
 
 % The need for simulation samples of signal and background
 This search uses the proton-proton collision data collected by the CMS detector during Run 2.
-The data are collected and stored for analysis after events generate trigger primitives in the detector subsystems, and get passed through the HLT as described in chapter~\ref{chap:exp}.
+The data are collected and stored for analysis after events generate trigger primitives in the detector subsystems and get passed through the HLT as described in chapter~\ref{chap:exp}.
 We also list the signal samples used in the analysis that are based on the BSM models of subsection~\ref{subsec:benchmark}.
 Additionally, we list the samples that model SM background contributions to the search.
-
-\subsection{Data Samples}
+Complete lists of each sample used are found in appendix~\ref{chap:appendixSamples}.
 
 % Data samples
-The data used for this work are based on three different sets over the three Run 2 years of 2016, 2017, and 2018.
-% Additional explanation on data certification
-\begin{itemize}
-  \item 2016 Rereco (Re-MiniAOD 03Feb2017) for Run2016B-H with $35.9\unit{fb^{-1}}$ as seen in Table~\ref{tab:dataSamples2016}
-  \begin{table}[htbp]
-    \centering
-    \input{tab/analysis/data2016Samples.tex}
-    \caption{
-      2016 data samples for Run2016B-H with $35.9\unit{fb^{-1}}$.
-    }
-    \label{tab:dataSamples2016}
-  \end{table}
-  \item 2017 Rereco (31Feb2018) for Run2017B-F with $41.5\unit{fb^{-1}}$ as seen in Table~\ref{tab:dataSamples2017}
-  \begin{table}[htbp]
-    \centering
-    \input{tab/analysis/data2017Samples.tex}
-    \caption{
-      2017 data samples for Run2017B-F with $41.5\unit{fb^{-1}}$.
-    }
-    \label{tab:dataSamples2017}
-  \end{table}
-  \item 2018 Rereco (17Sep2018 for Run2018A-C, 22Jan2019 for Run2018D) for Run2017B-F with $59.7\unit{fb^{-1}}$ as seen in Table~\ref{tab:dataSamples2018}
-  \begin{table}[htbp]
-    \centering
-    \input{tab/analysis/data2018Samples.tex}
-    \caption{
-      2018 data samples for Run2018A-C and Run2018D with $59.7\unit{fb^{-1}}$.
-    }
-    \label{tab:dataSamples2018}
-  \end{table}
-\end{itemize}
+The data are listed in tables~\ref{tab:dataSamples2016}-\ref{tab:dataSamples2018}, along with their integrated luminosities.
+For each year of Run 2, documentation is available for the luminosity measurements~\cite{CMS-PAS-LUM-17-001,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002}.
+The data are divided into three sets per year, with contributions from the \texttt{SingleMuon}, \texttt{SingleElectron}, and \texttt{MET} sets.
 
-\subsection{Simulation Samples}
+% Signal samples
+This analysis makes use of ten benchmark signal models, which are listed in tables~\ref{tab:ggFGBulkToWWSamples}-\ref{tab:VBFZprToWWSamples} with their cross sections and branching ratios.
+The signal models used are \ggF/\VBF\GBulktoWWtolnuqqbarpr, \ggF/\VBF\RadtoWWtolnuqqbarpr, \DY/\VBF\WprtoWZtolnuqqbar, \DY/\VBF\WprtoWHtolnubbbar, and \DY/\VBF\ZprtoWWtolnuqqbarpr.
+Each signal has different samples for each year of Run 2, for a total of three sets of samples per signal.
+Furthermore, each signal has separate samples with 50,000 events for the following resonance masses: 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, and $4.5\unit{TeV}$\footnotemark.
+\footnotetext{The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ sets are the exception to this, lacking mass values below $1.2\unit{TeV}$.}
+Additional details on the parameters for each model are discussed in section~\ref{sec:sigSamples} of appendix~\ref{chap:appendixSamples}.
 
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/ggFGBulkToWWSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:ggFGBulkToWWSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/VBFGBulkToWWSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:VBFGBulkToWWSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/ggFRadToWWSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:ggFRadToWWSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/VBFRadToWWSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:VBFRadToWWSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/DYWprToWZSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:DYWprToWZSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/VBFWprToWZSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:VBFWprToWZSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/DYWprToWHSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:DYWprToWHSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/VBFWprToWHSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:VBFWprToWHSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/DYZprToWWSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:DYZprToWWSamples}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-  \input{tab/analysis/VBFZprToWWSamples.tex}
-  \caption{
-    %
-  }
-  \label{tab:VBFZprToWWSamples}
-\end{table}
-
-\subsection{Background Samples}
+% Background samples
+Finally, samples are also used to simulate SM background contributions, as listed in tables~\ref{tab:bkg2016Samples} and \ref{tab:bkg2017Samples} along with their cross sections.
+These background samples include various processes that are broadly categorized as \Wjets and \WVt, some of which include DY+jets, QCD, and $t\bar{t}$ production samples.
+% More on background samples
 
 \section{Event Selection}
 \label{sec:events}
@@ -198,7 +88,9 @@ The data used for this work are based on three different sets over the three Run
 \begin{figure}[htbp]
   \centering
   \input{fig/analysis/jet.tex}
-  \caption{Illustration of jet substructure for a two-pronged jet with axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$.}
+  \caption{
+    Illustration of jet substructure for a two-pronged jet with axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$.
+  }
   \label{fig:jet}
 \end{figure}
 
@@ -208,7 +100,11 @@ The data used for this work are based on three different sets over the three Run
 \begin{figure}[htbp]
   \centering
   \input{fig/analysis/bkg.tex}
-  \caption{Feynman diagrams of the two main SM sources of background to consider for the search. Both cases produce a final state that is similar to the expected final state produced by the VBF signal process. The most common background is the \Wjets process (left), followed by the \WVt process (right).}
+  \caption{
+    Feynman diagrams of the two main SM sources of background to consider for the search.
+    Both cases produce a final state that is similar to the expected final state produced by the VBF signal process.
+    The most common background is the \Wjets process (left), followed by the \WVt process (right).
+  }
   \label{fig:bkgFeynman}
 \end{figure}
 

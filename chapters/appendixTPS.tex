@@ -1,7 +1,7 @@
 % !TEX root = ../thesis.tex
 
 \chapter{Reconstructing Muons in Real Time at the High Luminosity Large Hadron Collider}
-\label{chap:TPSappendix}
+\label{chap:appendixTPS}
 
 \section{Introduction}
 
@@ -126,7 +126,12 @@ Furthermore, in figure~\ref{fig:arc}, we can see that due to the symmetry of the
 \begin{figure}[htbp]
   \centering
   \input{fig/TPS/arc.tex}
-  \caption{Illustration of the circular trajectory taken by a particle with charge $q$ positioned at $(x_\mathrm{stub},y_\mathrm{stub})$ in a uniform magnetic field. The track starts at the origin with an initial angle $\phi_0$ tangent to the track of the particle, and ends with a final angle of $\phi$ for a total change in angle $\Delta\phi\equiv\phi-\phi_0$. The charged particle covers a radial distance $L$ with respect to the origin of the track, and the perpendicular distance between the mid-point of the track and the radial line $L$ is denoted by the sagitta $s$. The vector corresponding to the \pt of the charge is labeled, with the bending angle $\phi_b$ drawn with respect to the radial line $L$.}
+  \caption{
+    Illustration of the circular trajectory taken by a particle with charge $q$ positioned at $(x_\mathrm{stub},y_\mathrm{stub})$ in a uniform magnetic field.
+    The track starts at the origin with an initial angle $\phi_0$ tangent to the track of the particle, and ends with a final angle of $\phi$ for a total change in angle $\Delta\phi\equiv\phi-\phi_0$.
+    The charged particle covers a radial distance $L$ with respect to the origin of the track, and the perpendicular distance between the mid-point of the track and the radial line $L$ is denoted by the sagitta $s$.
+    The vector corresponding to the \pt of the charge is labeled, with the bending angle $\phi_b$ drawn with respect to the radial line $L$.
+  }
   \label{fig:arc}
 \end{figure}
 
@@ -148,7 +153,10 @@ These then define the propagation constants $c(\eta,d)$ for each detector, there
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\textwidth]{fig/TPS/barrelEta.pdf}
-  \caption{Cross section of the CMS detector in the $r$-$z$ plane illustrating how the detector is separated into different $\eta$ regions. Each $\eta$ region and depth is treated as a separate detector for the TPS algorithm.}
+  \caption{
+    Cross section of the CMS detector in the $r$-$z$ plane illustrating how the detector is separated into different $\eta$ regions.
+    Each $\eta$ region and depth is treated as a separate detector for the TPS algorithm.
+  }
   \label{fig:barrelEta}
 \end{figure}
 
@@ -156,7 +164,10 @@ These then define the propagation constants $c(\eta,d)$ for each detector, there
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_2D.pdf}
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_mean.pdf}
-  \caption{Two-dimensional distribution of $\Delta\phi$ from simulated detection stubs as a function of curvature $k$ (left), and linear fit for the mean values of Gaussians fitted to the vertical slices of the two-dimensional histogram (right). Propagation constants $c(\eta,d)$ for $\Delta\phi$ and $\phi_b$ for each section of the detector are obtained through these linear fits, in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.}
+  \caption{
+    Two-dimensional distribution of $\Delta\phi$ from simulated detection stubs as a function of curvature $k$ (left), and linear fit for the mean values of Gaussians fitted to the vertical slices of the two-dimensional histogram (right).
+    Propagation constants $c(\eta,d)$ for $\Delta\phi$ and $\phi_b$ for each section of the detector are obtained through these linear fits, in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.
+  }
   \label{fig:deltaPhiHist}
 \end{figure}
 
@@ -185,7 +196,10 @@ As with the propagation coefficients $c(\eta,d)$, the position resolution consta
 \begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_res.pdf}
-  \caption{Plot of the resolution for the stub measurements based on the Gaussian fits obtained from the two-dimensional distributions of $\Delta\phi$. The resolution is fitted using the linear approximation of equation~\ref{eq:posRes}.}
+  \caption{
+    Plot of the resolution for the stub measurements based on the Gaussian fits obtained from the two-dimensional distributions of $\Delta\phi$.
+    The resolution is fitted using the linear approximation of equation~\ref{eq:posRes}.
+  }
   \label{fig:deltaPhiRes}
 \end{figure}
 
@@ -204,7 +218,11 @@ Stubs that exceed the threshold for $|P_\phi|$ will instead be discarded.
 \begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_pull.pdf}
-  \caption{Example of a pull distribution for a single section of the detector based on the depth and $\eta$ region. The histogram is made by sampling the pull values of all tracks in simulation based on equation~\ref{eq:pull}. By construction, the pull distribution is a Gaussian with a mean of 0 and a standard deviation of 1.}
+  \caption{
+    Example of a pull distribution for a single section of the detector based on the depth and $\eta$ region.
+    The histogram is made by sampling the pull values of all tracks in simulation based on equation~\ref{eq:pull}.
+    By construction, the pull distribution is a Gaussian with a mean of 0 and a standard deviation of 1.
+  }
   \label{fig:deltaPhiPull}
 \end{figure}
 
@@ -232,7 +250,11 @@ The track with the smallest sum $\Delta\phi_{\mathrm{prop,sum}}$ of the deviatio
 \begin{figure}[htbp]
   \centering
   \input{fig/TPS/clean.tex}
-  \caption{Illustration of the two different cases that are considered when cleaning candidate tracks that share detection stubs. In case 1 there are two tracks that share stubs but one track has more stubs than the other. In case 2, the tracks share the same number of stubs, but one track has a smaller sum of the deviation in the propagated $\phi$ values as given in equation~\ref{eq:phiDev}.}
+  \caption{
+    Illustration of the two different cases that are considered when cleaning candidate tracks that share detection stubs.
+    In case 1 there are two tracks that share stubs but one track has more stubs than the other.
+    In case 2, the tracks share the same number of stubs, but one track has a smaller sum of the deviation in the propagated $\phi$ values as given in equation~\ref{eq:phiDev}.
+  }
   \label{fig:clean}
 \end{figure}
 
@@ -249,7 +271,11 @@ If $p_\mathrm{T,cone}$ exceeds the threshold set for the algorithm, then the can
 \begin{figure}[htbp]
   \centering
   \input{fig/TPS/isol.tex}
-  \caption{Illustration of the track isolation process used by the algorithm. A cone is defined about the origin of the candidate track TPS $\mu$ and the algorithm checks if there are any adjacent tracks whose origin is within $dz$ of the TPS $\mu$ origin, and if the track is within a cone of radius $\Delta R$ centered about TPS $\mu$. Tracks for which $p_\mathrm{T,cone}$ as defined by equation~\ref{eq:ptCone} exceeds the threshold set for the algorithm are discarded.}
+  \caption{
+    Illustration of the track isolation process used by the algorithm.
+    A cone is defined about the origin of the candidate track TPS $\mu$ and the algorithm checks if there are any adjacent tracks whose origin is within $dz$ of the TPS $\mu$ origin, and if the track is within a cone of radius $\Delta R$ centered about TPS $\mu$.
+    Tracks for which $p_\mathrm{T,cone}$ as defined by equation~\ref{eq:ptCone} exceeds the threshold set for the algorithm are discarded.
+  }
   \label{fig:isol}
 \end{figure}
 
@@ -273,7 +299,11 @@ While other algorithms suffer significant losses in efficiency in the gap region
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/effEta20GeV.pdf}
   \includegraphics[width=0.48\textwidth]{fig/TPS/effPt20GeV.pdf}
-  \caption{Comparison of the efficiencies defined by equation~\ref{eq:eff} for simulated muon $\eta$ (left) and \pt (right). The TPS algorithm is required to have two or more stubs associated to muon tracks, and is compared to the existing BMTF, proposed K-BMTF and TP algorithms. The TPS algorithm offers better overall efficiency in comparison to the other algorithms.}
+  \caption{
+    Comparison of the efficiencies defined by equation~\ref{eq:eff} for simulated muon $\eta$ (left) and \pt (right).
+    The TPS algorithm is required to have two or more stubs associated to muon tracks, and is compared to the existing BMTF, proposed K-BMTF and TP algorithms.
+    The TPS algorithm offers better overall efficiency in comparison to the other algorithms.
+  }
   \label{fig:eff}
 \end{figure}
 
@@ -296,7 +326,10 @@ These results also show that the TPS algorithm is well-suited for handling backg
 \begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/rate.pdf}
-  \caption{Comparison of the trigger rates at different \pt thresholds for TPS (with and without track isolation), TP, and K-BMTF algorithms when running on a background-only sample in which there are no muons present. Both the TPS and TP algorithms perform better at suppressing fake tracks compared to the K-BMTF over the full \pt threshold range.}
+  \caption{
+    Comparison of the trigger rates at different \pt thresholds for TPS (with and without track isolation), TP, and K-BMTF algorithms when running on a background-only sample in which there are no muons present.
+    Both the TPS and TP algorithms perform better at suppressing fake tracks compared to the K-BMTF over the full \pt threshold range.
+  }
   \label{fig:rates}
 \end{figure}
 
@@ -311,6 +344,9 @@ As of this writing, the UCLA CMS research group is currently in the process of d
 \begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.48\textwidth]{fig/TPS/ocean.pdf}
-  \caption{Render of the OCEAN Blade board that will be implemented into the CMS detector hardware. The onboard FPGA will allow for the TPS algorithm to be implemented directly as firmware into the muon trigger in the detector.}
+  \caption{
+    Render of the OCEAN Blade board that will be implemented into the CMS detector hardware.
+    The onboard FPGA will allow for the TPS algorithm to be implemented directly as firmware into the muon trigger in the detector.
+  }
   \label{fig:ocean}
 \end{figure}
