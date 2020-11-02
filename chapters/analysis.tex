@@ -84,28 +84,159 @@ These background samples include various processes that are broadly categorized 
 \section{Event Selection}
 \label{sec:events}
 
+% Goal of event selection
+In subsection~\ref{subsec:expEvent}, we described the expected event topology for the $WV$/$WH$ dibosonic resonance that this work searches for.
+In particular, the semileptonic decay produces a highly energetic lepton ($e$ or $\mu$) and large \Etmiss from the neutrino from the \Wtolnu decay, a large-radius jet from the hadronic \Vtoqqbarpr or \Htobbbar decay, and forward-facing VBF jets for VBF-produced resonances.
+To select for possible events that exhibit the expected final state structure, selection cuts must be made that capture the expected behavior and reduce background.
+This section provides an overview of the cuts that were made in the analysis to optimize the search for the $WV$/$WH$ dibosonic resonance.
+
+\subsection{Trigger}
+
+% Trigger paths
+There are multiple HLT trigger paths that used for recording the data that this analysis uses.
+Most of the data are collected from the single electron and single muon triggers, with the remainder coming from the single photon, EGamma, and MET triggers.
+For each year we use different paths, which are listed in tables~\ref{tab:triggers2016}, \ref{tab:triggers2017}, and \ref{tab:triggers2018} for the years 2016, 2017, and 2018, respectively.
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/triggers2016.tex}
+  \caption{
+    HLT paths used in 2016 data and MC.
+  }
+  \label{tab:triggers2016}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/triggers2017.tex}
+  \caption{
+    HLT paths used in 2017 data and MC.
+  }
+  \label{tab:triggers2017}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/triggers2018.tex}
+  \caption{
+    HLT paths used in 2018 data and MC.
+  }
+  \label{tab:triggers2018}
+\end{table}
+
+% Single electron thresholds
+The single electron \pt thresholds used are 27, 45, and $115\unit{GeV}$ for 2016, 32, 25, and $115\unit{GeV}$ for 2017, and 25 and $115\unit{GeV}$ for 2018. % Check why the threshold is 25 and not 32 for 2018
+Additionally, we apply an OR with \texttt{HLT\_Photon175} in 2016 with an \Et threshold of $175\unit{GeV}$, as well as with \texttt{HLT\_Photon200} in 2017 with $200\unit{GeV}$. % Need to find out what an OR is
+These thresholds were applied as recommended by the CMS E/Gamma Physics Object Group (POG)~\cite{MuonPOG}.
+
+% Single muon thresholds
+For the muon thresholds, the main threshold is $50\unit{GeV}$ across all three years, with an OR for \texttt{HLT\_TkMu50} at $50\unit{GeV}$ in 2016, and an OR for \texttt{HLT\_OldMu100} in 2017 and \texttt{HLT\_TkMU100} in 2018 at $100\unit{GeV}$, as recommended by the Muon POG~\cite{MuonHLT2016,MuonHLT2017,MuonHLT2018}.
+
+% Additional explanation of efficiencies?
+% Possibly add subsection on prefiring weights
+
+\subsection{Pileup Reweighting}
+
+The data samples from all three Run 2 years have different pileup (PU) profiles than that of the simulation samples that were used for this analysis.
+In order to account for this, we compute and apply PU weights to our samples and compare distributions for the number of primary vertices both with and without weights to the data.
+Figure~\ref{fig:PUreweight} shows these distributions for 2016, 2017, and 2018.
+The weights are computed using the recommended minimum bias cross section of $69.2\unit{mb}$. % Citation needed
+
 \begin{figure}[htbp]
   \centering
-  \input{fig/analysis/jet.tex}
+  \includegraphics[width=0.45\textwidth]{fig/analysis/PUrewN_0_2016_nVert.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/analysis/PUrewN_0_2017_nVert.pdf}\\
+  \includegraphics[width=0.45\textwidth]{fig/analysis/PUrewN_0_2018_nVert.pdf}
   \caption{
-    Illustration of jet substructure for a two-pronged jet with axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$.
+    Distribution of the number of primary vertices reconstructed in simulation before and after pileup reweighting, with data present, for 2016 (top left), 2017 (top right), and 2018 (bottom).
   }
-  \label{fig:jet}
+  \label{fig:PUreweight}
 \end{figure}
+
+\subsection{Muon Selection}
+
+% High-pT muon selection criteria
+When selecting muons for the analysis, they must pass the following high-\pt muon identification criteria as provided by the CMS Muon POG~\cite{MuonSelection}:
+\begin{itemize}
+  \item The muon is reconstructed as a ``global'' muon.
+  \item At least one muon-chamber hit included in the global-muon track fit or in the TuneP fit.
+  \item Muon segments in at least two muon stations.
+  \item The \pt relative error ($\sigma(\pt)/\pt$) of the muon best track is less than 30\%.
+  \item Its tracker track has transverse impact parameter $d_{xy}<2\unit{mm}$ with respect to the primary vertex.
+  \item The longitudinal distance of the tracker with respect to the primary vertex is $d_z<5\unit{mm}$.
+  \item The muon track has at least one pixel hit.
+  \item The muon track has at least six tracker layer hits.
+\end{itemize}
+
+% Further muon selection
+In addition to the high-\pt muon identification criteria, for this analysis we also require each muon to have $\pt>55\unit{GeV}$ and to be confined to the region $|\eta|<2.4$.
+We also apply an isolation requirement on the muons in order to further suppress background.
+This is done using the full relative particle flow isolation using $\Delta\beta$ corrections, with the requirement that $I_\mathrm{rel}<0.05$.
+
+Scale factors for muon ID as provided by the Muon POG are also applied~\cite{MuonPAGs}.
+To appropriately apply these scale factors as they vary by year to the full Run 2 data set, we weight them by the fraction of integrated luminosity for each year.
+We also apply a scale factor for the isolation requirement, which is shown in figure~\ref{fig:muonIsoSF}.
+This scale factor was derived on top of muon high-\pt ID, in boosted $Z$ and DY events over the full Run 2 period, which is found to be within 1\% from unity and smaller than the systematic uncertainty for the muon trigger/reco/ID of 5\% used in signal extraction.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.65\textwidth]{fig/analysis/muonFullIsoSF.pdf}
+  \caption{
+    Efficiency in data and simulation and data/MC scale factor for muon isolation requirement.
+  }
+  \label{fig:muonIsoSF}
+\end{figure}
+
+\subsection{Electron Selection}
+
+% Electron reconstruction
+The electrons that are reconstructed from trigger primitives in the ECAL are required to pass the ``HEEP v7.0'' ID requirements as prescribed by the E/Gamma POG~\cite{HEEPV70}.
+The ID requirements ensure that the reconstructed electrons from the ECAL energy deposits are paired with a high quality track from the inner tracker and have a shape consistent with an electromagnetic shower in the calorimeter.
+These requirements are listed in table~\ref{tab:HEEPV70}.
+For our analysis, we also require them to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$. % Unsure why this range is excluded
+We also apply scale factors for the HEEP ID requirements along with RECO scale factors as recommended by the E/Gamma POG~\cite{EgammaScale}.
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/HEEPV70.tex}
+  \caption{
+    Definitions of HEEP ID V7.0 selections.
+  }
+  \label{tab:HEEPV70}
+\end{table}
+
+\subsection{Jet Selection}
+
+%\begin{figure}[htbp]
+%  \centering
+%  \input{fig/analysis/jet.tex}
+%  \caption{
+%    Illustration of jet substructure for a two-pronged jet with axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$.
+%  }
+%  \label{fig:jet}
+%\end{figure}
+
+\subsection{Missing Transverse Energy}
+
+\subsection{VBF Forward Jets}
+
+\subsection{Spin Polarization and Boson Rapidities}
+
+\subsection{Event Categorization}
 
 \section{Background Modeling}
 \label{sec:bkg}
 
-\begin{figure}[htbp]
-  \centering
-  \input{fig/analysis/bkg.tex}
-  \caption{
-    Feynman diagrams of the two main SM sources of background to consider for the search.
-    Both cases produce a final state that is similar to the expected final state produced by the VBF signal process.
-    The most common background is the \Wjets process (left), followed by the \WVt process (right).
-  }
-  \label{fig:bkgFeynman}
-\end{figure}
+%\begin{figure}[htbp]
+%  \centering
+%  \input{fig/analysis/bkg.tex}
+%  \caption{
+%    Feynman diagrams of the two main SM sources of background to consider for the search.
+%    Both cases produce a final state that is similar to the expected final state produced by the VBF signal process.
+%    The most common background is the \Wjets process (left), followed by the \WVt process (right).
+%  }
+%  \label{fig:bkgFeynman}
+%\end{figure}
 
 \section{Signal Modeling}
 \label{sec:sig}

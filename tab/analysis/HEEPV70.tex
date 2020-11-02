@@ -1,0 +1,24 @@
+% !TEX root = ../../thesis.tex
+\footnotesize
+\begin{tabular}{lll}
+  \hline
+  Variable                          & Barrel                             & Endcap                             \\
+  \hline
+  \multicolumn{3}{c}{Acceptance selections}\\
+  \Et                               & $\Et>35\unit{GeV}$                 & $\Et>35\unit{GeV}$                 \\
+  $\eta$                            & $|\eta_{SC}|<1.4442$               & $1.566<|\eta_{SC}|<2.5$            \\
+  \multicolumn{3}{c}{Identification selections}\\
+  \texttt{isEcalDriven}             & \texttt{true}                      & \texttt{true}                      \\
+  $\Delta\eta_\mathrm{in}^\mathrm{seed}$          & $|\Delta\eta_\mathrm{in}^\mathrm{seed}|<0.004$ & $|\Delta\eta_\mathrm{in}^\mathrm{seed}|<0.006$ \\
+  $\Delta\phi_\mathrm{in}$                 & $|\Delta\phi_\mathrm{in}|<0.06$         & $|\Delta\phi_\mathrm{in}|<0.06$         \\
+  $H/E$                             & $H/E<1/E+0.05$                 & $H/E<5/E+0.05$                 \\
+  $\sigma_{i\eta i\eta}$            & -                                  & $\sigma_{i\eta i\eta}<0.03$      \\
+  $\frac{E_{1\times5}}{E_{5\times5}}$, $\frac{E_{2\times5}}{E_{5\times5}}$        & $\frac{E_{1\times5}}{E_{5\times5}}>0.83$ or $\frac{E_{2\times5}}{E_{5\times5}}>0.94$ & -                              \\
+  Inner lost layer hits             & lost hits $\leq1$                  & lost hits $\leq1$                  \\
+  Impact parameter, $d_{xy}$        & $|d_{xy}|<0.02$                    & $|d_{xy}|<0.05$                    \\
+  \multicolumn{3}{c}{Isolation selections}\\
+  EM + had depth 1                  & $iso<2+0.03\Et+0.28\rho$     & $iso<2.5+0.28\rho$ ($\Et<50\unit{GeV}$) \\
+  isolation, $iso$                  &                                    & else $iso<2.5+0.03(\Et-50\unit{GeV})+0.28\rho$ \\
+  $\pt$ isolation, $isopt$          & $isopt<5\unit{GeV}$                   & $isopt<5\unit{GeV}$                   \\
+  \hline
+\end{tabular}
