@@ -165,11 +165,11 @@ These rules may then immediately be applied to a process such as $e^-e^+\to\mu^-
 This can then be used to compute the scattering cross section. For a process in the center-of-mass frame with two particles in the initial state with momenta $\mathbf{p}_1=-\mathbf{p_2}$, and two particles in the final state with momenta $\mathbf{p}_3=-\mathbf{p}_4$.
 The cross section assuming unpolarized scattering is
 \begin{align*}
-  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega} &= \frac{1}{64\pi^2E^2_\mathrm{CM}}\frac{|\mathbf{p}_f|}{|\mathbf{p}_i|}\sum_\mathrm{spins}|\mathcal{M}|^2\\
-  &= \frac{\alpha^2}{4E_\mathrm{CM}^2}\sqrt{1-\frac{m_\mu^2}{E^2}}\bqty{1+\frac{m_\mu^2}{E^2}+\pqty{1-\frac{m_\mu^2}{E^2}}\cos^2\theta},
+  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega} &= \frac{1}{64\pi^2\ECM^2}\frac{|\mathbf{p}_f|}{|\mathbf{p}_i|}\sum_\mathrm{spins}|\mathcal{M}|^2\\
+  &= \frac{\alpha^2}{4\ECM^2}\sqrt{1-\frac{m_\mu^2}{E^2}}\bqty{1+\frac{m_\mu^2}{E^2}+\pqty{1-\frac{m_\mu^2}{E^2}}\cos^2\theta},
   \numberthis
 \end{align*}
-where $|\mathbf{p}_i|\equiv|\mathbf{p}_1|=|\mathbf{p}_2|$ and $|\mathbf{p}_f|\equiv|\mathbf{p}_3|=|\mathbf{p}_4|$, $E_\mathrm{CM}$ is the total energy in the center-of-mass frame, $E=E_\mathrm{CM}/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
+where $|\mathbf{p}_i|\equiv|\mathbf{p}_1|=|\mathbf{p}_2|$ and $|\mathbf{p}_f|\equiv|\mathbf{p}_3|=|\mathbf{p}_4|$, $\ECM$ is the total energy in the center-of-mass frame, $E=\ECM/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
 
 % Feynman diagrams generalized to the standard model
 The process for obtaining scattering cross sections for other field theories with a specified Lagrangian $\mathcal{L}$ is similar.
@@ -386,14 +386,14 @@ The warped geometry is such that there are two branes in these models: the Tevbr
 \label{sec:VBF}
 
 % Search for a heavy diboson resonance
-This thesis presents results on the search for a new heavy $X$ resonance produced through vector boson fusion (VBF), with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
+This thesis presents results on the search for a new heavy $X$ resonance produced through vector boson fusion (\VBF), with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
 The decays of interest are \XtoWV and \XtoWH, where $V=W,Z$ is any of the two massive electroweak vector bosons and $H$ is a Higgs boson.
-We consider semileptonic final event states in which the $W$ decays leptonically via \Wtolnu, the other vector boson decays hadronically through the process \Vtoqqbarpr and is reconstructed as a single massive jet, and there are two forward-facing jets resulting from the VBF production process.
+We consider semileptonic final event states in which the $W$ decays leptonically via \Wtolnu, the other vector boson decays hadronically through the process \Vtoqqbarpr and is reconstructed as a single massive jet, and there are two forward-facing jets resulting from the \VBF production process.
 
 % Previous work
 This work is motivated in part by models such as those mentioned in subsection~\ref{subsec:BSM}, and is a continuation of a previous search using the 2016 data collected by the LHC during Run 2~\cite{Sirunyan_18}.
 The previous analysis was conducted using only two benchmark signal models, and it was agnostic to the method of production for an $X$ resonance.
-This work instead uses four benchmark signal models and is specific to a VBF production mode for the heavy resonance.
+This work instead uses four benchmark signal models and is specific to a \VBF production mode for the heavy resonance.
 
 \subsection{Benchmark Models}
 \label{subsec:benchmark}
@@ -419,35 +419,35 @@ Furthermore, based on previous searches that have been conducted, they are all e
 
 % Event structure
 The decay processes \XtoWVtolnuqqbarpr and \XtoWHtolnubbbar were selected due to the fact that one-lepton events are ideal for such an analysis, as the final states that are generated provide a clean signal that suppresses background.
-The VBF production channel was also selected to further suppress background and identify signal events since the VBF process uniquely results in forward-facing jets~\cite{rauch2016vectorboson}.
-Examples of Feynman diagrams for the VBF production process of an $X$ resonance with the resulting final states can be seen in figure~\ref{fig:vbfFeynman}.
+The \VBF production channel was also selected to further suppress background and identify signal events since the \VBF process uniquely results in forward-facing jets~\cite{rauch2016vectorboson}.
+Examples of Feynman diagrams for the \VBF production process of an $X$ resonance with the resulting final states can be seen in figure~\ref{fig:vbfFeynman}.
 Such a process has been used in the past as one of the discovery channels for the Higgs boson, and it remains an important class of events at the LHC.
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/vbf.tex}
   \caption{
-    Feynman diagrams for production via vector boson fusion of a neutral spin-2 resonance $X$ decaying to the final state \lnuqqbarpr (left), and a charged spin-1 resonance decaying to the final state \lnubbbar (right), both with additional forward-facing jets due to the VBF production process.
-    The search for an $X$ boson will involve looking for a final state in which there are jets from the VBF production process present, along with a single merged jet from the $V$/$H$ boson, and a lepton $\ell$ with its corresponding neutrino $\nu$ produced from the $W$ decay.
+    Feynman diagrams for production via vector boson fusion of a neutral spin-2 resonance $X$ decaying to the final state \lnuqqbarpr (left), and a charged spin-1 resonance decaying to the final state \lnubbbar (right), both with additional forward-facing jets due to the \VBF production process.
+    The search for an $X$ boson will involve looking for a final state in which there are jets from the \VBF production process present, along with a single merged jet from the \VorH boson, and a lepton $\ell$ with its corresponding neutrino $\nu$ produced from the $W$ decay.
   }
   \label{fig:vbfFeynman}
 \end{figure}
 
 % Event topology
 Because the expected mass of the bosonic resonance lies in the TeV range, the final event state has a highly boosted topology, which is illustrated in figure~\ref{fig:eventTop}.
-The two initial state quarks from the VBF process in the diagram of figure~\ref{fig:vbfFeynman} result in two forward-facing jets in the final state that are highly energetic and collimated.
-Meanwhile, the lepton-neutrino pair from the \Wtolnu decay will have momenta opposite to that of the jet that results from the hadronic decay of the $V$/$H$ boson.
+The two initial state quarks from the \VBF process in the diagram of figure~\ref{fig:vbfFeynman} result in two forward-facing jets in the final state that are highly energetic and collimated.
+Meanwhile, the lepton-neutrino pair from the \Wtolnu decay will have momenta opposite to that of the jet that results from the hadronic decay of the \VorH boson.
 The jet from the \Vtoqqbarpr or \Htobbbar decay will also have two-pronged substructure since the decay results in a quark-antiquark pair.
-Lastly, both the lepton-neutrino pair and the jet will be highly collimated since the $W$ and $V$/$H$ bosons that produced them will have momenta of several hundred GeV or above.
+Lastly, both the lepton-neutrino pair and the jet will be highly collimated since the $W$ and \VorH bosons that produced them will have momenta of several hundred GeV or above.
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/eventTop.tex}
   \caption{
-    Illustration of event topology for VBF collision events of interest in the CMS detector.
+    Illustration of event topology for \VBF collision events of interest in the CMS detector.
     The semi-leptonic final state produces a $W$ boson that decays via \Wtolnu and produces the lepton-neutrino pair.
     Opposite to that is a single massive jet with two-pronged substructure that is produced via \Vtoqqbarpr or \Htobbbar.
-    Finally, the VBF production process results in two forward-facing jets, labeled by $q^{(\prime)\prime\prime}$ and $q^{(\prime)\prime\prime\prime}$.
+    Finally, the \VBF production process results in two forward-facing jets, labeled by $q^{(\prime)\prime\prime}$ and $q^{(\prime)\prime\prime\prime}$.
   }
   \label{fig:eventTop}
 \end{figure}
