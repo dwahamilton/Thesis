@@ -43,12 +43,24 @@ A unique aspect of the previous analysis that this work inherits is a novel sign
 This process is performed in the plane formed by the mass of the jet from the \VorH decay \MJ, and the invariant mass of the \WV/\WH diboson system \MVV.
 Two classes of SM background events are considered for this analysis.
 The first is a \WVt background that is resonant in the \MJ spectrum, and the second is a \Wjets contribution that is non-resonant in \MJ.
+Figure~\ref{fig:bkgFeynman} shows example Feynman diagrams for these two types of background.
 One advantage of using a 2D fit is the ability to retain more events for modeling background in the sideband regions within the 2D \MJ-\MVV plane, as opposed to looking at the sidebands in the \MJ and \MVV spectra separately.
 This also allows for conducting a simultaneous search of \WW, \WZ, and \WH resonances as opposed to performing separate analyses in pre-defined \MJ windows.
 
+\begin{figure}[htbp]
+  \centering
+  \input{fig/analysis/bkg.tex}
+  \caption{
+    Example Feynman diagrams of the two types of SM sources of background to consider for the search.
+    Both cases produce a final state that is similar to the expected final state produced by the VBF signal process.
+    The most common background is a \Wjets process (left), followed by a \WVt process (right).
+  }
+  \label{fig:bkgFeynman}
+\end{figure}
+
 % Chapter overview
 For this chapter, we examine the complete analysis process of the search for a dibosonic resonance produced in proton-proton collisions at the LHC with center-of-mass energies of $\sqrt{s}=13\unit{TeV}$.
-The data used in this analysis were collected over 2016, 2017, and 2018 with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$, respectively.
+The data used in this analysis were collected over Run 2 with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$, respectively.
 Section~\ref{sec:samples} provides an overview of the data and simulation samples that were used for the analysis.
 In section~\ref{sec:events}, we discuss the selection cuts used to determine which events are used from the data and simulation samples.
 We then go over the SM sources of background and how they are taken into account for the analysis in section~\ref{sec:bkg}, followed by the signal modeling process in section~\ref{sec:sig}.
@@ -95,7 +107,7 @@ This section provides an overview of the cuts that were made in the analysis to 
 % Trigger paths
 There are multiple HLT trigger paths that used for recording the data that this analysis uses.
 Most of the data are collected from the single electron and single muon triggers, with the remainder coming from the single photon, EGamma, and MET triggers.
-For each year we use different paths, which are listed in tables~\ref{tab:triggers2016}, \ref{tab:triggers2017}, and \ref{tab:triggers2018} for the years 2016, 2017, and 2018, respectively.
+For each year we use different paths, which are listed in tables~\ref{tab:triggers2016}, \ref{tab:triggers2017}, and \ref{tab:triggers2018} for the years Run 2, respectively.
 
 \begin{table}[htbp]
   \centering
@@ -139,7 +151,7 @@ For the muon thresholds, the main threshold is $50\unit{GeV}$ across all three y
 
 The data samples from all three Run 2 years have different pileup (PU) profiles than that of the simulation samples that were used for this analysis.
 In order to account for this, we compute and apply PU weights to our samples and compare distributions for the number of primary vertices both with and without weights to the data.
-Figure~\ref{fig:PUreweight} shows these distributions for 2016, 2017, and 2018.
+Figure~\ref{fig:PUreweight} shows these distributions for Run 2.
 The weights are computed using the recommended minimum bias cross section of $69.2\unit{mb}$. % Citation needed
 
 \begin{figure}[htbp]
@@ -313,7 +325,7 @@ We also apply $b$-tagging scale factors and weights that depend on the jet \pt, 
 The $V$-tagging methods previously described account for identifying and grooming jets resulting from the $\Vhad$ decay, but additional techniques are applied in this analysis to account for a large-radius \bbbar jet.
 Such a jet signifies the decay \Htobbbar in the final state and hence a \WH resonance, which allows for discriminating against background with light jet flavors.
 For this reason, we use a $b$-tagging discriminator to identify Higgs boson jet candidates that uses information from displaced tracks and secondary vertices~\cite{CMS-PAS-BTV-15-002}.
-We also apply a cut on the M2 operating point of the ``DoubleB tagger'' to categorize events, for which the threshold is 0.8 for 2016, 2017, and 2018 according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
+We also apply a cut on the M2 operating point of the ``\DoubleB tagger'' to categorize events, for which the threshold is 0.8 for Run 2 according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
 
 % Scale factors
 Additionally, we apply scale data/MC efficiency scale factors to our signal sample normalizations as recommended by the BTV POG, while the scale factors for the background are estimated from the data in the control regions.
@@ -430,6 +442,7 @@ For this reason, we use two categories based on rapidity: a low-\Dy category def
 Originally a 3-category scheme was considered for the analysis, but it was found that this did not leave sufficient background MC statistics in all three categories in order to build robust 2D background templates.
 
 \subsection{Final Event Selection and Categorization}
+\label{subsec:eventSelect}
 
 % Event selection and categorization
 For this analysis, we made a final event selection in order to select events that exhibit the expected behavior of the final state described in subsection~\ref{subsec:expEvent} and optimize the search potential for a semileptonically decaying heavy $X$ resonance produced via \ggF, \DY, or \VBF.
@@ -473,11 +486,11 @@ This defines the following two categories:
 \end{itemize}
 
 % VBF/non-VBF categories
-Third, to enhance the sensitivity of resonances decaying to \WHtolnubbbar, and to separate events consistent with \VBF production, we split the sample three-way based on the value of the DoubleB tagger and the presence of \VBF-compatible jet candidates described in subsection~\ref{subsec:VBFjets}:
+Third, to enhance the sensitivity of resonances decaying to \WHtolnubbbar, and to separate events consistent with \VBF production, we split the sample three-way based on the value of the \DoubleB tagger and the presence of \VBF-compatible jet candidates described in subsection~\ref{subsec:VBFjets}:
 \begin{itemize}
   \item {\bfseries \VBF-tagged (vbf):} Two candidate \VBF jets, $\DetaVBF>4$, $\mjjVBF>500\unit{GeV}$
-  \item {\bfseries \bbbar-tagged (bb):} $\mathrm{DoubleB}>0.8$, no \VBF tag
-  \item {\bfseries \bbbar-untagged (nobb):} $\mathrm{DoubleB}<0.8$, no \VBF tag
+  \item {\bfseries \bbbar-tagged (bb):} $\DoubleB>0.8$, no \VBF tag
+  \item {\bfseries \bbbar-untagged (nobb):} $\DoubleB<0.8$, no \VBF tag
 \end{itemize}
 
 % Dy categories
@@ -489,19 +502,183 @@ Fourth, to further discriminate all signals against background and distinguish b
 
 This selection defines $2\times2\times3\times2=24$ search categories that are referred to with labels such as e-HP-bb-LDy, $\mu$-LP-vbf-HDy, etc.
 
+\section{Comparison of Simulation to Data}
+\label{sec:comp}
+
+% Comparison between MC and data
+A crucial check on the validity of our selection cuts and categorizations is to compare the MC samples to the data in the regions where no signal is expected to be observed.
+In this section, we review the data to MC comparisons for relevant kinematic distributions by looking at control plots in non-signal regions.
+We split the non-signal regions of the analysis into two regions: a jet mass sideband and a top-enriched control region.
+
+% Jet mass sideband
+The jet mass sideband applies the final event selection cuts of subsection~\ref{subsec:eventSelect}, but with the \MJ selection cuts $20<\MJ<70\unit{GeV}$ or $150<\MJ<210\unit{GeV}$, so that there are no \Vhad large-radius jets present.
+To correct modeling of fake $V$ jets at low \pt, we also define a separate \Wjets dominated sideband of $30<\MJ<50\unit{GeV}$ that is used to derive rescaling factors for the \Wjets background yields.
+These rescaling factors are applied to \Wjets background yields for the analysis.
+
+% Top-enriched control region
+The top-enriched control region is used to calibrate the performance of the soft drop algorithm and jet substructure variables on merged bosons.
+We use a sample of hadronic $W$'s isolated in data using $t\bar{t}$ events.
+This is done by applying the selection cuts of subsection~\ref{subsec:eventSelect}, but without with an inverted $b$-tag veto in which we require the presence of at least one standard AK4 $b$-tagged jet in the event.
+The resulting selection is therefore largely dominated by $t\bar{t}$ and single top events.
+From this we obtain $b$-tagging scale factors and top \pt reweighting values that are applied in the rest of the analysis.
+
+\subsection{Control Plots}
+
+% Run 2 control plots
+The control plots presented here run over the full data set from 2017, 2017, and 2018.
+These plots were produced using separate MC samples for each year that are combined and weighted by their individual luminosities.
+
+\subsubsection{Control Plots in the Jet Mass Sideband Region}
+
+% Jet mass sideband control plots
+Figure~\ref{fig:SB_controlPlotsRun2_1} shows kinematic variables related to the lepton candidate, such as the \pt, $\eta$, and \Etmiss, for both $e$ and $\mu$ channels.
+In figure~\ref{fig:SB_controlPlotsRun2_2}, the distributions correspond to the \pt and transverse mass of the \Wlep candidate, along with the diboson invariant mass \MVV, again for both $e$ and $\mu$ channels.
+For figure~\ref{fig:SB_controlPlotsRun2_3}, the distributions show the \pt, $\eta$, \MJ, \nsubjDDT, and \DoubleB of the large-radius jet from the \Vhad candidate.
+Finally, for figure~\ref{fig:SB_controlPlotsRun2_4}, the \VBF-related distributions are shown for \DetaVBF, \mjjVBF, \nJets, and \Dy.
+The rescaling factors applied to the \Wjets background yields are 0.96, 0.86, and 0.79 for 2016, 2017, and 2018, respectively.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_mu_allP_allC_allE_Run2_lnujj_l1_l_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_e_allP_allC_allE_Run2_lnujj_l1_l_pt.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_mu_allP_allC_allE_Run2_lnujj_l1_l_eta.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_e_allP_allC_allE_Run2_lnujj_l1_l_eta.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_mu_allP_allC_allE_Run2_met_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_e_allP_allC_allE_Run2_met_pt.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for different \Wlep-related observables, in the jet mass sideband.
+    From top to bottom: lepton \pt, lepton $\eta$, \Etmiss.
+    Left: muon channel, right: electron channel.
+  }
+  \label{fig:SB_controlPlotsRun2_1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_mu_allP_allC_allE_Run2_lnujj_l1_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_e_allP_allC_allE_Run2_lnujj_l1_pt.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_mu_allP_allC_allE_Run2_lnujj_l1_mt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_e_allP_allC_allE_Run2_lnujj_l1_mt.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_mu_allP_allC_allE_Run2_mWV.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_e_allP_allC_allE_Run2_mWV.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for different \Wlep-related observables, in the jet mass sideband.
+    From top to bottom: \pt of the leptonic W, transverse mass of the leptonic W, diboson invariant mass.
+    Left: muon channel, right: electron channel.
+  }
+  \label{fig:SB_controlPlotsRun2_2}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_lnujj_l2_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_lnujj_l2_eta.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_mjet.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_tau21DDT.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_DoubleB.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for the \pt, $\eta$, \MJ (soft-drop mass), \nsubjDDT, and \DoubleB tagger of the selected \Vhad candidate (leading AK8 jet), in the jet mass sideband.
+  }
+  \label{fig:SB_controlPlotsRun2_3}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_lnujj_vbfDEta.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_lnujj_vbfMass.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_lnujj_nJets.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/SB_b1_allL_allP_allC_allE_Run2_dy.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for the separation in $\eta$ of the VBF forward jets, invariant mass of the VBF jets, number of selected standard jets, and rapidity separation between the reconstructed bosons, in the jet mass sideband.
+  }
+  \label{fig:SB_controlPlotsRun2_4}
+\end{figure}
+
+\subsubsection{Control Plots in the Top-Enriched Control Region}
+
+% Top-enriched control plots
+Figure~\ref{fig:CR_controlPlotsRun2_1} shows control plots of lepton-related observables in the top-enriched control region, with the lepton \pt, $\eta$, and \Etmiss in both the $e$ and $\mu$ channels.
+For figure~\ref{fig:CR_controlPlotsRun2_2}, the distributions of the \Wlep \pt, transverse mass, and \MVV are shown, for both the $e$ and $\mu$ channels.
+In figure~\ref{fig:CR_controlPlotsRun2_3}, distributions of variables related to the \Vhad jet are shown, with the jet \pt, $\eta$, \MJ, \nsubjDDT, and \DoubleB tagger.
+Finally, in figure~\ref{fig:CR_controlPlotsRun2_4}, \VBF-related distributions are shown for \DetaVBF, \mjjVBF, \nJets, and \Dy.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_mu_allP_allC_allE_Run2_lnujj_l1_l_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_e_allP_allC_allE_Run2_lnujj_l1_l_pt.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_mu_allP_allC_allE_Run2_lnujj_l1_l_eta.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_e_allP_allC_allE_Run2_lnujj_l1_l_eta.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_mu_allP_allC_allE_Run2_met_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_e_allP_allC_allE_Run2_met_pt.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for different \Wlep-related observables, in the top-enriched control region.
+    From top to bottom: lepton \pt, lepton $\eta$, \Etmiss.
+    Left: muon channel, right: electron channel.
+  }
+  \label{fig:CR_controlPlotsRun2_1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_mu_allP_allC_allE_Run2_lnujj_l1_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_e_allP_allC_allE_Run2_lnujj_l1_pt.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_mu_allP_allC_allE_Run2_lnujj_l1_mt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_e_allP_allC_allE_Run2_lnujj_l1_mt.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_mu_allP_allC_allE_Run2_mWV.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_e_allP_allC_allE_Run2_mWV.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for different \Wlep-related observables, in the top-enriched control region.
+    From top to bottom: \pt of the leptonic W, transverse mass of the leptonic W, diboson invariant mass.
+    Left: muon channel, right: electron channel.
+    }
+  \label{fig:CR_controlPlotsRun2_2}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_lnujj_l2_pt.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_lnujj_l2_eta.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_mjet.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_tau21DDT.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_DoubleB.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for the \pt, $\eta$, \MJ (soft-drop mass), \nsubjDDT, and \DoubleB tagger of the selected \Vhad candidate (leading AK8 jet), in the top-enriched control region.
+  }
+  \label{fig:CR_controlPlotsRun2_3}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_lnujj_vbfDEta.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_lnujj_vbfMass.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_lnujj_nJets.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/analysis/CR_b1_allL_allP_allC_allE_Run2_dy.pdf}\\
+  \caption{
+    Comparison plots between data and MC from Run 2 for the separation in $\eta$ of the VBF forward jets, invariant mass of the VBF jets, number of selected standard jets, and rapidity separation between the reconstructed bosons, in the top-enriched control region.
+  }
+  \label{fig:CR_controlPlotsRun2_4}
+\end{figure}
+
+\subsection{Electron Negative Endcap Issue}
+
+% Endcap issue
+During Run 319077, the two HCAL towers HEM15 and HEM16 were non-operational, and the data obtained from the electron channel for the \Wtolnu candidate in those regions results in an excess of events that can be seen in figure~\ref{fig:SB_controlPlots2018_electronexcess}. % Citation
+To remedy this, we exclude events recorded after Run 319077 if the lepton candidate is an electron and falls within the region $-1.55<\phi<-0.9$ and $-2.5<\eta<-1.479$.
+Removing these events results in the corrected behavior of the relevant kinematic variables for the electron candidate, and only discards 0.8\% of events in the signal region.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.30\textwidth]{fig/analysis/SB_e_2018_lnujj_l1_l_eta.pdf}
+  \includegraphics[width=0.30\textwidth]{fig/analysis/SB_e_2018_lnujj_l1_l_phi.pdf}
+  \includegraphics[width=0.30\textwidth]{fig/analysis/SB_e_2018_met_phi.pdf}
+  \caption{
+    Comparison plots between 2018 data (including the HEM15 and HEM16 after Run 319077) and 2017 MC for the electron $\eta$, electron $\phi$, and $\phi$ of the missing transverse energy, in the jet mass sideband.
+  }
+  \label{fig:SB_controlPlots2018_electronexcess}
+\end{figure}
+
 \section{Background Modeling}
 \label{sec:bkg}
-
-%\begin{figure}[htbp]
-%  \centering
-%  \input{fig/analysis/bkg.tex}
-%  \caption{
-%    Feynman diagrams of the two main SM sources of background to consider for the search.
-%    Both cases produce a final state that is similar to the expected final state produced by the VBF signal process.
-%    The most common background is the \Wjets process (left), followed by the \WVt process (right).
-%  }
-%  \label{fig:bkgFeynman}
-%\end{figure}
 
 \section{Signal Modeling}
 \label{sec:sig}
