@@ -664,7 +664,7 @@ Finally, in figure~\ref{fig:CR_controlPlotsRun2_4}, \VBF-related distributions a
 % Endcap issue
 During Run 319077, the two HCAL towers HEM15 and HEM16 were non-operational, and the data obtained from the electron channel for the \Wtolnu candidate in those regions results in an excess of events that can be seen in figure~\ref{fig:SB_controlPlots2018_electronexcess}. % Citation
 To remedy this, we exclude events recorded after Run 319077 if the lepton candidate is an electron and falls within the region $-1.55<\phi<-0.9$ and $-2.5<\eta<-1.479$.
-Removing these events results in the corrected behavior of the relevant kinematic variables for the electron candidate, and only discards 0.8\% of events in the signal region.
+Removing these events results in the correct behavior of the relevant kinematic variables for the electron candidate, and only discards 0.8\% of events in the signal region.
 
 \begin{figure}[htbp]
   \centering
@@ -677,11 +677,138 @@ Removing these events results in the corrected behavior of the relevant kinemati
   \label{fig:SB_controlPlots2018_electronexcess}
 \end{figure}
 
-\section{Background Modeling}
+\section{$V$-tagging Scale Factors}
+\label{sec:vTag}
+
+% Deriving scale factors
+As mentioned previously, the top-enriched control region is obtained by inverting the $b$-tag veto and requiring the presence of at least one $b$-tagged jet, and the region is used to calibrate the performance of the soft drop algorithm and jet substructure variables on merged bosons.
+In particular, the scale factors for the $V$-tagging selection in the HP and LP categories are derived in this region using a dedicated fit of the soft drop jet mass spectrum.
+We also include events with $\nsubjDDT>0.80$ as a separate category denoted by NP to avoid bias resulting from only selecting HP and LP events.
+This allows us to accurately model the $W$ peak for all categories used in the analysis.
+
+\subsection{Fit Model}
+
+% Fit model
+Our fit model relies on two classes of events in the top-enriched region.
+The first corresponds to resonant $W$ events that are the result of a top decay, with the $b$ jet outside of the AK8 jet.
+The second class consists of non-resonant events resulting from random combinations of a merged AK8 jet.
+To account for both of these types of events, we employ a fit model that uses a double crystal ball (DCB) for the $W$, another DCB for the partially reconstructed top quark, an exponential, and a uniform distribution.
+Once the fit is performed, we then merge the second DCB, exponential, and uniform distributions to form a single non-resonant shape.
+
+% Normalization
+The explicit form of the fit model $f$ in each category (HP, LP, NP) is given by
+\begin{align}
+  & f(\mathrm{HP})=rSF^\mathrm{HP}N_W^\mathrm{HP}f_W^\mathrm{HP}+N_{NR}^\mathrm{HP}f_{NR}^\mathrm{HP},\label{eq:VtagFit1}\\
+  & f(\mathrm{LP})=rSF^\mathrm{LP}N_W^\mathrm{LP}f_W^\mathrm{LP}+N_{NR}^\mathrm{LP}f_{NR}^\mathrm{LP},\label{eq:VtagFit2}\\
+  & f(\mathrm{NP})=r\bqty{N_\mathrm{Total}-SF^\mathrm{HP}N_W^\mathrm{HP}-SF^\mathrm{LP}N_W^\mathrm{LP}}f_W^\mathrm{NP}+N_{NR}^\mathrm{NP}+f_{NR}^\mathrm{NP},\label{eq:VtagFit3}
+\end{align}
+where $f_W$ is the resonant distribution for the $W$ jet, $f_{NR}$ is the non-resonant shape, $r$ is a global scale factor accounting for lepton efficiency and luminosity, $N_{W}^\mathrm{HP}$, $N_{W}^\mathrm{LP}$, $N_{W}^\mathrm{NP}$, and $N_\mathrm{Total}$ are the number of expected events in simulation for all three categories and the total number of events, and the $SF$ are scale factors for the HP and LP categories.
+This normalization is chosen to account for migration between categories.
+
+\subsection{Fit Results}
+
+% Fit results
+We perform the fit of equations~\ref{eq:VtagFit1}-\ref{eq:VtagFit3} in a jet mass window of 20-$145\unit{GeV}$.
+The resulting post-fit distributions for all three years and the full Run 2 dataset and MC samples can be seen in figure~\ref{fig:VTag_postfit_Run2}.
+Table~\ref{tab:VTagFactors} shows the $V$-tagging scale factors in the HP and LP categories obtained by the fit for all years and the full Run 2 dataset, and table~\ref{tab:VScaleRes} shows the scale factors for the jet mass scale and resolution again for all years and for the full Run 2 dataset.
+For the analysis we use the Run 2 scale factors in the computation of the expected signal normalizations, and the Run 2 uncertainties are used as a flat systematic uncertainty for the signal normalizations.
+The scale factors for the jet mass scale and resolution are used as corrections to the signal shapes and $W$ peak for the resonant background templates.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_HP_2016.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_LP_2016.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_NP_2016.pdf}\\
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_HP_2017.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_LP_2017.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_NP_2017.pdf}\\
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_HP_2018.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_LP_2018.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_NP_2018.pdf}\\
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_HP_Run2.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_LP_Run2.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_NP_Run2.pdf}\\
+  \caption{
+    Post-fit distributions for the background MC and data set for all three years and Run 2 (from top to bottom: 2016, 2017, 2018, Run 2), and for the three purity categories (from left to right: HP, LP, NP).
+  }
+  \label{fig:VTag_postfit_Run2}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/VTagFactors.tex}
+  \caption{
+    $V$-tagging scale factors for the HP and LP categories obtained from the fit process.
+  }
+  \label{tab:VTagFactors}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \input{tab/analysis/VScaleRes.tex}
+  \caption{
+    Scale factors for the jet mass scale and resolution obtained from the fit process.
+  }
+  \label{tab:VScaleRes}
+\end{table}
+
+\subsection{Momentum Dependence}
+
+% Momentum dependence
+We also conduct a study on the dependence of the $V$-tagging scale factors as a function of the diboson invariant mass \MVV to apply a systematic uncertainty on the $V$-tagging process.
+To do so, we measure the $V$-tagging scale factors for the full Run 2 dataset, but in three different binnings of \MVV.
+We apply a low-mass binning of $[0.6,0.8\unit{TeV}]$, a mid-mass binning of $[0.8,1.0\unit{TeV}]$, and a high-mass binning of $[1.0,1.5\unit{TeV}]$.
+The resulting post-fit distributions for all three binnings and for all purity categories may be see in figure~\ref{fig:VTag_postfit_massdep}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_HP_Low.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_LP_Low.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_NP_Low.pdf}\\
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_HP_Mid.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_LP_Mid.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_NP_Mid.pdf}\\
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_HP_High.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_LP_High.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/analysis/PostFit__MJJ__allC_allL_NP_High.pdf}\\
+  \caption{
+    Post-fit distributions for three bins of the diboson invariant mass \MVV (from top to bottom: $[0.6,0.8\unit{TeV}]$, $[0.8,1.0\unit{TeV}]$, and $[1.0,1.5\unit{TeV}]$), in the three purity categories (from left to right: HP, LP, NP), for the full Run 2 dataset.
+  }
+  \label{fig:VTag_postfit_massdep}
+\end{figure}
+
+% Scale factors and efficiency
+The resulting scale factors, scale, and resolution as a function of \MVV are plotted in figure~\ref{fig:VTag_massdep_summary} (left).
+We observe no significant dependence for $V$-tagging as a function of \MVV for the three binnings used in this study.
+The $V$-tagging efficiency as a function of \MVV is also studied, which can be seen in figure~\ref{fig:VTag_massdep_summary} (right).
+This allows us to place an upper limit on the uncertainty of the \pt dependence.
+The fact that the scale factor is small and the simulation agrees with the data means that the scale factor will never be larger than the variations of the efficiency versus \MVV. % May need to reword
+At high mass, we may therefore set an uncertainty equal to the difference of the signal efficiency at high mass versus low mass.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.45\textwidth]{fig/analysis/MVVDepSummary.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/analysis/ptDep.pdf}
+  \caption{
+    Left: Plot of all scale factors as a function of the diboson invariant mass \MVV.
+    Right: Plot of the $V$-tagging efficiency as a function of \MVV.
+  }
+  \label{fig:VTag_massdep_summary}
+\end{figure}
+
+\section{Two-dimensional Fit Process}
+\label{sec:2Dfit}
+
+% Overview and motivation
+
+\subsection{Background Modeling}
 \label{sec:bkg}
 
-\section{Signal Modeling}
+\subsection{Signal Modeling}
 \label{sec:sig}
+
+\section{Systematic Uncertainties}
+\label{sec:uncert}
 
 \section{Fit Validation and Bias Testing}
 \label{sec:bias}
