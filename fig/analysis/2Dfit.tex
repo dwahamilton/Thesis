@@ -1,0 +1,21 @@
+% !TEX root = ../../thesis.tex
+\begin{tikzpicture}
+  % Jet mass sidebands
+  \draw[fill=yellow!40] (0,0) rectangle (6,2) node[pos=0.5] {High jet mass sideband};
+  \draw[fill=yellow!40] (0,4) rectangle (6,6) node[pos=0.5] {Low jet mass sideband};
+
+  % Sidebands
+  \draw[fill=yellow!40] (8,0) rectangle (14,6);
+  \node at (11,1) {Sidebands};
+
+  % Signal regions
+  \draw[fill=red!40] (2,2) rectangle (4,4) node[pos=0.5] {Signal};
+  \draw[fill=red!40] (10,2) rectangle (12,4) node[pos=0.5] {Signal};
+
+  % Axes
+  \draw[->,thick] (0,0) -- (6,0) node[below] {\MVV};
+  \draw[->,thick] (0,0) -- (0,6) node[left] {\MJ};
+
+  \draw[->,thick] (8,0) -- (14,0) node[below] {\MVV};
+  \draw[->,thick] (8,0) -- (8,6) node[left] {\MJ};
+\end{tikzpicture}
