@@ -18,6 +18,27 @@ The second class consists of non-resonant events resulting from random combinati
 To account for both of these types of events, we employ a fit model that uses a double crystal ball (DCB) for the $W$, another DCB for the partially reconstructed top quark, an exponential, and a uniform distribution.
 Once the fit is performed, we then merge the second DCB, exponential, and uniform distributions to form a single non-resonant shape.
 
+% Crystal ball function
+The crystal ball function is a composite function consisting of a power law stitched to a Gaussian core~\cite{Cheng_2016}, defined by
+\begin{equation}
+  f_\mathrm{CB}(x;\mu,\sigma,\alpha,n)=N
+  \begin{cases}
+    e^{-\frac{1}{2}\pqty{\frac{x-\mu}{\sigma}}^2}, & \frac{x-\mu}{\sigma}>-\alpha,\\
+    \pqty{\frac{n}{|\alpha|}}^ne^{-\frac{|\alpha|^2}{2}}\pqty{\frac{n}{|\alpha|}-|\alpha|-\frac{x-\mu}{\sigma}}^{-n} & \frac{x-\mu}{\sigma}\leq-\alpha,
+  \end{cases}
+\end{equation}
+where $\alpha$ is a parameter that determines the cutoff between the Gaussian core and the powertail, $n$ is the exponent of the powertail, and $N$ is a normalization factor.
+The double crystal ball instead has powertails on both sides of the Gaussian core, and is given by
+\begin{equation}
+  f_\mathrm{DCB}(x;\mu,\sigma,\alpha_1,\alpha_2,n_1,n_2)=N
+  \begin{cases}
+    \pqty{\frac{n_1}{|\alpha_1|}}^{n_1}e^{-\frac{|\alpha_1|^2}{2}}\pqty{\frac{n_1}{|\alpha_1|}-|\alpha_1|-\frac{x-\mu}{\sigma}}^{-n_1} & \frac{x-\mu}{\sigma}\leq-\alpha_1,\\
+    e^{-\frac{1}{2}\pqty{\frac{x-\mu}{\sigma}}^2}, & -\alpha_1<\frac{x-\mu}{\sigma}<\alpha_2,\\
+    \pqty{\frac{n_2}{|\alpha_2|}}^{n_2}e^{-\frac{|\alpha_2|^2}{2}}\pqty{\frac{n_2}{|\alpha_2|}-|\alpha_2|-\frac{x-\mu}{\sigma}}^{-n_2} & \frac{x-\mu}{\sigma}\geq\alpha_2,
+  \end{cases}
+\end{equation}
+where $\alpha_1$ and $n_1$ are the powertail parameters for the left side of the tail, and $\alpha_2$ and $n_2$ are the powertail parameters for the right side of the tail.
+
 % Normalization
 The explicit form of the fit model $f$ in each category (HP, LP, NP) is given by
 \begin{align}
