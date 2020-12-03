@@ -56,6 +56,7 @@ For the muon thresholds, the main threshold is $50\unit{GeV}$ across all three y
 
 \subsection{Pileup Reweighting}
 
+% Pileup reweighting
 The data samples from all three Run 2 years have different pileup (PU) profiles than that of the simulation samples that were used for this analysis.
 In order to account for this, we compute and apply PU weights to our samples and compare distributions for the number of primary vertices both with and without weights to the data.
 Figure~\ref{fig:PUreweight} shows these distributions for Run 2.
@@ -93,6 +94,7 @@ In addition to the high-\pt muon identification criteria, for this analysis we a
 We also apply an isolation requirement on the muons in order to further suppress background.
 This is done using the full relative particle flow isolation using $\Delta\beta$ corrections, with the requirement that $I_\mathrm{rel}<0.05$.
 
+% Muon scale factors
 Scale factors for muon ID as provided by the Muon POG are also applied~\cite{MuonPAGs}.
 To appropriately apply these scale factors as they vary by year to the full Run 2 dataset, we weight them by the fraction of integrated luminosity for each year.
 We also apply a scale factor for the isolation requirement, which is shown in figure~\ref{fig:muonIsoSF}.
@@ -408,4 +410,5 @@ Fourth, to further discriminate all signals against background and distinguish b
   \item {\bfseries High \Dy (HDy):} $\Dy\geq1.0$
 \end{itemize}
 
+% Category format
 This selection defines $2\times2\times3\times2=24$ search categories that are referred to with labels such as e-HP-bb-LDy, $\mu$-LP-vbf-HDy, etc.
