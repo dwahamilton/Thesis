@@ -161,8 +161,8 @@ These then define the propagation constants $c(\eta,d)$ for each detector, there
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_2D.pdf}
-  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_mean.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_2D.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_mean.pdf}\\
   \caption{
     Two-dimensional distribution of $\Delta\phi$ from simulated detection stubs as a function of curvature $k$ (left), and linear fit for the mean values of Gaussians fitted to the vertical slices of the two-dimensional histogram (right).
     Propagation constants $c(\eta,d)$ for $\Delta\phi$ and $\phi_b$ for each section of the detector are obtained through these linear fits, in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.
@@ -194,7 +194,7 @@ As with the propagation coefficients $c(\eta,d)$, the position resolution consta
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_res.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_res.pdf}
   \caption{
     Plot of the resolution for the stub measurements based on the Gaussian fits obtained from the two-dimensional distributions of $\Delta\phi$.
     The resolution is fitted using the linear approximation of equation~\ref{eq:posRes}.
@@ -216,7 +216,7 @@ Stubs that exceed the threshold for $|P_\phi|$ will instead be discarded.
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.48\textwidth]{fig/TPS/deltaPhi_pull.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_pull.pdf}
   \caption{
     Example of a pull distribution for a single section of the detector based on the depth and $\eta$ region.
     The histogram is made by sampling the pull values of all tracks in simulation based on equation~\ref{eq:pull}.
@@ -296,8 +296,8 @@ While other algorithms suffer significant losses in efficiency in the gap region
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.48\textwidth]{fig/TPS/effEta20GeV.pdf}
-  \includegraphics[width=0.48\textwidth]{fig/TPS/effPt20GeV.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/effEta20GeV.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/effPt20GeV.pdf}
   \caption{
     Comparison of the efficiencies defined by equation~\ref{eq:eff} for simulated muon $\eta$ (left) and \pt (right).
     The TPS algorithm is required to have two or more stubs associated to muon tracks, and is compared to the existing BMTF, proposed K-BMTF and TP algorithms.
@@ -324,7 +324,7 @@ These results also show that the TPS algorithm is well-suited for handling backg
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.48\textwidth]{fig/TPS/rate.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/rate.pdf}
   \caption{
     Comparison of the trigger rates at different \pt thresholds for TPS (with and without track isolation), TP, and K-BMTF algorithms when running on a background-only sample in which there are no muons present.
     Both the TPS and TP algorithms perform better at suppressing fake tracks compared to the K-BMTF over the full \pt threshold range.
@@ -342,7 +342,7 @@ As of this writing, the UCLA CMS research group is currently in the process of d
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.48\textwidth]{fig/TPS/ocean.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/ocean.pdf}
   \caption{
     Render of the OCEAN Blade board that will be implemented into the CMS detector hardware.
     The onboard FPGA will allow for the TPS algorithm to be implemented directly as firmware into the muon trigger in the detector.
