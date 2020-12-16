@@ -378,11 +378,30 @@ Good agreement between the data and post-fit templates is observed for all 24 ca
 \subsection{Goodness-of-Fit Test}
 
 % Saturated model
-The goodness-of-fit is estimated using the saturated model (Cousins-Baker) algorithm, in which 1000 background toys are generated for the g.o.f estimator.
-The process is repeated for the data, which is compared to the g.o.f estimator distribution for the background toys in figure~\ref{fig:GOF}, with the red arrow corresponding to the location of the estimator for the data.
-We find that the g.o.f estimator for the data has good compatibility with the background toys distribution.
+The goodness-of-fit (GOF) is estimated using the saturated model (Cousins-Baker) algorithm~\cite{Baker1984437}, in which 1000 background toys are generated for the GOF estimator.
+The process is repeated for the data, which is compared to the GOF estimator distribution for the background toys in figure~\ref{fig:GOF}, with the red arrow corresponding to the location of the estimator for the data.
+We find that the GOF estimator for the data has good compatibility with the background toys distribution.
 
-% More on Cousins-Baker algorithm
+% Cousins-Baker algorithm
+The saturated model algorithm produces a quantity defined by a likelihood ratio that is similar to the $\chi^2$ test statistic~\cite{Cousins2013}.
+To illustrate the process, we shall consider the case of uncorrelated Gaussian distributed data, which has a likelihood given by
+\begin{equation}
+  \mathcal{L}=\prod_i\frac{1}{\sqrt{2\pi\sigma_i^2}}\exp\bqty{-\pqty{d_i-f_i}^2/2\sigma_i^2},
+\end{equation}
+where $d_i\pm\sigma_i$ is the $i$th measured data point with RMS deviation $\sigma_i$, and $f_i$ is the value as predicted by the model.
+The saturated model for $\mathcal{L}$ is defined by setting $f_i=d_i$ for each data point $i$, which for the Gaussian case yields
+\begin{equation}
+  \mathcal{L}_\mathrm{sat}=\prod_i\frac{1}{\sqrt{2\pi\sigma_i^2}}.
+\end{equation}
+This in turn gives the likelihood ratio
+\begin{equation}
+  \lambda_\mathrm{sat}=\frac{\mathcal{L}}{\mathcal{L}_\mathrm{sat}}=\prod_i\exp\bqty{-\pqty{d_i-f_i}^2/2\sigma_i^2},
+\end{equation}
+and hence the test statistic for the algorithm defined by $-2\ln\lambda$ in this case gives us the familiar $\chi^2$ expression:
+\begin{equation}
+  \chi^2=-2\ln\lambda_\mathrm{sat}=\sum_i\frac{\pqty{d_i-f_i}^2}{\sigma_i^2}.
+\end{equation}
+Beyond this example, the saturated algorithm can compute a corresponding test statistic for an arbitrary combination of binned channels with constraints.
 
 \begin{figure}[htbp]
   \centering
@@ -395,15 +414,19 @@ We find that the g.o.f estimator for the data has good compatibility with the ba
 
 \subsection{Signal-Injected Bias Tests}
 
-% Max likelihood bias test
+% Max likelihood bias test and profile likelihood signal injection
 The last test performed to assess the 2D fit is a signal-injected bias test.
 We run a maximum likelihood fit on toy data samples generated from a signal+backgound model used in place of the data, then extract the measured cross section from the result.
 For the toy data samples, we generate 1000 toys for eight values of the resonance mass \MX ($1\unit{TeV}$ to $4.5\unit{TeV}$ in increments of $0.5\unit{TeV}$) for each of the benchmark signal models and for two possible injected cross sections.
 We obtain an injected signal cross section for each value of \MX for each benchmark signal model for $2\sigma$ and $5\sigma$ local significance by scanning the cross section ranges at a given mass point \MX using a profile likelihood fit until the desired significance is obtained.
-The cross section pull is then defined as the difference between the measured cross section and the injected signal cross section divided by the measured cross section uncertainty.
 
 % Resulting pull distributions
-The median for the resulting cross section pulls for each signal model as a function of \MX is shown in figure~\ref{fig:biasTest_injectedSignal}.
+The cross section pull is defined by
+\begin{equation}
+  P_r=\frac{r_\mathrm{meas}-r_\mathrm{inject}}{\sigma_r},
+\end{equation}
+where $r$ is the injected cross section times branching fraction and $\sigma_r$ is the measured cross section uncertainty.
+We define the bias as the median for the resulting cross section pull $P_r$, which is shown for each signal model as a function of \MX in figure~\ref{fig:biasTest_injectedSignal}.
 Each benchmark signal model exhibits slight biases on the order of 0-10\%, with some reaching as high as 20\% at certain mass points.
 These biases have been investigated and are partly due to tail effects for the pull distributions at each mass point, with large pre-fit uncertainties causing some of the shapes to get far from the nominal ones in the toy data sets.
 

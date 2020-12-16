@@ -181,7 +181,7 @@ We denote the soft drop mass by \MJ, and apply corrections as recommended by Jet
 % N-subjettiness
 To determine the degree to which the jet has substructure, we use the ``$N$-subjettiness'' as a measure of how many subjets are present in the jet~\cite{Thaler_2011,Thaler_2012}.
 It is designed to identify boosted hadronic objects based on the angular distances of jet constituents relative to their nearest subjet axis.
-Figure~\ref{fig:jetSubstruct} shows an example of a jet with two subjects defined by axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$, which is the two-pronged structure expected to be observed by the \Vhad boson decay.
+Figure~\ref{fig:jetSubstruct} shows an example of a jet with two subjects defined by axes $\vu{n}_1$ and $\vu{n}_2$, which is the two-pronged structure expected to be observed by the \Vhad boson decay.
 We proceed by reclustering the jets with the \kt algorithm until $N$ jets remain, then compute the $N$-subjettiness defined by
 \begin{equation}
   \tau_N=\frac{1}{d_0}\sum_kp_{\mathrm{T},k}\min\pqty{\Delta R_{1,k},\Delta R_{2,k},\ldots,\Delta R_{N,k}},
@@ -196,7 +196,7 @@ with $R_0$ as the clustering parameter of the original jet, $p_{\mathrm{T},k}$ i
   \centering
   \input{fig/eventSelection/jetSubstruct.tex}
   \caption{
-    Illustration of jet substructure for a two-pronged jet with axes $\mathbf{\hat{n}}_1$ and $\mathbf{\hat{n}}_2$.
+    Illustration of jet substructure for a two-pronged jet with axes $\vb{\hat{n}}_1$ and $\vb{\hat{n}}_2$.
     The $N$-subjettiness $\tau_N$ is used as a measure of how many subjets are present within a jet.
   }
   \label{fig:jetSubstruct}
@@ -257,7 +257,7 @@ For the \bbbar-untagged category, we instead use
 For this analysis, we use type-I corrected particle flow MET (PFMET) to account for the energy of the neutrino from the \Wlep decay, where PFMET is defined as the magnitude of the negative vector sum of all transverse energies from particle flow objects~\cite{PFMET}.
 The correction is a propagation of the jet energy corrections (JEC) to MET, which is given by
 \begin{equation}
-  \EtmissTI=\vqty{-\sum_\mathrm{jet}\mathbf{p}_\mathrm{T,jet}^\mathrm{JEC}-\sum_{i\in\mathrm{uncl.}}\mathbf{p}_{\mathrm{T},i}},
+  \EtmissTI=\vqty{-\sum_\mathrm{jet}\vb{p}_\mathrm{T,jet}^\mathrm{JEC}-\sum_{i\in\mathrm{uncl.}}\vb{p}_{\mathrm{T},i}},
 \end{equation}
 where the first sum is over clustered jets and the second sum is over unclustered particles.
 

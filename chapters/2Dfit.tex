@@ -80,20 +80,20 @@ To do so, we derive the each of the parameters for the signal shapes as function
 Each signal model takes the same functional form in the two-dimensional \MJ-\MVV space.
 The signals are parameterized in 2D as the product of the two 1D \MJ and \MVV shapes for the jet mass and the resonance mass given by
 \begin{equation}
-  P_\mathrm{sig}(\MVV,\MJ|\MX)=\PVV(\MVV|\MX,\theta_1)\PJ(\MJ|\MX,\theta_2),
+  P_\mathrm{sig}(\MVV,\MJ|\MX)=\PVV(\MVV|\MX,\vb*{\theta}_1)\PJ(\MJ|\MX,\vb*{\theta}_2),
 \end{equation}
-where $\theta_1$ and $\theta_2$ are shape parameters that in principle depend on \MX.
+where $\vb*{\theta}_1$ and $\vb*{\theta}_2$ are shape parameters that in principle depend on \MX.
 Both shapes are modeled separately based on the jet purity (HP/LP), rapidity (HDy/LDy), and bb/nobb/vbf categories.
 However, the $e$ and $\mu$ categories are merged for the signal modeling process.
 To parameterize the shapes, we perform separate fits for the 1D shapes in the \MVV and \MJ spectra, then interpolate the parameters for each shape as a function of \MX to obtain $P_\mathrm{sig}(\MVV,\MJ|\MX)$ for arbitrary \MX between 1 and $4.5\unit{TeV}$.
-A DCB shape is used for $\PVV(\MVV|\MX,\theta_1)$ for all categories, while the jet resonance shape $\PJ(\MJ|\MX,\theta_2)$ uses a DCB for the HP categories, and the sum of a DCB and an exponential for the LP categories.
+A DCB shape is used for $\PVV(\MVV|\MX,\vb*{\theta}_1)$ for all categories, while the jet resonance shape $\PJ(\MJ|\MX,\vb*{\theta}_2)$ uses a DCB for the HP categories, and the sum of a DCB and an exponential for the LP categories.
 
 % Signal shape parameter figures
 Figures~\ref{fig:MVVShapeParam_LDy_Run2} and \ref{fig:MVVShapeParam_HDy_Run2} show the DCB parameters ($\mu$, $\sigma$, $\alpha_1$, $\alpha_2$) for the \MVV shapes in the 12 categories used to model the 2D signal shapes.
 The DCB parameters for the \MJ shapes are shown in figures~\ref{fig:MJJShapeParam_LDy_Run2} and \ref{fig:MJJShapeParam_HDy_Run2}
 
 % Signal shape substitutions
-In some categories there are not enough events present that result in a smooth fit for the parameters of $\PVV(\MVV|\MX,\theta_1)$ or $\PJ(\MJ|\MX,\theta_2)$.
+In some categories there are not enough events present that result in a smooth fit for the parameters of $\PVV(\MVV|\MX,\vb*{\theta}_1)$ or $\PJ(\MJ|\MX,\vb*{\theta}_2)$.
 For example, signals that are \VBF-produced will not have a sufficient number of events present for the bb/nobb categories.
 Because the signal parameters do not vary significantly between production modes, we allow for substituting non-\VBF signal shapes with \VBF shapes, and \VBF signal shapes with non-\VBF shapes:
 \begin{itemize}
@@ -628,9 +628,9 @@ This is in part due to the challenges encountered with the modeling process, whi
 % Non-resonant background templates overview
 The non-resonant background templates are modeled with conditional products, taking the form
 \begin{equation}
-  P_{\Wjets}(\MVV,\MJ)=\PVV(\MVV|\MJ,\theta_1)\PJ(\MJ|\theta_2).
+  P_{\Wjets}(\MVV,\MJ)=\PVV(\MVV|\MJ,\vb*{\theta}_1)\PJ(\MJ|\vb*{\theta}_2).
 \end{equation}
-For $\PJ(\MJ|\theta_2)$ we derive a 1D template for the \MJ distribution, which we then multiply with a 2D shape from $\PVV(\MVV|\MJ,\theta_1)$ for the \MVV distribution.
+For $\PJ(\MJ|\vb*{\theta}_2)$ we derive a 1D template for the \MJ distribution, which we then multiply with a 2D shape from $\PVV(\MVV|\MJ,\vb*{\theta}_1)$ for the \MVV distribution.
 
 % 2D conditional template
 For the 2D \MVV shape, we use a specialized Gaussian kernel method in order overcome the low statistics encountered for the background MC events.
@@ -735,9 +735,9 @@ Figure~\ref{fig:condTemplateVscondReco_nonRes_MVV_Run2} shows the resulting comp
 \end{figure}
 
 % 1D non-resonant soft drop jet mass templates
-The remaining step to complete the conditional product $P_{\Wjets}(\MVV,\MJ)$ is to obtain the 1D template for $\PJ(\MJ|\theta_2)$.
+The remaining step to complete the conditional product $P_{\Wjets}(\MVV,\MJ)$ is to obtain the 1D template for $\PJ(\MJ|\vb*{\theta}_2)$.
 Rather than using a kernel method as with the 2D conditional template, we instead use a coarsely binned histogram of weighted MC events for \MJ, and then fit the result with a spline.
-The spline is then used to interpolate the $\PJ(\MJ|\theta_2)$ template with the final \MJ binning.
+The spline is then used to interpolate the $\PJ(\MJ|\vb*{\theta}_2)$ template with the final \MJ binning.
 In this case, we also do not merge any of the 24 categories and keep the templates separate.
 Figure~\ref{fig:1dtemplateVsReco_nonRes_MJ_Run2} shows the resulting 1D templates for each category compared to the weighted MC distributions used to obtain them.
 
@@ -832,11 +832,11 @@ To better visualize the differences between each of the categories, figure~\ref{
 Since the resonant templates contain a merged $W$ or top jet, they are separated from the non-resonant templates in that they require a generated boson in a cone of $\Delta R=0.8$ around the reconstructed merged jet.
 The 2D templates in this case are very similar to the non-resonant templates, with a conditional product of the form
 \begin{equation}
-  P_{\WVt}(\MVV,\MJ)=\PVV(\MVV|\MJ,\theta_1)\PJ(\MJ|\theta_2).
+  P_{\WVt}(\MVV,\MJ)=\PVV(\MVV|\MJ,\vb*{\theta}_1)\PJ(\MJ|\vb*{\theta}_2).
 \end{equation}
 
 % 2D conditional template
-The 2D conditional template $\PVV(\MVV|\MJ,\theta_1)$ is constructed with a kernel method in a manner identical to the non-resonant background.
+The 2D conditional template $\PVV(\MVV|\MJ,\vb*{\theta}_1)$ is constructed with a kernel method in a manner identical to the non-resonant background.
 However, in this case there is no reweighting of the \MVV spectrum as there was with the non-resonant templates, and because the number of events is even lower than that of the non-resonant MC samples, we merge the $e$/$\mu$, bb/nobb/vbf, and HP/LP categories.
 We therefore only separate the 2D conditional resonant template based on the rapidity categories HDy/LDy.
 Figure~\ref{fig:res2DCorr} shows the correlation between the jet \pt and the jet mass for the HP/LP and nobb/bb categories for the resonant background MC samples.

@@ -129,7 +129,7 @@ Here, $\psi$ is a spin-1/2 field, $\bar{\psi}\equiv\psi^\dagger\gamma^0$ is the 
 % Equations of motion
 The classical equations of motion for the fields can be obtained through the Euler-Lagrange equation for a field $\phi$, which is given by
 \begin{equation}\label{eq:EL}
-  \pdv{\mathcal{L}}{\phi}-\partial_\mu\pqty{\pdv{\mathcal{L}}{(\partial_\mu\phi)}}=0.
+  \pdv{\mathcal{L}}{\phi}-\partial_\mu\bqty{\pdv{\mathcal{L}}{(\partial_\mu\phi)}}=0.
 \end{equation}
 Applying equation~\ref{eq:EL} to the spin-1/2 field $\psi$ yields
 \begin{equation}
@@ -162,14 +162,14 @@ These rules may then immediately be applied to a process such as $e^-e^+\to\mu^-
 \begin{equation}
   i\mathcal{M}=\input{fig/theory/QEDfeyn.tex}=\frac{ie^2}{(p_1+p_2)^2}\bqty{\bar{v}(p_2)\gamma^\mu u(p_1)}\bqty{\bar{u}(p_3)\gamma_\mu v(p_4)}.
 \end{equation}
-This can then be used to compute the scattering cross section. For a process in the center-of-mass frame with two particles in the initial state with momenta $\mathbf{p}_1=-\mathbf{p_2}$, and two particles in the final state with momenta $\mathbf{p}_3=-\mathbf{p}_4$.
+This can then be used to compute the scattering cross section. For a process in the center-of-mass frame with two particles in the initial state with momenta $\vb{p}_1=-\vb{p_2}$, and two particles in the final state with momenta $\vb{p}_3=-\vb{p}_4$.
 The cross section assuming unpolarized scattering is
 \begin{align*}
-  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega} &= \frac{1}{64\pi^2\ECM^2}\frac{|\mathbf{p}_f|}{|\mathbf{p}_i|}\sum_\mathrm{spins}|\mathcal{M}|^2\\
+  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega} &= \frac{1}{64\pi^2\ECM^2}\frac{|\vb{p}_f|}{|\vb{p}_i|}\sum_\mathrm{spins}|\mathcal{M}|^2\\
   &= \frac{\alpha^2}{4\ECM^2}\sqrt{1-\frac{m_\mu^2}{E^2}}\bqty{1+\frac{m_\mu^2}{E^2}+\pqty{1-\frac{m_\mu^2}{E^2}}\cos^2\theta},
   \numberthis
 \end{align*}
-where $|\mathbf{p}_i|\equiv|\mathbf{p}_1|=|\mathbf{p}_2|$ and $|\mathbf{p}_f|\equiv|\mathbf{p}_3|=|\mathbf{p}_4|$, $\ECM$ is the total energy in the center-of-mass frame, $E=\ECM/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
+where $|\vb{p}_i|\equiv|\vb{p}_1|=|\vb{p}_2|$ and $|\vb{p}_f|\equiv|\vb{p}_3|=|\vb{p}_4|$, $\ECM$ is the total energy in the center-of-mass frame, $E=\ECM/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
 
 % Feynman diagrams generalized to the standard model
 The process for obtaining scattering cross sections for other field theories with a specified Lagrangian $\mathcal{L}$ is similar.
