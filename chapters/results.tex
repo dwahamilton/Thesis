@@ -6,7 +6,7 @@
 % Results overview
 The results of the search for a new heavy boson resonance are considered in terms of exclusion limits for the benchmark signal models described in this analysis.
 These limits are model-independent, and cover spin-0, spin-1, and spin-2 resonances decaying to \WW, \WZ, and \WH.
-We also consider the observed $p$-values that are used to derive the exclusion limits.
+We also consider the observed $p$-values obtained through a profile likelihood fit.
 
 \subsection{Exclusion Limits}
 
@@ -48,40 +48,65 @@ We then define the $CL_s$ upper limit as
 
 % Observed limits
 We derive 95\% CL upper limits on the resonance production cross section times branching ratio to \WW, \WZ, or \WH as a function of the mass hypothesis \MX for a narrow resonance, and compare them to expected cross sections from the benchmark models where available.
-The resulting limits are shown in figures~\ref{fig:exclusion_limits_spin0}, \ref{fig:exclusion_limits_spin1}, and \ref{fig:exclusion_limits_spin2} for the spin-0, spin-1, and spin-2 signal models, respectively.
+We also obtain the corresponding local $p$-values as a function of \MX.
+The resulting limits and local $p$-values are shown in figures~\ref{fig:limits_pvalue_spin0}, \ref{fig:limits_pvalue_spin1_neut}, \ref{fig:limits_pvalue_spin1_char}, and \ref{fig:limits_pvalue_spin2} for the spin-0, spin-1, and spin-2 signal models.
 These limits are obtained for the combination of all 24 search categories, showing the observed and median expected limits with the 68\% and 95\% expected bands.
 
+% Observed excesses
+No significant excess is observed for the \ggF and \VBF spin-0 and spin-2 signals, nor for the \DY spin-1 signals.
+However, a possible excess is observed for the \VBF spin-1 signals for both the neutral and charged signal models.
+The excesses for both signal models occur at $1\unit{TeV}$, with the largest $p$-value occurring in the \VBF\ZprtoWW model with $3.3\sigma$ local significance.
+While this warrants further investigation in future analyses, this does not meet the required $5\sigma$ threshold for discovery as of this writing.
+
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_RadToWW_o_74.pdf}
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_VBFRadToWW_o_74.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_RadToWW.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_RadToWW.pdf}\\
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_VBFRadToWW.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFRadToWW.pdf}
   \caption{
-    Exclusion limits on the product of the production cross section with the branching ratio for a new neutral spin-0 resonance produced via gluon-gluon fusion (left) or vector boson fusion (right) and decaying to \WW, as a function of the resonance mass hypothesis \MX.
+    Exclusion limits on the product of the production cross section with the branching ratio (left) and $p$-values (right) for a new neutral spin-0 resonance produced via gluon-gluon fusion (top row) or vector boson fusion (bottom row) and decaying to \WW, as a function of the resonance mass hypothesis \MX.
   }
-  \label{fig:exclusion_limits_spin0}
+  \label{fig:limits_pvalue_spin0}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_ZprToWW_o_74.pdf}
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_WprToWH_o_74.pdf}
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_WprToWZ_o_74.pdf}\\
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_VBFZprToWW_o_74.pdf}
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_VBFWprToWZ_o_74.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_ZprToWW.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_ZprToWW.pdf}\\
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_VBFZprToWW.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFZprToWW.pdf}
   \caption{
-    Exclusion limits on the product of the production cross section with the branching ratio for a new neutral spin-1 resonance produced via Drell-Yan (top left) or vector boson fusion (bottom left) and decaying to \WW, for a new charged spin-1 resonance produced via Drell-Yan (top center) and decaying to \WH, and for a new charged spin-1 resonance produced via Drell-Yan (top right) or vector boson fusion (bottom right) and decaying to \WZ, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a \Wpr or \Zpr from HVT model B (for \DY)  or HVT model C with $c_\mathrm{H}=3$ (for \VBF).
+    Exclusion limits on the product of the production cross section with the branching ratio (left) and $p$-values (right) for a new neutral spin-1 resonance produced via Drell-Yan (top row) or vector boson fusion (bottom row) and decaying to \WW, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a \Zpr from HVT model B (for \DY) or HVT model C with $c_\mathrm{H}=3$ (for \VBF).
     The signal cross section uncertainties are shown as red cross-hatched bands.
   }
-  \label{fig:exclusion_limits_spin1}
+  \label{fig:limits_pvalue_spin1_neut}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_RadToWW_o_74.pdf}
-  \includegraphics[width=0.3\textwidth]{fig/results/limits_VBFRadToWW_o_74.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_WprToWH.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_WprToWH.pdf}\\
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_WprToWZ.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_WprToWZ.pdf}\\
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_VBFWprToWZ.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFWprToWZ.pdf}\\
   \caption{
-    Exclusion limits on the product of the production cross section with the branching ratio for a new neutral spin-2 resonance produced via gluon-gluon fusion (left) or vector boson fusion (right) and decaying to \WW, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a spin-2 bulk graviton with curvature $\tilde{k}=0.5$.
+    Exclusion limits on the product of the production cross section with the branching ratio (left) and $p$-values (right) for a new charged spin-1 resonance produced via Drell-Yan (top row) and decaying to \WH, and for a new charged spin-1 resonance produced via Drell-Yan (middle row) or vector boson fusion (bottom row) and decaying to \WZ, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a \Wpr from HVT model B (for \DY) or HVT model C with $c_\mathrm{H}=3$ (for \VBF).
     The signal cross section uncertainties are shown as red cross-hatched bands.
   }
-  \label{fig:exclusion_limits_spin2}
+  \label{fig:limits_pvalue_spin1_char}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_RadToWW.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_RadToWW.pdf}\\
+  \includegraphics[width=0.33\textwidth]{fig/results/limits_VBFRadToWW.pdf}
+  \includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFRadToWW.pdf}\\
+  \caption{
+    Exclusion limits on the product of the production cross section with the branching ratio (left) and $p$-values (right) for a new neutral spin-2 resonance produced via gluon-gluon fusion (top row) or vector boson fusion (bottom row) and decaying to \WW, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a \GBulk with curvature $\tilde{k}=0.5$.
+    The signal cross section uncertainties are shown as red cross-hatched bands.
+  }
+  \label{fig:limits_pvalue_spin2}
 \end{figure}
