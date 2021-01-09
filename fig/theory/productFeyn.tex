@@ -1,0 +1,118 @@
+% !TEX root = ../../thesis.tex
+\begin{tikzpicture}
+  \begin{feynman}
+    % Vertices
+    \coordinate (q1) at (-1.5,1.25);
+    \coordinate (q2) at (0,1);
+    \coordinate (q3) at ($(q2)+(11.5:4.75)$);
+    \coordinate (q4) at (-1.5,-1.25);
+    \coordinate (q5) at (0,-1);
+    \coordinate (q6) at ($(q5)+(-11.5:4.75)$);
+    \coordinate (v1) at (1,0);
+    \coordinate (x1) at (2.25,0);
+    \coordinate (v2) at (3.5,0.75);
+    \coordinate (v3) at (3.5,-0.75);
+    \coordinate (q7) at ($(v2)+(15:1.25)$);
+    \coordinate (q8) at ($(v2)+(-15:1.25)$);
+    \coordinate (l1) at ($(v3)+(15:1.25)$);
+    \coordinate (l2) at ($(v3)+(-15:1.25)$);
+
+    \coordinate (g1) at ($(8,0)+(135:2.25)$);
+    \coordinate (g2) at ($(8,0)+(225:2.25)$);
+    \coordinate (x2) at (8,0);
+    \coordinate (x3) at ($(8,0)+(1.5,0)$);
+    \coordinate (v4) at ($(x3)+(45:1.5)$);
+    \coordinate (v5) at ($(x3)+(-45:1.5)$);
+    \coordinate (q9) at ($(v4)+(25:1.5)$);
+    \coordinate (q10) at ($(v4)+(-25:1.5)$);
+    \coordinate (l3) at ($(v5)+(25:1.5)$);
+    \coordinate (l4) at ($(v5)+(-25:1.5)$);
+
+    \coordinate (q11) at ($(g1)+(-4,-5)$);
+    \coordinate (q12) at ($(g2)+(-4,-5)$);
+    \coordinate (x4) at ($(x2)+(-4,-5)$);
+    \coordinate (x5) at ($(x3)+(-4,-5)$);
+    \coordinate (v6) at ($(v4)+(-4,-5)$);
+    \coordinate (v7) at ($(v5)+(-4,-5)$);
+    \coordinate (q13) at ($(q9)+(-4,-5)$);
+    \coordinate (q14) at ($(q10)+(-4,-5)$);
+    \coordinate (l5) at ($(l3)+(-4,-5)$);
+    \coordinate (l6) at ($(l4)+(-4,-5)$);
+
+    % Lines
+    \draw[fermion] (q1) -- (q2);
+    \draw[fermion] (q2) -- (q3);
+    \draw[fermion] (q4) -- (q5);
+    \draw[fermion] (q5) -- (q6);
+    \draw[boson] (q2) -- (v1) node[pos=0.65,xshift=-0.5cm] {$Z$};
+    \draw[boson] (q5) -- (v1) node[pos=0.65,xshift=-0.5cm] {$Z$};
+    \draw[scalar] (v1) -- (x1) node[pos=0.5,above] {$X$};
+    \draw[boson] (x1) -- (v2) node[pos=0.9,xshift=-0.5cm] {$W$};
+    \draw[boson] (x1) -- (v3) node[pos=0.9,xshift=-0.5cm] {$W$};
+    \draw[fermion] (v2) -- (q7);
+    \draw[fermion] (q8) -- (v2);
+    \draw[fermion] (v3) -- (l1);
+    \draw[fermion] (l2) -- (v3);
+
+    \draw[gluon] (x2) -- (g1);
+    \draw[gluon] (x2) -- (g2);
+    \draw[boson] ($(x2)+(0,-0.025)$) -- ($(x3)+(0,-0.025)$);
+    \draw[boson] ($(x2)+(0,0.025)$) -- ($(x3)+(0,0.025)$) node[pos=0.5,above] {$X$};
+    \draw[boson] (x3) -- (v4) node[pos=0.75,xshift=-0.5cm] {$W$};
+    \draw[boson] (x3) -- (v5) node[pos=0.75,xshift=-0.5cm] {$W$};
+    \draw[fermion] (v4) -- (q9);
+    \draw[fermion] (q10) -- (v4);
+    \draw[fermion] (v5) -- (l3);
+    \draw[fermion] (l4) -- (v5);
+
+    \draw[fermion] (q11) -- (x4);
+    \draw[fermion] (x4) -- (q12);
+    \draw[boson] (x4) -- (x5) node[pos=0.5,above] {$X$};
+    \draw[scalar] (x5) -- (v6) node[pos=0.75,xshift=-0.5cm] {$H$};
+    \draw[boson] (x5) -- (v7) node[pos=0.75,xshift=-0.5cm] {$W$};
+    \draw[fermion] (v6) -- (q13);
+    \draw[fermion] (q14) -- (v6);
+    \draw[fermion] (v7) -- (l5);
+    \draw[fermion] (l6) -- (v7);
+
+    % Blobs
+    \fill[white] (v1) circle (0.2);
+    \fill[white] (x1) circle (0.2);
+    \draw[pattern=north west lines] (v1) circle (0.2);
+    \draw[pattern=north west lines] (x1) circle (0.2);
+
+    \fill[white] (x2) circle (0.2);
+    \fill[white] (x3) circle (0.2);
+    \draw[pattern=north west lines] (x2) circle (0.2);
+    \draw[pattern=north west lines] (x3) circle (0.2);
+
+    \fill[white] (x4) circle (0.2);
+    \fill[white] (x5) circle (0.2);
+    \draw[pattern=north west lines] (x4) circle (0.2);
+    \draw[pattern=north west lines] (x5) circle (0.2);
+
+    % Label
+    \node[anchor=mid,left] at (q1) {$q''$};
+    \node[anchor=mid,left] at (q4) {$q'''$};
+    \node[anchor=mid,right] at (q3) {$q''$};
+    \node[anchor=mid,right] at (q6) {$q'''$};
+    \node[anchor=mid,right] at (q7) {$q$};
+    \node[anchor=mid,right] at (q8) {$\bar{q}'$};
+    \node[anchor=mid,right] at (l1) {$\ell$};
+    \node[anchor=mid,right] at (l2) {$\nu$};
+
+    \node[anchor=mid,left] at (g1) {$g$};
+    \node[anchor=mid,left] at (g2) {$g$};
+    \node[anchor=mid,right] at (q9) {$q$};
+    \node[anchor=mid,right] at (q10) {$\bar{q}'$};
+    \node[anchor=mid,right] at (l3) {$\ell$};
+    \node[anchor=mid,right] at (l4) {$\bar{\nu}$};
+
+    \node[anchor=mid,left] at (q11) {$q$};
+    \node[anchor=mid,left] at (q12) {$\bar{q}'$};
+    \node[anchor=mid,right] at (q13) {$b$};
+    \node[anchor=mid,right] at (q14) {$\bar{b}$};
+    \node[anchor=mid,right] at (l5) {$\ell$};
+    \node[anchor=mid,right] at (l6) {$\bar{\nu}$};
+  \end{feynman}
+\end{tikzpicture}

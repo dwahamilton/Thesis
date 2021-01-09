@@ -1,0 +1,18 @@
+% !TEX root = ../../thesis.tex
+\begin{tikzpicture}
+  \begin{feynman}
+    % Fermion loop
+    \draw[scalar] (0,0) node[left] {$H$} -- (1.5,0);
+    \draw[fermion] (3,0) arc (0:180:0.75);
+    \draw[fermion] (1.5,0) arc (180:360:0.75);
+    \draw[scalar] (3,0) -- (4.5,0);
+
+    % Scalar loop
+    \draw[scalar] (6,-0.75) node[left] {$H$} -- (10.5,-0.75);
+    \draw[scalar] (8.25,0) circle (0.75);
+
+    % Labels
+    \node[above] at (2.25,0.75) {$f$};
+    \node[above] at (8.25,0.75) {$S$};
+  \end{feynman}
+\end{tikzpicture}

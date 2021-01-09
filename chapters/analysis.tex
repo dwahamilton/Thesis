@@ -1,6 +1,6 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Search for a Heavy Diboson Resonance Produced via Vector Boson Fusion}
+\chapter{Search for a Heavy Diboson Resonance}
 \label{chap:analysis}
 
 \section{Introduction}
@@ -8,29 +8,12 @@
 % Motivation of analysis from theory chapter
 In chapter~\ref{chap:theory}, we explored some of the motivation behind BSM searches and examples of BSM theories that predict exotic new particles that may be found in collision events at accelerator facilities.
 We also enumerated some of the benchmark models from BSM theories, which were the spin-0 Kaluza-Klein Radion, spin-1 \Wpr/\Zpr boson, and spin-2 Bulk Graviton.
-Additionally, we discussed the \VBF production mode that this work focuses on, and the final state that is produced.
+Additionally, we discussed the three production modes that this work focuses on (\VBF, \ggF, and \DY), and the final state that is produced.
 
 % Previous searches
 Previous searches have been conducted for dibosonic resonances at both CMS and ATLAS, although none have found evidence of such a resonance being observed at the LHC~\cite{Sirunyan_18,Aaboud_18,Aaboud_18_2,Aad_15,Khachatryan_14,Sirunyan_17,Sirunyan_17_2,atlas20}.
 Some of these searches also considered different production modes, as well as other intermediate and final states, such as a \ZZ/\ZH resonance with fully leptonic or hadronic final states.
 As mentioned in section~\ref{sec:VBF}, this analysis is itself a continuation of a previous search by the CMS collaboration for a dibosonic resonance using data from 2016.
-
-% VBF analysis as part of the main analysis
-While this work focuses on the \VBF production mode, it is one of three modes considered for the full diboson analysis using the Run 2 data.
-The other two modes considered involve gluon-gluon fusion (\ggF) and Drell-Yan (\DY) processes.
-These additional modes produce identical \lnuqqbarprp and \lnubbbar semileptonic final states, but without the \VBF jets in the forward regions of the detector.
-For completeness, we include the full diboson analysis with the non-\VBF production categories in this chapter.
-Figure~\ref{fig:nonVbf} shows some example Feynman diagrams of other processes that were considered for the full analysis.
-
-\begin{figure}[htbp]
-  \centering
-  \input{fig/analysis/nonVbf.tex}
-  \caption{
-    Examples of additional production processes considered in the full analysis that includes non-\VBF production modes.
-    We also consider a gluon-gluon fusion process such as a neutral spin-2 resonance decaying to \WW (left), and a Drell-yan process such as a charged spin-1 resonance decaying to \WH (right).
-  }
-  \label{fig:nonVbf}
-\end{figure}
 
 % Details of reconstructing events
 In subsection~\ref{subsec:expEvent} we discussed the expected event structure for the decay events of interest, in which the leptonic decay of the $W$ boson results in an $e\nu$ or $\mu\nu$ pair with large missing transverse energy from the neutrino, the hadronic decay of the \VorH boson results in a large single jet with substructure, and \VBF processes produce forward-facing jets.
@@ -52,14 +35,14 @@ This also allows for conducting a simultaneous search of \WW, \WZ, and \WH reson
   \input{fig/analysis/bkg.tex}
   \caption{
     Example Feynman diagrams of the two types of SM sources of background to consider for the search.
-    Both cases produce a final state that is similar to the expected final state produced by the \VBF signal process.
+    Both cases produce a final state that is similar to the expected final state produced by the \ggF, \DY, and \VBF processes for the benchmark signal models.
     The most common background is a \Wjets process (left), followed by a \WVt process (right).
   }
   \label{fig:bkgFeynman}
 \end{figure}
 
 % Chapter overview (rewrite)
-For this chapter, we examine the complete analysis process of the search for a dibosonic resonance produced in proton-proton collisions at the LHC with center-of-mass energies of $\sqrt{s}=13\unit{TeV}$.
+For this chapter, we examine the complete analysis process of the search for a dibosonic resonance produced in proton collisions at the LHC with center-of-mass energies of $\sqrt{s}=13\unit{TeV}$.
 The data used in this analysis were collected over Run 2 with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$, respectively.
 Section~\ref{sec:samples} provides an overview of the data and Monte Carlo (MC) simulation samples that were used for the analysis.
 In section~\ref{sec:events}, we discuss the selection cuts used to determine which events are used from the data and simulation samples, and we enumerate the event categories that are used in the analysis.

@@ -1,6 +1,6 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Theory and Motivation for Searching for a Dibosonic Resonance}
+\chapter{Theory and Motivation for Searching for a Heavy New Resonance}
 \label{chap:theory}
 
 \section{Introduction}
@@ -19,7 +19,7 @@ The Standard Model is the resulting theory that came about by combining EW theor
 
 % Problems with the SM
 Today, the Standard Model remains as the dominant theory describing three of the four known forces, with gravity excluded due to its inability to be renormalized when approached as a quantum field theory.
-The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs completing the family after being discovered in the summer of 2012. % Perhaps reword
+The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs completing the family after being discovered in the summer of 2012.
 However, despite the success of this theory, many fundamental questions of physics still remain unanswered.
 As previously mentioned in chapter~\ref{chap:intro}, the theory does not include gravity, as it only accounts for the electromagnetic, strong, and weak nuclear forces.
 It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory currently is incapable of addressing, such as the hierarchy problem~\cite{krippendorf2010cambridge}.
@@ -45,7 +45,7 @@ Each elementary particle and antiparticle is associated with a field, individual
 % The elementary particles
 The Standard Model describes the interactions between 17 elementary particles, which are classified by quarks, leptons, gauge bosons, and scalar bosons.
 A table of all particles described by the theory can be seen in figure~\ref{fig:standardModel}, labeled with their masses, charges, and spins~\cite{PhysRevD.98.030001}, with the fermions grouped by generation.
-Quarks and leptons are classified as fermions since they have half-integer values for their spin, while the scalar and gauge bosons are eponymously named for the fact that they are bosons and therefore have integer values for their spin. % Check wording
+Quarks and leptons are classified as fermions since they have half-integer values for their spin, while the scalar and gauge bosons are eponymously named for the fact that they are bosons and therefore have integer values for their spin.
 
 \begin{figure}[htbp]
   \centering
@@ -67,7 +67,7 @@ These are just two of the many different combinations of composite particles tha
 
 % Combinations of quarks
 There are two main combinations of quarks to consider: mesons and baryons.
-Mesons are composed of one quark and an antiquark, and baryons are composed of three quarks or three antiquarks. % Mention recently observed pentaquark?
+Mesons are composed of one quark and an antiquark, and baryons are composed of three quarks or three antiquarks.
 For example, pions ($\pi^0$/$\pi^\pm$) were the first mesons to be observed, and can be electrically charged when comprised only of up or down quark-antiquark pairs (i.e., a $\pi^+$ is made from the combination $u\bar{d}$, and a $\pi^-$ is made from $d\bar{u}$), or it can be electrically neutral (i.e., a $\pi^0$ is made from $u\bar{u}$ or $d\bar{d}$).
 On the other hand, protons and neutrons are examples of baryons, as they are each made of three quarks.
 Both baryons and mesons are examples of hadrons: bound states of quarks.
@@ -85,7 +85,6 @@ The electron is the most familiar lepton, as it is a component of the atoms that
 However, it also has two heavier cousins: the muon and the tau.
 Both of these particles have the same charge as the electron, but their masses are much larger.
 Finally, leptons also include neutrinos, which are extremely light particles that have no electric charge, and therefore only interact via the weak force.
-% Possibly elaborate
 
 \subsubsection{Gauge Bosons}
 
@@ -96,16 +95,15 @@ Gluons are massless particles that mediate the strong nuclear force, and they on
 Photons are the most familiar example of the gauge bosons, as we can quite literally see them since light is made of photons.
 They are masses particles that mediate the electromagnetic force, and they interact with any particle that is electrically charged.
 Finally, the $Z$ and $W$ bosons are massive particles that mediate the weak nuclear force, which is responsible for radioactive decay.
-% Possibly elaborate
 
 \subsubsection{Scalar Bosons}
 
 % Scalar bosons
 The last category of bosons to consider is the scalar bosons, which are spin-0 particles.
 This family contains only one member: the Higgs boson.
-The need for the Higgs boson arises due to the fact that all of the previously mentioned particles do not have intrinsic masses.
-Rather, the Higgs is responsible for giving all massive Standard Model particles their masses, with the exception of the neutrinos.
-This occurs through the Higgs mechanism, in which spontaneous symmetry breaking and gauge invariance cause the Higgs field to interact with the other fields in the Standard model, thereby imparting the observed masses onto the particles. % Check wording
+The need for the Higgs boson arises due to the fact the previously mentioned massive gauge bosons ($W$ and $Z$) do not have intrinsic masses.
+Rather, the Higgs is responsible for giving the massive gauge bosons their masses.
+This occurs through the Higgs mechanism, in which spontaneous symmetry breaking and gauge invariance cause the Higgs field to interact with the $W$ and $Z$ fields in the Standard model, thereby imparting the observed masses onto the particles.
 
 \subsection{Mathematical Structure of the Standard Model}
 
@@ -115,7 +113,7 @@ Each term in this Lagrangian must be Lorentz invariant in order for the Lagrangi
 The terms present in $\mathcal{L}_\mathrm{SM}$ allow us to compute probability amplitudes for particle production and decay processes through the method of Feynman diagrams.
 The Standard Model is also a non-abelian gauge theory, in which the internal symmetry group is $SU(3)_C\times SU(2)_L\times U(1)_Y$~\cite{Srednicki:1019751}.
 The $SU(3)_C$ symmetry group corresponds to the QCD interactions of the quarks and gluons, while the $SU(2)_L\times U(1)_Y$ group corresponds to the electroweak interactions.
-The symmetries of these groups lead to conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$. %\footnote{Electric charge $Q$ arises as a linear combination of $T_3$ and $Y_W$ given by $Q=T_3+\frac{1}{2}Y_W$.}. % Check wording
+The symmetries of these groups lead to conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$. %\footnote{Electric charge $Q$ arises as a linear combination of $T_3$ and $Y_W$ given by $Q=T_3+\frac{1}{2}Y_W$.}.
 
 \subsubsection{Lagrangian Formalism}
 
@@ -336,23 +334,37 @@ Figure~\ref{fig:hierarchy} shows the comparison between the Planck scale, the el
   \label{fig:hierarchy}
 \end{figure}
 
+% Correcting the Higgs mass
+The issues caused by the hierarchy problem are more apparent when considering the mass corrections to the Higgs.
+The Higgs mass $m_H$ is corrected through one-loop Feynman diagrams that are proportional to $m_H^2$~\cite{Martin_1998}, two examples of which can be seen in figure~\ref{fig:higgsFeyn}.
+Such corrections require a momentum cutoff $\Lambda$ when evaluating the loop integrals obtained from the diagrams, and if the cutoff is on the same order as $m_P$, the correction to $m_H^2$ ends up being far larger than the required value.
+While this effect only directly applies to $m_H^2$, the rest of the massive SM particles are indirectly sensitive to the cutoff $\Lambda$ due to the fact that they gain their masses through the vacuum expectation value of the Higgs field $\ev{H}$, meaning that the mass spectrum of the SM is sensitive to $\Lambda$.
+It also does not suffice to simply pick a sufficiently small cutoff, as this requires new physics at the energy scale of $\Lambda$ to change the behavior of the propagators in the one-loop mass correction terms.
+
+\begin{figure}[htbp]
+  \centering
+  \input{fig/theory/higgsFeyn.tex}
+  \caption{
+    One-loop Feynman diagrams with a Higgs coupling to a fermion $f$ (left), and a scalar $S$ (right).
+    Such diagrams contribute quadratic corrections $m_H^2$ to the Higgs mass.
+  }
+  \label{fig:higgsFeyn}
+\end{figure}
+
 % Addressing the hierarchy problem
-In the absence of some mechanism that resolves this problem, we are left with having to fine-tune parameters of the Standard Model in order to account for the large difference between the EW scale and the Planck scale. % Check wording
+In the absence of some mechanism that resolves this issue, we are left with having to fine-tune parameters of the Standard Model in order to resolve the hierarchy problem.
 On the other hand, some BSM theories seek to address this problem in a more natural manner that does not require such fine-tuning.
 Such theories result in new physics that may be experimentally verified, with some predicting the existence of new heavy particles that could be detected in collision events at the LHC.
-% Possibly mention the hierarchy problem in terms of renormalizing the Higgs mass
 
-% Possibly irrelevant and may need to comment out
 \subsubsection{Supersymmetric Theories}
 
 % Supersymmetry
 Supersymmetry extends the notion of local symmetry to fermionic and bosonic fields, suggesting that there are symmetry transformations that mix the fields into each other~\cite{Wess197452}.
 SUSY theories suggest that every known fermion has a corresponding bosonic partner, and every known boson has a corresponding fermionic partner.
-For example, the electron would have a spin-0 supersymmetric partner known as the `selectron', and there would be other supersymmetric partners such as `squarks' and `sneutrinos'~\cite{Martin_1998}.
+For example, the electron would have a spin-0 supersymmetric partner known as the `selectron', and there would be other supersymmetric partners such as `squarks' and `sneutrinos'.
 Bosonic particles would have partners such as the `photoino', `gluino', 'wino', and 'zino'.
 However, one main issue is that no such supersymmetric partners have been identified, and the simplest models predict that they should have the same mass as their SM partners.
 This suggests that if there is a supersymmetric theory that turns out to be correct, there must be a spontaneously broken symmetry mechanism that causes supersymmetric partners to differ in mass from their SM partners~\cite{dine_2007}.
-% Elaborate on ongoing searches and particles that could be produced
 
 \subsubsection{Grand Unified Theories}
 
@@ -364,13 +376,12 @@ The first example of a GUT was the Georgi-Glashow model that was based on the $S
 A unique aspect of such theories is that they often predict that the proton is unstable and can decay due to new gauge bosons that couple quarks to leptons\footnote{Such particles are often called `leptoquarks'~\cite{Diaz_2017}.}.
 However, proton decay has not been observed~\cite{PhysRevLett.81.3319}, and the current lower bound for the lifetime of the proton is inconsistent with the Georgi-Glashow model.
 Despite this, there are still other models based on more complex groups, such as $E_6$~\cite{Hewett1989193} or $SO(10)$~\cite{Cveti__1997}, that are candidates for further investigation.
-% Elaborate on how such theories resolve the hierarchy problem
 
 \subsubsection{Warped Extra Dimensions}
 
 % Warped extra dimensions
 There are many BSM theories that suggest that there are extra spatial dimensions, some of which are based on work done well before the formulation of the Standard Model.
-Classical Kaluza-Klein theory has its roots in the early 20th century, and like RS models, its main feature is the addition of a fourth spatial dimension~\cite{1921spaw966K}.
+Classical Kaluza-Klein theory has its roots in the early 20th century, and its main feature is the addition of a fourth spatial dimension~\cite{1921spaw966K}.
 It is a unified field theory that combines gravity and electromagnetism, and it rests on the idea that the extra spatial dimension is compactified in such a way that makes it experimentally difficult to observe.
 The integration of electromagnetism into the theory neatly follows from symmetry considerations due to the extra spatial dimension.
 
@@ -380,22 +391,22 @@ Randall-Sundrum (RS) models are examples of this, which propose that there is an
 These models are based on the idea that the spatial dimensions of the universe are restricted to a brane embedded within a higher-dimensional space known as the ``bulk.''
 In such a framework, the elementary particles---except for the graviton---are localized in (3+1)-dimensional branes, while the graviton is able to propagate in the bulk.
 The warped geometry is such that there are two branes in these models: the Tevbrane where the SM particles are localized, and the Planckbrane where the gravitational force becomes much stronger.
-% Possibly elaborate
 
 \section{Search for a Heavy Diboson Resonance}
 \label{sec:VBF}
 
 % Search for a heavy diboson resonance
-This thesis presents results on the search for a new heavy $X$ resonance produced through vector boson fusion (\VBF), with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
+This thesis presents results on the search for a new heavy $X$ resonance, with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
 The decays of interest are \XtoWV and \XtoWH, where $V=W,Z$ is any of the two massive electroweak vector bosons and $H$ is a Higgs boson.
-We consider semileptonic final event states in which the $W$ decays leptonically via \Wtolnu, the other vector boson decays hadronically through the process \Vtoqqbarpr and is reconstructed as a single massive jet, and there are two forward-facing jets resulting from the \VBF production process.
+We consider semileptonic final event states in which the $W$ decays leptonically via \Wtolnu, as this provides a clean experimental signature and an efficient online event selection.
+The other vector boson decays hadronically through the process \Vtoqqbarpr and is reconstructed as a single massive jet, and there are two forward-facing jets resulting from vector boson fusion (\VBF) production processes.
 
 % Previous work
 This work is motivated in part by models such as those mentioned in subsection~\ref{subsec:BSM}, and is a continuation of a previous search using the 2016 data collected by the LHC during Run 2~\cite{Sirunyan_18}.
 The previous analysis was conducted using only two benchmark signal models, and it was agnostic to the method of production for an $X$ resonance.
-This work instead uses four benchmark signal models and is specific to a \VBF production mode for the heavy resonance.
+This work instead uses four benchmark signal models and considers multiple production methods.
 
-\subsection{Benchmark Models}
+\subsection{Narrow Resonance Models}
 \label{subsec:benchmark}
 
 % List of signal models used
@@ -411,31 +422,35 @@ This search covers spin-0, spin-1, and spin-2 bosonic resonances, and is based o
 
 % Motivation for using signal models
 These benchmarks cover a wide range of possibilities for candidate BSM bosonic resonances to be discovered.
+The models used also assume a narrow resonance, which means that the internal width of the resonance is smaller than the resolution of the experiment.
 Despite the variety in signal models, they may all result in similar semileptonic final states, thereby allowing the analysis to be model independent.
-Furthermore, based on previous searches that have been conducted, they are all expected to be in the TeV mass range. % Citations (check 2018 paper that references this in the introduction)
+Furthermore, based on previous searches that have been conducted, they are all expected to be in the TeV mass range.
 
 \subsection{Expected Event Structure}
 \label{subsec:expEvent}
 
 % Event structure
 The decay processes \XtoWVtolnuqqbarpr and \XtoWHtolnubbbar were selected due to the fact that one-lepton events are ideal for such an analysis, as the final states that are generated provide a clean signal that suppresses background.
-The \VBF production channel was also selected to further suppress background and identify signal events since the \VBF process uniquely results in forward-facing jets~\cite{rauch2016vectorboson}.
-Examples of Feynman diagrams for the \VBF production process of an $X$ resonance with the resulting final states can be seen in figure~\ref{fig:vbfFeynman}.
+Three production modes are considered based on the benchmark models used: vector boson fusion (\VBF), gluon-gluon fusion (\ggF), and Drell-Yan (\DY) production.
+The \VBF production channel was selected to further suppress background and identify signal events since the \VBF process uniquely results in forward-facing jets~\cite{rauch2016vectorboson}, and all benchmark models used in the analysis are capable of this production mechanism.
 Such a process has been used in the past as one of the discovery channels for the Higgs boson, and it remains an important class of events at the LHC.
+The \ggF and \DY production modes produce identical \lnuqqbarprp and \lnubbbar semileptonic final states, but without the \VBF jets in the forward regions of the detector.
+The spin-0 Kaluza-Klein radion and spin-2 bulk graviton models both have \ggF production modes, while the spin-1 \Wpr and \Zpr models can be produced via a \DY process.
+Examples of Feynman diagrams for all three production processes of an $X$ resonance with the resulting final states can be seen in figure~\ref{fig:productFeynman}.
 
 \begin{figure}[htbp]
   \centering
-  \input{fig/theory/vbf.tex}
+  \input{fig/theory/productFeyn.tex}
   \caption{
-    Feynman diagrams for production via vector boson fusion of a neutral spin-2 resonance $X$ decaying to the final state \lnuqqbarpr (left), and a charged spin-1 resonance decaying to the final state \lnubbbar (right), both with additional forward-facing jets due to the \VBF production process.
-    The search for an $X$ boson will involve looking for a final state in which there are jets from the \VBF production process present, along with a single merged jet from the \VorH boson, and a lepton $\ell$ with its corresponding neutrino $\nu$ produced from the $W$ decay.
+    Feynman diagrams for production via vector boson fusion of a neutral spin-0 resonance $X$ decaying to the final state \lnuqqbarpr (top left), gluon-gluon fusion for a spin-2 resonance $X$ decaying to the final state \lnuqqbarpr (top right), and a Drell-Yan process for a charged spin-1 resonance $X$ decaying to the final state \lnubbbar (bottom).
+    The search for an $X$ boson will involve looking for a final state in which there is a single merged jet from the \VorH boson, a lepton $\ell$ with its corresponding neutrino produced from the $W$ decay, and forward-facing jets for \VBF production processes.
   }
-  \label{fig:vbfFeynman}
+  \label{fig:productFeynman}
 \end{figure}
 
 % Event topology
 Because the expected mass of the bosonic resonance lies in the TeV range, the final event state has a highly boosted topology, which is illustrated in figure~\ref{fig:eventTop}.
-The two initial state quarks from the \VBF process in the diagram of figure~\ref{fig:vbfFeynman} result in two forward-facing jets in the final state that are highly energetic and collimated.
+The two initial state quarks from the \VBF process in the diagram of figure~\ref{fig:productFeynman} result in two forward-facing jets in the final state that are highly energetic and collimated.
 Meanwhile, the lepton-neutrino pair from the \Wtolnu decay will have momenta opposite to that of the jet that results from the hadronic decay of the \VorH boson.
 The jet from the \Vtoqqbarpr or \Htobbbar decay will also have two-pronged substructure since the decay results in a quark-antiquark pair.
 Lastly, both the lepton-neutrino pair and the jet will be highly collimated since the $W$ and \VorH bosons that produced them will have momenta of several hundred GeV or above.
@@ -444,10 +459,10 @@ Lastly, both the lepton-neutrino pair and the jet will be highly collimated sinc
   \centering
   \input{fig/theory/eventTop.tex}
   \caption{
-    Illustration of event topology for \VBF collision events of interest in the CMS detector.
+    Illustration of event topology for collision events of interest in the CMS detector.
     The semi-leptonic final state produces a $W$ boson that decays via \Wtolnu and produces the lepton-neutrino pair.
     Opposite to that is a single massive jet with two-pronged substructure that is produced via \Vtoqqbarpr or \Htobbbar.
-    Finally, the \VBF production process results in two forward-facing jets, labeled by $q^{(\prime)\prime\prime}$ and $q^{(\prime)\prime\prime\prime}$.
+    Finally, the \VBF production process results in two forward-facing jets, labeled by $q^{(\prime)\prime\prime}$ and $q^{(\prime)\prime\prime\prime}$, which are colored red.
   }
   \label{fig:eventTop}
 \end{figure}

@@ -1,7 +1,7 @@
 % !TEX root = ../thesis.tex
 
 \chapter{Reconstructing Muons in Real Time at the High Luminosity Large Hadron Collider}
-\label{chap:appendixTPS}
+\label{chap:TPS}
 
 \section{Introduction}
 
@@ -18,8 +18,8 @@ It was conceived as a replacement for the legacy Drift Tube Track Finder (DTTF),
 The BMTF instead receives superprimitives made from a combination of DT and RPC primitives, which provides better resolution and trigger rates compared to the DTTF.
 However, as with other components of the CMS detector, the BMTF is slated to be replaced by newer hardware that offers improvements in performance.
 
-% Appendix overview
-In this appendix, we present work towards the implementation of a novel algorithm for reconstructing muon tracks in real time at the LHC.
+% Chapter overview
+In this chapter, we present work towards the implementation of a novel algorithm for reconstructing muon tracks in real time at the LHC.
 In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector for Phase 2 that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
 Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, which will allow for the reconstruction of muon tracks in real time at the L1 Trigger level.
 
@@ -50,7 +50,7 @@ Figure~\ref{fig:P2L1trigger} shows the new architecture of the L1 Trigger that i
 The prospect of more interactions per bunch crossing is also met with the demand for improvements to muon track reconstruction and resolution.
 New algorithms are being developed in order to take advantage of the higher maximum bandwidth and the new track finder in the L1 Trigger.
 Some make use of techniques such as Kalman Filters, with an algorithm that can be implemented onto FPGAs for the track trigger~\cite{Amstutz:2194514}, or another for the muon trigger known as the Kalman Barrel Muon Track Finder (KBMTF)~\cite{Bachtis:2648953}.
-The work presented in this appendix instead relies on a novel approach to reconstructing muon tracks that uses both the track finder and the muon trigger.
+The work presented in this chapter instead relies on a novel approach to reconstructing muon tracks that uses both the track finder and the muon trigger.
 
 \section{The Tracks Plus Stubs Algorithm}
 \label{sec:TPS}
