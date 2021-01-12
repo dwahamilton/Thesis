@@ -80,7 +80,8 @@ From this, the algorithm can construct a candidate muon track, which is a combin
 % Transverse momentum in a uniform magnetic field
 One of the defining characteristics of the CMS detector is the $3.8\unit{T}$ solenoidal magnetic field that is aligned with the beam axis.
 In a uniform magnetic field $B$, a charged particle of charge $q$ with momentum transverse to the magnetic field \pt will experience an induced centripetal force due to the Lorentz force that the magnetic field exerts on the charge.
-This in turn defines a radius of orbit $R$ for the charge, which is related to the transverse momentum \pt by the relation $\pt=qBR$. It is typical in particle physics to convert the units of the elementary charge so that in terms of $B$ and $R$, we have
+This in turn defines a radius of orbit $R$ for the charge, which is related to the transverse momentum \pt by the relation $\pt=qBR$.
+It is typical in particle physics to convert the units of the elementary charge so that in terms of $B$ and $R$, we have
 \begin{equation}\label{eq:pt}
   \pt=0.3BR\unit{GeV/\clight}.
 \end{equation}
@@ -95,7 +96,8 @@ Assuming that the track starts in the center of the beamline as in figure~\ref{f
   y(x)=\frac{x^2}{2R}+bx,
 \end{equation}
 where $R$ is the radius of curvature as in Eq.~\ref{eq:pt}, and $b$ is a constant to be determined.
-First, observe that at the origin, the tangent of the initial angle $\phi_0$ corresponds to the first derivative of~\ref{eq:para} evaluated at $x=0$. Therefore,
+First, observe that at the origin, the tangent of the initial angle $\phi_0$ corresponds to the first derivative of~\ref{eq:para} evaluated at $x=0$.
+Therefore,
 \begin{equation}
   \eval{\dv{y}{x}}_{x=0}=\tan\phi_0=b,
 \end{equation}
@@ -237,7 +239,8 @@ To deal with this, the TPS algorithm cleans tracks by checking if there are stub
 
 % Stub cleaning process
 There are two cases that are considered during the cleaning process.
-The first is case 1 in figure~\ref{fig:clean}, in which two or more tracks share one or more detection stubs. In this case, the track with the most detection stubs is retained and all others are discarded.
+The first is case 1 in figure~\ref{fig:clean}, in which two or more tracks share one or more detection stubs.
+In this case, the track with the most detection stubs is retained and all others are discarded.
 For case 2, if two tracks have the same number of stubs, we instead consider the difference in the propagated values of $\phi$ versus the values as measured by the detection stubs.
 We evaluate the sum of the difference in these values by evaluating
 \begin{equation}\label{eq:phiDev}

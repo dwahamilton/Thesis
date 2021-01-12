@@ -80,7 +80,8 @@ This phenomenon is known as color confinement, and while there is currently no a
 \subsubsection{Leptons}
 
 % leptons
-Leptons, like quarks, are also spin-1/2 particles that can be electrically charged. Unlike quarks, they only interact via the electromagnetic and weak nuclear forces.
+Leptons, like quarks, are also spin-1/2 particles that can be electrically charged.
+Unlike quarks, they only interact via the electromagnetic and weak nuclear forces.
 The electron is the most familiar lepton, as it is a component of the atoms that are found in everyday interactions.
 However, it also has two heavier cousins: the muon and the tau.
 Both of these particles have the same charge as the electron, but their masses are much larger.
@@ -109,11 +110,11 @@ This occurs through the Higgs mechanism, in which spontaneous symmetry breaking 
 
 % The mathematical structure of the standard model
 As the Standard Model is a quantum field theory, it has a Lagrangian density $\mathcal{L}_\mathrm{SM}$ that contains all the information about the fields corresponding to each particle and how they interact with each other.
-Each term in this Lagrangian must be Lorentz invariant in order for the Lagrangian to remain the same under gauge transformations or boosts and rotations.
+%Each term in this Lagrangian must be Lorentz invariant in order for the Lagrangian to remain the same under gauge transformations or boosts and rotations.
 The terms present in $\mathcal{L}_\mathrm{SM}$ allow us to compute probability amplitudes for particle production and decay processes through the method of Feynman diagrams.
 The Standard Model is also a non-abelian gauge theory, in which the internal symmetry group is $SU(3)_C\times SU(2)_L\times U(1)_Y$~\cite{Srednicki:1019751}.
 The $SU(3)_C$ symmetry group corresponds to the QCD interactions of the quarks and gluons, while the $SU(2)_L\times U(1)_Y$ group corresponds to the electroweak interactions.
-The symmetries of these groups lead to conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$. %\footnote{Electric charge $Q$ arises as a linear combination of $T_3$ and $Y_W$ given by $Q=T_3+\frac{1}{2}Y_W$.}.
+The symmetries of these groups lead to conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$\footnote{Electric charge $Q$ arises as a linear combination of $T_3$ and $Y_W$ given by $Q=T_3+\frac{1}{2}Y_W$.}.
 
 \subsubsection{Lagrangian Formalism}
 
@@ -131,7 +132,7 @@ The classical equations of motion for the fields can be obtained through the Eul
 \end{equation}
 Applying equation~\ref{eq:EL} to the spin-1/2 field $\psi$ yields
 \begin{equation}
-  i\gamma^\mu D_\mu\psi-m\psi=0
+  (i\gamma^\mu D_\mu-m)\psi=0
 \end{equation}
 which is the Dirac equation with the gauge covariant derivative in place of the usual partial derivative.
 On the other hand, for $A^\mu$, we get
@@ -140,48 +141,54 @@ On the other hand, for $A^\mu$, we get
 \end{equation}
 which are the inhomogeneous Maxwell equations for the electromagnetic field.
 
-\subsubsection{Feynman Diagrams}
+%\subsubsection{Feynman Diagrams}
 
 % Feynman diagrams
-Feynman diagrams are pictorial representations of the terms in present in the Dyson series, which is a perturbative expansion of the time evolution operator in the interaction picture.
-Through the process of canonical quantization, one may obtain a quantum field theory starting from a Lagrangian $\mathcal{L}$~\cite{Lancaster:1629337}.
-The Lagrangian contains all the information about how the fields interact with one another, and from this we may obtain the Feynman rules to compute scattering amplitudes and cross sections.
+%Feynman diagrams are pictorial representations of the terms in present in the Dyson series, which is a perturbative expansion of the time evolution operator in the interaction picture.
+%Through the process of canonical quantization, one may obtain a quantum field theory starting from a Lagrangian $\mathcal{L}$~\cite{Lancaster:1629337}.
+%The Lagrangian contains all the information about how the fields interact with one another, and from this we may obtain the Feynman rules to compute scattering amplitudes and cross sections.
 
 % Example with QED Lagrangian
-For example, given the QED Lagrangian $\mathcal{L}_\mathrm{QED}$ in equation~\ref{eq:QED}, we obtain the following Feynman rules~\cite{Schwartz:2013pla}:
-\begin{equation}
-  \begin{aligned}
-    \input{fig/theory/QEDpropPhoton.tex} &= \frac{-ig_{\mu\nu}}{p^2+i\epsilon}, & \input{fig/theory/QEDphotonIncoming.tex} &= \epsilon_\mu(p), & \input{fig/theory/QEDphotonOutgoing.tex} &= \epsilon_\mu^*(p),\\
-    \input{fig/theory/QEDpropFermion.tex} &= \frac{i(\slashed{p}+m)}{p^2-m^2+i\epsilon}, & \input{fig/theory/QEDfermionIncoming.tex} &= u^s(p), & \input{fig/theory/QEDfermionOutgoing.tex} &= \bar{u}^s(p),\\
-    \input{fig/theory/QEDvert.tex} &= -ie\gamma^\mu, & \input{fig/theory/QEDantifermionIncoming.tex} &= \bar{v}^s(p), & \input{fig/theory/QEDantifermionOutgoing.tex} &= v^s(p).
-  \end{aligned}
-\end{equation}
-These rules may then immediately be applied to a process such as $e^-e^+\to\mu^-\mu^+$ to obtain the first-order scattering amplitude,
-\begin{equation}
-  i\mathcal{M}=\input{fig/theory/QEDfeyn.tex}=\frac{ie^2}{(p_1+p_2)^2}\bqty{\bar{v}(p_2)\gamma^\mu u(p_1)}\bqty{\bar{u}(p_3)\gamma_\mu v(p_4)}.
-\end{equation}
-This can then be used to compute the scattering cross section. For a process in the center-of-mass frame with two particles in the initial state with momenta $\vb{p}_1=-\vb{p_2}$, and two particles in the final state with momenta $\vb{p}_3=-\vb{p}_4$.
-The cross section assuming unpolarized scattering is
-\begin{align*}
-  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega} &= \frac{1}{64\pi^2\ECM^2}\frac{|\vb{p}_f|}{|\vb{p}_i|}\sum_\mathrm{spins}|\mathcal{M}|^2\\
-  &= \frac{\alpha^2}{4\ECM^2}\sqrt{1-\frac{m_\mu^2}{E^2}}\bqty{1+\frac{m_\mu^2}{E^2}+\pqty{1-\frac{m_\mu^2}{E^2}}\cos^2\theta},
-  \numberthis
-\end{align*}
-where $|\vb{p}_i|\equiv|\vb{p}_1|=|\vb{p}_2|$ and $|\vb{p}_f|\equiv|\vb{p}_3|=|\vb{p}_4|$, $\ECM$ is the total energy in the center-of-mass frame, $E=\ECM/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
+%For example, given the QED Lagrangian $\mathcal{L}_\mathrm{QED}$ in equation~\ref{eq:QED}, we obtain the following Feynman rules~\cite{Schwartz:2013pla}:
+%\begin{equation}
+%  \begin{aligned}
+%    \input{fig/theory/QEDpropPhoton.tex} &= \frac{-ig_{\mu\nu}}{p^2+i\epsilon}, & \input{fig/theory/QEDphotonIncoming.tex} &= \epsilon_\mu(p), & \input{fig/theory/QEDphotonOutgoing.tex} &= \epsilon_\mu^*(p),\\
+%    \input{fig/theory/QEDpropFermion.tex} &= \frac{i(\slashed{p}+m)}{p^2-m^2+i\epsilon}, & \input{fig/theory/QEDfermionIncoming.tex} &= u^s(p), & \input{fig/theory/QEDfermionOutgoing.tex} &= \bar{u}^s(p),\\
+%    \input{fig/theory/QEDvert.tex} &= -ie\gamma^\mu, & \input{fig/theory/QEDantifermionIncoming.tex} &= \bar{v}^s(p), & \input{fig/theory/QEDantifermionOutgoing.tex} &= v^s(p).
+%  \end{aligned}
+%\end{equation}
+
+%For example, given the QED Lagrangian $\mathcal{L}_\mathrm{QED}$ in equation~\ref{eq:QED}, the resulting Feynman rules may immediately be applied to a process such as $e^-e^+\to\mu^-\mu^+$ to obtain the first-order scattering amplitude,
+%\begin{equation}
+%  i\mathcal{M}=\input{fig/theory/QEDfeyn.tex}=\frac{ie^2}{(p_1+p_2)^2}\bqty{\bar{v}(p_2)\gamma^\mu u(p_1)}\bqty{\bar{u}(p_3)\gamma_\mu v(p_4)}.
+%\end{equation}
+%This can then be used to compute the scattering cross section.
+%For a process in the center-of-mass frame with two particles in the initial state with momenta $\vb{p}_1=-\vb{p_2}$, and two particles in the final state with momenta $\vb{p}_3=-\vb{p}_4$.
+%The cross section assuming unpolarized scattering is
+%\begin{align*}
+%  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega} &= \frac{1}{64\pi^2\ECM^2}\frac{|\vb{p}_f|}{|\vb{p}_i|}\sum_\mathrm{spins}|\mathcal{M}|^2\\
+%  &= \frac{\alpha^2}{4\ECM^2}\sqrt{1-\frac{m_\mu^2}{E^2}}\bqty{1+\frac{m_\mu^2}{E^2}+\pqty{1-\frac{m_\mu^2}{E^2}}\cos^2\theta},
+%  \numberthis
+%\end{align*}
+%\begin{equation}
+%  \dv{\sigma(e^-e^+\to\mu^-\mu^+)}{\Omega}=\frac{\alpha^2}{4\ECM^2}\sqrt{1-\frac{m_\mu^2}{E^2}}\bqty{1+\frac{m_\mu^2}{E^2}+\pqty{1-\frac{m_\mu^2}{E^2}}\cos^2\theta},
+%\end{equation}
+%where $|\vb{p}_i|\equiv|\vb{p}_1|=|\vb{p}_2|$ and $|\vb{p}_f|\equiv|\vb{p}_3|=|\vb{p}_4|$, $\ECM$ is the total energy in the center-of-mass frame, $E=\ECM/2$ is the energy of one of the incoming or outgoing particles, $\theta$ is measured with respect to the axis of the initial momenta, and $m_\mu$ is the mass of the muon.
 
 % Feynman diagrams generalized to the standard model
-The process for obtaining scattering cross sections for other field theories with a specified Lagrangian $\mathcal{L}$ is similar.
-Thus, applying this machinery to the SM Lagrangian allows us to construct the diagrams necessary to compute scattering amplitudes and cross sections for any particular process of interest. Some examples of SM vertices may be seen in figure~\ref{fig:SMVert}~\cite{Romao_2012}.
+%The process for obtaining scattering cross sections for other field theories with a specified Lagrangian $\mathcal{L}$ is similar.
+%Thus, applying this machinery to the SM Lagrangian allows us to construct the diagrams necessary to compute scattering amplitudes and cross sections for any particular process of interest.
+%Some examples of SM vertices may be seen in figure~\ref{fig:SMVert}~\cite{Romao_2012}.
 
-\begin{figure}[htbp]
-  \centering
-  \input{fig/theory/SMverts.tex}
-  \caption{
-    Examples of vertices for constructing Feynman diagrams in the Standard Model, where $f$ is any fermion, $f_Q$ is any electrically charged fermion, $\ell$ is any lepton that is not a neutrino, $q_u$ is an up-type quark ($u$, $c$, $t$), and $q_d$ is a down-type quark ($d$, $s$, $b$).
-    For the quartic electroweak vertex, the two particles interacting with the $W$'s must be chosen such that charge conservation holds.
-  }
-  \label{fig:SMVert}
-\end{figure}
+%\begin{figure}[htbp]
+%  \centering
+%  \input{fig/theory/SMverts.tex}
+%  \caption{
+%    Examples of vertices for constructing Feynman diagrams in the Standard Model, where $f$ is any fermion, $f_Q$ is any electrically charged fermion, $\ell$ is any lepton that is not a neutrino, $q_u$ is an up-type quark ($u$, $c$, $t$), and $q_d$ is a down-type quark ($d$, $s$, $b$).
+%    For the quartic electroweak vertex, the two particles interacting with the $W$'s must be chosen such that charge conservation holds.
+%  }
+%  \label{fig:SMVert}
+%\end{figure}
 
 \subsubsection{Gauge Theory}
 
@@ -196,34 +203,22 @@ To see this, consider the Dirac Lagrangian for a spin-1/2 field given by
   \mathcal{L}_\mathrm{Dirac}=\bar{\psi}(i\gamma^\mu\partial_\mu-m)\psi.
 \end{equation}
 This Lagrangian is invariant under the global $U(1)$ transformation $\psi\to e^{i\alpha}\psi$, as $\bar{\psi}\to e^{-i\alpha}\bar{\psi}$ and the product $\bar{\psi}\psi$ remains the same.
-However, if we insist on a local $U(1)$ transformation such that $\psi\to e^{i\alpha(x)}\psi$, then the invariance is broken since we now have
-\begin{equation}
-  \bar{\psi}\gamma^\mu\partial_\mu\psi\to e^{-i\alpha(x)}\bar{\psi}\gamma^\mu\partial_\mu\bqty{e^{i\alpha(x)}\psi}=\bar{\psi}\gamma^\mu\partial_\mu\psi+\bar{\psi}\gamma^\mu[i\partial_\mu\alpha(x)]\psi,
-\end{equation}
-and hence
+However, if we insist on a local $U(1)$ transformation such that $\psi\to e^{i\alpha(x)}\psi$, then the invariance is broken since the transformed Lagrangian obtains an additional term:
 \begin{equation}
   \mathcal{L}\to\mathcal{L}-\bar{\psi}\gamma^\mu[\partial_\mu\alpha(x)]\psi.
 \end{equation}
 
 % Introducing the gauge field
-However, the symmetry can be restored by adding an interaction term with a gauge field $A_\mu$ in the Lagrangian and demanding that it transform along with $\psi$ according to
+The symmetry can be restored by adding an interaction term with a gauge field $A_\mu$ in the Lagrangian and demanding that it transform along with $\psi$, and by adding interaction term $\mathcal{L}_\mathrm{int}$:
 \begin{equation}
-  A_\mu\to A_\mu-\frac{1}{e}\partial_\mu\alpha(x),
+  A_\mu\to A_\mu-\frac{1}{e}\partial_\mu\alpha(x),\qquad \mathcal{L}_\mathrm{int}=-e\bar{\psi}\gamma^\mu A_\mu\psi.
 \end{equation}
-with an interaction Lagrangian
-\begin{equation}
-  \mathcal{L}_\mathrm{int}=-e\bar{\psi}\gamma^\mu A_\mu\psi.
-\end{equation}
-But introducing the gauge field requires that we also add a kinetic term for $A_\mu$ of the form
-\begin{equation}
-  \mathcal{L}_\mathrm{kin}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu},
-\end{equation}
-with $F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$.
+But introducing the gauge field requires that we also add a kinetic term $-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$ for $A_\mu$, with $F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$.
 Then the full Lagrangian is now
 \begin{equation}
   \mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\bar{\psi}(i\gamma^\mu\partial_\mu-m)\psi-e\bar{\psi}\gamma^\mu A_\mu\psi=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\bar{\psi}(i\gamma^\mu D_\mu-m)\psi,
 \end{equation}
-where $D_\mu=\partial_\mu+ieA_\mu$ is the usual gauge covariant derivative.
+where $D_\mu=\partial_\mu+ieA_\mu$ is the gauge covariant derivative.
 This is in fact the QED Lagrangian of equation~\ref{eq:QED}.
 Thus, $\mathcal{L}_\mathrm{QED}$ is exhibits a local $U(1)$ symmetry, and applying Noether's theorem to the $U(1)$ gauge transformations reveals that the conserved quantity under this symmetry is electric charge.
 
@@ -231,9 +226,9 @@ Thus, $\mathcal{L}_\mathrm{QED}$ is exhibits a local $U(1)$ symmetry, and applyi
 This same process can be applied to the overall $SU(3)_C\times SU(2)_L\times U(1)_Y$ gauge group to obtain conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$.
 The method of introducing a gauge field and replacing ordinary derivatives with gauge covariant derivatives to obtain local gauge symmetry is known as the minimal coupling rule~\cite{cheng1984}.
 While the example of local $U(1)$ symmetry with the QED Lagrangian is simpler due to the fact that $U(1)$ is an abelian group, the process is similar for the non-abelian groups such as $SU(3)$ and $SU(2)$.
-The number of generators for the gauge group corresponds to the number of gauge fields that are introduced to the Lagrangian.
-For example, the EW symmetry group $SU(2)_L\times U(1)_Y$ has four generators, each of which correspond to the four EW bosons ($W^+$, $W^-$, $Z$, $\gamma$).
-Thus, the gauge bosons are named for the fact that their fields naturally arise from demanding local gauge symmetry for our Lagrangian.
+%The number of generators for the gauge group corresponds to the number of gauge fields that are introduced to the Lagrangian.
+%For example, the EW symmetry group $SU(2)_L\times U(1)_Y$ has four generators, each of which correspond to the four EW bosons ($W^+$, $W^-$, $Z$, $\gamma$).
+Thus, the gauge bosons are named for the fact that their fields naturally arise from demanding local gauge symmetry for the SM Lagrangian.
 
 \subsubsection{The Higgs Mechanism}
 
@@ -249,12 +244,13 @@ To see this mechanism in action, we may consider a simple model with a complex s
   \mathcal{L}=\frac{1}{2}(\partial_\mu\phi)^*(\partial^\mu\phi)+\frac{1}{2}\mu^2(\phi^*\phi)-\frac{1}{4}\lambda^2(\phi^*\phi)^2.
 \end{equation}
 By inspection, this Lagrangian has a $U(1)$ global symmetry under the transformation $\phi\to e^{i\theta}\phi$.
-However, in order to apply perturbation theory so that we may use Feynman diagrams to compute scattering amplitudes, the Lagrangian must be defined so that the fields are shifted to the global minimum of the potential\footnote{The potential in this case is $\mathcal{U}(\phi,\phi^*)=-\frac{1}{2}\mu^2(\phi^*\phi)+\frac{1}{4}\lambda^2(\phi^*\phi)^2$ since $\mathcal{L}=\mathcal{T}-\mathcal{U}$.}.
-We may do so by noticing that the minimum of the potential lies on a circle of radius $\mu/\lambda$ in $(\phi_1,\phi_2)$ space, and rewriting $\mathcal{L}$ in terms of new fields $\eta$ and $\xi$ defined by
-\begin{equation}\label{eq:fields}
-  \eta=\phi_1-\mu/\lambda,\qquad \xi=\phi_2,
-\end{equation}
-and the Lagrangian is now
+However, in order to apply perturbation theory so that we may use Feynman diagrams to compute scattering amplitudes, the Lagrangian must be defined so that the fields are shifted to the global minimum of the potential. %\footnote{The potential in this case is $\mathcal{U}(\phi,\phi^*)=-\frac{1}{2}\mu^2(\phi^*\phi)+\frac{1}{4}\lambda^2(\phi^*\phi)^2$ since $\mathcal{L}=\mathcal{T}-\mathcal{U}$.}.
+%We may do so by noticing that the minimum of the potential lies on a circle of radius $\mu/\lambda$ in $(\phi_1,\phi_2)$ space, and rewriting $\mathcal{L}$ in terms of new fields $\eta$ and $\xi$ defined by
+%\begin{equation}\label{eq:fields}
+%  \eta=\phi_1-\mu/\lambda,\qquad \xi=\phi_2,
+%\end{equation}
+%and the Lagrangian is now
+We may do so by noticing that the minimum of the potential lies on a circle of radius $\mu/\lambda$ in $(\phi_1,\phi_2)$ space, and by rewriting $\mathcal{L}$ in terms of new fields $\eta\equiv\phi_1-\mu/\lambda$ and $\xi\equiv\phi_2$, the Lagrangian is now
 \begin{equation}
   \begin{aligned}
     \mathcal{L} &= \frac{1}{2}(\partial_\mu\xi)(\partial^\mu\xi)+\frac{1}{2}(\partial_\mu\eta)(\partial^\mu\eta)-\mu^2\eta^2\\
@@ -270,11 +266,12 @@ Evidently, $\xi$ is the Goldstone boson present in the theory.
 
 % Local gauge symmetry revisited
 We may repeat this process but instead promote the original global $U(1)$ symmetry to a local symmetry and take the usual approach of introducing a gauge field $A^\mu$ and gauge covariant derivative $D_\mu=\partial_\mu+ieA_\mu$.
-Our Lagrangian is now
-\begin{equation}
-  \mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\frac{1}{2}(D_\mu\phi)^*(D^\mu\phi)+\frac{1}{2}\mu^2(\phi^*\phi)-\frac{1}{4}\lambda^2(\phi^*\phi)^2.
-\end{equation}
-and if we apply the same shift in the fields in equation~\ref{eq:fields} so that the potential is instead written about the minimum, we obtain
+%Our Lagrangian is now
+%\begin{equation}
+%  \mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\frac{1}{2}(D_\mu\phi)^*(D^\mu\phi)+\frac{1}{2}\mu^2(\phi^*\phi)-\frac{1}{4}\lambda^2(\phi^*\phi)^2.
+%\end{equation}
+%and if we apply the same shift in the fields $\eta$ and $\xi$ so that the potential is instead written about the minimum, we obtain
+After applying the shift in the fields $\eta$ and $\xi$ so that the potential is instead written about the minimum, the new Lagrangian with the gauge field is
 \begin{equation}
   \begin{aligned}
     \mathcal{L} &= \frac{1}{2}(\partial_\mu\xi)(\partial^\mu\xi)+\frac{1}{2}(\partial_\mu\eta)(\partial^\mu\eta)-\mu^2\eta^2-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\frac{1}{2}\frac{e^2\mu^2}{\lambda^2}A_\mu A^\mu\\
