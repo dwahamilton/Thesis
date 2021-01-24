@@ -199,24 +199,26 @@ These nuisance parameters are also left uncorrelated across categories, with fig
 \subsection{Resonant Background Shape}
 
 % Resonant conditional shape variation
-As with the non-resonant background shapes, we apply a jet \pt spectrum related uncertainty and a diagonal uncertainty for the resonant background shapes.
+As with the non-resonant background shapes, we apply a jet \pt spectrum related uncertainty, but with two additional sets of nuisance parameters introduced for the LP categories corresponding to the two \MJ bins used to build the \MVV likelihood.
+The HP categories use only one \MJ bin, hence they only have one set of nuisance parameters.
+We also apply an uncertainty in the exponent of the power-law function used to populate the high-\MVV region of the template for each category.
 These nuisance parameters are also uncorrelated between categories and are uncorrelated between the resonant and non-resonant backgrounds.
-Figures~\ref{fig:systResMVV_MVVScale} and \ref{fig:systResMVV_Diag} show the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MVV dimension for the jet \pt spectrum related and diagonal uncertainties.
+Figures~\ref{fig:systResMVV_MVVScale} and \ref{fig:systResMVV_MVVTail} show the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MVV dimension for the jet \pt spectrum related and the \MVV power-law exponent uncertainties.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_bb_LDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_LDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_bb_HDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_HDy_MVVScale_ProjX.pdf}\\
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_nobb_LDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_LDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_nobb_HDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_HDy_MVVScale_ProjX.pdf}\\
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_vbf_LDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_LDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_vbf_HDy_MVVScale_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_HDy_MVVScale_ProjX.pdf}\\
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_LDy_MVVScaleBinW_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_HDy_MVVScaleBinW_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_LDy_MVVScaleBinTop_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_HDy_MVVScaleBinTop_ProjX.pdf}\\
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_LDy_MVVScaleBinW_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_HDy_MVVScaleBinW_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_LDy_MVVScaleBinTop_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_HDy_MVVScaleBinTop_ProjX.pdf}\\
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_LDy_MVVScaleBinW_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_HDy_MVVScaleBinW_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_LDy_MVVScaleBinTop_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_HDy_MVVScaleBinTop_ProjX.pdf}\\
   \caption{
     Projections of the nominal and alternative shapes of the resonant background onto the \MVV dimension obtained from applying $\pm3\sigma$ variations of the jet \pt spectrum uncertainties for the electron channel.
     Columns 1 to 4: HP-LDy, LP-LDy, HP-HDy, LP-HDy.
@@ -227,24 +229,24 @@ Figures~\ref{fig:systResMVV_MVVScale} and \ref{fig:systResMVV_Diag} show the nom
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_bb_LDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_LDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_bb_HDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_HDy_Diag_ProjX.pdf}\\
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_nobb_LDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_LDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_nobb_HDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_HDy_Diag_ProjX.pdf}\\
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_vbf_LDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_LDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_vbf_HDy_Diag_ProjX.pdf}
-  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_HDy_Diag_ProjX.pdf}\\
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_bb_LDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_LDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_bb_HDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_bb_HDy_MVVTail_ProjX.pdf}\\
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_nobb_LDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_LDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_nobb_HDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_nobb_HDy_MVVTail_ProjX.pdf}\\
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_vbf_LDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_LDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_HP_vbf_HDy_MVVTail_ProjX.pdf}
+  \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_res_e_LP_vbf_HDy_MVVTail_ProjX.pdf}\\
   \caption{
-    Projections of the nominal and alternative shapes of the resonant background onto the \MVV dimension obtained from applying $\pm3\sigma$ variations of the diagonal uncertainties for the electron channel.
+    Projections of the nominal and alternative shapes of the resonant background onto the \MVV dimension obtained from applying $\pm3\sigma$ variations of the high-\MVV power-law tail uncertainties for the electron channel.
     Columns 1 to 4: HP-LDy, LP-LDy, HP-HDy, LP-HDy.
     Rows 1 to 3: bb, nobb, vbf.
   }
-  \label{fig:systResMVV_Diag}
+  \label{fig:systResMVV_MVVTail}
 \end{figure}
 
 % Resonant jet shape variation

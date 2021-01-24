@@ -98,7 +98,7 @@ For example, signals that are \VBF-produced will not have a sufficient number of
 Because the signal parameters do not vary significantly between production modes, we allow for substituting non-\VBF signal shapes with \VBF shapes, and \VBF signal shapes with non-\VBF shapes:
 \begin{itemize}
   \item \VBF\ZprtoWW shapes are used for \DY\ZprtoWW in the vbf categories.
-  %\item \VBF\WprtoWH shapes are used for \DY\WprtoWH in the vbf categories.
+  \item \VBF\WprtoWH shapes are used for \DY\WprtoWH in the vbf categories.
   \item \VBF\WprtoWZ shapes are used for \DY\WprtoWZ in the vbf categories.
   \item \ggF\GBulktoWW shapes are used for \VBF\GBulktoWW in the bb categories.
   \item \DY\WprtoWZ shapes are used for \VBF\WprtoWZ in the bb and nobb categories.
@@ -658,10 +658,10 @@ where $w_i$ is the event weight, and $s$ and $\sigma$ are the scale and resoluti
   \label{fig:nonResScaleResMVV}
 \end{figure}
 
-% Template smoothing
+% Non-resonant template smoothing
 Another issue encountered with the low statistics of the MC samples is the lack of events at higher values of \MVV.
-To address this, we perform a smoothing of the tails of the \MVV shape with a power law function in each bin of \MJ.
-We then populate the 2D histogram with values from the \MVV shape in each \MJ bin, with the power law functions sampled from $1.2\unit{TeV}$ and onward for the bb categories, and $1.6\unit{TeV}$ and onward for the nobb categories.
+To address this, we perform a smoothing of the tails of the \MVV shape with a power-law function in each bin of \MJ.
+We then populate the 2D histogram with values from the \MVV shape in each \MJ bin, with the power-law functions sampled from $1.6\unit{TeV}$ and onward for all categories.
 
 % Template conditionality
 To ensure that the template is conditional with respect to \MJ, each histogram slice corresponding to one crude bin of \MJ is normalized.
@@ -728,7 +728,7 @@ Figure~\ref{fig:condTemplateVscondReco_nonRes_MVV_Run2} shows the resulting comp
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/templateVsReco_nonResCond_MVV_e_LP_nobb_LDy.pdf}
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/templateVsReco_nonResCond_MVV_e_LP_nobb_HDy.pdf}\\
   \caption{
-    Projection onto the \MVV spectrum of the 2D conditional non-resonant background templates (solid lines) versus the weighted MC distributions (points) used to make them, for the HP-LDy (top left), HP-HDy (top right), LP-LDy (bottom left), and LP-HDy (bottom right) merged categories.
+    Comparison of the \MVV projection of the 2D conditional non-resonant background templates (solid lines) and the weighted MC events (points), for the HP-LDy (top left), HP-HDy (top right), LP-LDy (bottom left), and LP-HDy (bottom right) merged categories.
     Four separate \MJ ranges are plotted, with one corresponding to the full \MJ range, and three corresponding to the sub-ranges.
   }
   \label{fig:condTemplateVscondReco_nonRes_MVV_Run2}
@@ -836,33 +836,52 @@ The 2D templates in this case are very similar to the non-resonant templates, wi
 \end{equation}
 
 % 2D conditional template
-The 2D conditional template $\PVV(\MVV|\MJ,\vb*{\theta}_1)$ is constructed with a kernel method in a manner identical to the non-resonant background.
-However, in this case there is no reweighting of the \MVV spectrum as there was with the non-resonant templates, and because the number of events is even lower than that of the non-resonant MC samples, we merge the $e$/$\mu$, bb/nobb/vbf, and HP/LP categories.
-We therefore only separate the 2D conditional resonant template based on the rapidity categories HDy/LDy.
-Figure~\ref{fig:res2DCorr} shows the correlation between the jet \pt and the jet mass for the HP/LP and nobb/bb categories for the resonant background MC samples.
-This again shows similar behavior between the categories as with the non-resonant case.
+The 2D conditional template $\PVV(\MVV|\MJ,\vb*{\theta}_1)$ is constructed in a different manner compared to the non-resonant background.
+In this case there is no reweighting of the \MVV spectrum as there was with the non-resonant templates.
+We also do not make use of the kernel method of populating the histograms of the templates because the \MVV spectrum for the resonant background templates only depends on whether or not we are in the $W$ peak or the top peak of the \MJ spectrum.
+Thus, we perform the resonant template fitting process in only two bins of \MJ for LP categories, and only one bin of \MJ for the HP categories.
+This allows us to overcome the issues that occur due to the low statistics of the top MC samples, and we build 12 templates for the resonant background by only merging the $e$ and $\mu$ categories.
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.45\textwidth]{fig/2Dfit/res_corr.pdf}
-  \caption{
-    Average \pt of the jet as a function of the jet mass \MJ compared between the four combinations of HP/LP and nobb/bb categories for the resonant background MC samples.
-  }
-  \label{fig:res2DCorr}
-\end{figure}
+% Resonant template smoothing
+As with the non-resonant background, we smooth the high-\MVV tails by refitting the tail of the \MVV shape in each \MJ bin using a power-law function.
+The lower boundary for populating the histogram depends on the category due to the differences between the MC statistics and the turn-on regions.
+We use $1.1\unit{TeV}$ for the HP-vbf-LDy and LP-vbf-LDy categories, $1.2\unit{TeV}$ for the HP-bb-HDy, HP-bb-LDy, HP-vbf-HDy, and LP-bb-LDy categories, and $1.4\unit{TeV}$ for all other categories.
 
 % Resonant closure test
 We perform a closure test similar to the one done on the non-resonant background templates, in which we compare the \MVV projection of the conditional templates against the MC events used to derive them.
-Figure~\ref{fig:condTemplateVscondReco_res_MVV_Run2} shows the comparisons between the LDy and HDy 2D resonant conditional templates versus the MC samples.
+Figure~\ref{fig:condTemplateVscondReco_res_MVV_Run2} shows the comparisons between the 2D resonant conditional templates for all categories (with $e$ and $\mu$ separated) versus the MC samples.
 Again we find good agreement between the templates and the MC.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.45\textwidth]{fig/2Dfit/templateVsReco_resCond_MVV_e_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.45\textwidth]{fig/2Dfit/templateVsReco_resCond_MVV_e_HP_nobb_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_bb_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_bb_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_bb_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_bb_LDy.pdf}\\
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_nobb_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_nobb_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_nobb_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_nobb_LDy.pdf}\\
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_vbf_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_vbf_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_vbf_LDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_vbf_LDy.pdf}\\
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_bb_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_bb_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_bb_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_bb_HDy.pdf}\\
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_nobb_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_nobb_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_nobb_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_nobb_HDy.pdf}\\
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_vbf_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_vbf_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_vbf_HDy.pdf}
+  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_vbf_HDy.pdf}\\
   \caption{
-    Projection onto the \MVV spectrum of the 2D conditional resonant background templates (solid lines) versus the weighted MC distributions (points) used to make them, for the LDy (left) and HDy (right) merged categories.
-    Four separate \MJ ranges are plotted, with one corresponding to the full \MJ range (gray), and three corresponding to the sub-ranges (colors).
+    Comparison of the \MVV projection of the 2D conditional resonant background templates (solid lines) and the weighted MC events (points).
+    Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, $e$-LP.
+    Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
   }
   \label{fig:condTemplateVscondReco_res_MVV_Run2}
 \end{figure}
