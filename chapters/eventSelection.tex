@@ -53,7 +53,8 @@ For each year we use different paths, which are listed in table~\ref{tab:trigger
 %\end{table}
 
 % Single electron thresholds
-The single electron \pt thresholds used are 27, 45, and $115\unit{GeV}$ for 2016, 32, 25, and $115\unit{GeV}$ for 2017, and 25 and $115\unit{GeV}$ for 2018. % Check why the threshold is 25 and not 32 for 2018
+The single electron \pt thresholds used are 27, 45, and $115\unit{GeV}$ for 2016, 32, 25, and $115\unit{GeV}$ for 2017, and 25 and $115\unit{GeV}$ for 2018.
+These thresholds are chosen as part of compromises between energy thresholds and isolation tightness, as lower \pt thresholds result in better electron identification, but higher \pt electrons are harder to identify and hence have looser working points.
 Additionally, we apply an OR with \texttt{HLT\_Photon175} in 2016 with an \Et threshold of $175\unit{GeV}$, as well as with \texttt{HLT\_Photon200} in 2017 with $200\unit{GeV}$. % Need to find out what an OR is
 These thresholds were applied as recommended by the CMS E/Gamma Physics Object Group (POG)~\cite{MuonPOG}.
 
@@ -65,8 +66,13 @@ For the muon thresholds, the main threshold is $50\unit{GeV}$ across all three y
 
 \subsection{Pileup Reweighting}
 
+% Pileup explanation
+For a given collision event in the analysis, we are concerned with the hard-scatter event that takes place at the primary vertex (PV).
+However, additional proton-proton interactions may take place in locations other than the PV along the beamline during a single bunch crossing.
+These interactions are referred to as pileup (PU)~\cite{Perloff_2012}, and the presence of the additional PU energy requires corrective measures to be taken in order to accurately reconstruct jets in an event.
+
 % Pileup reweighting
-The data samples from all three Run 2 years have different pileup (PU) profiles than that of the simulation samples that were used for this analysis.
+The data samples from all three Run 2 years have different pileup profiles than that of the simulation samples that were used for this analysis.
 In order to account for this, we compute and apply PU weights to our samples and compare distributions for the number of primary vertices both with and without weights to the data.
 Figure~\ref{fig:PUreweight} shows these distributions for Run 2.
 The weights are computed using the recommended minimum bias cross section of $69.2\unit{mb}$. % Citation needed
@@ -85,10 +91,17 @@ The weights are computed using the recommended minimum bias cross section of $69
 \subsection{Muon Selection}
 \label{subsec:muonSelect}
 
+% Muon reconstruction
+Muon reconstruction in CMS is a multi-stage process that involves creating muon objects from various trigger sources~\cite{Sirunyan_2018_CMS}. %\cite{MuonAnalysis}
+This process starts with local reconstruction, in which detection hits in the muon chambers are reconstructed through the trigger system.
+The hits within the chambers are then matched to create track segments, known as track stubs.
+During offline reconstruction, the track stubs are used to create standalone muons, which are muon objects constructed by using the track stubs to estimate the muon transverse momentum using the Kalman filter technique.
+These objects are then used to create global muons, which are objects that combine standalone muon tracks with tracks from the inner tracking system, again using a Kalman filter.
+
 % High-pT muon selection criteria
 When selecting muons for the analysis, they must pass the following high-\pt muon identification criteria as provided by the CMS Muon POG~\cite{MuonSelection}:
 \begin{itemize}
-  \item The muon is reconstructed as a ``global'' muon.
+  \item The muon is reconstructed as a global muon.
   \item At least one muon-chamber hit included in the global-muon track fit or in the TuneP fit.
   \item Muon segments in at least two muon stations.
   \item The \pt relative error ($\sigma(\pt)/\pt$) of the muon best track is less than 30\%.
@@ -101,13 +114,19 @@ When selecting muons for the analysis, they must pass the following high-\pt muo
 % Further muon selection
 In addition to the high-\pt muon identification criteria, for this analysis we also require each muon to have $\pt>55\unit{GeV}$ and to be confined to the region $|\eta|<2.4$.
 We also apply an isolation requirement on the muons in order to further suppress background.
-This is done using the full relative particle flow isolation using $\Delta\beta$ corrections, with the requirement that $I_\mathrm{rel}<0.05$.
+This is done using the full relative particle flow isolation using $\Delta\beta$ corrections, with the requirement that $I_\mathrm{rel}<0.05$, with $I_\mathrm{rel}$ defined by
+\begin{equation}
+  I_\mathrm{rel}=\frac{\sum_{i\in\mathrm{PV}}p_{\mathrm{T},i}+\max\pqty{0,\sum_{j\in\mathrm{NH}}E_{\mathrm{T},j}+\sum_{k\in\mathrm{phot}}E_{\mathrm{T},k}-\frac{1}{2}\sum_{n\in\mathrm{PU}}p_{\mathrm{T},n}}}{p_{\mathrm{T},\mu}},
+\end{equation}
+where $\mathrm{PV}$ denotes the set of charged hadrons from the primary vertex, $\mathrm{NH}$ is the set of neutral hadrons, $\mathrm{phot}$ is the set of photons, $\mathrm{PU}$ denotes the set of charged hadrons from pileup, and $p_\mathrm{T,\mu}$ is the transverse momentum of the muon for which the isolation is being performed.
+The isolation is performed within a cone of size $\Delta R=0.4$ centered around the $p_{\mathrm{T},\mu}$ axis, where $\Delta R\equiv\sqrt{\Delta\eta^2+\Delta\phi^2}$.
 
 % Muon scale factors
-Scale factors for muon ID as provided by the Muon POG are also applied~\cite{MuonPAGs}.
+Scale factors for muon identification as provided by the Muon POG are also applied~\cite{MuonPAGs}.
+These scale factors are used to correct for the differences between muon identification in data and simulation.
 To appropriately apply these scale factors as they vary by year to the full Run 2 dataset, we weight them by the fraction of integrated luminosity for each year.
 We also apply a scale factor for the isolation requirement, which is shown in figure~\ref{fig:muonIsoSF}.
-This scale factor was derived on top of muon high-\pt ID, in boosted $Z$ and DY events over the full Run 2 period, which is found to be within 1\% from unity and smaller than the systematic uncertainty for the muon trigger/reco/ID of 5\% used in signal extraction.
+This scale factor was derived on top of muon high-\pt identification, in boosted $Z$ and DY events over the full Run 2 period, which is found to be within 1\% from unity and smaller than the systematic uncertainty for the muon trigger/reconstruction/identification of 5\% used in signal extraction.
 
 \begin{figure}[htbp]
   \centering
@@ -122,17 +141,23 @@ This scale factor was derived on top of muon high-\pt ID, in boosted $Z$ and DY 
 \label{subsec:elecSelect}
 
 % Electron reconstruction
-The electrons that are reconstructed from trigger primitives in the ECAL are required to pass the ``HEEP v7.0'' ID requirements as prescribed by the E/Gamma POG~\cite{HEEPV70}.
-The ID requirements ensure that the reconstructed electrons from the ECAL energy deposits are paired with a high quality track from the inner tracker and have a shape consistent with an electromagnetic shower in the calorimeter.
-These requirements are listed in table~\ref{tab:HEEPV70}.
+The electrons that are reconstructed from trigger primitives in the ECAL are required to pass the ``HEEP v7.0'' identification requirements as prescribed by the E/Gamma POG. %\cite{HEEPV70}
+These requirements are chosen specifically to optimize the identification of high energy electrons.
+The identification requirements ensure that the reconstructed electrons from the ECAL energy deposits are paired with a high quality track from the inner tracker and have a shape consistent with an electromagnetic shower in the calorimeter.
+These requirements are listed in table~\ref{tab:HEEPV70} in terms of identification variables~\cite{electron_2015}.
 For our analysis, we also require them to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$. % Unsure why this range is excluded
-We also apply scale factors for the HEEP ID requirements along with RECO scale factors as recommended by the E/Gamma POG~\cite{EgammaScale}.
+We also apply scale factors for the HEEP identification requirements along with RECO scale factors as recommended by the E/Gamma POG~\cite{EgammaScale}.
 
 \begin{table}[htbp]
   \centering
   \input{tab/eventSelection/HEEPV70.tex}
   \caption{
-    Definitions of HEEP ID V7.0 selections.
+    Definitions of HEEP identification V7.0 selections.
+    Here, the $SC$ subscript denotes ``supercluster'', which corresponds to a collection of arrays of ECAL crystals.
+    Quantities with an ``in'' subscript correspond to the point of closest approach to the beam spot, while the ``seed'' superscript denotes a quantity related to a seed crystal, which is the crystal containing the largest amount of energy from a deposit.
+    $H/E$ denotes the ratio of the sum of the HCAL tower energies to the supercluster energies within a cone of $\Delta R=0.15$ around the electron.
+    The shower-shape variable is denoted by $\sigma_{i\eta i\eta}$.
+    Finally, the cluster energies $E_{n\times m}$ correspond to the energy deposited within an $n\times m$ grid of ECAL crystals.
   }
   \label{tab:HEEPV70}
 \end{table}
@@ -150,24 +175,25 @@ This analysis therefore categorizes candidate jets into the two following types:
 \end{itemize}
 
 % The anti-kt algorithm
-The anti-\kt algorithm is a jet clustering algorithm reconstructs jets by introducing distances $d_{ij}$ between objects $i$ and $j$ and $d_{i,B}$ between object $i$ and the beam $B$~\cite{Cacciari_2008}.
+The anti-\kt algorithm is a jet clustering algorithm that reconstructs jets by introducing distances $d_{ij}$ between objects $i$ and $j$ and $d_{i,B}$ between object $i$ and the beam $B$~\cite{Cacciari_2008}.
 The algorithm starts by assigning values for $d_{ij}$ and $d_{i,B}$ for all objects in the final state, and finds the minimum value among the distances.
 If the minimum value is a $d_{i,B}$ value, then object $i$ is declared to be a jet and removed from the list, and the algorithm starts over from the first step.
 If instead it is a $d_{ij}$ value, then objects $i$ and $j$ are combined and the algorithm goes back to the first step.
 This process is repeated until all particles have been declared jets, with $d_{ij}$ and $d_{i,B}$ defined by
 \begin{align}
-  d_{ij} &= \min\pqty{k_{\mathrm{T},i}^{2p},k_{\mathrm{T},j}^{2p}}\frac{\Delta_{ij}^2}{R^2},\\
-  d_{i,B} &= k_{\mathrm{T},i}^{2p},
+  & d_{ij}=\min\pqty{k_{\mathrm{T},i}^{2p},k_{\mathrm{T},j}^{2p}}\frac{\Delta_{ij}^2}{R^2},\\
+  & d_{i,B}=k_{\mathrm{T},i}^{2p},
 \end{align}
 where $\Delta_{ij}^2=(y_i-y_j)^2+(\phi_i-\phi_j)^2$, with $k_{T,i}$ as the transverse momentum for object $i$, $y_i$ the rapidity for object $i$, $\phi_i$ is the azimuthual angle for object $i$, $R$ is the distance parameter for the algorithm, and $p$ is a parameter determined by the jet clustering algorithm.
 For the anti-\kt algorithm, $p=-1$, with other algorithms taking on different values, such as $p=1$ for the \kt algorithm~\cite{Marzani_2019}.
 
 % Jet selection
-For both types of jets, we use tight ID jets as recommended by the JetMET POG~\cite{jetID2016,jetID2017,jetID2018}.
+For both types of jets, we use tight identification jets as recommended by the JetMET POG~\cite{jetID2016,jetID2017,jetID2018}.
+These jets are required to pass identification requirements based on quantities such as the neutral hadron fraction, neutral EM fraction, number of constituents, and number of neutral particles.
 We also apply jet energy corrections for data and MC prescribed by the Jet Energy Resolution and Corrections (JERC) subgroup~\cite{JetEnergyScale}.
 The hadronic jet resulting from the \VorH decay is selected by taking the jet with the highest \pt from the large-radius jets, with a minimum threshold of $\pt>200\unit{GeV}$ and a pseudorapidity range of $|\eta|<2.4$.
-Any large-radius jets that have an electron or tight muon within $\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}<1.0$ are discarded to suppress background events.
-For the standard jets, we require that $\pt>30\unit{GeV}$, and we discard any jets within $\Delta R<0.4$ of any tight electron or tight muon, or within $\Delta R<0.8$ of any large-radius jet.
+Any large-radius jets that have an electron or tight muon within $\Delta R<1.0$ are discarded to suppress background events.
+For the standard jets, we require that $\pt>30\unit{GeV}$, and we discard any jets within $\Delta R<0.4$ of any selected electron or muon, or within $\Delta R<0.8$ of any large-radius jet.
 
 \subsubsection{$V$-jet Tagging}
 
@@ -218,9 +244,9 @@ This allows for separating jets originating from boosted vector bosons versus je
 This analysis uses a modified version of the $N$-subjettiness ratio that reduces the dependency of \nsubj on the jet mass, which is denoted by the designed decorrelated tagger (DDT) $N$-subjettiness \nsubjDDT~\cite{Dolen_2016}.
 It is defined by
 \begin{equation}
-  \nsubjDDT=\nsubj-C\ln\pqty{\frac{\MJ^2}{\ptjet\times(1\unit{GeV})}},
+  \nsubjDDT=\nsubj-C\ln\bqty{\frac{\MJ^2}{\ptjet\times(1\unit{GeV})}},
 \end{equation}
-where $C$ is a coefficient obtained by taking the slope of a fit for the \nsubj profile versus $\ln\pqty{\frac{\MJ^2}{\ptjet\times(1\unit{GeV})}}$ in non-resonant \Wjets background events after applying the full analysis selection cuts.
+where $C$ is a coefficient obtained by taking the slope of a fit for the \nsubj profile versus $\ln\bqty{\frac{\MJ^2}{\ptjet\times(1\unit{GeV})}}$ in non-resonant \Wjets background events after applying the full analysis selection cuts.
 
 % N-subjettiness selection
 For this analysis, we only consider large-radius jets that satisfy $\nsubjDDT<0.80$.
@@ -229,20 +255,29 @@ We also later use \nsubjDDT for event categorization to split the analysis into 
 \subsubsection{$b$-tagging}
 
 % CHS approach
-While the boosted jets resulting from the \Vhad decay are identified and groomed using algorithms such as the anti-\kt and PUPPI algorithms, the candidate four vector for the $X$ boson is estimated using jet energy scale corrections and charged hadron subtraction (CHS).
-The CHS approach is used in order to suppress background contribution from top quark production, which results in the production of jets from $b$ decays.
+%While the boosted jets resulting from the \Vhad decay are identified and groomed using algorithms such as the anti-\kt and PUPPI algorithms, the candidate four vector for the $X$ boson is estimated using jet energy scale corrections and charged hadron subtraction (CHS).
+%The CHS approach is used in order to suppress background contribution from top quark production, which results in the production of jets from $b$ decays.
+
+% b-tagging overview
+Decays resulting from $b$ quarks are of particular importance due to the fact that they often originate from heavier particles, such as top quarks or the Higgs.
+Additionally, jets produced from $b$ quarks have unique characteristics that distinguish them from other hadronic decays~\cite{Sirunyan_jet}.
+Because of the relatively long lifetime of hadrons that contain $b$ quarks, the secondary vertices (SV) corresponding to the location of the decay tend to have displacements on the order of a few millimeters away from the primary vertex.
+Another distinguishing property is that decays from $b$ hadrons result in a boosted jet topology, as the products that $b$ quarks decay into are much lighter.
+Finally, the heavy hadrons containing $b$ quarks tend to favor semileptonic decays, resulting in soft leptons present in the jet.
+The techniques used to identify such jets are referred to as $b$-tagging.
 
 % b-tagging details
 Jets in the region $|\eta|<2.4$ are $b$-tagged if they pass the \texttt{medium} working point of the Combined Secondary Vertex (CSV) or DeepCSV algorithms, as recommended by the $b$-tag and vertexing (BTV) POG.
-The \texttt{medium} working point for CSV is 0.8484 in 2016~\cite{bTagging2016}, and for DeepCSV the working points are 0.4941 and 0.4184 for 2017 and 2018, respectively~\cite{bTagging2017,bTagging2018}.
+The \texttt{medium} working point for CSV is 0.8484 in 2016, and for DeepCSV the working points are 0.4941 and 0.4184 for 2017 and 2018, respectively. %\cite{bTagging2016,bTagging2017,bTagging2018}
 We also apply $b$-tagging scale factors and weights that depend on the jet \pt, $\eta$, and value of the $b$-tagging discriminant as prescribed by the BTV POG~\cite{bTaggingEff,bTaggingSF}.
 
-\subsubsection{$H(b\bar{b})$-tagging}
+\subsubsection{$H(\bbbar)$-tagging}
 
-% The need for bb-tagging
+% bb-tagging overview
 The $V$-tagging methods previously described account for identifying and grooming jets resulting from the $\Vhad$ decay, but additional techniques are applied in this analysis to account for a large-radius \bbbar jet.
 Such a jet signifies the decay \Htobbbar in the final state and hence a \WH resonance, which allows for discriminating against background with light jet flavors.
-For this reason, we use a $b$-tagging discriminator to identify Higgs boson jet candidates that uses information from displaced tracks and secondary vertices~\cite{CMS-PAS-BTV-15-002}.
+Furthermore, a unique feature of the topology of \bbbar jets is the fact that the constituent $b$ quarks have secondary vertices that are displaced from the PV of the jet.
+To identify such \bbbar jets, we therefore use a $b$-tagging discriminator to identify Higgs boson jet candidates that uses information from displaced tracks and secondary vertices~\cite{CMS-PAS-BTV-15-002}.
 We also apply a cut on the M2 operating point of the ``\DoubleB tagger'' to categorize events, for which the threshold is 0.8 for Run 2 according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
 
 % Scale factors
@@ -250,12 +285,21 @@ Additionally, we apply scale data/MC efficiency scale factors to our signal samp
 We use two sets of scale factors that depend on \ptjet.
 One is for \Htobbbar jets resulting from the \WprtoWHtolnubbbar signal model, and the other is for mistagging $W$ bosons resulting from $t\bar{t}$ events, which are applied to the \GBulktoWWtolnuqqbarpr and \WprtoWZtolnuqqbar signal models.
 These scale factors are applied from method 1a from reference~\cite{bTaggingEff}.
-First we measure the MC \bbbar-tagging efficiencies $\epsilon$, then apply the event weights for the \bbbar-tagged category as
+The weights are calculated by considering the probability of a given configuration of jets in MC and data as
+\begin{align}
+  & P(\mathrm{MC})=\prod_{i=\text{tagged}}\epsilon_i\prod_{j=\text{not tagged}}(1-\epsilon_j),\\
+  & P(\mathrm{DATA})=\prod_{i=\text{tagged}}\mathrm{SF}_i\epsilon_i\prod_{j=\text{not tagged}}(1-\mathrm{SF}_j\epsilon_j),
+\end{align}
+where $\epsilon_i$ is the $b$-tagging efficiency in MC, and the scale factors $\mathrm{SF}_i$ and $\epsilon_i$ are functions of the jet flavor, \pt, and $\eta$.
+The weight is then calculated as
+\begin{equation}
+  w=\frac{P(\mathrm{DATA})}{P(\mathrm{MC})}.
+\end{equation}
+For this analysis, first we measure the MC \bbbar-tagging efficiencies $\epsilon$, then apply the event weights for the \bbbar-tagged category as
 \begin{equation}
   w^{\bbbar}(\pt)=\frac{\mathrm{SF}(\pt)\epsilon(\pt)}{\epsilon(\pt)}=\mathrm{SF}(\pt),
 \end{equation}
-where $\mathrm{SF}$ denotes the scale factors.
-For the \bbbar-untagged category, we instead use
+while for the \bbbar-untagged category, we instead use
 \begin{equation}
   w^{\mathrm{no}\bbbar}(\pt)=\frac{1-\mathrm{SF}(\pt)\epsilon(\pt)}{1-\epsilon(\pt)}.
 \end{equation}
@@ -263,7 +307,7 @@ For the \bbbar-untagged category, we instead use
 \subsection{Missing Transverse Energy}
 
 % MET
-For this analysis, we use type-I corrected particle flow MET (PFMET) to account for the energy of the neutrino from the \Wlep decay, where PFMET is defined as the magnitude of the negative vector sum of all transverse energies from particle flow objects~\cite{PFMET}.
+For this analysis, we use type-I corrected particle flow MET (PFMET) to account for the energy of the neutrino from the \Wlep decay, where PFMET is defined as the magnitude of the negative vector sum of all transverse energies from particle flow objects~\cite{Sirunyan:2019kia}. %\cite{PFMET}
 The correction is a propagation of the jet energy corrections (JEC) to MET, which is given by
 \begin{equation}
   \EtmissTI=\vqty{-\sum_\mathrm{jet}\vb{p}_\mathrm{T,jet}^\mathrm{JEC}-\sum_{i\in\mathrm{uncl.}}\vb{p}_{\mathrm{T},i}},
@@ -274,7 +318,13 @@ where the first sum is over clustered jets and the second sum is over unclustere
 
 % Leptonic reconstruction
 To reconstruct the leptonically decaying $W$ candidate \Wlep, we select the highest \pt lepton in the event and combine it with the \EtmissTI resulting from the neutrino.
-We also apply a $W$ mass constraint to estimate the $z$-component of the missing energy.
+We also apply a $W$ mass constraint to estimate the $z$-component of the missing energy $p_{\nu,z}$.
+This is done by solving a second order equation for $p_{\nu,z}$ given by
+\begin{equation}
+  4(E_\ell^2-p_{\ell,z}^2)p_{\nu,z}^2-4(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})p_{\ell,z}p_{\nu,z}+4E_\ell^2(\Etmiss)^2-(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})^2=0,
+\end{equation}
+where $E_\ell$ is the energy of the lepton, $\vb{p}_\ell$ is the momentum of the lepton, $\vb{p}_\nu$ is the momentum of the neutrino, and $m_W$ is the mass of the $W$ boson.
+When solving for $p_{\nu,z}$ we choose the root with the smaller magnitude, and if the discriminant is imaginary then we select only the real part of $p_{\nu,z}$.
 The resulting \Wlep is then combined with the large-radius \Vhad jet to form a diboson candidate, with mass denoted by \MVV.
 
 \subsection{VBF Forward Jets}
@@ -377,8 +427,8 @@ The final event selection used in the analysis is defined by the following:
   \item Leptonic $W$ \pt: the \pt of the reconstructed \Wlep must satisfy $\pt>200\unit{GeV}$ in order to select a boosted $W$ topology.
   \item Hadronic \VorH \pt: the \pt of the reconstructed \Vhad must satisfy $\pt>200\unit{GeV}$ in order to select a boosted \VorH topology.
   \item $b$-tag veto: the event is required to have no $b$-tagged standard jets.
-  \item \ZH veto: to ensure that the selection is disjoint from the $X\to\ZH\to\ell\ell\bbbar$ search~\cite{CMS_AN2019_107}, which uses a different electron and muon ID, we explicitly veto events where a \ZH candidate is selected with their criteria.
-  \item Search region: the search region is defined as $0.6<\MVV<5.0\unit{TeV}$ and $20<\MJ<210\unit{GeV}$.
+  \item \ZH veto: to ensure that the selection is disjoint from the $X\to\ZH\to\ell\ell\bbbar$ search~\cite{CMS-PAS-B2G-19-006}, which uses a different electron and muon identification, we explicitly veto events where a \ZH candidate is selected with their criteria.
+  \item Search region: the search region is defined as $0.7<\MVV<5.0\unit{TeV}$ and $20<\MJ<210\unit{GeV}$.
 \end{enumerate}
 
 \subsubsection{Final Event Categories}
@@ -386,6 +436,7 @@ The final event selection used in the analysis is defined by the following:
 
 % Final event categories
 After considering the final event selection, we split the analysis into 24 disjoint event categories.
+By doing so, the sensitivity of the search is enhanced since this allows for discriminating between different signal models based on their final state (\WW, \WZ, or \WH), their production mechanism (\ggF, \DY, or \VBF), or the spin of the resonance (0, 1, or 2).
 The categories are based on four successive criteria based on the lepton channel, large-radius jet purity, \VBF/non-\VBF categories, and \Dy categories.
 
 % Lepton channel

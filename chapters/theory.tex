@@ -394,7 +394,7 @@ The warped geometry is such that there are two branes in these models: the Tevbr
 
 % Search for a heavy diboson resonance
 This thesis presents results on the search for a new heavy $X$ resonance, with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
-The decays of interest are \XtoWV and \XtoWH, where $V=W,Z$ is any of the two massive electroweak vector bosons and $H$ is the Higgs boson discovered at the LHC in 2012.
+The decays of interest are \XtoWV and \XtoWH, where $V=W^\pm,Z$ is any of the three massive electroweak vector bosons and $H$ is the Higgs boson discovered at the LHC in 2012.
 We consider semileptonic final event states in which the $W$ decays leptonically via \Wtolnu, where $\ell$ is either an electron or a muon, as this provides a clean experimental signature and an efficient online event selection.
 The other vector boson decays hadronically through the process \Vtoqqbarpr and is reconstructed as a single massive jet, and there are two forward-facing jets resulting from vector boson fusion (\VBF) production processes.
 
@@ -413,7 +413,7 @@ The structure of these events then informs us about making our selection cuts fo
 This search covers spin-0, spin-1, and spin-2 bosonic resonances, and is based off of the following benchmark models:
 \begin{enumerate}
   \item \textbf{Spin-0 Kaluza-Klein Radion:} A neutral scalar boson appearing in RS models that can decay to the vector bosons $W$ and $Z$ via \RadtoWW and \RadtoZZ~\cite{Goldberger_1999,Goldberger_2000}.
-  \item \textbf{Spin-1 \Wpr/\Zpr Boson:} A heavier version of the spin-1 $W$ and $Z$ bosons that can decay via \WprtoWZ, \WprtoWH, \ZprtoWW, and \ZprtoZZ~\cite{Pappadopulo_2014}.
+  \item \textbf{Spin-1 \Wpr/\Zpr Boson:} A heavier version of the spin-1 $W$ and $Z$ bosons that can decay via \WprtoWZ, \WprtoWH, \ZprtoWW, and \ZprtoZH~\cite{Pappadopulo_2014}.
   \item \textbf{Spin-2 Bulk Graviton:} A spin-2 resonance from a bulk RS model that decays via \GBulktoWW and \GBulktoZZ~\cite{Fitzpatrick_2007,PhysRevD.76.036006}.
 \end{enumerate}
 
@@ -423,17 +423,67 @@ The models used also assume a narrow resonance, which means that the internal wi
 Despite the variety in signal models, they may all result in similar semileptonic final states, thereby allowing the analysis to be model independent.
 Furthermore, based on previous searches that have been conducted, they are all expected to be in the TeV mass range.
 
+\subsubsection{Model Parameters}
+\label{subsec:param}
+
+% GBulk parameters
+The Kaluza-Klein Radion and Bulk Graviton benchmark models make use of common parameters because they are both based off of RS theories.
+In particular, the metric considered with the extra spatial dimension $\varphi$ is given by~\cite{carvalho2018gravity}
+\begin{equation}
+  \dd{s}^2=e^{-2kr_c\varphi}\eta_{\mu\nu}\dd{x}^\mu\dd{x}^\nu+r_c^2\dd{\varphi}^2,
+\end{equation}
+where $0\leq\varphi\leq\pi$, $r_c$ is the finite size of the $\varphi$ dimension, $x^\mu$ are the familiar 4D spacetime coordinates, $\eta_{\mu\nu}$ is the Minkowski metric, and $k$ is the curvature factor given by
+\begin{equation}
+  k\equiv\sqrt{\frac{-\Lambda}{24M_5^2}}.
+\end{equation}
+Here, $\Lambda$ is the vacuum energy density on the branes/bulk, and $M_5$ is the 5D Planck mass.
+The Bulk Graviton model used for this analysis is parameterized in terms of the dimensionless curvature given by $\tilde{k}\equiv{k/\overline{M}_P}$, where $\overline{M}_P^2=\frac{M_5^3}{k}(1-e^{2\pi kr_c})$ is the 4D Planck mass obtained by integrating out the extra dimension $\varphi$.
+
+% Rad parameters
+For the Radion model, there are two parameters that are considered.
+The first is the dimensionless combination $kr_c$, given by
+\begin{equation}
+  kr_c=\frac{1}{\pi}\ln\pqty{3.83\tilde{k}\frac{\overline{M}_P}{M_G}},
+\end{equation}
+where $M_G$ is the graviton mass.
+The second parameter $\Lambda_R\equiv e^{-\pi kr_c}\sqrt{\frac{6M_5^3}{k}}$ determines the strength of the coupling of the Radion with matter in the interaction Lagrangian
+\begin{equation}
+  \mathcal{L}_\Rad=-\frac{1}{\Lambda_R}\Rad a_iT^{\mu(i)}{}_\mu,
+\end{equation}
+where the $a_iT^{\mu(i)}{}_\mu$ are interaction terms obtained from taking the trace of the energy-momentum tensor $T^{\mu\nu}$, with $i$ denoting the type of matter field in the interaction (i.e., massive gauge bosons or fermions).
+
+% W'/Z' parameters
+Meanwhile, the \Wpr/\Zpr model considered for \ggF and \DY processes is the Heavy Vector Triplet (HVT) model B, and model C for \VBF processes, as described in reference~\cite{Pappadopulo_2014}.
+The model introduces a spin-1 field $\rho_\mu$ that transforms under the $SO(4)$ group, with a Lagrangian
+\begin{equation}
+  \mathcal{L}_\rho=-\frac{1}{4\hat{g}'^2}(B_{\mu\nu})^2-\frac{1}{4\hat{g}^2}(W_{\mu\nu}^a)^2+\frac{f^2}{4}d_\mu^id^{\mu i}-\frac{1}{4g_\rho^2}(\rho_{\mu\nu}^a)^2+\frac{m_\rho^2}{2g_\rho^2}(p_\mu^a-e_\mu^a)^2.
+\end{equation}
+The field strength tensor for $\rho$ is $\rho_{\mu\nu}^a=D_{[\mu}V_{\nu]}^a-\epsilon^{abc}V_\mu^bV_\nu^c-W_{\mu\nu}^a$, where $V_\mu^a\equiv\rho_\mu^a+W_\mu^a$ is the vector triplet for which the model is named.
+Meanwhile, the $d_\mu^i$ and $e_\mu^a$ terms contain interactions between the Higgs fields and other fields, $f$ is the Goldstone-Boson-Higgs decay constant, and $g_\rho$, $\hat{g}$, and $\hat{g}'$ are coupling constants.
+For the parameters of the models, it is convenient to instead rewrite the coupling constants as
+\begin{equation}
+  g_V=g_\rho,\qquad \frac{1}{g^2}=\frac{1}{\hat{g}^2}+\frac{1}{\hat{g}_\rho^2},\qquad g'=\hat{g}'.
+\end{equation}
+There are several parameters that describe the three variants of the HVT models, but for this analysis we are interested only in three: $g_V$, $c_H$, and $c_F$, with the latter two being the Higgs and fermion couplings, respectively.
+In terms of other model parameters, the two couplings are
+\begin{equation}
+  c_H=\frac{g_V}{\sqrt{g_V^2-\tilde{c}_{VW}^2g^2}}\pqty{\tilde{c}_H+\frac{g^2}{g_V^2}\tilde{c}_{VW}},\qquad c_F=\frac{g_V}{\sqrt{g_V^2-\tilde{c}_{VW}^2g^2}}(\tilde{c}_F+\tilde{c}_{VW}),
+\end{equation}
+where the $\tilde{c}$ quantities are transformed versions of the original $c$ couplings and the subscripts denote the interaction terms they couple to.
+For model B, $g_V\leq4\pi$, $c_H\approx1$, and $c_F\approx1$, while for model C the fermionic couplings are zero, with $g_V\approx1$ and $c_F=0$.
+
 \subsection{Expected Event Structure}
 \label{subsec:expEvent}
 
 % Event structure
 The decay processes \XtoWVtolnuqqbarpr and \XtoWHtolnubbbar were chosen due to the fact that one-lepton events are ideal for such an analysis, as the final states that are generated provide a clean signal that suppresses background.
-Furthermore, the semileptonic final state is also a good compromise for search sensitivity since it is cleaner than an all-hadronic final state, and produces more expected signal than an all-leptonic state.
+Furthermore, the semileptonic final state is also a good compromise for search sensitivity since it is cleaner than an all-hadronic final state, and it produces more expected signal than an all-leptonic state.
 Three production modes are considered based on the benchmark models used: vector boson fusion (\VBF), gluon-gluon fusion (\ggF), and Drell-Yan (\DY) production.
 The \VBF production channel was selected to further suppress background and identify signal events since the \VBF process uniquely results in forward-facing jets~\cite{rauch2016vectorboson}, and all benchmark models used in the analysis are capable of this production mechanism.
 Such a process has been used in the past as one of the discovery channels for the Higgs boson, and it remains an important class of events at the LHC.
-The \ggF and \DY production modes produce identical \lnuqqbarprp and \lnubbbar semileptonic final states, but without the \VBF jets in the forward regions of the detector.
-The spin-0 Kaluza-Klein radion and spin-2 bulk graviton models both have \ggF production modes, while the spin-1 \Wpr and \Zpr models can be produced via a \DY process.
+%The \ggF and \DY production modes produce identical \lnuqqbarprp and \lnubbbar semileptonic final states, but without the \VBF jets in the forward regions of the detector.
+The \ggF and \DY production modes produce only the \lnuqqbarprp and \lnubbbar semileptonic final states resulting from the decay of the $X$ resonance.
+The spin-0 Kaluza-Klein Radion and spin-2 Bulk Graviton models both have \ggF production modes, while the spin-1 \Wpr and \Zpr models can be produced via a \DY process.
 Examples of Feynman diagrams for all three production processes of an $X$ resonance with the resulting final states can be seen in figure~\ref{fig:productFeynman}.
 
 \begin{figure}[htbp]

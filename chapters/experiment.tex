@@ -216,7 +216,7 @@ To avoid overheating from the power consumption, the pixels are mounted on cooli
 
 % The silicon strip tracker
 Once particles pass through the three layers of the pixel detector, they then go through the silicon strip tracker.
-The strip tracker has 15,148 detector modules in total, spread out among several layers, with each module containing 24,244 silicon sensors along with electronic readouts supported by a carbon fiber or graphite frame. % Check wording
+The strip tracker has 15,148 detector modules in total, spread out among several layers, with each module containing 24,244 silicon sensors along with electronic readouts supported by a carbon fiber or graphite frame~\cite{TRK-11-001,Phase1Pixel}.
 These strips work in a manner similar to the pixels, with electrons getting knocked out of the material as charged particles pass through them and sending a current to be read out by a sensor.
 Figure~\ref{fig:CMSsilicon} shows the layout of the strip tracker~\cite{Chatrchyan:1211825}.
 The Tracker Inner Barrel (TIB) has four inner barrel layers of silicon strips placed between radii of $255.0\unit{mm}$ and $498.0\unit{mm}$, which has a length of $1.4\unit{m}$ along the LHC beamline centered at the interaction point.
@@ -413,7 +413,7 @@ It is not possible to meet the hardware demands for recording every single colli
 Thus, the trigger system is needed in order to select for high-energy events of interest, while also recording them at a reasonable rate that allows for long-term storage.
 
 % Trigger system overview
-The trigger system has two levels, consisting of a Level-1 (L1) Trigger, and a High-Level Trigger (HLT).
+The trigger system has two levels, consisting of a Level-1 (L1) Trigger, and a High-Level Trigger (HLT)~\cite{CMStrigger}.
 The L1 Trigger is hardware-based and is comprised of custom-designed electronics that uses data from the calorimeters and muon system.
 The HLT is software-based and consists of a conventional CPU farm, which has access to a complete readout from the L1 Trigger and is able to perform more advanced calculations with the data.
 The trigger system as whole reduces the rate by a factor of $10^6$, with the L1 Trigger designed to have an output rate of 100 kHz.
@@ -449,3 +449,39 @@ The HLT uses various algorithms to reconstruct the full event and performs tasks
 Since the HLT is software-based, the algorithms used to reconstruct the events have changed over the operational history of the CMS detector~\cite{Trocino_2014}.
 After passing through the HLT, the events are then recorded for offline analysis, and the rate of recorded events after passing through the trigger system as a whole is cut down to be on the order of only a few $10^2\unit{Hz}$.
 The recorded events are then passed onto the Data Acquisition (DAQ) system~\cite{Cittolin:578006}.
+
+\subsection{Event Reconstruction}
+
+% Overview
+Once the data for an event is processed through the HLT, the event reconstruction process uses the raw detector data to identify particles and jets.
+Event reconstruction at CMS is handled through the Particle-Flow (PF) algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, which uses a combination of information from each sub-detector system to identify candidate particles.
+In particular, the principal objects identified are electrons, muons, photons, charged hadrons, and neutral hadrons, along with their directions, energies, and types.
+These objects can then be used to reconstruct jets to determine quark and gluon energies, determine missing transverse energy \Etmiss resulting from neutrinos and other undetectable particles, reconstruct tau leptons from their decay products, and tag $b$-jets.
+
+% Challenges and demands
+Accurately reconstructing the constituents of an event is a challenging task due to the fact that most stable particles that are produced in collisions tend to have low \pt.
+For example, in a quark or gluon jet with a \pt of $500\unit{GeV}$, the average \pt carried by its stable constituent particles is on the order of $10\unit{GeV}$, and for jets with a total \pt below $100\unit{GeV}$ this reduces to only a few GeV per stable constituent.
+In order to discriminate between jets that produced by heavy exotic particles and those that originate from SM background processes, it is crucial to accurately reconstruct as many final stable particles in the event as possible, many of which will have low \pt and energy.
+
+\subsubsection{The Particle-Flow Algorithm}
+
+% Particle flow overview
+The basic elements of PF inputs are objects that come from the CMS sub-detectors: charged particle tracks from the inner tracker, calorimeter clusters, and muon tracks from the muon chambers.
+These inputs can be grouped together into objects known as PF blocks through a link algorithm, which are topologically linked together to identify each particle while also avoiding double counting from different detectors.
+A block typically contains only one, two, or three of the aforementioned elements from the CMS sub-detectors.
+Once the blocks in the event are identified, the Particle-Flow algorithm receives them as input and begins reconstructing individual particles.
+
+% Algorithm outline
+The PF algorithm proceeds in the following steps for each block:
+\begin{enumerate}
+  \item Create PF muons from inner tracker tracks and muon stubs, then remove the corresponding tracks.
+  \item Create PF electrons from tracks and ECAL PF clusters if they pass identification criteria, then remove the corresponding tracks.
+  \item Tighter quality criteria on the transverse momenta are applied to the remaining tracks to remove fake tracks.
+  \item Energies of the remaining ECAL and HCAL PF clusters are calibrated and have the expected energies of the muons from the corresponding clusters subtracted.
+  \item Links between ECAL/HCAL clusters and tracks are sorted and either kept or discarded in order to determine which clusters resulted from which tracks.
+  \item If the total calibrated calorimetric energy is smaller than the total track momentum by more than three standard deviations, a search for muons and fake tracks is performed with looser criteria.
+  \item The remaining tracks result in PF charged hadrons, with the momentum taken from the track momentum if it is not consistent with the calorimetric energy, or obtained from a fit of the measurements in the tracker and the calorimeters.
+  \item Neutral particles are identified if the total calibrated cluster energy is larger than the total associated track momentum, with PF photons being created if the calorimetric energy excess is larger than the total ECAL energy, and PF neutral hadrons being created with the remaining part of the excess calibrated ECAL and HCAL energies.
+  \item The remaining ECAL and HCAL clusters without links to tracks produce PF photons and PF neutral hadrons, respectively.
+\end{enumerate}
+After the PF candidates are obtained, they are then used for various tasks in analyses, such as reconstructing jets and determining \Etmiss for the event.
