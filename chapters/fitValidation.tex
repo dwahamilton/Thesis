@@ -5,7 +5,7 @@
 
 % Fit validation overview
 The nuisance parameters implemented as part of the 2D fitting process for each of the 24 categories results in various alternative shapes for the signal and background models.
-To evaluate their performance, we perform various fit validation and bias tests.
+To check their performance, we perform various fit validation and bias tests to evaluate the quality of the 2D fit, which includes the correctness of the shape uncertainties. % Check wording
 We consider the post-fit pulls and impacts for each of the nuisance parameters described in section~\ref{sec:uncert}, post-fit distributions for a background-only fit in the signal region, a goodness-of-fit test using the saturated model algorithm, and a signal-injected bias test using a maximum likelihood fit.
 
 \subsection{Post-fit Pulls and Impacts}
@@ -66,7 +66,7 @@ Another test performed to assess the fit quality involves performing a backgroun
 Figure~\ref{fig:postfit_MJJ_Run2} shows the post-fit distributions for all categories projected onto the \MJ dimension for all events in the full range of \MVV, while figure~\ref{fig:postfit_MVV_Run2} shows the post-fit distributions projected onto the \MVV dimension for all events in the full \MJ range.
 We also consider slices of \MJ and \MVV while projecting over the full range of the other variable.
 Figures~\ref{fig:postfit_MJJ_MVV0700to1000_Run2}, \ref{fig:postfit_MJJ_MVV1000to1500_Run2}, and \ref{fig:postfit_MJJ_MVV1500to5000_Run2} show the post-fit distributions for the low ($[0.7,1.0\unit{TeV}]$), medium ($[1.0,1.5\unit{TeV}]$), and high ($[1.5,5.0\unit{TeV}]$) \MVV ranges projected into the \MJ dimension, respectively.
-We do the same in figures~\ref{fig:postfit_MVV_MJJ020to070_Run2}, \ref{fig:postfit_MVV_MJJ070to110_Run2}, \ref{fig:postfit_MVV_MJJ110to150_Run2}, and \ref{fig:postfit_MVV_MJJ150to210_Run2} for the low jet mass sideband ($\MJ<70\unit{GeV}$), $W/Z$ peak range ($70\leq\MJ\leq110\unit{GeV}$), Higgs peak range ($110\leq\MJ\leq150\unit{GeV}$), and high jet mass sideband ($\MJ>150\unit{GeV}$).
+We do the same in figures~\ref{fig:postfit_MVV_MJJ020to070_Run2}, \ref{fig:postfit_MVV_MJJ070to110_Run2}, \ref{fig:postfit_MVV_MJJ110to150_Run2}, and \ref{fig:postfit_MVV_MJJ150to210_Run2} for the low jet mass sideband ($\MJ<70\unit{GeV}$), $W/Z$ peak range ($70\leq\MJ\leq110\unit{GeV}$), Higgs boson peak range ($110\leq\MJ\leq150\unit{GeV}$), and high jet mass sideband ($\MJ>150\unit{GeV}$).
 Good agreement between the data and post-fit templates is observed for all 24 categories.
 
 \begin{figure}[htbp]
@@ -334,7 +334,7 @@ Good agreement between the data and post-fit templates is observed for all 24 ca
   \includegraphics[width=0.18\textwidth]{fig/fitValidation/PostFit_SR_MVV_MJJ110to150__mu_LP_vbf_HDy_Run2.pdf}
   \includegraphics[width=0.18\textwidth]{fig/fitValidation/PostFit_SR_MVV_MJJ110to150__e_LP_vbf_HDy_Run2.pdf}\\
   \caption{
-    Post-fit distributions and data projected onto the \MVV dimension for the Higgs peak range ($110\leq\MJ\leq150\unit{GeV}$).
+    Post-fit distributions and data projected onto the \MVV dimension for the Higgs boson peak range ($110\leq\MJ\leq150\unit{GeV}$).
     Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, and $e$-LP.
     Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, and vbf-HDy.
   }
@@ -427,7 +427,7 @@ The cross section pull is defined by
 \end{equation}
 where $r$ is the injected cross section times branching fraction and $\sigma_r$ is the measured cross section uncertainty.
 We define the bias as the median for the resulting cross section pull $P_r$, which is shown for each signal model as a function of \MX in figure~\ref{fig:biasTest_injectedSignal}.
-Each benchmark signal model exhibits slight biases on the order of 0-10\%, with some reaching as high as 20\% at certain mass points.
+While the overall level of bias is very low, each benchmark signal model exhibits slight biases on the order of 0-10\%, with some reaching as high as 20\% at certain mass points.
 These biases have been investigated and are partly due to tail effects for the pull distributions at each mass point, with large pre-fit uncertainties causing some of the shapes to get far from the nominal ones in the toy data sets.
 
 \begin{figure}[htbp]

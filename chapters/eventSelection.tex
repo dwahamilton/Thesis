@@ -5,15 +5,15 @@
 
 % Goal of event selection
 In subsection~\ref{subsec:expEvent}, we described the expected event topology for the \WV/\WH dibosonic resonance that this work searches for.
-In particular, the semileptonic decay produces a highly energetic lepton ($e$ or $\mu$) and large \Etmiss from the neutrino from the \Wtolnu decay, a large-radius jet from the hadronic \Vtoqqbarpr or \Htobbbar decay, and forward-facing \VBF jets for \VBF-produced resonances.
+In particular, the semileptonic decay produces a highly energetic lepton ($e$ or $\mu$) and large \ptmiss from the neutrino from the \Wtolnu decay, a large-radius jet from the hadronic \Vtoqqbarpr or \Htobbbar decay, and forward-facing \VBF jets for \VBF-produced resonances.
 To select for possible events that exhibit the expected final state structure, selection cuts must be made that capture the expected behavior and reduce background.
 This section provides an overview of the cuts that were made in the analysis to optimize the search for the \WV/\WH dibosonic resonance.
 
 \subsection{Trigger}
 
 % Trigger paths
-There are multiple HLT trigger paths that used for recording the data that this analysis uses.
-Most of the data are collected from the single electron and single muon triggers, with the remainder coming from the single photon, EGamma, and MET triggers.
+There are multiple HLT trigger paths used for recording the data that this analysis utilizes.
+Most of the data are collected from the \texttt{SingleElecton} and \texttt{SingleMuon} triggers, with the remainder coming from the \texttt{SinglePhoton}, \texttt{EGamma}\footnote{This is specific to 2018 and denotes a combined \texttt{SingleElectron} and \texttt{SinglePhoton} dataset.}, and \texttt{MET} triggers.
 For each year we use different paths, which are listed in table~\ref{tab:triggers}.%~\ref{tab:triggers2016}, \ref{tab:triggers2017}, and \ref{tab:triggers2018} for the years Run 2, respectively.
 
 \begin{table}[htbp]
@@ -53,13 +53,16 @@ For each year we use different paths, which are listed in table~\ref{tab:trigger
 %\end{table}
 
 % Single electron thresholds
-The single electron \pt thresholds used are 27, 45, and $115\unit{GeV}$ for 2016, 32, 25, and $115\unit{GeV}$ for 2017, and 25 and $115\unit{GeV}$ for 2018.
-These thresholds are chosen as part of compromises between energy thresholds and isolation tightness, as lower \pt thresholds result in better electron identification, but higher \pt electrons are harder to identify and hence have looser working points.
-Additionally, we apply an OR with \texttt{HLT\_Photon175} in 2016 with an \Et threshold of $175\unit{GeV}$, as well as with \texttt{HLT\_Photon200} in 2017 with $200\unit{GeV}$. % Need to find out what an OR is
+The \texttt{SingleElectron} \pt thresholds used are 27, 45, and $115\unit{GeV}$ for 2016, 32, 25, and $115\unit{GeV}$ for 2017, and 25 and $115\unit{GeV}$ for 2018.
+These thresholds are chosen as part of compromises between energy thresholds and isolation tightness, as lower \pt thresholds result in a higher event rate and hence require tighter identification cuts, while higher \pt thresholds allow for looser working points.
+To overcome some inefficiencies, we apply an OR with \texttt{HLT\_Photon175} in 2016 with an \Et threshold of $175\unit{GeV}$, as well as with \texttt{HLT\_Photon200} in 2017 with $200\unit{GeV}$. % Need to find out what an OR is
 These thresholds were applied as recommended by the CMS E/Gamma Physics Object Group (POG)~\cite{MuonPOG}.
 
 % Single muon thresholds
-For the muon thresholds, the main threshold is $50\unit{GeV}$ across all three years, with an OR for \texttt{HLT\_TkMu50} at $50\unit{GeV}$ in 2016, and an OR for \texttt{HLT\_OldMu100} in 2017 and \texttt{HLT\_TkMU100} in 2018 at $100\unit{GeV}$, as recommended by the Muon POG~\cite{MuonHLT2016,MuonHLT2017,MuonHLT2018}.
+For \texttt{SingleMuon} paths, the main threshold is $50\unit{GeV}$ across all three years, with an OR for \texttt{HLT\_TkMu50} at $50\unit{GeV}$ in 2016, and an OR for \texttt{HLT\_OldMu100} in 2017 and \texttt{HLT\_TkMU100} in 2018 at $100\unit{GeV}$, as recommended by the Muon POG~\cite{MuonHLT_16,MuonHLT_17,MuonHLT_18}.
+
+% MET trigger path
+Lastly, the additional \texttt{MET} trigger path recovers some inefficiency in triggering on high \pt muons in the endcaps.
 
 % Additional explanation of efficiencies?
 % Possibly add subsection on prefiring weights
@@ -92,14 +95,14 @@ The weights are computed using the recommended minimum bias cross section of $69
 \label{subsec:muonSelect}
 
 % Muon reconstruction
-Muon reconstruction in CMS is a multi-stage process that involves creating muon objects from various trigger sources~\cite{Sirunyan_2018_CMS}. %\cite{MuonAnalysis}
+Muon reconstruction in CMS is a multi-stage process that involves creating muon objects from various trigger sources~\cite{Sirunyan_2018_CMS,Sirunyan_2020}. %\cite{MuonAnalysis}
 This process starts with local reconstruction, in which detection hits in the muon chambers are reconstructed through the trigger system.
 The hits within the chambers are then matched to create track segments, known as track stubs.
 During offline reconstruction, the track stubs are used to create standalone muons, which are muon objects constructed by using the track stubs to estimate the muon transverse momentum using the Kalman filter technique.
 These objects are then used to create global muons, which are objects that combine standalone muon tracks with tracks from the inner tracking system, again using a Kalman filter.
 
 % High-pT muon selection criteria
-When selecting muons for the analysis, they must pass the following high-\pt muon identification criteria as provided by the CMS Muon POG~\cite{MuonSelection}:
+When selecting muons for the analysis, they must pass the following high-\pt muon identification criteria as provided by the CMS Muon POG~\cite{Sirunyan_2020}:
 \begin{itemize}
   \item The muon is reconstructed as a global muon.
   \item At least one muon-chamber hit included in the global-muon track fit or in the TuneP fit.
@@ -144,8 +147,8 @@ This scale factor was derived on top of muon high-\pt identification, in boosted
 The electrons that are reconstructed from trigger primitives in the ECAL are required to pass the ``HEEP v7.0'' identification requirements as prescribed by the E/Gamma POG. %\cite{HEEPV70}
 These requirements are chosen specifically to optimize the identification of high energy electrons.
 The identification requirements ensure that the reconstructed electrons from the ECAL energy deposits are paired with a high quality track from the inner tracker and have a shape consistent with an electromagnetic shower in the calorimeter.
-These requirements are listed in table~\ref{tab:HEEPV70} in terms of identification variables~\cite{electron_2015}.
-For our analysis, we also require them to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$. % Unsure why this range is excluded
+These requirements are listed in table~\ref{tab:HEEPV70} in terms of identification variables~\cite{CMSe}.
+For our analysis, we also require the electrons to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$. % Unsure why this range is excluded
 We also apply scale factors for the HEEP identification requirements along with RECO scale factors as recommended by the E/Gamma POG~\cite{EgammaScale}.
 
 \begin{table}[htbp]
@@ -167,30 +170,19 @@ We also apply scale factors for the HEEP identification requirements along with 
 
 % Types of jets
 As mentioned previously, there are two types of jets that are expected to be produced in the signal events of interest.
-The first is a large-radius jet that is produced via the \VorH decay that exhibits two-pronged substructure, while the second type are small-radius forward-facing jets only present in \VBF production modes.
+The first is a large-radius jet that is produced via the \VorH decay that exhibits two-pronged substructure, while the second type are regular-radius forward-facing jets only present in \VBF production modes.
 This analysis therefore categorizes candidate jets into the two following types:
 \begin{itemize}
   \item ``Large-radius'' AK8 jets: \VorH boson candidates that decay into $q\bar{q}^{(\prime)}$ or $b\bar{b}$, using the anti-\kt algorithm with distance parameter $R=0.8$.
-  \item ``Standard'' AK4 jets: \VBF forward jet candidates, using the anti-\kt algorithm with distance parameter $R=0.4$.
+  \item ``Standard'' AK4 jets: \VBF forward jet candidates and jets used to require or veto the presence of $b$-tagged jets in the event, using the anti-\kt algorithm with distance parameter $R=0.4$.
 \end{itemize}
-
-% The anti-kt algorithm
-The anti-\kt algorithm is a jet clustering algorithm that reconstructs jets by introducing distances $d_{ij}$ between objects $i$ and $j$ and $d_{i,B}$ between object $i$ and the beam $B$~\cite{Cacciari_2008}.
-The algorithm starts by assigning values for $d_{ij}$ and $d_{i,B}$ for all objects in the final state, and finds the minimum value among the distances.
-If the minimum value is a $d_{i,B}$ value, then object $i$ is declared to be a jet and removed from the list, and the algorithm starts over from the first step.
-If instead it is a $d_{ij}$ value, then objects $i$ and $j$ are combined and the algorithm goes back to the first step.
-This process is repeated until all particles have been declared jets, with $d_{ij}$ and $d_{i,B}$ defined by
-\begin{align}
-  & d_{ij}=\min\pqty{k_{\mathrm{T},i}^{2p},k_{\mathrm{T},j}^{2p}}\frac{\Delta_{ij}^2}{R^2},\\
-  & d_{i,B}=k_{\mathrm{T},i}^{2p},
-\end{align}
-where $\Delta_{ij}^2=(y_i-y_j)^2+(\phi_i-\phi_j)^2$, with $k_{T,i}$ as the transverse momentum for object $i$, $y_i$ the rapidity for object $i$, $\phi_i$ is the azimuthual angle for object $i$, $R$ is the distance parameter for the algorithm, and $p$ is a parameter determined by the jet clustering algorithm.
-For the anti-\kt algorithm, $p=-1$, with other algorithms taking on different values, such as $p=1$ for the \kt algorithm~\cite{Marzani_2019}.
 
 % Jet selection
 For both types of jets, we use tight identification jets as recommended by the JetMET POG~\cite{jetID2016,jetID2017,jetID2018}.
 These jets are required to pass identification requirements based on quantities such as the neutral hadron fraction, neutral EM fraction, number of constituents, and number of neutral particles.
 We also apply jet energy corrections for data and MC prescribed by the Jet Energy Resolution and Corrections (JERC) subgroup~\cite{JetEnergyScale}.
+
+% Hadronic jet selection
 The hadronic jet resulting from the \VorH decay is selected by taking the jet with the highest \pt from the large-radius jets, with a minimum threshold of $\pt>200\unit{GeV}$ and a pseudorapidity range of $|\eta|<2.4$.
 Any large-radius jets that have an electron or tight muon within $\Delta R<1.0$ are discarded to suppress background events.
 For the standard jets, we require that $\pt>30\unit{GeV}$, and we discard any jets within $\Delta R<0.4$ of any selected electron or muon, or within $\Delta R<0.8$ of any large-radius jet.
@@ -205,6 +197,7 @@ The resulting reweighted candidates are then put into substructure algorithms fo
 
 % Jet grooming
 The jets obtained from the PUPPI algorithm are then groomed by using the ``soft drop'' algorithm~\cite{Larkoski_2014}, which removes soft wide-angle radiation from jets.
+The soft drop algorithm starts by using the Cambridge-Aachen algorithm to recluster the constituents of a given jet~\cite{Dokshitzer_1997,Wobisch:393035}.
 For a jet with radius $R$ with two constituents, the soft drop algorithm removes the softer constituent if it does not satisfy the condition
 \begin{equation}
   \frac{\min\pqty{p_{\mathrm{T},1},p_{\mathrm{T},2}}}{p_{\mathrm{T},1}+p_{\mathrm{T},2}}>z\pqty{\frac{\Delta R_{12}}{R}}^\beta,
@@ -250,7 +243,7 @@ where $C$ is a coefficient obtained by taking the slope of a fit for the \nsubj 
 
 % N-subjettiness selection
 For this analysis, we only consider large-radius jets that satisfy $\nsubjDDT<0.80$.
-We also later use \nsubjDDT for event categorization to split the analysis into high and low purity jet categories.
+We also later use \nsubjDDT for event categorization to split the analysis into high and low purity jet categories, as discussed in subsection~\ref{subsec:eventCat}.
 
 \subsubsection{$b$-tagging}
 
@@ -259,7 +252,7 @@ We also later use \nsubjDDT for event categorization to split the analysis into 
 %The CHS approach is used in order to suppress background contribution from top quark production, which results in the production of jets from $b$ decays.
 
 % b-tagging overview
-Decays resulting from $b$ quarks are of particular importance due to the fact that they often originate from heavier particles, such as top quarks or the Higgs.
+Decays resulting from $b$ quarks are of particular importance due to the fact that they often originate from heavier particles, such as top quarks or Higgs boson.
 Additionally, jets produced from $b$ quarks have unique characteristics that distinguish them from other hadronic decays~\cite{Sirunyan_jet}.
 Because of the relatively long lifetime of hadrons that contain $b$ quarks, the secondary vertices (SV) corresponding to the location of the decay tend to have displacements on the order of a few millimeters away from the primary vertex.
 Another distinguishing property is that decays from $b$ hadrons result in a boosted jet topology, as the products that $b$ quarks decay into are much lighter.
@@ -267,6 +260,8 @@ Finally, the heavy hadrons containing $b$ quarks tend to favor semileptonic deca
 The techniques used to identify such jets are referred to as $b$-tagging.
 
 % b-tagging details
+For this analysis, we use $b$-tagging to suppress background contributions by removing events with at least one $b$-tagged standard jet, as these events are dominated by processes containing top quark decays, such as $t\bar{t}$ events.
+We also use $b$-tagged jets for defining the top-enriched control region, which is discussed in section~\ref{sec:comp}.
 Jets in the region $|\eta|<2.4$ are $b$-tagged if they pass the \texttt{medium} working point of the Combined Secondary Vertex (CSV) or DeepCSV algorithms, as recommended by the $b$-tag and vertexing (BTV) POG.
 The \texttt{medium} working point for CSV is 0.8484 in 2016, and for DeepCSV the working points are 0.4941 and 0.4184 for 2017 and 2018, respectively. %\cite{bTagging2016,bTagging2017,bTagging2018}
 We also apply $b$-tagging scale factors and weights that depend on the jet \pt, $\eta$, and value of the $b$-tagging discriminant as prescribed by the BTV POG~\cite{bTaggingEff,bTaggingSF}.
@@ -278,7 +273,7 @@ The $V$-tagging methods previously described account for identifying and groomin
 Such a jet signifies the decay \Htobbbar in the final state and hence a \WH resonance, which allows for discriminating against background with light jet flavors.
 Furthermore, a unique feature of the topology of \bbbar jets is the fact that the constituent $b$ quarks have secondary vertices that are displaced from the PV of the jet.
 To identify such \bbbar jets, we therefore use a $b$-tagging discriminator to identify Higgs boson jet candidates that uses information from displaced tracks and secondary vertices~\cite{CMS-PAS-BTV-15-002}.
-We also apply a cut on the M2 operating point of the ``\DoubleB tagger'' to categorize events, for which the threshold is 0.8 for Run 2 according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
+We also apply a cut on the M2 operating point of the ``\DoubleB tagger'' to categorize events in subsection~\ref{subsec:eventCat}, for which the threshold is 0.8 for Run 2. % according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
 
 % Scale factors
 Additionally, we apply scale data/MC efficiency scale factors to our signal sample normalizations as recommended by the BTV POG, while the scale factors for the background are estimated from the data in the control regions.
@@ -304,24 +299,24 @@ while for the \bbbar-untagged category, we instead use
   w^{\mathrm{no}\bbbar}(\pt)=\frac{1-\mathrm{SF}(\pt)\epsilon(\pt)}{1-\epsilon(\pt)}.
 \end{equation}
 
-\subsection{Missing Transverse Energy}
+\subsection{Missing Transverse Momentum}
 
-% MET
-For this analysis, we use type-I corrected particle flow MET (PFMET) to account for the energy of the neutrino from the \Wlep decay, where PFMET is defined as the magnitude of the negative vector sum of all transverse energies from particle flow objects~\cite{Sirunyan:2019kia}. %\cite{PFMET}
-The correction is a propagation of the jet energy corrections (JEC) to MET, which is given by
+% Missing pt
+For this analysis, we use type-I corrected particle flow missing transverse energy (PFMET) to account for the energy of the neutrino from the \Wlep decay, where PFMET is defined as the magnitude of the negative vector sum of all transverse momenta from particle flow objects~\cite{Sirunyan:2019kia}. %\cite{PFMET}
+The correction is a propagation of the jet energy corrections (JEC) to \ptmiss, which is given by
 \begin{equation}
-  \EtmissTI=\vqty{-\sum_\mathrm{jet}\vb{p}_\mathrm{T,jet}^\mathrm{JEC}-\sum_{i\in\mathrm{uncl.}}\vb{p}_{\mathrm{T},i}},
+  \ptmissTI=\vqty{-\sum_\mathrm{jet}\vb{p}_\mathrm{T,jet}^\mathrm{JEC}-\sum_{i\in\mathrm{uncl.}}\vb{p}_{\mathrm{T},i}},
 \end{equation}
 where the first sum is over clustered jets and the second sum is over unclustered particles.
 
 \subsection{Leptonic $W$ and \WV reconstruction}
 
 % Leptonic reconstruction
-To reconstruct the leptonically decaying $W$ candidate \Wlep, we select the highest \pt lepton in the event and combine it with the \EtmissTI resulting from the neutrino.
-We also apply a $W$ mass constraint to estimate the $z$-component of the missing energy $p_{\nu,z}$.
+To reconstruct the leptonically decaying $W$ candidate \Wlep, we select the highest \pt lepton in the event and combine it with the \ptmissTI resulting from the neutrino.
+We also apply a $W$ mass constraint to estimate the $z$-component of the missing momentum $p_{\nu,z}$.
 This is done by solving a second order equation for $p_{\nu,z}$ given by
 \begin{equation}
-  4(E_\ell^2-p_{\ell,z}^2)p_{\nu,z}^2-4(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})p_{\ell,z}p_{\nu,z}+4E_\ell^2(\Etmiss)^2-(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})^2=0,
+  4(E_\ell^2-p_{\ell,z}^2)p_{\nu,z}^2-4(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})p_{\ell,z}p_{\nu,z}+4E_\ell^2(\ptmiss)^2-(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})^2=0,
 \end{equation}
 where $E_\ell$ is the energy of the lepton, $\vb{p}_\ell$ is the momentum of the lepton, $\vb{p}_\nu$ is the momentum of the neutrino, and $m_W$ is the mass of the $W$ boson.
 When solving for $p_{\nu,z}$ we choose the root with the smaller magnitude, and if the discriminant is imaginary then we select only the real part of $p_{\nu,z}$.
@@ -332,7 +327,8 @@ The resulting \Wlep is then combined with the large-radius \Vhad jet to form a d
 
 % VBF signature
 The defining signature of the \VBF production process is the presence of two boosted jets in the forward and backward regions of the detector, along with the decay products in the central region of the detector resulting from the \Wlep and \Vhad resonances.
-The analysis therefore requires additional kinematic constraints in order to categorize \VBF-produced events, which take into account properties of the forward-facing \VBF jets such as their combined mass and separation in $\eta$.
+%The analysis therefore requires additional kinematic constraints in order to categorize \VBF-produced events, which take into account properties of the forward-facing \VBF jets such as their combined mass and separation in $\eta$.
+The analysis therefore exploits the specific event topology of \VBF events to define a \VBF-tagged category that is sensitive to \VBF-produced resonances, as defined in subsection~\ref{subsec:eventCat}.
 
 % VBF jet selection
 We select candidate \VBF jets from the two highest \pt standard AK4 jets as defined in subsection~\ref{subsec:jetSelect}.
@@ -406,7 +402,7 @@ Finally, the \VBF\RadtoWW signal exhibits no difference in its \Dy distribution 
 
 % Statistical power of Dy categories
 The shape differences between the \VBF signals allow for not only enhancing the search sensitivity by using categories based on \Dy, but by also allowing for distinguishing between spin-0 (\RadtoWW), spin-1 (\ZprtoWW, \WprtoWZ, \WprtoWH), or spin-2 (\GBulktoWW) \VBF signal models.
-For this reason, we use two categories based on rapidity: a low-\Dy category defined by the condition $\Dy<1.0$, and a high-\Dy category defined by $\Dy\geq1.0$.
+For this reason, we use two categories defined in subsection~\ref{subsec:eventCat} based on rapidity: a low-\Dy category defined by the condition $\Dy<1.0$, and a high-\Dy category defined by $\Dy\geq1.0$.
 Originally a 3-category scheme was considered for the analysis, but it was found that this did not leave sufficient background MC statistics in all three categories in order to build robust 2D background templates.
 
 \subsection{Final Event Selection and Categorization}
@@ -423,21 +419,21 @@ The final event selection used in the analysis is defined by the following:
 \begin{enumerate}
   \item Exactly one charged lepton as defined in subsections~\ref{subsec:muonSelect} and \ref{subsec:elecSelect}.
   \item Lepton veto: no additional loose electron ($\pt>35\unit{GeV}$) or muon ($\pt>20\unit{GeV}$) in the event.
-  \item Type-I corrected missing transverse energy \EtmissTI: events are required to have $\Etmiss>80\unit{GeV}$ for the electron channel and $\Etmiss>40\unit{GeV}$ for the muon channel to suppress contributions from QCD multijet backgrounds.
+  \item Type-I corrected missing transverse momentum \ptmissTI: events are required to have $\ptmiss>80\unit{GeV}$ for the electron channel and $\ptmiss>40\unit{GeV}$ for the muon channel to suppress contributions from QCD multijet backgrounds.
   \item Leptonic $W$ \pt: the \pt of the reconstructed \Wlep must satisfy $\pt>200\unit{GeV}$ in order to select a boosted $W$ topology.
   \item Hadronic \VorH \pt: the \pt of the reconstructed \Vhad must satisfy $\pt>200\unit{GeV}$ in order to select a boosted \VorH topology.
   \item $b$-tag veto: the event is required to have no $b$-tagged standard jets.
   \item \ZH veto: to ensure that the selection is disjoint from the $X\to\ZH\to\ell\ell\bbbar$ search~\cite{CMS-PAS-B2G-19-006}, which uses a different electron and muon identification, we explicitly veto events where a \ZH candidate is selected with their criteria.
-  \item Search region: the search region is defined as $0.7<\MVV<5.0\unit{TeV}$ and $20<\MJ<210\unit{GeV}$.
+  \item Search region: the search region is defined as $0.7<\MVV<6.0\unit{TeV}$ and $20<\MJ<210\unit{GeV}$.
 \end{enumerate}
 
 \subsubsection{Final Event Categories}
 \label{subsec:eventCat}
 
 % Final event categories
-After considering the final event selection, we split the analysis into 24 disjoint event categories.
+After considering the final event selection, we split the search region into 24 disjoint event categories.
 By doing so, the sensitivity of the search is enhanced since this allows for discriminating between different signal models based on their final state (\WW, \WZ, or \WH), their production mechanism (\ggF, \DY, or \VBF), or the spin of the resonance (0, 1, or 2).
-The categories are based on four successive criteria based on the lepton channel, large-radius jet purity, \VBF/non-\VBF categories, and \Dy categories.
+The categories are based on four successive criteria based on the lepton channel, $V$ jet tagging, \VBF/\bbbar/non-\bbbar categories, and \Dy categories.
 
 % Lepton channel
 First, we split the event sample based on the lepton flavor of the reconstructed \Wlep candidate, defining two channels:
@@ -456,7 +452,7 @@ This defines the following two categories:
 \end{itemize}
 
 % VBF/non-VBF categories
-Third, to enhance the sensitivity of resonances decaying to \WHtolnubbbar, and to separate events consistent with \VBF production, we split the sample three-way based on the value of the \DoubleB tagger and the presence of \VBF-compatible jet candidates described in subsection~\ref{subsec:VBFjets}:
+Third, to enhance the sensitivity of resonances decaying to \WHtolnubbbar, and to separate events consistent with \VBF production, we split the sample three-way based on the value of the \DoubleB tagger (as described in subsection~\ref{subsec:jetSelect}) and the presence of \VBF-compatible jet candidates described in subsection~\ref{subsec:VBFjets}:
 \begin{itemize}
   \item {\bfseries \VBF-tagged (vbf):} Two candidate \VBF jets, $\DetaVBF>4$, $\mjjVBF>500\unit{GeV}$
   \item {\bfseries \bbbar-tagged (bb):} $\DoubleB>0.8$, no \VBF tag

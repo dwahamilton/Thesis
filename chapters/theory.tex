@@ -19,7 +19,7 @@ The Standard Model is the resulting theory that came about by combining EW theor
 
 % Problems with the SM
 Today, the Standard Model remains as the dominant theory describing three of the four known forces, with gravity excluded due to its inability to be renormalized when approached as a quantum field theory.
-The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs completing the family after being discovered in the summer of 2012.
+The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs boson completing the family after being discovered in the summer of 2012.
 However, despite the success of this theory, many fundamental questions of physics still remain unanswered.
 As previously mentioned in chapter~\ref{chap:intro}, the theory does not include gravity, as it only accounts for the electromagnetic, strong, and weak nuclear forces.
 It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory currently is incapable of addressing, such as the hierarchy problem~\cite{krippendorf2010cambridge}.
@@ -103,7 +103,7 @@ Finally, the $Z$ and $W$ bosons are massive particles that mediate the weak nucl
 The last category of bosons to consider is the scalar bosons, which are spin-0 particles.
 This family contains only one member: the Higgs boson.
 The need for the Higgs boson arises due to the fact the previously mentioned massive gauge bosons ($W$ and $Z$) do not have intrinsic masses.
-Rather, the Higgs is responsible for giving the massive gauge bosons their masses.
+Rather, the Higgs boson is responsible for giving the massive gauge bosons their masses.
 This occurs through the Higgs mechanism, in which spontaneous symmetry breaking and gauge invariance cause the Higgs field to interact with the $W$ and $Z$ fields in the Standard model, thereby imparting the observed masses onto the particles.
 
 \subsection{Mathematical Structure of the Standard Model}
@@ -297,7 +297,7 @@ Thus, the Goldstone boson is eliminated, we are left with the massive scalar fie
 
 % The Higgs mechanism applied to the standard model
 The Higgs mechanism is ultimately the result of combining spontaneous symmetry breaking and local gauge invariance~\cite{Higgs:1964ia}, and applying this process to the $SU(2)_L\times U(1)_Y$ EW theory accounts for the masses of the electroweak $W^\pm$ and $Z$ bosons, while also introducing the Higgs field itself.
-It is for this reason that discovering the Higgs was of the utmost importance in verifying the Standard Model's description of the electroweak sector.
+It is for this reason that discovering the Higgs boson was of the utmost importance in verifying the Standard Model's description of the electroweak sector.
 Meanwhile, the fermions gain their masses through a Yukawa interaction with the Higgs field.
 
 \subsection{Beyond the Standard Model}
@@ -332,8 +332,8 @@ Figure~\ref{fig:hierarchy} shows the comparison between the Planck scale, the el
 \end{figure}
 
 % Correcting the Higgs mass
-The issues caused by the hierarchy problem are more apparent when considering the mass corrections to the Higgs.
-The Higgs mass $m_H$ is corrected through one-loop Feynman diagrams that are proportional to $m_H^2$~\cite{Martin_1998}, two examples of which can be seen in figure~\ref{fig:higgsFeyn}.
+The issues caused by the hierarchy problem are more apparent when considering the mass corrections to the Higgs boson.
+The Higgs boson mass $m_H$ is corrected through one-loop Feynman diagrams that are proportional to $m_H^2$~\cite{Martin_1998}, two examples of which can be seen in figure~\ref{fig:higgsFeyn}.
 Such corrections require a momentum cutoff $\Lambda$ when evaluating the loop integrals obtained from the diagrams, and if the cutoff is on the same order as $m_P$, the correction to $m_H^2$ ends up being far larger than the required value.
 While this effect only directly applies to $m_H^2$, the rest of the massive SM particles are indirectly sensitive to the cutoff $\Lambda$ due to the fact that they gain their masses through the vacuum expectation value of the Higgs field $\ev{H}$, meaning that the mass spectrum of the SM is sensitive to $\Lambda$.
 It also does not suffice to simply pick a sufficiently small cutoff, as this requires new physics at the energy scale of $\Lambda$ to change the behavior of the propagators in the one-loop mass correction terms.
@@ -342,8 +342,8 @@ It also does not suffice to simply pick a sufficiently small cutoff, as this req
   \centering
   \input{fig/theory/higgsFeyn.tex}
   \caption{
-    One-loop Feynman diagrams with a Higgs coupling to a fermion $f$ (left), and a scalar $S$ (right).
-    Such diagrams contribute quadratic corrections $m_H^2$ to the Higgs mass.
+    One-loop Feynman diagrams with a Higgs boson coupling to a fermion $f$ (left), and a scalar $S$ (right).
+    Such diagrams contribute quadratic corrections $m_H^2$ to the Higgs boson mass.
   }
   \label{fig:higgsFeyn}
 \end{figure}
@@ -396,7 +396,9 @@ The warped geometry is such that there are two branes in these models: the Tevbr
 This thesis presents results on the search for a new heavy $X$ resonance, with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
 The decays of interest are \XtoWV and \XtoWH, where $V=W^\pm,Z$ is any of the three massive electroweak vector bosons and $H$ is the Higgs boson discovered at the LHC in 2012.
 We consider semileptonic final event states in which the $W$ decays leptonically via \Wtolnu, where $\ell$ is either an electron or a muon, as this provides a clean experimental signature and an efficient online event selection.
-The other vector boson decays hadronically through the process \Vtoqqbarpr and is reconstructed as a single massive jet, and there are two forward-facing jets resulting from vector boson fusion (\VBF) production processes.
+The other \VorH boson decays hadronically through the process \Vtoqqbarpr or \Htobbbar and is reconstructed as a single massive jet.
+Three production modes are considered based on the benchmark models used: vector boson fusion (\VBF), gluon-gluon fusion (\ggF), and Drell-Yan (\DY) production.
+For \ggF and \DY processes there are no additional objects produced in the event, but for \VBF processes there are two forward-facing jets.
 
 % Previous work
 This work is motivated in part by models such as those mentioned in subsection~\ref{subsec:BSM}, and is a continuation of a previous search using the 2016 data collected by the LHC during Run 2~\cite{Sirunyan_18}.
@@ -464,7 +466,7 @@ For the parameters of the models, it is convenient to instead rewrite the coupli
 \begin{equation}
   g_V=g_\rho,\qquad \frac{1}{g^2}=\frac{1}{\hat{g}^2}+\frac{1}{\hat{g}_\rho^2},\qquad g'=\hat{g}'.
 \end{equation}
-There are several parameters that describe the three variants of the HVT models, but for this analysis we are interested only in three: $g_V$, $c_H$, and $c_F$, with the latter two being the Higgs and fermion couplings, respectively.
+There are several parameters that describe the three variants of the HVT models, but for this analysis we are interested only in three: $g_V$, $c_H$, and $c_F$, with the latter two being the Higgs boson and fermion couplings, respectively.
 In terms of other model parameters, the two couplings are
 \begin{equation}
   c_H=\frac{g_V}{\sqrt{g_V^2-\tilde{c}_{VW}^2g^2}}\pqty{\tilde{c}_H+\frac{g^2}{g_V^2}\tilde{c}_{VW}},\qquad c_F=\frac{g_V}{\sqrt{g_V^2-\tilde{c}_{VW}^2g^2}}(\tilde{c}_F+\tilde{c}_{VW}),
@@ -478,11 +480,11 @@ For model B, $g_V\leq4\pi$, $c_H\approx1$, and $c_F\approx1$, while for model C 
 % Event structure
 The decay processes \XtoWVtolnuqqbarpr and \XtoWHtolnubbbar were chosen due to the fact that one-lepton events are ideal for such an analysis, as the final states that are generated provide a clean signal that suppresses background.
 Furthermore, the semileptonic final state is also a good compromise for search sensitivity since it is cleaner than an all-hadronic final state, and it produces more expected signal than an all-leptonic state.
-Three production modes are considered based on the benchmark models used: vector boson fusion (\VBF), gluon-gluon fusion (\ggF), and Drell-Yan (\DY) production.
-The \VBF production channel was selected to further suppress background and identify signal events since the \VBF process uniquely results in forward-facing jets~\cite{rauch2016vectorboson}, and all benchmark models used in the analysis are capable of this production mechanism.
+The \ggF and \DY production modes produce only the \lnuqqbarprp and \lnubbbar semileptonic final states resulting from the decay of the $X$ resonance.
+Meanwhile, while the \VBF production channel is rarer than the \ggF and \DY production modes by a factor of 10 to 100, its particular event signature further suppresses background events and uniquely results in forward-facing jets~\cite{rauch2016vectorboson}.
+All benchmark models used in this analysis are capable of this production mechanism.
 Such a process has been used in the past as one of the discovery channels for the Higgs boson, and it remains an important class of events at the LHC.
 %The \ggF and \DY production modes produce identical \lnuqqbarprp and \lnubbbar semileptonic final states, but without the \VBF jets in the forward regions of the detector.
-The \ggF and \DY production modes produce only the \lnuqqbarprp and \lnubbbar semileptonic final states resulting from the decay of the $X$ resonance.
 The spin-0 Kaluza-Klein Radion and spin-2 Bulk Graviton models both have \ggF production modes, while the spin-1 \Wpr and \Zpr models can be produced via a \DY process.
 Examples of Feynman diagrams for all three production processes of an $X$ resonance with the resulting final states can be seen in figure~\ref{fig:productFeynman}.
 
@@ -491,7 +493,7 @@ Examples of Feynman diagrams for all three production processes of an $X$ resona
   \input{fig/theory/productFeyn.tex}
   \caption{
     Feynman diagrams for production via vector boson fusion of a neutral spin-0 resonance $X$ decaying to the final state \lnuqqbarpr (top left), gluon-gluon fusion for a spin-2 resonance $X$ decaying to the final state \lnuqqbarpr (top right), and a Drell-Yan process for a charged spin-1 resonance $X$ decaying to the final state \lnubbbar (bottom).
-    The search for an $X$ boson will involve looking for a final state in which there is a single merged jet from the \VorH boson, a lepton $\ell$ with its corresponding neutrino produced from the $W$ decay, and forward-facing jets for \VBF production processes.
+    The search for an $X$ boson will involve looking for a final state in which there is a single merged jet from the \VorH boson, a lepton $\ell$ with its corresponding neutrino produced from the $W$ decay, and in the case of \VBF production, two forward-facing jets.
   }
   \label{fig:productFeynman}
 \end{figure}

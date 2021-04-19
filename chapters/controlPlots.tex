@@ -6,7 +6,7 @@
 % Comparison between MC and data
 A crucial check on the validity of our selection cuts and categorizations is to compare the MC samples to the data in the regions where no signal is expected to be observed.
 In this section, we review the data to MC comparisons for relevant kinematic distributions by looking at control plots in non-signal regions.
-We split the non-signal regions of the analysis into two regions: a jet mass sideband and a top-enriched control region.
+We define two control regions of the analysis as follows: a jet mass sideband and a top-enriched control region.
 
 % Jet mass sideband
 The jet mass sideband applies the final event selection cuts of subsection~\ref{subsec:eventSelect}, but with the \MJ selection cuts $20<\MJ<70\unit{GeV}$ or $150<\MJ<210\unit{GeV}$, so that the \Vhad large-radius jets present do not originate from a corresponding \VorH decay in signal events.
@@ -15,9 +15,9 @@ These rescaling factors are applied to \Wjets background yields for the analysis
 
 % Top-enriched control region
 The top-enriched control region is used to calibrate the performance of the soft drop algorithm and jet substructure variables on merged bosons.
-We use a sample of hadronic $W$'s isolated in data using $t\bar{t}$ events.
-This is done by applying the selection cuts of subsection~\ref{subsec:eventSelect}, but without with an inverted $b$-tag veto in which we require the presence of at least one standard AK4 $b$-tagged jet in the event.
-The resulting selection is therefore largely dominated by $t\bar{t}$ and single top events.
+We define this region to be enriched in $t\bar{t}$ and single top events, where the selected large-radius jet results from an actual hadronically decaying $W$ boson.
+This is done by applying the selection cuts of subsection~\ref{subsec:eventSelect}, but with an inverted $b$-tag veto to ensure the presence of at least one standard AK4 $b$-tagged jet in the event.
+The resulting event sample is therefore largely dominated by $t\bar{t}$ and single top events.
 %From this we obtain $b$-tagging scale factors and top \pt reweighting values that are applied in the rest of the analysis.
 
 \subsection{Control Plots}
@@ -29,7 +29,7 @@ These plots were produced using separate MC samples for each year that are combi
 \subsubsection{Control Plots in the Jet Mass Sideband Region}
 
 % Jet mass sideband control plots
-Figure~\ref{fig:SB_controlPlotsRun2_1} shows kinematic variables related to the lepton candidate, such as the \pt, $\eta$, and \Etmiss, for both $e$ and $\mu$ channels.
+Figure~\ref{fig:SB_controlPlotsRun2_1} shows kinematic variables related to the lepton candidate, such as the \pt, $\eta$, and \ptmiss, for both $e$ and $\mu$ channels.
 In figure~\ref{fig:SB_controlPlotsRun2_2}, the distributions correspond to the \pt and transverse mass of the \Wlep candidate, along with the diboson invariant mass \MVV, again for both $e$ and $\mu$ channels.
 For figure~\ref{fig:SB_controlPlotsRun2_3}, the distributions show the \pt, $\eta$, \MJ, \nsubjDDT, and \DoubleB of the large-radius jet from the \Vhad candidate.
 Finally, for figure~\ref{fig:SB_controlPlotsRun2_4}, the \VBF-related distributions are shown for \DetaVBF, \mjjVBF, \nJets, and \Dy.
@@ -45,7 +45,7 @@ The rescaling factors applied to the \Wjets background yields are 0.96, 0.86, an
   \includegraphics[width=0.3825\textwidth]{fig/controlPlots/SB_b1_e_allP_allC_allD_Run2_met_pt.pdf}\\
   \caption{
     Comparison plots between data and MC from Run 2 for different \Wlep-related observables, in the jet mass sideband.
-    From top to bottom: lepton \pt, lepton $\eta$, \Etmiss.
+    From top to bottom: lepton \pt, lepton $\eta$, \ptmiss.
     Left: muon channel, right: electron channel.
   }
   \label{fig:SB_controlPlotsRun2_1}
@@ -95,7 +95,7 @@ The rescaling factors applied to the \Wjets background yields are 0.96, 0.86, an
 \subsubsection{Control Plots in the Top-Enriched Control Region}
 
 % Top-enriched control plots
-Figure~\ref{fig:CR_controlPlotsRun2_1} shows control plots of lepton-related observables in the top-enriched control region, with the lepton \pt, $\eta$, and \Etmiss in both the $e$ and $\mu$ channels.
+Figure~\ref{fig:CR_controlPlotsRun2_1} shows control plots of lepton-related observables in the top-enriched control region, with the lepton \pt, $\eta$, and \ptmiss in both the $e$ and $\mu$ channels.
 For figure~\ref{fig:CR_controlPlotsRun2_2}, the distributions of the \Wlep \pt, transverse mass, and \MVV are shown, for both the $e$ and $\mu$ channels.
 In figure~\ref{fig:CR_controlPlotsRun2_3}, distributions of variables related to the \Vhad jet are shown, with the jet \pt, $\eta$, \MJ, \nsubjDDT, and \DoubleB tagger.
 Finally, in figure~\ref{fig:CR_controlPlotsRun2_4}, \VBF-related distributions are shown for \DetaVBF, \mjjVBF, \nJets, and \Dy.
@@ -110,7 +110,7 @@ Finally, in figure~\ref{fig:CR_controlPlotsRun2_4}, \VBF-related distributions a
   \includegraphics[width=0.3825\textwidth]{fig/controlPlots/CR_b1_e_allP_allC_allD_Run2_met_pt.pdf}\\
   \caption{
     Comparison plots between data and MC from Run 2 for different \Wlep-related observables, in the top-enriched control region.
-    From top to bottom: lepton \pt, lepton $\eta$, \Etmiss.
+    From top to bottom: lepton \pt, lepton $\eta$, \ptmiss.
     Left: muon channel, right: electron channel.
   }
   \label{fig:CR_controlPlotsRun2_1}

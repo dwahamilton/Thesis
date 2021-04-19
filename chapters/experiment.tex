@@ -15,7 +15,7 @@ Finally, the interactions take place at a specified location where detectors may
 
 % Fixed-target accelerators
 The center-of-mass energy \ECM\footnote{Sometimes instead written in terms of the Mandelstam variable $s$ as $\sqrt{s}=\ECM$~\cite{Perelstein_2011}.} is a defining feature of an accelerator, as it is a measure of the energy available to produce particles in collision events~\cite{martin2008particle}.
-There are two types of accelerators to consider: fixed-target and colliders. % Check terms
+There are two types of accelerators to consider in this respect: fixed-target and colliders.
 A key distinction between them is how they differ their center-of-mass energies based on the parameters of the accelerator.
 Fixed-target accelerators involve a single beam that is directed to a stationary target in the lab frame, with a center-of-mass energy given by
 \begin{equation}
@@ -33,8 +33,33 @@ In this case, given two beams with energies $E_{L,1}$ and $E_{L,2}$ as measured 
 and if $E_{L,1}=E_{L,2}=E_L$, this reduces to $\ECM=2E_L$.
 Thus, colliders have the advantage that they depend linearly on beam energy and therefore have higher gains in \ECM compared to fixed-target accelerators.
 
+% Linear accelerators
+There are also two different types of accelerator geometries: linear and circular.
+Linear accelerators have charged particles pass in a straight line through a series of metal pipes known as drift tubes, with the tubes connected to a radio frequency (RF) oscillator that generates the accelerating electric field in the tubes. % Citation
+The electric fields alternate in such a way that charged particles passing through the tubes are accelerated both as they pass through the tube and as they emerge from the other side, ensuring that they are continuously accelerated.
+Linear accelerators operate on simpler design principles compared to circular accelerators, but have to be very long in order to reach high center-of-mass energies.
+
+% Circular accelerators
+On the other hand, circular accelerators accelerate particles along a circular trajectory using electromagnets. % Citation
+Because of the circular geometry, the particles may be continually accelerated along the beamline, which means circular accelerators can be much smaller than linear accelerators and still achieve similar center-of-mass energies.
+However, circular accelerators are more difficult to operate because of the need to maintain the circular orbit of the particles.
+Furthermore, any charged particle with mass $m$ and charge $q$ moving in a circular trajectory radiates synchrotron radiation described by
+\begin{equation}
+  \Delta E=\frac{4\pi q^2\beta^3\gamma^4}{3\epsilon_0r},
+\end{equation}
+where $\beta\equiv v/c$, $\gamma\equiv(1-\beta^2)^{-1/2}$, $v$ is the particle's velocity, and $r$ is the radius of the particle's orbit~\cite{Jackson:100964}.
+Thus, circular accelerators are limited by the amount of power needed to compensate for the energy losses of the particles.
+
+% Lepton vs hadron colliders
+Another consideration is the type of particle used in collisions, as accelerators may be made to collide either leptons or hadrons.
+Leptonic colliders make use of electrons or positrons, while hadronic colliders use protons or antiprotons.
+Because collisions in leptonic colliders only involve electroweak interactions in the initial state, there are no sources of QCD background and the resulting final states are relatively clean and easier to analyze.
+Leptonic collisions also allow for more precise measurements because the initial state of the particles is well-defined, while hadron colliders require sophisticated techniques to reconstruct the initial state due to the fact that hadrons are composite.
+However, hadronic collisions involve both electroweak and QCD interactions in the initial state because of the quark content of the hadrons, and this allows for more production methods of exotic particles, and hence more final states.
+Hadronic colliders are also more ideal for circular accelerators due to the fact that protons/antiprotons do not lose as much energy to synchrotron radiation compared to electrons/positrons.
+
 % Luminosity
-Another key parameter of an accelerator is the luminosity $\mathcal{L}$.
+A key parameter of an accelerator is the luminosity $\mathcal{L}$.
 Given a cross section $\sigma$ for a process, and a rate at which events occur $R$, the luminosity is the constant of proportionality such that
 \begin{equation}\label{eq:evtRate}
   R=\mathcal{L}\sigma,
@@ -82,12 +107,12 @@ This overview is based off of documents concerning CMS in references~\cite{Chatr
 \label{sec:LHC}
 
 % The Large Hadron Collider
-The Large Hadron Collider is a circular collider accelerator facility with two superconducting rings that accelerate protons to relativistic speeds, and it is located just outside of Geneva on the French-Swiss border.
+The Large Hadron Collider is a circular collider accelerator facility with two superconducting rings that are capable of accelerating protons or heavy ions to relativistic speeds, and it is located just outside of Geneva on the French-Swiss border.
 It is the largest and most powerful collider in the world, with plans to extend its service life into the 2030's and 2040's.
 It has a circumference of 26.7 km and was built into an existing tunnel that was used for the Large Electron-Positron (LEP) collider, which was used from 1989 to 2000.
-Various detectors used to study collision events are placed along the beamline, such as ALICE, ATLAS, CMS, and LHCb.
+Four main detectors are used to study collision events and are placed along the beamline, consisting of the ALICE, ATLAS, CMS, and LHCb experiments.
 Figure~\ref{fig:CERN} shows the complete CERN accelerator complex with all of its components~\cite{Mobs:2636343}.
-The ATLAS and CMS facilities are general-purpose detectors for studying the Higgs and searching new physics arising from proton collisions, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions ($^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
+The ATLAS and CMS facilities are general-purpose detectors designed for a large physics program, which includes studying the Higgs boson and searching new physics arising from proton collisions, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions ($^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
 
 \begin{figure}[htbp]
   \centering
@@ -95,12 +120,12 @@ The ATLAS and CMS facilities are general-purpose detectors for studying the Higg
   \caption{
     Layout of the CERN accelerator complex.
     The LHC is one of several accelerators present at the facility, with multiple detectors along the beamline such as ATLAS, CMS, ALICE, and LHCb.
-    ATLAS and CMS are both general-purpose detectors for studying properties of the Higgs and searching for new physics.
-    ALICE is designed to study heavy-ion collisions with lead ions to investigate quark-gluon plasma.
-    LHCb is meant to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
-    The LHC is injected with protons and lead ions through a multi-stage process.
-    Protons starting at the Linac2 facility, which are then fed through the Proton Synchrotron Booster (PSB), then to the Proton Synchrotron (PS), and then to the Super Proton Synchrotron (SPS) before finally being injected into the LHC itself.
-    The lead ions undergo a similar process, starting at Linac3 and then being transferred to the Low Energy Ion Ring (LEIR), then going through the PS and SPS before being injected into the LHC.
+    %ATLAS and CMS are both general-purpose detectors for studying properties of the Higgs boson and searching for new physics.
+    %ALICE is designed to study heavy-ion collisions with lead ions to investigate quark-gluon plasma.
+    %LHCb is meant to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
+    %The LHC is injected with protons and lead ions through a multi-stage process.
+    %Protons starting at the Linac2 facility, which are then fed through the Proton Synchrotron Booster (PSB), then to the Proton Synchrotron (PS), and then to the Super Proton Synchrotron (SPS) before finally being injected into the LHC itself.
+    %The lead ions undergo a similar process, starting at Linac3 and then being transferred to the Low Energy Ion Ring (LEIR), then going through the PS and SPS before being injected into the LHC.
   }
   \label{fig:CERN}
 \end{figure}
@@ -120,8 +145,8 @@ It also has a specific expression for the luminosity $\mathcal{L}$ given by
 \end{equation}
 where $N_b$ is the number of particles per bunch, $n_b$ is the number of bunches per beam, $f_\mathrm{rev}$ is the revolution frequency, $\gamma_r$ is the Lorentz factor, $\epsilon_n$ is the normalized transverse beam emittance, $\beta^*$ is the beta function at the collision point, and $F$ is the geometric luminosity reduction factor.
 The LHC is designed to reach a luminosity of $10^{34}\unit{cm^{-2}s^{-1}}$, but surpassed this value in June 2016~\cite{LHClumi}.
-Figure~\ref{fig:CMSlumi} shows the integrated luminosities as a function of time delivered to the CMS detector for the years 2015-2018~\cite{CMSlumi}.
-Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $41.0\unit{fb^{-1}}$, $49.8\unit{fb^{-1}}$, and $67.9\unit{fb^{-1}}$ delivered to CMS over the Run 2 years of 2016, 2017, and 2018 respectively.
+Figure~\ref{fig:CMSlumi} shows the integrated luminosities as a function of time delivered to the CMS detector during Run 2, which ran during the years 2015-2018~\cite{CMSlumi}.
+Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $41.0\unit{fb^{-1}}$, $49.8\unit{fb^{-1}}$, and $67.9\unit{fb^{-1}}$ delivered\footnote{These numbers differ from the \emph{recorded} value obtained from CMS that used in the analysis for chapter~\ref{chap:analysis}.} to CMS over the Run 2 years of 2016, 2017, and 2018 respectively.
 This corresponds to a total integrated luminosity of $158.7\unit{fb^{-1}}$ at CMS over Run 2.
 
 % Need to check where luminosity figures used in analysis come from
@@ -142,9 +167,9 @@ This corresponds to a total integrated luminosity of $158.7\unit{fb^{-1}}$ at CM
 \label{sec:CMS}
 
 % The Compact Muon Solenoid
-The Compact Muon Solenoid is one of the main general-purpose detectors at the LHC, and it along with ATLAS obtained independent results for the discovery of the Higgs boson in 2012.
+The Compact Muon Solenoid is one of the main general-purpose detectors at the LHC, and it along with ATLAS independently discovered of the Higgs boson in 2012~\cite{20121,201230}.
 The CMS detector is located 100 meters underground on the French side of the border near the village of Cessy.
-It is a cylindrical apparatus with a solenoidal magnet that is coaxial with the beamline of the LHC, with a diameter of $14.6\unit{m}$ and a length of $21.6\unit{m}$, and it is surrounded by various detection systems.
+It is a cylindrical apparatus with a solenoidal magnet that is coaxial with the beamline of the LHC, with the entire CMS detector having a $14.6\unit{m}$ diameter and a length of $21.6\unit{m}$, and it is composed of several subdetector systems.
 The coordinate system used by CMS is defined such that $z$-axis is defined to lie along the LHC beam, with the $y$-axis pointing vertically upward and the $x$-axis pointing radially inward.
 This leads to the azimuthal angle $\phi$ being measured from the $x$-axis in the $x$-$y$ plane, with the radial coordinate denoted by $r$.
 The polar angle $\theta$ is defined with respect to the $z$-axis, but in practice one typically uses pseudorapidity defined by $\eta=-\ln\tan(\theta/2)$.
@@ -153,9 +178,16 @@ The polar angle $\theta$ is defined with respect to the $z$-axis, but in practic
 One of its primary functions is to accurately identify the charge and momentum of muons emerging from collision events as their trajectories are bent through the magnetic field.
 Muons are ideal for reconstructing collisions due to their relatively long lifetime ($\tau_\mu=2.2\unit{\micro s}$), large mass ($m_\mu=105.7\unit{MeV/\clight^2}$), and low radiation losses when propagating through matter~\cite{peskin2019}.
 This makes muons the most penetrative and easily identifiable charged particles that can be found in collision events. % Check wording
-In addition to identifying muons, the CMS detector also has other components for detecting electrons, photons, and hadrons.
+In addition to identifying muons, the CMS detector also has other subdetectors for identifying electrons, photons, and hadrons.
 These detection systems are designed in order to meet the demands that come with the LHC's high luminosity, as there are more than 20 proton interactions every $25\unit{ns}$, which results in around 1000 particles emerging for each bunch crossing. % Check numbers
 A cutaway diagram of the detector with various components labeled may be seen in figure~\ref{fig:CMScut}~\cite{Sakuma:2665537}.
+
+% Subdetectors
+The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
+Outside of the tracker is the preshower detector that screens neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
+The electromagnetic calorimeter (ECAL) is encased by the hadronic calorimeter (HCAL), which detects hadron jets and neutrinos or exotic particles through missing transverse momentum.
+Both calorimeters are surrounded by the muon detection chambers embedded within the return yoke that are used to identify muon charges and momenta.
+Finally, the Cerenkov-based forward calorimeter has both an electromagnetic and hadronic section, lying just outside of the endcaps for the muon chambers.
 
 \begin{figure}[htbp]
   \centering
@@ -163,11 +195,11 @@ A cutaway diagram of the detector with various components labeled may be seen in
   \caption{
     Cutaway diagram of the CMS detector with components labeled as configured in 2018 for Run 2.
     The detector and its components are coaxial with the LHC beam and give wide geometric coverage over the interaction point where the collisions are produced.
-    The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
-    Outside of the tracker is the preshower detector that screens neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
-    The electromagnetic calorimeter is encased by the hadronic calorimeter, which detects hadron jets and neutrinos or exotic particles through missing transverse energy.
-    Both calorimeters are surrounded by the muon detection chambers embedded within the return yoke that are used to identify muon charges and momenta.
-    Finally, the Cerenkov-based forward calorimeter has both an electromagnetic and hadronic section, lying just outside of the endcaps for the muon chambers. % Check wording
+    %The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
+    %Outside of the tracker is the preshower detector that screens neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
+    %The electromagnetic calorimeter (ECAL) is encased by the hadronic calorimeter (HCAL), which detects hadron jets and neutrinos or exotic particles through missing transverse momentum.
+    %Both calorimeters are surrounded by the muon detection chambers embedded within the return yoke that are used to identify muon charges and momenta.
+    %Finally, the Cerenkov-based forward calorimeter has both an electromagnetic and hadronic section, lying just outside of the endcaps for the muon chambers. % Check wording
   }
   \label{fig:CMScut}
 \end{figure}
@@ -242,7 +274,8 @@ The TOB is closed off by the Tracker EndCaps (TEC) which extend radially from $2
 The CMS detector is equipped with various calorimeters that are designed to measure the energies of particles emerging from the collision events.
 Unlike the inner tracking system, the calorimeters are designed to abruptly halt any particles passing through them and record the energies of the stopped particles.
 The electromagnetic calorimeter (ECAL) and preshower detector lie just outside of the silicon tracker and are designed to detect photons and electrons.
-These are both encased by the hadron calorimeter (HCAL), which is used to measure hadron jets and neutrinos or exotic particles that result in missing transverse energy (MET\footnote{Transverse energy is typically written as \Et, which is why missing \Et is abbreviated as MET rather than MTE.}).
+These are both encased by the hadron calorimeter (HCAL), which is used to measure hadron jets.
+Because of the good hermiticity of the HCAL, it is also capable of measuring missing transverse momentum resulting from neutrinos or exotic particles. %(MET\footnote{Transverse energy is typically written as \Et, which is why missing \Et is abbreviated as MET rather than MTE.}).
 Both the ECAL and HCAL are supplemented by the forward calorimeter, which is a Cerenkov-based detector that has electromagnetic and hadronic sections. % Check wording
 
 \subsubsection{Electromagnetic Calorimeter}
@@ -308,7 +341,7 @@ For this reason, quartz fibers were used as the scintillation material and the s
 The muon system is of central importance to the CMS detector.
 From its inception as a detector, it was recognized that muons would be one of the primary tools for reconstructing collision events.
 One reason for this is the fact that final states with muons present offer some of the best results for mass resolution, thereby increasing the discovery potential for new physics.
-This was one of the considerations taken into account when designing the CMS detector to optimize for the observation of the Higgs before it was discovered.
+This was one of the considerations taken into account when designing the CMS detector to optimize for the observation of the Higgs boson before it was discovered.
 The so-called $H\to ZZ^{(*)}\to 4\ell$ ``golden channel'' has the cleanest signal when all four of the leptons in the final state are muons~\cite{Gainer_2011}.
 Moreover, muons are expected to be produced in many decay events for exotic particles from BSM theories.
 As such, the muon system is designed to provide robust and accurate muon identification, momentum measurement, and triggering for events.
@@ -407,9 +440,10 @@ Their fast response time is used in the trigger system in order to determine whe
 
 % Motivation for the trigger system
 One of the unique challenges facing detectors at the LHC is the large amount of collision events that occur at the interaction points.
-proton collisions occur every $25\unit{ns}$, corresponding to a rate of $40\unit{MHz}$.
+Proton collisions occur every $25\unit{ns}$, corresponding to a rate of $40\unit{MHz}$.
 With 20 simultaneous $pp$ collisions for every bunch crossing, this corresponds to $8\times10^8$ interactions every second.
 It is not possible to meet the hardware demands for recording every single collision event, nor would it be prudent to do so since most events are soft collisions between protons that do not reveal any new physics.
+Furthermore, it would be too computationally expensive to reconstruct every collision event even if the previously mentioned limitations were not an issue.
 Thus, the trigger system is needed in order to select for high-energy events of interest, while also recording them at a reasonable rate that allows for long-term storage.
 
 % Trigger system overview
@@ -417,7 +451,7 @@ The trigger system has two levels, consisting of a Level-1 (L1) Trigger, and a H
 The L1 Trigger is hardware-based and is comprised of custom-designed electronics that uses data from the calorimeters and muon system.
 The HLT is software-based and consists of a conventional CPU farm, which has access to a complete readout from the L1 Trigger and is able to perform more advanced calculations with the data.
 The trigger system as whole reduces the rate by a factor of $10^6$, with the L1 Trigger designed to have an output rate of 100 kHz.
-In practice, the L1 Trigger is not operated at its maximum output and instead runs at 30 kHz as a safety measure.
+In practice, the L1 Trigger is not operated at its maximum output and instead runs at 30 kHz as a safety measure, and the L1 trigger output is further reduced by the HLT to around $1\unit{kHz}$.
 
 \subsubsection{Level-1 Trigger}
 
@@ -445,8 +479,10 @@ The allowed latency between the a single bunch crossing and the L1A decision in 
 
 % High level trigger
 After receiving the L1A signal, the complete readout data from the rest of the detector is sent to the HLT to be further analyzed.
-The HLT uses various algorithms to reconstruct the full event and performs tasks such as matching tracks from the inner tracker to muon detection hits in the chambers, or identifying high-energy photons.
-Since the HLT is software-based, the algorithms used to reconstruct the events have changed over the operational history of the CMS detector~\cite{Trocino_2014}.
+The HLT is entirely software-based, and it is run on a farm of commercial computers, using various algorithms to reconstruct the full event and performs tasks such as matching tracks from the inner tracker to muon detection hits in the chambers, or identifying high-energy photons.
+Since the HLT is software, the algorithms used to reconstruct the events have changed over the operational history of the CMS detector~\cite{Trocino_2014}.
+The data is processed through the HLT in a modular manner using trigger paths, which are sequences of reconstruction and filtering blocks of increasing complexity that reconstruct physics objects and apply selection cuts to them.
+Faster algorithms run first in a path, and then the remaining products are filtered.
 After passing through the HLT, the events are then recorded for offline analysis, and the rate of recorded events after passing through the trigger system as a whole is cut down to be on the order of only a few $10^2\unit{Hz}$.
 The recorded events are then passed onto the Data Acquisition (DAQ) system~\cite{Cittolin:578006}.
 
@@ -456,7 +492,7 @@ The recorded events are then passed onto the Data Acquisition (DAQ) system~\cite
 Once the data for an event is processed through the HLT, the event reconstruction process uses the raw detector data to identify particles and jets.
 Event reconstruction at CMS is handled through the Particle-Flow (PF) algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, which uses a combination of information from each sub-detector system to identify candidate particles.
 In particular, the principal objects identified are electrons, muons, photons, charged hadrons, and neutral hadrons, along with their directions, energies, and types.
-These objects can then be used to reconstruct jets to determine quark and gluon energies, determine missing transverse energy \Etmiss resulting from neutrinos and other undetectable particles, reconstruct tau leptons from their decay products, and tag $b$-jets.
+These objects can then be used to reconstruct jets to determine quark and gluon energies, determine missing transverse momentum \ptmiss resulting from neutrinos and other undetectable particles, reconstruct tau leptons from their decay products, and tag $b$-jets.
 
 % Challenges and demands
 Accurately reconstructing the constituents of an event is a challenging task due to the fact that most stable particles that are produced in collisions tend to have low \pt.
@@ -466,7 +502,7 @@ In order to discriminate between jets that produced by heavy exotic particles an
 \subsubsection{The Particle-Flow Algorithm}
 
 % Particle flow overview
-The basic elements of PF inputs are objects that come from the CMS sub-detectors: charged particle tracks from the inner tracker, calorimeter clusters, and muon tracks from the muon chambers.
+The basic elements of PF inputs are objects that come from the CMS sub-detectors: charged particle tracks from the inner tracker, energy clusters reconstructed in the ECAL and HCAL, and muon tracks from the muon chambers.
 These inputs can be grouped together into objects known as PF blocks through a link algorithm, which are topologically linked together to identify each particle while also avoiding double counting from different detectors.
 A block typically contains only one, two, or three of the aforementioned elements from the CMS sub-detectors.
 Once the blocks in the event are identified, the Particle-Flow algorithm receives them as input and begins reconstructing individual particles.
@@ -484,4 +520,26 @@ The PF algorithm proceeds in the following steps for each block:
   \item Neutral particles are identified if the total calibrated cluster energy is larger than the total associated track momentum, with PF photons being created if the calorimetric energy excess is larger than the total ECAL energy, and PF neutral hadrons being created with the remaining part of the excess calibrated ECAL and HCAL energies.
   \item The remaining ECAL and HCAL clusters without links to tracks produce PF photons and PF neutral hadrons, respectively.
 \end{enumerate}
-After the PF candidates are obtained, they are then used for various tasks in analyses, such as reconstructing jets and determining \Etmiss for the event.
+After the PF candidates are obtained, they are then used for various tasks in analyses, such as reconstructing jets and determining \ptmiss for the event.
+
+\subsubsection{Jet Clustering}
+
+% Jet clustering overview
+In hadronic collisions, the scattering of partons (the quarks and gluons that make up hadrons) gives rise to collimated showers of particles known as jets.
+These showers arise due to the fact that quarks and gluons do not exist in isolation long enough to be observed, as they immediately hadronize into other particles that have no QCD flavor charge. % Check wording
+It is therefore not possible to directly observe the quarks and gluons that give rise to jets, and their presence must instead be inferred from reconstructing jets and determining the total jet momentum.
+Once PF objects are identified, jets may be identified by using a clustering algorithm that groups together particles from a candidate jet.
+
+% The anti-kt algorithm
+One of the most commonly used jet clustering algorithm is the anti-\kt algorithm.
+The anti-\kt algorithm reconstructs jets by introducing distances $d_{ij}$ between objects $i$ and $j$ and $d_{i,B}$ between object $i$ and the beam $B$~\cite{Cacciari_2008}.
+The algorithm starts by assigning values for $d_{ij}$ and $d_{i,B}$ for all objects in the final state, and finds the minimum value among the distances.
+If the minimum value is a $d_{i,B}$ value, then object $i$ is declared to be a jet and removed from the list, and the algorithm starts over from the first step.
+If instead it is a $d_{ij}$ value, then objects $i$ and $j$ are combined and the algorithm goes back to the first step.
+This process is repeated until all particles have been declared jets, with $d_{ij}$ and $d_{i,B}$ defined by
+\begin{align}
+  & d_{ij}=\min\pqty{k_{\mathrm{T},i}^{2p},k_{\mathrm{T},j}^{2p}}\frac{\Delta_{ij}^2}{R^2},\\
+  & d_{i,B}=k_{\mathrm{T},i}^{2p},
+\end{align}
+where $\Delta_{ij}^2=(y_i-y_j)^2+(\phi_i-\phi_j)^2$, with $k_{T,i}$ as the transverse momentum for object $i$, $y_i$ the rapidity for object $i$, $\phi_i$ is the azimuthual angle for object $i$, $R$ is the distance parameter for the algorithm, and $p$ is a parameter determined by the jet clustering algorithm.
+For the anti-\kt algorithm, $p=-1$, with other algorithms taking on different values, such as $p=1$ for the \kt algorithm~\cite{Marzani_2019}.
