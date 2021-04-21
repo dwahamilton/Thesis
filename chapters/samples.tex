@@ -27,42 +27,42 @@ The datasets used in the analysis are listed in table~\ref{tab:dataSamples}, and
 % Data certification
 Data collected by CMS are certified by the Data Quality Management (DQM) group~\cite{CMSData}, which receives information from each subdetector group about the quality of data obtained over each data-taking period.
 The DQM then reviews the information from each subdetector group and certifies the data that is of sufficiently high quality, with relevant certification information released as golden data certificates.
-The golden data JSON certificates used for the Run 2 data are the following: % Elaborate on this
-\begin{itemize}
-  \item[2016:]
-  \begingroup
-  \fontsize{9pt}{12pt}
-  \begin{verbatim}
-  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/ReReco/Final
-   /Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt
-  \end{verbatim}
-  \endgroup
-  \item[2017:]
-  \begingroup
-  \fontsize{9pt}{12pt}
-  \begin{verbatim}
-  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/ReReco
-   /Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt
-  \end{verbatim}
-  \endgroup
-  \item[2018:]
-  \begingroup
-  \fontsize{9pt}{12pt}
-  \begin{verbatim}
-  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/ReReco
-   /Cert_314472-325175_13TeV_17SeptEarlyReReco2018ABC_PromptEraD_Collisions18_JSON.txt
-  \end{verbatim}
-  \endgroup
-\end{itemize}
+%The golden data JSON certificates used for the Run 2 data are the following: % Elaborate on this
+%\begin{itemize}
+%  \item[2016:]
+%  \begingroup
+%  \fontsize{9pt}{12pt}
+%  \begin{verbatim}
+%  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/ReReco/Final
+%   /Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt
+%  \end{verbatim}
+%  \endgroup
+%  \item[2017:]
+%  \begingroup
+%  \fontsize{9pt}{12pt}
+%  \begin{verbatim}
+%  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/ReReco
+%   /Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt
+%  \end{verbatim}
+%  \endgroup
+%  \item[2018:]
+%  \begingroup
+%  \fontsize{9pt}{12pt}
+%  \begin{verbatim}
+%  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/ReReco
+%   /Cert_314472-325175_13TeV_17SeptEarlyReReco2018ABC_PromptEraD_Collisions18_JSON.txt
+%  \end{verbatim}
+%  \endgroup
+%\end{itemize}
 
-\begin{table}[htbp]
-  \centering
-  \input{tab/samples/dataSamples.tex}
-  \caption{
-    Data samples for each year and era for a given year (denoted by letters), with integrated luminosities of $35.9\unit{fb^{-1}}$ in 2016, $41.5\unit{fb^{-1}}$ in 2017, and $59.7\unit{fb^{-1}}$ in 2018.
-  }
-  \label{tab:dataSamples}
-\end{table}
+%\begin{table}[htbp]
+%  \centering
+%  \input{tab/samples/dataSamples.tex}
+%  \caption{
+%    Data samples for each year and era for a given year (denoted by letters), with integrated luminosities of $35.9\unit{fb^{-1}}$ in 2016, $41.5\unit{fb^{-1}}$ in 2017, and $59.7\unit{fb^{-1}}$ in 2018.
+%  }
+%  \label{tab:dataSamples}
+%\end{table}
 
 %\begin{table}[htbp]
 %  \centering
@@ -108,7 +108,7 @@ Additionally, we also use MC samples to simulate the background sources that thi
 %This analysis makes use of ten benchmark signal models, which are listed in tables~\ref{tab:ggFGBulkToWWSamples}-\ref{tab:VBFZprToWWSamples} with their cross sections and branching ratios where appropriate.
 %The MC samples used to simulate events produced by the narrow resonance models are listed in table~\ref{tab:sigSamples} with their branching ratios where appropriate, while the cross sections for each signal model are displayed in figure~\ref{fig:sigCrossSec} as a function of the resonance mass \MX.
 %The branching ratios only apply to signal samples for which other final states that are not semileptonic are present, whereas samples without a branching ratio listed are entirely restricted to the semileptonic state.
-The MC samples used to simulate events produced by the narrow resonance models are listed in table~\ref{tab:sigSamples}.
+%The MC samples used to simulate events produced by the narrow resonance models are listed in table~\ref{tab:sigSamples}.
 The \DY\WprtoWH, \DY\WprtoWZ, and \ggF\GBulktoWW samples are restricted to the semileptonic final state, while the other six samples also contain different final states that are not used in this analysis.
 Each signal has different samples with 50,000 events for each year of Run 2, for a total of three sets of samples per signal.
 Furthermore, each signal has separate samples with 50,000 events for the following resonance masses: 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, and $4.5\unit{TeV}$\footnote{The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ sets are the exception to this, lacking mass values below $1.2\unit{TeV}$.}.
@@ -131,17 +131,17 @@ Meanwhile, the \VBF\ZprtoWW and \DY\WprtoWZ samples use cross sections from the 
 %The \Zpr cross section is obtained from the ``Zprim\_cH3'' column and multiplied with the branching fraction to $WW$ in the ``BrZprimeToWW'' column.
 %Similarly for the \Wpr cross section, we take the values from the ``Wprime\_cH3'' column and multiply them with the branching fraction to $WW$ in the ``BrWprimeToWZ'' column.
 
-\begin{table}[htbp]
-  \centering
-  \input{tab/samples/sigSamples.tex}
-  \caption{
+%\begin{table}[htbp]
+%  \centering
+%  \input{tab/samples/sigSamples.tex}
+%  \caption{
     %Samples for each of the nine benchmark signals with branching ratios where appropriate.
     %The samples without branching ratios are already restricted to the semileptonic final state.
-    Samples for each of the nine benchmark signals.
-    Here, ``\texttt{[MASS]}'' refers to the mass points for \MX, while ``\texttt{[SUFFIX]}'' refers to various tags denoting the campaign in which the samples were made, such as \texttt{13TeV-madgraph} or \texttt{TuneCP5\_13TeV-madgraph-pythia8}.
-  }
-  \label{tab:sigSamples}
-\end{table}
+%    Samples for each of the nine benchmark signals.
+%    Here, ``\texttt{[MASS]}'' refers to the mass points for \MX, while ``\texttt{[SUFFIX]}'' refers to various tags denoting the campaign in which the samples were made, such as \texttt{13TeV-madgraph} or \texttt{TuneCP5\_13TeV-madgraph-pythia8}.
+%  }
+%  \label{tab:sigSamples}
+%\end{table}
 
 \begin{figure}[htbp]
   \centering
@@ -257,7 +257,7 @@ Meanwhile, the \VBF\ZprtoWW and \DY\WprtoWZ samples use cross sections from the 
 \subsubsection{Background Samples}
 
 % Background samples
-The MC samples used to simulate SM background contributions listed in table~\ref{tab:bkgSamples} along with their cross sections. %~\ref{tab:bkg2016Samples} and \ref{tab:bkg2017Samples} along with their cross sections.
+The MC samples used to simulate SM background contributions listed in table~\ref{tab:bkgSamples} along with their cross sections where available. %~\ref{tab:bkg2016Samples} and \ref{tab:bkg2017Samples} along with their cross sections.
 These include the previously mentioned background processes described in the introduction, consisting of $W$+jets, \DY+jets, SM diboson, \bbbar, $t\bar{t}$, single-$t$, and QCD production samples.
 The background samples were generated in the same \texttt{RunIISummer16MiniAODv2}, \texttt{RunIIFall17MiniAODv2}, and \texttt{RunIIAutumn18MiniAOD} campaigns as for the signal samples.
 
@@ -265,9 +265,9 @@ The background samples were generated in the same \texttt{RunIISummer16MiniAODv2
   \centering
   \input{tab/samples/bkgSamples.tex}
   \caption{
-    Background samples used for Run 2 with cross sections.
-    Here, ``\texttt{[RANGE]}'' refers to the range of the \texttt{HT} variable, which is the scalar sum of the transverse momenta of all jets in the sample, while ``\texttt{[SUFFIX]}'' refers to various tags denoting the campaign in which the samples were made, such as \texttt{13TeV-madgraph} or \texttt{TuneCP5\_13TeV-madgraph-pythia8}.
-    The $W$+jets and \DY+jets samples have \texttt{HT} greater than $100\unit{GeV}$ in several bins, and the QCD samples have \texttt{HT} greater than $500\unit{GeV}$.
+    Classes of background samples used for Run 2 with total cross sections for each sample used where available.
+    %Here, ``\texttt{[RANGE]}'' refers to the range of the \texttt{HT} variable, which is the scalar sum of the transverse momenta of all jets in the sample, while ``\texttt{[SUFFIX]}'' refers to various tags denoting the campaign in which the samples were made, such as \texttt{13TeV-madgraph} or \texttt{TuneCP5\_13TeV-madgraph-pythia8}.
+    %The $W$+jets and \DY+jets samples have \texttt{HT} greater than $100\unit{GeV}$ in several bins, and the QCD samples have \texttt{HT} greater than $500\unit{GeV}$.
   }
   \label{tab:bkgSamples}
 \end{table}

@@ -33,29 +33,29 @@ In this case, given two beams with energies $E_{L,1}$ and $E_{L,2}$ as measured 
 and if $E_{L,1}=E_{L,2}=E_L$, this reduces to $\ECM=2E_L$.
 Thus, colliders have the advantage that they depend linearly on beam energy and therefore have higher gains in \ECM compared to fixed-target accelerators.
 
-% Linear accelerators
+% Linear vs circular accelerators
 There are also two different types of accelerator geometries: linear and circular.
 Linear accelerators have charged particles pass in a straight line through a series of metal pipes known as drift tubes, with the tubes connected to a radio frequency (RF) oscillator that generates the accelerating electric field in the tubes. % Citation
-The electric fields alternate in such a way that charged particles passing through the tubes are accelerated both as they pass through the tube and as they emerge from the other side, ensuring that they are continuously accelerated.
-Linear accelerators operate on simpler design principles compared to circular accelerators, but have to be very long in order to reach high center-of-mass energies.
-
-% Circular accelerators
-On the other hand, circular accelerators accelerate particles along a circular trajectory using electromagnets. % Citation
-Because of the circular geometry, the particles may be continually accelerated along the beamline, which means circular accelerators can be much smaller than linear accelerators and still achieve similar center-of-mass energies.
+%The electric fields alternate in such a way that charged particles passing through the tubes are accelerated both as they pass through the tube and as they emerge from the other side, ensuring that they are continuously accelerated.
+While linear accelerators operate on simpler design principles compared to circular accelerators, they have to be very long in order to reach high center-of-mass energies.
+On the other hand, circular colliders accelerate particles along a circular trajectory using electromagnets, which allows for continuously accelerating particles along the beamline to achieve similar collision energies despite being smaller than linear accelerators. % Citation
+%Because of the circular geometry, the particles may be continually accelerated along the beamline, which means circular accelerators can be much smaller than linear accelerators and still achieve similar center-of-mass energies.
 However, circular accelerators are more difficult to operate because of the need to maintain the circular orbit of the particles.
-Furthermore, any charged particle with mass $m$ and charge $q$ moving in a circular trajectory radiates synchrotron radiation described by
-\begin{equation}
-  \Delta E=\frac{4\pi q^2\beta^3\gamma^4}{3\epsilon_0r},
-\end{equation}
-where $\beta\equiv v/c$, $\gamma\equiv(1-\beta^2)^{-1/2}$, $v$ is the particle's velocity, and $r$ is the radius of the particle's orbit~\cite{Jackson:100964}.
-Thus, circular accelerators are limited by the amount of power needed to compensate for the energy losses of the particles.
+They are also limited by the amount of power needed to compensate for the energy losses of the particles due to synchrotron radiation.
+%Furthermore, any charged particle with mass $m$ and charge $q$ moving in a circular trajectory emits synchrotron radiation, with an energy loss per turn described by
+%\begin{equation}
+%  \Delta E=\frac{4\pi q^2\beta^3\gamma^4}{3\epsilon_0r},
+%\end{equation}
+%where $\beta\equiv v/c$, $\gamma\equiv(1-\beta^2)^{-1/2}$, $v$ is the particle's velocity, and $r$ is the radius of the particle's orbit~\cite{Jackson:100964}.
+%Thus, circular accelerators are limited by the amount of power needed to compensate for the energy losses of the particles.
 
 % Lepton vs hadron colliders
 Another consideration is the type of particle used in collisions, as accelerators may be made to collide either leptons or hadrons.
 Leptonic colliders make use of electrons or positrons, while hadronic colliders use protons or antiprotons.
 Because collisions in leptonic colliders only involve electroweak interactions in the initial state, there are no sources of QCD background and the resulting final states are relatively clean and easier to analyze.
-Leptonic collisions also allow for more precise measurements because the initial state of the particles is well-defined, while hadron colliders require sophisticated techniques to reconstruct the initial state due to the fact that hadrons are composite.
+Leptonic collisions also allow for more precise measurements because the initial state and collision energy of the particles is well-defined, while hadron colliders require sophisticated techniques to reconstruct the initial state due to the fact that hadrons are composite.
 However, hadronic collisions involve both electroweak and QCD interactions in the initial state because of the quark content of the hadrons, and this allows for more production methods of exotic particles, and hence more final states.
+Furthermore, because the collision energy of constituent quarks varies, this allows for a wide range of collision energies, making hadronic colliders well-suited for discovering new particles.
 Hadronic colliders are also more ideal for circular accelerators due to the fact that protons/antiprotons do not lose as much energy to synchrotron radiation compared to electrons/positrons.
 
 % Luminosity
@@ -73,7 +73,7 @@ This can then be used with equation~\ref{eq:evtRate} to obtain the number of col
 \begin{equation}
   N_\mathrm{event}=\mathcal{L}_\mathrm{int}\sigma.
 \end{equation}
-Thus, by increasing the luminosity (and hence the integrated luminosity), we may increase the number of collision events of interest for a given process.
+Thus, by increasing the luminosity (and hence the integrated luminosity), we may increase the number of expected collision events of interest for a given process.
 The luminosity may also be expressed in terms of parameters relevant to the beam, as it is essentially an instantaneous measure of particle flux. % Check wording
 For example, given the number of particles per bunch for two Gaussian beams $N_1$ and $N_2$, revolution frequency $f$, and number of bunches $N_b$, the luminosity is
 \begin{equation}
@@ -112,7 +112,7 @@ It is the largest and most powerful collider in the world, with plans to extend 
 It has a circumference of 26.7 km and was built into an existing tunnel that was used for the Large Electron-Positron (LEP) collider, which was used from 1989 to 2000.
 Four main detectors are used to study collision events and are placed along the beamline, consisting of the ALICE, ATLAS, CMS, and LHCb experiments.
 Figure~\ref{fig:CERN} shows the complete CERN accelerator complex with all of its components~\cite{Mobs:2636343}.
-The ATLAS and CMS facilities are general-purpose detectors designed for a large physics program, which includes studying the Higgs boson and searching new physics arising from proton collisions, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions ($^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
+The ATLAS and CMS facilities are general-purpose detectors designed for a large physics program, which includes studying the Higgs boson and searching new physics arising from proton collisions, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions (e.g., $^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
 
 \begin{figure}[htbp]
   \centering
@@ -184,7 +184,7 @@ A cutaway diagram of the detector with various components labeled may be seen in
 
 % Subdetectors
 The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
-Outside of the tracker is the preshower detector that screens neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
+%Outside of the tracker is the preshower detector that screens neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
 The electromagnetic calorimeter (ECAL) is encased by the hadronic calorimeter (HCAL), which detects hadron jets and neutrinos or exotic particles through missing transverse momentum.
 Both calorimeters are surrounded by the muon detection chambers embedded within the return yoke that are used to identify muon charges and momenta.
 Finally, the Cerenkov-based forward calorimeter has both an electromagnetic and hadronic section, lying just outside of the endcaps for the muon chambers.
@@ -236,7 +236,7 @@ To avoid overheating from the power consumption, the pixels are mounted on cooli
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{fig/experiment/cms_pixelTracker.pdf}
+  \includegraphics[width=0.7\textwidth]{fig/experiment/cms_pixelTracker.pdf}
   \caption{
     Illustration of the CMS pixel detector, with the barrel region colored in blue, and the endcap regions colored in orange.
     A current is generated as charged particles pass through the pixel cells and eject electrons, which is read by a readout chip attached to each pixel.
@@ -249,7 +249,9 @@ To avoid overheating from the power consumption, the pixels are mounted on cooli
 % The silicon strip tracker
 Once particles pass through the three layers of the pixel detector, they then go through the silicon strip tracker.
 The strip tracker has 15,148 detector modules in total, spread out among several layers, with each module containing 24,244 silicon sensors along with electronic readouts supported by a carbon fiber or graphite frame~\cite{TRK-11-001,Phase1Pixel}.
-These strips work in a manner similar to the pixels, with electrons getting knocked out of the material as charged particles pass through them and sending a current to be read out by a sensor.
+%These strips work in a manner similar to the pixels, with electrons getting knocked out of the material as charged particles pass through them and sending a current to be read out by a sensor.
+These strips consist of $p$-on-$n$ type silicon sensors, which operate with reverse bias to minimize leakage current across the $p$-$n$ junction.
+As charged particles pass through the sensors, electron-hole pairs are created along the particle's trajectory, which generates a drift current that is amplified and read as signal.
 Figure~\ref{fig:CMSsilicon} shows the layout of the strip tracker~\cite{Chatrchyan:1211825}.
 The Tracker Inner Barrel (TIB) has four inner barrel layers of silicon strips placed between radii of $255.0\unit{mm}$ and $498.0\unit{mm}$, which has a length of $1.4\unit{m}$ along the LHC beamline centered at the interaction point.
 The TIB is closed off by the Tracker Inner Disks (TID), with the two endcaps containing three disks each placed along the $z$ axis between $\pm800\unit{mm}$ and $\pm900\unit{mm}$ from the interaction point.
@@ -286,12 +288,12 @@ Figure~\ref{fig:CMSECAL} shows an illustration of a module of the ECAL in the ba
 Scintillators are materials that emit light after absorbing ionizing radiation, which are attached to a photodetector and generate a current via the photoelectric effect.
 These crystals were selected due to their density ($8.28\unit{g/cm^3}$), radiation length ($0.89\unit{cm}$), and Moli\`{e}re radius ($2.2\unit{cm}$), all of which allow for high resolution measurement of electron and photon energies while withstanding the harsh radiation levels of the LHC.
 The photodetectors attached to the scintillators are also specially designed to operate in the $4\unit{T}$ magnetic field generated by the solenoid.
-Additionally, around 80\% of the light from the scintillation effect is emitted in the LHC bunch crossing time of $25\unit{ns}$, which is adequate for detection purposes.
+Additionally, around 80\% of the light from the scintillation effect is emitted in the LHC bunch crossing time of $25\unit{ns}$, which reduces the energy contributions from previous or later collision events.
 The crystals measure $22\times22\unit{mm^2}$ at the front face and $26\times26\unit{mm^2}$ at the rear face, corresponding to $0.0174\times0.0174$ in the $\eta$-$\phi$ plane, and have a length of $230\unit{mm}$.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.65\textwidth]{fig/experiment/20130816_01_EB_module_1.pdf}
+  \includegraphics[width=0.55\textwidth]{fig/experiment/20130816_01_EB_module_1.pdf}
   \caption{
     Illustration of a module of the CMS ECAL in the barrel showing the layout of the lead tungstate scintillators.
     The scintillators emit light after absorbing ionizing radiation, each of which are attached to photodetectors and generate a current from the scintillation light.
@@ -377,7 +379,8 @@ The DT system in the barrel region is distributed among the four layers present 
 The stations are numbered according to how close they are to the interaction point, with station 1 being the innermost layer and station 4 being the outermost.
 Each drift tube contains a gaseous mix of Ar (85\%) and CO$_2$ (15\%), with sensitive wires inside of the tubes held at a specified potential.
 An illustration of an individual drift tube cell can be seen in figure~\ref{fig:CMSDTcell}~\cite{Abbiendi_2019}.
-As muons pass through the gas, they impart enough ionization energy to knock off electrons from the atoms of the gas, which are then attracted to the wire and cause a cascade of additional electrons from the gas to be deposited onto the wire and cause a current.
+As muons pass through the gas, they impart enough ionization energy to knock off electrons from the atoms of the argon gas, which are then attracted to the wire and cause a cascade of additional electrons from the gas to be deposited onto the wire and cause a current.
+Meanwhile, the carbon dioxide acts as a quenching gas by absorbing photons that are released from de-exciting electrons in the argon atoms, thereby preventing any further cascades resulting from the release of electrons by the emitted photons.
 The muon's position can then be inferred from where the electrons hit the wire, and how far the muon was from the wire.
 Additionally, the muon track and momentum can be reconstructed by using multiple detection hits from different stations in the barrel.
 Each DT allows for a position resolution of $0.25\unit{mm}$.
@@ -448,7 +451,8 @@ Thus, the trigger system is needed in order to select for high-energy events of 
 
 % Trigger system overview
 The trigger system has two levels, consisting of a Level-1 (L1) Trigger, and a High-Level Trigger (HLT)~\cite{CMStrigger}.
-The L1 Trigger is hardware-based and is comprised of custom-designed electronics that uses data from the calorimeters and muon system.
+%The L1 Trigger is hardware-based and is comprised of custom-designed electronics that uses data from the calorimeters and muon system.
+The L1 Trigger is hardware-based and is comprised of custom-designed processors, featuring large Field Programmable Gate Arrays (FPGAs) that use data from the calorimeters and muon system.
 The HLT is software-based and consists of a conventional CPU farm, which has access to a complete readout from the L1 Trigger and is able to perform more advanced calculations with the data.
 The trigger system as whole reduces the rate by a factor of $10^6$, with the L1 Trigger designed to have an output rate of 100 kHz.
 In practice, the L1 Trigger is not operated at its maximum output and instead runs at 30 kHz as a safety measure, and the L1 trigger output is further reduced by the HLT to around $1\unit{kHz}$.
@@ -489,8 +493,8 @@ The recorded events are then passed onto the Data Acquisition (DAQ) system~\cite
 \subsection{Event Reconstruction}
 
 % Overview
-Once the data for an event is processed through the HLT, the event reconstruction process uses the raw detector data to identify particles and jets.
-Event reconstruction at CMS is handled through the Particle-Flow (PF) algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, which uses a combination of information from each sub-detector system to identify candidate particles.
+Once the data for an event is processed through the HLT, the event reconstruction process uses the resulting objects from the HLT, such as energy clusters and tracks, to identify particles and jets.
+Event reconstruction at CMS is handled through the Particle-Flow (PF) algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, which uses a combination of objects from each sub-detector system to identify candidate particles.
 In particular, the principal objects identified are electrons, muons, photons, charged hadrons, and neutral hadrons, along with their directions, energies, and types.
 These objects can then be used to reconstruct jets to determine quark and gluon energies, determine missing transverse momentum \ptmiss resulting from neutrinos and other undetectable particles, reconstruct tau leptons from their decay products, and tag $b$-jets.
 
