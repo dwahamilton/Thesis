@@ -96,7 +96,7 @@ Assuming that the track starts in the center of the beamline as in figure~\ref{f
   y(x)=\frac{x^2}{2R}+bx,
 \end{equation}
 where $R$ is the radius of curvature as in Eq.~\ref{eq:pt}, and $b$ is a constant to be determined.
-First, observe that at the origin, the tangent of the initial angle $\phi_0$ corresponds to the first derivative of~\ref{eq:para} evaluated at $x=0$.
+First, observe that at the origin, the tangent of the initial angle $\phi_0$ corresponds to the first derivative of equation~\ref{eq:para} evaluated at $x=0$.
 Therefore,
 \begin{equation}
   \eval{\dv{y}{x}}_{x=0}=\tan\phi_0=b,
@@ -140,7 +140,7 @@ Furthermore, in figure~\ref{fig:arc}, we can see that due to the symmetry of the
 With equations~\ref{eq:phi} and~\ref{eq:phib} in hand, we may now propagate the tracks based on the initial information about the curvature $k$ and angle $\phi_0$.
 The CMS detector consists of multiple layers of detection chambers, and each chamber requires its own propagation constant $c$.
 The relevant variables to consider for $c$ based on the geometry of the detector are the pseudorapidity of the track $\eta$ and the station depth $d$.
-Thus, the propagation constants $C(\eta,d)$ are functions of these two variables.
+Thus, the propagation constants $c(\eta,d)$ are functions of these two variables.
 Rather than obtaining these constants analytically, they are obtained by using simulation data. % Elaborate on the simulation samples used later
 
 % Obtaining propagation coefficients
