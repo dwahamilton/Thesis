@@ -15,6 +15,7 @@ This section provides an overview of the cuts that were made in the analysis to 
 Multiple HLT trigger paths are used for recording the data that this analysis utilizes.
 %Most of the data are collected from the \texttt{SingleElecton} and \texttt{SingleMuon} triggers, with the remainder coming from the \texttt{SinglePhoton}, \texttt{EGamma}\footnote{This is specific to 2018 and denotes a combined \texttt{SingleElectron} and \texttt{SinglePhoton} dataset.}, and \texttt{MET} triggers.
 Most of the data are collected from the Single Electron and Single Muon HLT paths, with the remainder coming from the MET, Single Photon, and E/Gamma\footnote{This is specific to 2018 and denotes a combined Single Electron and Single Photon HLT path.} paths.
+The use of the Single Photon paths in conjunction with the Single Electron paths in 2017 and 2018 is to recover efficiency losses on the Single Electron path for high \pt electrons, which is necessary for electrons with $\pt>300\unit{GeV}$.
 For each year we use different HLT paths, which are listed in table~\ref{tab:triggers}.%~\ref{tab:triggers2016}, \ref{tab:triggers2017}, and \ref{tab:triggers2018} for the years Run 2, respectively.
 
 \begin{table}[htbp]
@@ -62,8 +63,49 @@ These thresholds are chosen as part of compromises between energy thresholds and
 Lastly, the additional MET trigger path recovers some inefficiency in triggering on high \pt muons in the endcaps.
 %The thresholds were applied as recommended by the CMS E/Gamma Physics Object Group (POG)~\cite{MuonPOG}.
 
-% Additional explanation of efficiencies?
-% Possibly add subsection on prefiring weights
+% Trigger efficiencies
+For both lepton triggers, the efficiencies for all Run 2 years are measured with respect to offline electron High Energy Electron Pairs (HEEP) requirements, and to muon high-\pt ID and isolation requirements, using a dataset enriched in boosted \Wjets events.
+The efficiencies and resulting data/MC scale factors for 2016 are shown in figures~\ref{fig:eletrigeff2016}-\ref{fig:mettrigeff2016}.
+We also separately measure the efficiencies of the lepton legs and of the MET legs by either triggering on MET and looking at Single Electron or Single Muon paths, or by triggering on one of the lepton paths and looking at the MET path.
+Large uncertainties in the data/MC scale factors for the lepton legs are observed at large \pt and $\eta$ due to the low statistics in those regions.
+The muon channel for the MET efficiencies in figure~\ref{fig:mettrigeff2016} also does not have a turn-on curve since the chosen MET HLT path sees the whole $W$ as \ptmiss in boosted $W\to\mu\nu$ events.
+The resulting event-level scale factor used in this analysis is defined as $S=\epsilon_\mathrm{total}(\mathrm{DATA})/\epsilon_\mathrm{total}(\mathrm{MC})$, where each efficiency $\epsilon$ is estimated as $\epsilon(\mathrm{lepton})+\epsilon(\mathrm{MET})-\epsilon(\mathrm{lepton})\epsilon(\mathrm{MET})$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_ELE_DATA_abseta_2016.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_ELE_MC_abseta_2016.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerSF_ELE_2016.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff1DPt_ELE2016.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff1DAbsEta_ELE2016.pdf}\\
+  \caption{
+    2016 Single Electron trigger efficiencies versus offline electron \pt and $\eta$ in data (top left) and MC (top right) and data/MC scale factors (middle), and efficiencies and scale factors versus \pt in bins of $\eta$ (bottom left) and versus $\eta$ in bins of \pt (bottom right).
+  }
+  \label{fig:eletrigeff2016}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_MU_DATA_abseta_2016.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_MU_MC_abseta_2016.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerSF_MU_2016.pdf}\\
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff1DPt_MU2016.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff1DAbsEta_MU2016.pdf}\\
+  \caption{
+    2016 Single Muon trigger efficiencies versus offline muon \pt and $\eta$ in data (top left) and MC (top right) and data/MC scale factors (middle), and efficiencies and scale factors versus \pt in bins of $\eta$ (bottom left) and versus $\eta$ in bins of \pt (bottom right).
+  }
+  \label{fig:mutrigeff2016}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_MET_eleChannel_2016.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_MET_muChannel_2016.pdf}
+  \caption{
+    2016 MET trigger efficiencies and scale factors, in the electron (left) and muon (right) channels.
+  }
+  \label{fig:mettrigeff2016}
+\end{figure}
 
 \subsection{Pileup Reweighting}
 
@@ -80,11 +122,11 @@ The weights are computed using the recommended minimum bias cross section of $69
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.45\textwidth]{fig/eventSelection/PUrewN_0_2016_nVert.pdf}
-  \includegraphics[width=0.45\textwidth]{fig/eventSelection/PUrewN_0_2017_nVert.pdf}\\
-  \includegraphics[width=0.45\textwidth]{fig/eventSelection/PUrewN_0_2018_nVert.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/eventSelection/PUrewN_0_2016_nVert.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/eventSelection/PUrewN_0_2017_nVert.pdf}
+  \includegraphics[width=0.3\textwidth]{fig/eventSelection/PUrewN_0_2018_nVert.pdf}
   \caption{
-    Distribution of the number of primary vertices reconstructed in simulation before and after pileup reweighting, with data present, for 2016 (top left), 2017 (top right), and 2018 (bottom).
+    Distribution of the number of primary vertices reconstructed in simulation before and after pileup reweighting, with data present, for 2016 (left), 2017 (middle), and 2018 (right).
   }
   \label{fig:PUreweight}
 \end{figure}
@@ -249,9 +291,21 @@ This allows for separating jets originating from boosted vector bosons versus je
 This analysis uses a modified version of the $N$-subjettiness ratio that reduces the dependency of \nsubj on the jet mass, which is denoted by the designed decorrelated tagger (DDT) $N$-subjettiness \nsubjDDT~\cite{Dolen_2016}.
 It is defined by
 \begin{equation}
-  \nsubjDDT=\nsubj-C\ln\bqty{\frac{\MJ^2}{\ptjet\times(1\unit{GeV})}},
+  \nsubjDDT=\nsubj-C\ln\pqty{\frac{\MJ^2}{\ptjet\mu}},
 \end{equation}
-where $C$ is a coefficient obtained by taking the slope of a fit for the \nsubj profile versus $\ln\bqty{\frac{\MJ^2}{\ptjet\times(1\unit{GeV})}}$ in non-resonant \Wjets background events after applying the full analysis selection cuts.
+where $C$ is a coefficient obtained by taking the slope of a fit for the \nsubj profile versus $\ln\pqty{\MJ^2/\ptjet\mu}$ in non-resonant \Wjets background events after applying the full analysis selection cuts, and $\mu$ is a constant chosen such that $\mu=1\unit{GeV}$.
+Figure~\ref{fig:tau21DDTComp} shows a comparison of \nsubj versus \nsubjDDT for signal and background MC events, with their distributions normalized to unity.
+The distributions for \nsubjDDT have peaks for signal and background that are more separated than the distributions for \nsubj, resulting in better discrimination against background.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/hists_SR_mjet30to210_2017_tau21.pdf}
+  \includegraphics[width=0.4\textwidth]{fig/eventSelection/hists_SR_mjet30to210_2017_tau21DDT.pdf}
+  \caption{
+    Comparison of the distributions for signal versus background for \nsubj (left) and \nsubjDDT (right), with distributions normalized to unity.
+    The signal distributions for \nsubjDDT exhibit larger separation from the background distributions compared to \nsubj.
+  }
+  \label{fig:tau21DDTComp}
+\end{figure}
 
 % N-subjettiness selection
 For this analysis, we only consider large-radius jets that satisfy $\nsubjDDT<0.80$.
@@ -334,6 +388,12 @@ This is done by solving a second order equation for $p_{\nu,z}$ given by
 where $E_\ell$ is the energy of the lepton, $\vb{p}_\ell$ is the momentum of the lepton, $\vb{p}_\nu$ is the momentum of the neutrino, and $m_W$ is the mass of the $W$ boson.
 When solving for $p_{\nu,z}$ we choose the root with the smaller magnitude, and if the discriminant is imaginary then we select only the real part of $p_{\nu,z}$.
 The resulting \Wlep is then combined with the large-radius \Vhad jet to form a diboson candidate, with mass denoted by \MVV.
+
+% Angular separation
+To select a diboson-like topology we apply angular selection criteria between the lepton, \Vhad, \Wlep, and \ptmissTI candidates.
+The first is that the angular distance in $\eta$-$\phi$ between the \Vhad and lepton candidates is required to be $\Delta R>\pi/2$.
+For the second requirement, the difference in the azimuthal angle between the \Vhad and \ptmissTI must be $|\Delta\phi|>2$.
+Finally, the third requirement is that the difference in the azimuthal angle between the \Vhad and \Wlep satisfies $|\Delta\phi|>2$ as well.
 
 \subsection{VBF Forward Jets}
 \label{subsec:VBFjets}
@@ -435,6 +495,7 @@ The final event selection used in the analysis is defined by the following:
   \item Type-I corrected missing transverse momentum \ptmissTI: events are required to have $\ptmiss>80\unit{GeV}$ for the electron channel and $\ptmiss>40\unit{GeV}$ for the muon channel to suppress contributions from QCD multijet backgrounds.
   \item Leptonic $W$ \pt: the \pt of the reconstructed \Wlep must satisfy $\pt>200\unit{GeV}$ in order to select a boosted $W$ topology.
   \item Hadronic \VorH \pt: the \pt of the reconstructed \Vhad must satisfy $\pt>200\unit{GeV}$ in order to select a boosted \VorH topology.
+  \item Diboson angular separation: the angular distance between the selected lepton and \Vhad is required to be $\Delta R>\pi/2$, the difference in the azimuthal angle between \Vhad and \ptmissTI is required to be $|\Delta\phi|>2$, and the difference in the azimuthal angle between \Vhad and \Wlep is required to be $|\Delta\phi|>2$.
   \item $b$-tag veto: the event is required to have no $b$-tagged standard jets.
   \item \ZH veto: to ensure that the selection is disjoint from the $X\to\ZH\to\ell\ell\bbbar$ search~\cite{CMS-PAS-B2G-19-006}, which uses a different electron and muon identification, we explicitly veto events where a \ZH candidate is selected with their criteria.
   \item Search region: the search region is defined as $0.7<\MVV<6.0\unit{TeV}$ and $20<\MJ<210\unit{GeV}$.
@@ -451,8 +512,8 @@ The categories are based on four successive criteria based on the lepton channel
 % Lepton channel
 First, we split the event sample based on the lepton flavor of the reconstructed \Wlep candidate, defining two channels:
 \begin{itemize}
-  \item {\bfseries Electron channel ($e$)}
-  \item {\bfseries Muon channel ($\mu$)}
+  \item {\bfseries Electron channel (e):} The selected lepton is an electron.
+  \item {\bfseries Muon channel (mu):} The selected lepton is a muon.
 \end{itemize}
 
 % Jet purity
@@ -480,4 +541,4 @@ Fourth, to further discriminate all signals against background and distinguish b
 \end{itemize}
 
 % Category format
-This selection defines $2\times2\times3\times2=24$ search categories that are referred to with labels such as e-HP-bb-LDy, $\mu$-LP-vbf-HDy, etc.
+This selection defines $2\times2\times3\times2=24$ search categories that are referred to with labels such as e-HP-bb-LDy, mu-LP-vbf-HDy, etc.

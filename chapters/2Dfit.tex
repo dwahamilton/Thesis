@@ -83,7 +83,8 @@ The signals are parameterized in 2D as the product of the two 1D \MJ and \MVV sh
 \begin{equation}
   P_\mathrm{sig}(\MVV,\MJ|\MX)=\PVV(\MVV|\MX,\vb*{\theta}_1)\PJ(\MJ|\MX,\vb*{\theta}_2),
 \end{equation}
-where $\vb*{\theta}_1$ and $\vb*{\theta}_2$ are shape parameters that in principle depend on \MX.
+where $\vb*{\theta}_1$ and $\vb*{\theta}_2$ are the nuisance parameters.
+In principle, the signal shape parameters depend on the resonance mass \MX.
 Both shapes are modeled separately based on the jet purity (HP/LP), rapidity (HDy/LDy), and bb/nobb/vbf categories.
 However, the $e$ and $\mu$ categories are merged for the signal modeling process.
 To parameterize the shapes, we perform separate fits for the 1D shapes in the \MVV and \MJ spectra, then interpolate the parameters for each shape as a function of \MX to obtain $P_\mathrm{sig}(\MVV,\MJ|\MX)$ for arbitrary \MX between 1 and $4.5\unit{TeV}$.
@@ -107,28 +108,16 @@ Because the signal parameters do not vary significantly between production modes
 \end{itemize}
 
 % Analytic signal shape figures
-%Figures \ref{fig:MVVShapes_NonVBF_LDy_Run2} and \ref{fig:MVVShapes_NonVBF_HDy_Run2} show the \MVV signal shapes for non-\VBF signals.
-%For figures \ref{fig:MVVShapes_VBF_LDy_Run2} and \ref{fig:MVVShapes_VBF_HDy_Run2}, we show the \MVV signal shapes for the \VBF signals.
-%In figures \ref{fig:MJJShapes_NonVBF_LDy_Run2} and \ref{fig:MJJShapes_NonVBF_HDy_Run2}, the \MJ signal shapes are shown for the non-\VBF signals.
-%Finally, figures \ref{fig:MJJShapes_VBF_LDy_Run2} and \ref{fig:MJJShapes_VBF_HDy_Run2} show the \MJ signal shapes for the \VBF signals.
-%We also perform a closure test by converting the \MVV and \MJ projections of the $2\unit{TeV}$ version of the template of each signal model into 1D histograms and compare them with the corresponding weighted MC distributions for each category in figures~\ref{fig:1dtemplateVsReco_GbuToWW2000_Run2}-\ref{fig:1dtemplateVsReco_VBFWprToWZ2000_Run2}.
 For brevity, we show various signal parameters and shapes in the nobb category only.
 Figure \ref{fig:MVVShapes_NonVBF_LDy_Run2} shows the \MVV signal shapes for non-\VBF signals.
 For figure \ref{fig:MVVShapes_VBF_LDy_Run2}, we show the \MVV signal shapes for the \VBF signals.
 In figure \ref{fig:MJJShapes_NonVBF_LDy_Run2}, the \MJ signal shapes are shown for the non-\VBF signals.
 Finally, figure \ref{fig:MJJShapes_VBF_LDy_Run2} shows the \MJ signal shapes for the \VBF signals.
-We also perform a closure test by converting the \MVV and \MJ projections of the $2\unit{TeV}$ version of the template of each signal model into 1D histograms and compare them with the corresponding weighted MC distributions in figures~\ref{fig:1dtemplateVsReco_GbuToWW2000_Run2}-\ref{fig:1dtemplateVsReco_VBFWprToWZ2000_Run2}.
+We also perform a closure test by converting the \MVV and \MJ projections of the $2\unit{TeV}$ version of the template of each signal model into 1D histograms and compare them with the corresponding weighted MC distributions.
+An example of this is presented in figure\ref{fig:1dtemplateVsReco_GbuToWW2000_Run2} with the \DY\GBulktoWW signal.
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_LDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_LDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_LDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_LDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_LDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_LDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_LDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_LDy_ALPHA2.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_nobb_LDy_MEAN.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_nobb_LDy_SIGMA.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_nobb_LDy_ALPHA1.pdf}
@@ -137,65 +126,15 @@ We also perform a closure test by converting the \MVV and \MJ projections of the
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_nobb_LDy_SIGMA.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_nobb_LDy_ALPHA1.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_nobb_LDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_LDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_LDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_LDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_LDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_LDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_LDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_LDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_LDy_ALPHA2.pdf}\\
   \caption{
     DCB parameters (from left to right: $\mu$, $\sigma$, $\alpha_1$, $\alpha_2$) for the diboson reconstructed mass \MVV as a function of \MX.
-    %Rows 1 to 6: HP-bb-LDy, LP-bb-LDy, HP-nobb-LDy, LP-nobb-LDy, HP-vbf-LDy, LP-vbf-LDy.
     Top to bottom: HP-nobb-LDy, LP-nobb-LDy.
   }
   \label{fig:MVVShapeParam_LDy_Run2}
 \end{figure}
 
-%\begin{figure}[htbp]
-  %\centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_HDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_HDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_HDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_bb_HDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_HDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_HDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_HDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_bb_HDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_nobb_HDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_nobb_HDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_nobb_HDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_nobb_HDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_nobb_HDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_nobb_HDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_nobb_HDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_nobb_HDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_HDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_HDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_HDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_HP_vbf_HDy_ALPHA2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_HDy_MEAN.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_HDy_SIGMA.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_HDy_ALPHA1.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MVV_LP_vbf_HDy_ALPHA2.pdf}\\
-  %\caption{
-    %DCB parameters (from left to right: $\mu$, $\sigma$, $\alpha_1$, $\alpha_2$) for the diboson reconstructed mass \MVV as a function of \MX.
-    %Rows 1 to 6: HP-bb-HDy, LP-bb-HDy, HP-nobb-HDy, LP-nobb-HDy, HP-vbf-HDy, LP-vbf-HDy.
-  %}
-  %\label{fig:MVVShapeParam_HDy_Run2}
-%\end{figure}
-
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_LDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_LDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_LDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_LDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_LDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_LDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_LDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_LDy_alpha2.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_nobb_LDy_mean.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_nobb_LDy_sigma.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_nobb_LDy_alpha.pdf}
@@ -204,67 +143,16 @@ We also perform a closure test by converting the \MVV and \MJ projections of the
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_nobb_LDy_sigma.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_nobb_LDy_alpha.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_nobb_LDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_LDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_LDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_LDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_LDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_LDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_LDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_LDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_LDy_alpha2.pdf}\\
   \caption{
     DCB parameters (from left to right: $\mu$, $\sigma$, $\alpha_1$, $\alpha_2$) for the jet mass \MJ as a function of \MX.
-    %Rows 1 to 6: HP-bb-LDy, LP-bb-LDy, HP-nobb-LDy, LP-nobb-LDy, HP-vbf-LDy, LP-vbf-LDy.
     Top to bottom: HP-nobb-LDy, LP-nobb-LDy.
   }
   \label{fig:MJJShapeParam_LDy_Run2}
 \end{figure}
 
-%\begin{figure}[htbp]
-  %\centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_HDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_HDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_HDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_bb_HDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_HDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_HDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_HDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_bb_HDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_nobb_HDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_nobb_HDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_nobb_HDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_nobb_HDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_nobb_HDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_nobb_HDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_nobb_HDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_nobb_HDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_HDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_HDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_HDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_HP_vbf_HDy_alpha2.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_HDy_mean.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_HDy_sigma.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_HDy_alpha.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalShape_allSig_MJJ_LP_vbf_HDy_alpha2.pdf}\\
-  %\caption{
-    %DCB parameters (from left to right: $\mu$, $\sigma$, $\alpha_1$, $\alpha_2$) for the jet mass \MJ as a function of \MX.
-    %Rows 1 to 6: HP-bb-HDy, LP-bb-HDy, HP-nobb-HDy, LP-nobb-HDy, HP-vbf-HDy, LP-vbf-HDy.
-  %}
-  %\label{fig:MJJShapeParam_HDy_Run2}
-%\end{figure}
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_HP_bb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_HP_nobb_LDy.pdf}
@@ -275,75 +163,16 @@ We also perform a closure test by converting the \MVV and \MJ projections of the
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_HP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_LP_vbf_LDy.pdf}\\
   \caption{
     Signal shapes for the diboson reconstructed mass \MVV for \ggF- and \DY-produced signals, for 8 values of \MX.
     From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ, \WprtoWH.
-    %Rows 1 to 6: HP-bb-LDy, LP-bb-LDy, HP-nobb-LDy, LP-nobb-LDy, HP-vbf-LDy, LP-vbf-LDy.
     Top to bottom: HP-nobb-LDy, LP-nobb-LDy.
   }
   \label{fig:MVVShapes_NonVBF_LDy_Run2}
 \end{figure}
 
-%\begin{figure}[htbp]
-  %\centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_HP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_LP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_HP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_HP_vbf_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MVV_mu_LP_vbf_HDy.pdf}\\
-  %\caption{
-    %Signal shapes for the diboson reconstructed mass \MVV for \ggF- and \DY-produced signals, for 8 values of \MX.
-    %From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ, \WprtoWH.
-    %Rows 1 to 6: HP-bb-HDy, LP-bb-HDy, HP-nobb-HDy, LP-nobb-HDy, HP-vbf-HDy, LP-vbf-HDy.
-  %}
-  %\label{fig:MVVShapes_NonVBF_HDy_Run2}
-%\end{figure}
-
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_HP_bb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_HP_nobb_LDy.pdf}
@@ -352,69 +181,16 @@ We also perform a closure test by converting the \MVV and \MJ projections of the
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_HP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_LP_vbf_LDy.pdf}\\
   \caption{
     Signal shapes for the diboson reconstructed mass \MVV for \VBF-produced signals, for 8 values of \MX.
     From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ.
-    %Rows 1 to 6: HP-bb-LDy, LP-bb-LDy, HP-nobb-LDy, LP-nobb-LDy, HP-vbf-LDy, LP-vbf-LDy.
     Top to bottom: HP-nobb-LDy, LP-nobb-LDy.
   }
   \label{fig:MVVShapes_VBF_LDy_Run2}
 \end{figure}
 
-%\begin{figure}[htbp]
-  %\centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_HP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_LP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_HP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_HP_vbf_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MVV_mu_LP_vbf_HDy.pdf}\\
-  %\caption{
-    %Signal shapes for the diboson reconstructed mass \MVV for \VBF-produced signals, for 8 values of \MX.
-    %From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ.
-    %Rows 1 to 6: HP-bb-HDy, LP-bb-HDy, HP-nobb-HDy, LP-nobb-HDy, HP-vbf-HDy, LP-vbf-HDy.
-  %}
-  %\label{fig:MVVShapes_VBF_HDy_Run2}
-%\end{figure}
-
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_HP_bb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_HP_nobb_LDy.pdf}
@@ -425,75 +201,16 @@ We also perform a closure test by converting the \MVV and \MJ projections of the
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_HP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_LP_vbf_LDy.pdf}\\
   \caption{
     Signal shapes for the soft drop jet mass \MJ for \ggF- and \DY-produced signals, for 8 values of \MX.
     From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ, \WprtoWH.
-    %Rows 1 to 6: HP-bb-LDy, LP-bb-LDy, HP-nobb-LDy, LP-nobb-LDy, HP-vbf-LDy, LP-vbf-LDy.
     Top to bottom: HP-nobb-LDy, LP-nobb-LDy.
   }
   \label{fig:MJJShapes_NonVBF_LDy_Run2}
 \end{figure}
 
-%\begin{figure}[htbp]
-  %\centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_HP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_LP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_HP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_HP_vbf_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_GbuToWW_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_RadToWW_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_ZprToWW_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWZ_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_WprToWH_MJJ_mu_LP_vbf_HDy.pdf}\\
-  %\caption{
-    %Signal shapes for the soft drop jet mass \MJ for \ggF- and \DY-produced signals, for 8 values of \MX.
-    %From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ, \WprtoWH.
-    %Rows 1 to 6: HP-bb-HDy, LP-bb-HDy, HP-nobb-HDy, LP-nobb-HDy, HP-vbf-HDy, LP-vbf-HDy.
-  %}
-  %\label{fig:MJJShapes_NonVBF_HDy_Run2}
-%\end{figure}
-
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_HP_bb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_HP_nobb_LDy.pdf}
@@ -502,370 +219,29 @@ We also perform a closure test by converting the \MVV and \MJ projections of the
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_HP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_LP_vbf_LDy.pdf}\\
   \caption{
     Signal shapes for the soft drop jet mass \MJ for \VBF-produced signals, for 8 values of \MX.
     From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ.
-    %Rows 1 to 6: HP-bb-LDy, LP-bb-LDy, HP-nobb-LDy, LP-nobb-LDy, HP-vbf-LDy, LP-vbf-LDy.
     Top to bottom: HP-nobb-LDy, LP-nobb-LDy.
   }
   \label{fig:MJJShapes_VBF_LDy_Run2}
 \end{figure}
 
-%\begin{figure}[htbp]
-  %\centering
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_HP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_LP_bb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_HP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_HP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_LP_nobb_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_HP_vbf_HDy.pdf}\\
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFGbuToWW_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFRadToWW_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFZprToWW_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.18\textwidth]{fig/2Dfit/templateSignalVsMX_fromDC_VBFWprToWZ_MJJ_mu_LP_vbf_HDy.pdf}\\
-  %\caption{
-    %Signal shapes for the soft drop jet mass \MJ for \VBF-produced signals, for 8 values of \MX.
-    %From left to right: \GBulktoWW, \RadtoWW, \ZprtoWW, \WprtoWZ.
-    %Rows 1 to 6: HP-bb-HDy, LP-bb-HDy, HP-nobb-HDy, LP-nobb-HDy, HP-vbf-HDy, LP-vbf-HDy.
-  %}
-  %\label{fig:MJJShapes_VBF_HDy_Run2}
-%\end{figure}
-
 \begin{figure}[htpb]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_GbuToWW2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
   \caption{
     Comparison between the \ggF\GBulktoWW template for $m_{\GBulk}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
     Top to bottom: \MVV projections, \MJ projections.
   }
   \label{fig:1dtemplateVsReco_GbuToWW2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_RadToWW2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \ggF\RadtoWW template for $m_{\Rad}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_RadToWW2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_ZprToWW2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \DY\ZprtoWW template for $m_{\Zpr}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_ZprToWW2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWZ2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \DY\WprtoWZ template for $m_{\Wpr}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_WprToWZ2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_WprToWH2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \Dy\WprtoWH template for $m_{\Wpr}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_WprToWH2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFGbuToWW2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \VBF\GBulktoWW template for $m_{\GBulk}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_VBFGbuToWW2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFRadToWW2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \VBF\RadtoWW template for $m_{\Rad}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_VBFRadToWW2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFZprToWW2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \VBF\ZprtoWW template for $m_{\Zpr}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_VBFZprToWW2000_Run2}
-\end{figure}
-
-\begin{figure}[htpb]
-  \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_HP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_LP_bb_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_HP_bb_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_LP_bb_HDy_linear.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_HP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_LP_nobb_LDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_HP_nobb_HDy_linear.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_LP_nobb_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_HP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_LP_vbf_LDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_HP_vbf_HDy_linear.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MVV_mu_LP_vbf_HDy_linear.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_LP_bb_HDy.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_HP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_LP_nobb_LDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_HP_nobb_HDy.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_VBFWprToWZ2000_r0_MJ_mu_LP_vbf_HDy.pdf}\\
-  \caption{
-    Comparison between the \VBF\WprtoWZ template for $m_{\Wpr}=2\unit{TeV}$ (solid line) and the histogram from weighted simulated events (points) in the nobb muon event categories.
-    %Top 3 rows: \MVV projections.
-    %Bottom 3 rows: \MJ projections.
-    Top to bottom: \MVV projections, \MJ projections.
-  }
-  \label{fig:1dtemplateVsReco_VBFWprToWZ2000_Run2}
 \end{figure}
 
 \subsubsection{Signal Yields}
@@ -878,35 +254,17 @@ Figures~\ref{fig:YieldParam_NonVBF_Run2} and \ref{fig:YieldParam_VBF_Run2} show 
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_NonVBFSig_e_LP_vbf_HDy.pdf}\\
   \caption{
     Parameterizations of the expected yields per pb of cross section for \ggF- and \DY-produced signals as a function of \MX.
-    %Columns 1 to 4: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:YieldParam_NonVBF_Run2}
@@ -914,35 +272,17 @@ Figures~\ref{fig:YieldParam_NonVBF_Run2} and \ref{fig:YieldParam_VBF_Run2} show 
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/paramSignalYield_VBFSig_e_LP_vbf_HDy.pdf}\\
   \caption{
     Parameterizations of the expected yields per pb of cross section for \VBF-produced signals as a function of \MX.
-    %Columns 1 to 4: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:YieldParam_VBF_Run2}
@@ -978,7 +318,7 @@ This is done in simulation by estimating the Gaussian mean and sigma of the reso
 We then begin generating the template by populating the \MJ spectrum using a coarse binning.
 For each event in a slice of the \MJ spectrum, we add a 1D Gaussian onto the partial mass with scale shifted by the detector response and width equal to the Gaussian resolution as defined by
 \begin{equation}\label{eq:Pplus}
-  P_+=\frac{w_i}{\sqrt{2\pi}\sigma}\exp\bqty{-\frac{1}{2}\pqty{\frac{x-s\cdot\MVVpart}{\sigma}}^2},
+  P_i(\MVV)=\frac{w_i}{\sqrt{2\pi}\sigma}\exp\bqty{-\frac{1}{2}\pqty{\frac{\MVV-s\cdot\MVVpart}{\sigma}}^2},
 \end{equation}
 where $w_i$ is the event weight, and $s$ and $\sigma$ are the scale and resolution parameters obtained from the detector response.
 
@@ -1029,24 +369,14 @@ Figure~\ref{fig:nonResMvvSpectrumReweighting} shows the \MVV distributions from 
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_bb_LDy_Run2_mWV_1OverX.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_bb_LDy_Run2_mWV_1OverX.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_bb_HDy_Run2_mWV_1OverX.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_bb_HDy_Run2_mWV_1OverX.pdf}\\
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_nobb_LDy_Run2_mWV_1OverX.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_nobb_LDy_Run2_mWV_1OverX.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_nobb_HDy_Run2_mWV_1OverX.pdf}
-  \includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_nobb_HDy_Run2_mWV_1OverX.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_vbf_LDy_Run2_mWV_1OverX.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_vbf_LDy_Run2_mWV_1OverX.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_vbf_HDy_Run2_mWV_1OverX.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_vbf_HDy_Run2_mWV_1OverX.pdf}\\
+  \includegraphics[width=0.45\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_nobb_LDy_Run2_mWV_1OverX.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_nobb_LDy_Run2_mWV_1OverX.pdf}\\
+  \includegraphics[width=0.45\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_nobb_HDy_Run2_mWV_1OverX.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_nobb_HDy_Run2_mWV_1OverX.pdf}\\
   \caption{
     Plots of the \MVV spectra for the full Run 2 data and MC samples in the jet mass sideband for the nobb category, with the $e$ and $\mu$ categories merged.
     After merging the $e$ and $\mu$ categories, the remaining categories are kept separate and the ratio of data to MC is fitted with a function of the form $f(\MVV)=a+b/\MVV$.
     The resulting weights for each event $w_i$ are then used in equation~\ref{eq:Pplus} when building the conditional 2D templates.
-    %Columns 1 to 4: HP-LDy, LP-LDy, HP-HDy, LP-HDy.
-    %Rows 1 to 3: bb, nobb, and vbf for data, but with merged bb+nobb+vbf distributions for the MC.
     Left to right: HP-LDy-nobb, LP-LDy-nobb, HP-HDy-nobb, LP-HDy-nobb.
   }
   \label{fig:nonResMvvSpectrumReweighting}
@@ -1078,35 +408,17 @@ Figure~\ref{fig:1dtemplateVsReco_nonRes_MJ_Run2} shows the resulting 1D template
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_nonRes_r0_MJ_e_LP_vbf_HDy.pdf}\\
   \caption{
     Comparison of the 1D \MJ templates for the non-resonant background (solid line) and the weighted MC distributions (points).
-    %Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, $e$-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:1dtemplateVsReco_nonRes_MJ_Run2}
@@ -1119,35 +431,17 @@ To better visualize the differences between each of the categories, figure~\ref{
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_nonRes_e_LP_vbf_HDy.pdf}\\
   \caption{
     Final 2D non-resonant templates for the nobb category.
-    %Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, $e$-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:templates_nonRes_Run2}
@@ -1194,35 +488,17 @@ Again we find good agreement between the templates and the MC.
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MVV_e_LP_vbf_HDy.pdf}\\
   \caption{
     Comparison of the \MVV projection of the 2D conditional resonant background templates (solid lines) and the weighted MC events (points).
-    %Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, $e$-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:condTemplateVscondReco_res_MVV_Run2}
@@ -1237,35 +513,17 @@ The comparisons between the 1D templates and the MC distributions are shown in f
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/LNuJJ_res_MJJ_e_LP_vbf_HDy.pdf}\\
   \caption{
     Fits for the 1D \MJ distributions of the resonant background for each of the 24 categories.
-    %Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, $e$-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:fits_res_MJJ_Run2}
@@ -1273,35 +531,17 @@ The comparisons between the 1D templates and the MC distributions are shown in f
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/templateVsReco_res_r0_MJ_e_LP_vbf_HDy.pdf}\\
   \caption{
     Comparison of the 1D \MJ templates for the resonant background (solid line) and the weighted MC distributions (points).
-    %Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, $e$-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:1dtemplateVsReco_res_MJ_Run2}
@@ -1313,35 +553,17 @@ As was done with the non-resonant templates, figure~\ref{fig:compTemplate_res} s
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_HP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_LP_bb_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_LP_bb_LDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_HP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_LP_nobb_LDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_LP_nobb_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_HP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_LP_vbf_LDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_LP_vbf_LDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_HP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_LP_bb_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_LP_bb_HDy.pdf}\\
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_HP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_LP_nobb_HDy.pdf}
   \includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_LP_nobb_HDy.pdf}\\
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_HP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_mu_LP_vbf_HDy.pdf}
-  %\includegraphics[width=0.2\textwidth]{fig/2Dfit/template_res_e_LP_vbf_HDy.pdf}\\
   \caption{
     Final 2D resonant templates for the nobb category.
-    %Columns 1 to 4: $\mu$-HP, $e$-HP, $\mu$-LP, $e$-LP.
-    %Rows 1 to 6: bb-LDy, nobb-LDy, vbf-LDy, bb-HDy, nobb-HDy, vbf-HDy.
-    Left to right: $\mu$-HP, e-HP, $\mu$-LP, e-LP.
+    Left to right: mu-HP, e-HP, mu-LP, e-LP.
     Top to bottom: nobb-LDy, nobb-HDy.
   }
   \label{fig:template_res_Run2}

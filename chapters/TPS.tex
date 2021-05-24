@@ -292,18 +292,18 @@ For a given event, the efficiency is defined by
 \end{equation}
 where $N_\mathrm{TPS}$ is the number of TPS tracks obtained by the algorithm, and $N_\mathrm{gen}$ is the number of real muons generated in the simulation event.
 Figure~\ref{fig:eff} shows the results obtained when evaluating the efficiency for all events in a simulation sample of muons passing through the detector as a function of muon $\eta$ (left) and \pt (right).
-The performance of the TPS algorithm is compared to the existing BMTF, K-BMTF, and Technical Proposal (TP) algorithms.
+The performance of the TPS algorithm is compared to the existing KBMT, and to an algorithm which matches tracks to KBMTF muons referred to as Track+KBMTF.
 For these efficiency studies, we required that a TPS track has at least two stubs.
 A notable feature of the TPS algorithm is its performance in the gap region of $|\eta|\in[0.15,0.35]$ between wheels 1 and $-1$.
 While other algorithms suffer significant losses in efficiency in the gap region, the TPS algorithm performs especially well by comparison on this region.
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.45\textwidth]{fig/TPS/effEta20GeV.pdf}
-  \includegraphics[width=0.45\textwidth]{fig/TPS/effPt20GeV.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/effVsEta_5_TPS.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/effVsPt_20_TPS.pdf}
   \caption{
     Comparison of the efficiencies defined by equation~\ref{eq:eff} for simulated muon $\eta$ (left) and \pt (right).
-    The TPS algorithm is required to have two or more stubs associated to muon tracks, and is compared to the existing BMTF, proposed K-BMTF and TP algorithms.
+    The TPS algorithm (denoted by L1 Track+Muon Stubs) is required to have two or more stubs associated to muon tracks, and is compared to the existing KBMTF, and to an algorithm that combines tracks with KBMTF muons (denoted by Track+KBMTF).
     The TPS algorithm offers better overall efficiency in comparison to the other algorithms.
   }
   \label{fig:eff}
@@ -321,16 +321,16 @@ The trigger rates are computed according to
 
 % Trigger rates comparison
 A comparison of the trigger rate at different trigger thresholds can be see in figure~\ref{fig:rates}.
-The TPS algorithm performance is similar to the TP algo ($\sim8\unit{kHz}$ at $20\unit{GeV}$), and both are significantly lower than the K-BMTF.
+The TPS algorithm performance is similar to the Track+KBMTF algorithm ($\sim3\unit{kHz}$ at $20\unit{GeV}$).
 Moreover, allowing for track isolation with a maximum $p_{\mathrm{T},cone}$ of $5\unit{GeV}$ and a minimum $p_{\mathrm{T,i}}$ of $2\unit{GeV}$ results in a decrease in the rate by a factor of 2 at $20\unit{GeV}$, thereby demonstrating the effectiveness of using track isolation to suppress background.
 These results also show that the TPS algorithm is well-suited for handling background noise while also efficiently matching detection stubs to real muon tracks.
 
 \begin{figure}[htbp] % Need to update figure
   \centering
-  \includegraphics[width=0.45\textwidth]{fig/TPS/rate.pdf}
+  \includegraphics[width=0.45\textwidth]{fig/TPS/rateVsPt_TPSIsol.pdf}
   \caption{
-    Comparison of the trigger rates at different \pt thresholds for TPS (with and without track isolation), TP, and K-BMTF algorithms when running on a background-only sample in which there are no muons present.
-    Both the TPS and TP algorithms perform better at suppressing fake tracks compared to the K-BMTF over the full \pt threshold range.
+    Comparison of the trigger rates at different \pt thresholds for TPS (with and without track isolation) and Track+KBMTF algorithms when running on a background-only sample in which there are no muons present.
+    The TPS algorithm with isolation results in lower overall trigger rates compared to the Track+KBMTF algorithm.
   }
   \label{fig:rates}
 \end{figure}
@@ -340,14 +340,14 @@ These results also show that the TPS algorithm is well-suited for handling backg
 
 % Implementation on the OCEAN board
 While initially tested as software, the TPS algorithm will eventually be implemented into the CMS detector through hardware to allow for fast processing.
-As of this writing, the UCLA CMS research group is currently in the process of designing and testing a custom OCEAN Blade board with an FPGA that will allow for the TPS algorithm to be implemented as firmware.
+As of this writing, the UCLA CMS research group is currently in the process of testing a custom OCEAN Blade board with an FPGA that will allow for the TPS algorithm to be implemented as firmware.
 % More up-to-date information on resource usage and performance results here
 
 \begin{figure}[htbp] % Need to update figure
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/ocean.pdf}
   \caption{
-    Render of the OCEAN Blade board that will be implemented into the CMS detector hardware.
+    Picture of the assembled OCEAN Blade board that will be implemented into the CMS detector hardware.
     The onboard FPGA will allow for the TPS algorithm to be implemented directly as firmware into the muon trigger in the detector.
   }
   \label{fig:ocean}
