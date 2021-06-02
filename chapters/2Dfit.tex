@@ -87,8 +87,8 @@ where $\vb*{\theta}_1$ and $\vb*{\theta}_2$ are the nuisance parameters.
 In principle, the signal shape parameters depend on the resonance mass \MX.
 Both shapes are modeled separately based on the jet purity (HP/LP), rapidity (HDy/LDy), and bb/nobb/vbf categories.
 However, the $e$ and $\mu$ categories are merged for the signal modeling process.
-To parameterize the shapes, we perform separate fits for the 1D shapes in the \MVV and \MJ spectra, then interpolate the parameters for each shape as a function of \MX to obtain $P_\mathrm{sig}(\MVV,\MJ|\MX)$ for arbitrary \MX between 1 and $4.5\unit{TeV}$.
-A DCB shape is used for $\PVV(\MVV|\MX,\vb*{\theta}_1)$ for all categories, while the jet resonance shape $\PJ(\MJ|\MX,\vb*{\theta}_2)$ uses a DCB for the HP categories, and the sum of a DCB and an exponential for the LP categories.
+To parameterize the shapes, we perform separate fits for the 1D shapes in the \MVV and \MJ spectra, then interpolate the parameters for each shape as a function of \MX to obtain $P_\mathrm{sig}(\MVV,\MJ|\MX)$ for arbitrary \MX between 1 and $4.5\unit{TeV}$ using uncorrelated polynomial functions.
+A DCB shape is used for $\PVV(\MVV|\MX,\vb*{\theta}_1)$ for all categories, while the jet resonance shape $\PJ(\MJ|\MX,\vb*{\theta}_2)$ uses a DCB for the HP categories, and the sum of a DCB and an exponential for the LP categories to properly capture the behavior of the low-mass tail of the distribution.
 
 % Signal shape parameter figures
 Figure~\ref{fig:MVVShapeParam_LDy_Run2} shows the DCB parameters ($\mu$, $\sigma$, $\alpha_1$, $\alpha_2$) for the \MVV shapes in the 12 categories used to model the 2D signal shapes.
@@ -315,7 +315,7 @@ The generated jet is made by clustering generated particle candidates with $\Del
 % Response function
 Because the generated jets are used in place of the reconstructed \Vhad, we must make use of a detector response function to accurately model reconstruction of the simulated jets.
 This is done in simulation by estimating the Gaussian mean and sigma of the resolution of $\MVV/\MVVpart$ in bins of generator jet \pt, which can be seen in figure~\ref{fig:nonResScaleResMVV}.
-We then begin generating the template by populating the \MJ spectrum using a coarse binning.
+We then begin generating the template by populating the \MJ spectrum using a coarse binning, with 16 bins used in \MJ.
 For each event in a slice of the \MJ spectrum, we add a 1D Gaussian onto the partial mass with scale shifted by the detector response and width equal to the Gaussian resolution as defined by
 \begin{equation}\label{eq:Pplus}
   P_i(\MVV)=\frac{w_i}{\sqrt{2\pi}\sigma}\exp\bqty{-\frac{1}{2}\pqty{\frac{\MVV-s\cdot\MVVpart}{\sigma}}^2},
@@ -335,7 +335,7 @@ where $w_i$ is the event weight, and $s$ and $\sigma$ are the scale and resoluti
 % Non-resonant template smoothing
 Another issue encountered with the low statistics of the MC samples is the lack of events at higher values of \MVV.
 To address this, we perform a smoothing of the tails of the \MVV shape with a power-law function in each bin of \MJ.
-We then populate the 2D histogram with values from the \MVV shape in each \MJ bin, with the power-law functions sampled from $1.6\unit{TeV}$ and onward for all categories.
+We then populate the 2D histogram with values from the \MVV shape in each \MJ bin, with the power-law functions sampled above thresholds of $1.1\unit{TeV}$ to $1.6\unit{TeV}$ depending on the category.
 
 % Template conditionality
 To ensure that the template is conditional with respect to \MJ, each histogram slice corresponding to one crude bin of \MJ is normalized.

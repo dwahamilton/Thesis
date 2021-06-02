@@ -164,7 +164,7 @@ This is done using the full relative Particle-Flow isolation using $\Delta\beta$
 \end{equation}
 where $\mathrm{PV}$ denotes the set of charged hadrons from the primary vertex, $\mathrm{NH}$ is the set of neutral hadrons, $\mathrm{phot}$ is the set of photons, $\mathrm{PU}$ denotes the set of charged hadrons from pileup, and $p_\mathrm{T,\mu}$ is the transverse momentum of the muon for which the isolation is being performed.
 The factor $\Delta\beta=0.5$ corresponds approximately to the ratio of neutral particle to charged hadron production in inelastic proton-proton collisions, which is estimated from simulation.
-Isolation is performed within a cone of size $\Delta R=0.4$ centered around the $p_{\mathrm{T},\mu}$ axis, where $\Delta R\equiv\sqrt{\Delta\eta^2+\Delta\phi^2}$.
+Isolation is performed within a cone of size $\Delta R=0.3$ centered around the $p_{\mathrm{T},\mu}$ axis, where $\Delta R\equiv\sqrt{\Delta\eta^2+\Delta\phi^2}$.
 
 % Muon scale factors
 %Scale factors for muon identification as provided by the Muon POG are also applied~\cite{MuonPAGs}.
@@ -233,7 +233,7 @@ These jets are required to pass identification requirements based on quantities 
 We also apply jet energy corrections for data and MC prescribed by the Jet Energy Resolution and Corrections (JERC) subgroup~\cite{JetEnergyScale}.
 
 % Hadronic jet selection
-The hadronic jet resulting from the \VorH decay is selected by taking the jet with the highest \pt from the large-radius jets, with a minimum threshold of $\pt>200\unit{GeV}$ and a pseudorapidity range of $|\eta|<2.4$.
+The hadronic jet resulting from the \VorH decay is selected by taking the jet with the highest \pt from the large-radius jets, with a minimum threshold of $\pt>200\unit{GeV}$ and a pseudorapidity range of $|\eta|<2.5$.
 Any large-radius jets that have an electron or tight muon within $\Delta R<1.0$ are discarded to suppress background events.
 For the standard jets, we require that $\pt>30\unit{GeV}$, and we discard any jets within $\Delta R<0.4$ of any selected electron or muon, or within $\Delta R<0.8$ of any large-radius jet.
 
@@ -252,9 +252,10 @@ For a jet with radius $R$ with two constituents, the soft drop algorithm removes
 \begin{equation}
   \frac{\min\pqty{p_{\mathrm{T},1},p_{\mathrm{T},2}}}{p_{\mathrm{T},1}+p_{\mathrm{T},2}}>z\pqty{\frac{\Delta R_{12}}{R}}^\beta,
 \end{equation}
-where the $p_{\mathrm{T},i}$ are the transverse momenta of the jet constituents, $\Delta R_{12}$ is the separation between the constituents in the $y$-$\phi$ plane, $R$ is the radius of the jet, $z$ is the soft drop threshold, and $\beta$ is the angular exponent.
+where the $p_{\mathrm{T},i}$ are the transverse momenta of the jet constituents, $\Delta R_{12}$ is the separation between the constituents in the $y$-$\phi$ plane, $R$ is the characteristic radius, $z$ is the soft drop threshold, and $\beta$ is the angular exponent.
 For this analysis, we use $z=0.1$ based on theoretical considerations of the jet mass from QCD~\cite{Dasgupta_2013,Dasgupta_2013_2}.
-We denote the soft drop mass by \MJ, and apply recommended corrections~\cite{WZ-tagging}.
+We also use an angular exponent of $\beta=0$ and a characteristic radius of $R=0.8$.
+The soft drop mass is denoted by \MJ, and apply recommended corrections~\cite{WZ-tagging}.
 
 % N-subjettiness
 To determine the degree to which the jet has substructure, we use the ``$N$-subjettiness'' as a measure of how many subjets are present in the jet~\cite{Thaler_2011,Thaler_2012}.
@@ -291,9 +292,9 @@ This allows for separating jets originating from boosted vector bosons versus je
 This analysis uses a modified version of the $N$-subjettiness ratio that reduces the dependency of \nsubj on the jet mass, which is denoted by the designed decorrelated tagger (DDT) $N$-subjettiness \nsubjDDT~\cite{Dolen_2016}.
 It is defined by
 \begin{equation}
-  \nsubjDDT=\nsubj-C\ln\pqty{\frac{\MJ^2}{\ptjet\mu}},
+  \nsubjDDT=\nsubj-M\ln\pqty{\frac{\MJ^2}{\ptjet\mu}},
 \end{equation}
-where $C$ is a coefficient obtained by taking the slope of a fit for the \nsubj profile versus $\ln\pqty{\MJ^2/\ptjet\mu}$ in non-resonant \Wjets background events after applying the full analysis selection cuts, and $\mu$ is a constant chosen such that $\mu=1\unit{GeV}$.
+where $M=-0.08$ is a coefficient obtained by taking the slope of a fit for the \nsubj profile versus $\ln\pqty{\MJ^2/\ptjet\mu}$ in non-resonant \Wjets background events after applying the full analysis selection cuts, and $\mu$ is a constant chosen such that $\mu=1\unit{GeV}$.
 Figure~\ref{fig:tau21DDTComp} shows a comparison of \nsubj versus \nsubjDDT for signal and background MC events, with their distributions normalized to unity.
 The distributions for \nsubjDDT have peaks for signal and background that are more separated than the distributions for \nsubj, resulting in better discrimination against background.
 \begin{figure}[htbp]
@@ -308,7 +309,7 @@ The distributions for \nsubjDDT have peaks for signal and background that are mo
 \end{figure}
 
 % N-subjettiness selection
-For this analysis, we only consider large-radius jets that satisfy $\nsubjDDT<0.80$.
+For this analysis, we only consider large-radius jets that satisfy $\nsubjDDT\leq0.80$.
 We also later use \nsubjDDT for event categorization to split the analysis into high and low purity jet categories, as discussed in subsection~\ref{subsec:eventCat}.
 
 \subsubsection{$b$-tagging}
@@ -319,7 +320,7 @@ We also later use \nsubjDDT for event categorization to split the analysis into 
 
 % b-tagging overview
 %Decays resulting from $b$ quarks are of particular importance due to the fact that they often originate from heavier particles, such as top quarks or Higgs boson.
-Jets produced from $b$ quarks have unique characteristics that distinguish them from other hadronic decays~\cite{Sirunyan_jet}.
+Jets produced from $b$ quarks have unique characteristics that distinguish them from other hadronic decays.
 Because of the relatively long lifetime of hadrons that contain $b$ quarks, the secondary vertices (SV) corresponding to the location of the decay tend to have displacements on the order of a few millimeters away from the primary vertex.
 Another distinguishing property is that decays from $b$ hadrons result in a boosted jet topology, as the products that $b$ quarks decay into are much lighter.
 Finally, the heavy hadrons containing $b$ quarks tend to favor semileptonic decays, resulting in soft leptons present in the jet.
@@ -328,7 +329,7 @@ The techniques used to identify such jets are referred to as $b$-tagging.
 % b-tagging details
 For this analysis, we use $b$-tagging to suppress background contributions by removing events with at least one $b$-tagged standard jet, as these events are dominated by processes containing top quark decays, such as $t\bar{t}$ events.
 We also use $b$-tagged jets for defining the top-enriched control region, which is discussed in section~\ref{sec:comp}.
-Jets in the region $|\eta|<2.4$ are $b$-tagged if they pass the \texttt{medium} working point of the Combined Secondary Vertex (CSV) or DeepCSV algorithms.
+Jets in the region $|\eta|<2.5$ are $b$-tagged if they pass the \texttt{medium} working point of the Combined Secondary Vertex (CSV) or DeepCSV algorithms~\cite{Sirunyan_jet}.
 The \texttt{medium} working point for CSV is 0.8484 in 2016, and for DeepCSV the working points are 0.4941 and 0.4184 for 2017 and 2018, respectively. %\cite{bTagging2016,bTagging2017,bTagging2018}
 We also apply $b$-tagging scale factors and weights that depend on the jet \pt, $\eta$, and value of the $b$-tagging discriminant~\cite{bTaggingEff,bTaggingSF}.
 
@@ -339,7 +340,7 @@ The $V$-tagging methods previously described account for identifying and groomin
 Such a jet signifies the decay \Htobbbar in the final state and hence a \WH resonance, which allows for discriminating against background with light jet flavors.
 Furthermore, a unique feature of the topology of \bbbar jets is the fact that the constituent $b$ quarks have secondary vertices that are displaced from the PV of the jet.
 To identify such \bbbar jets, we therefore use a $b$-tagging discriminator to identify Higgs boson jet candidates that uses information from displaced tracks and secondary vertices~\cite{CMS-PAS-BTV-15-002}.
-We also apply a cut on the M2 operating point of the ``\DoubleB tagger'' to categorize events in subsection~\ref{subsec:eventCat}, for which the threshold is 0.8 for Run 2. % according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
+We also apply a cut on the M2 operating point of the ``\DoubleB tagger''~\cite{Sirunyan_jet} to categorize events in subsection~\ref{subsec:eventCat}, for which the threshold is 0.8 for Run 2. % according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
 
 % Scale factors
 Additionally, we apply scale data/MC efficiency scale factors to our signal sample normalizations, while the scale factors for the background are estimated from the data in the control regions.
@@ -406,7 +407,7 @@ The analysis therefore exploits the specific event topology of \VBF events to de
 % VBF jet selection
 We select candidate \VBF jets from the two highest \pt standard AK4 jets as defined in subsection~\ref{subsec:jetSelect}.
 This requires that the \VBF jets pass $\pt>30\unit{GeV}$, and that they do not overlap with the selected lepton and large-radius jet.
-We then apply selection cuts to the two candidate \VBF jets based on their separation in pseudorapidity \DetaVBF and \VBF dijet mass \mjjVBF.
+We then apply selection cuts to the two candidate \VBF jets based on their separation in pseudorapidity \DetaVBF and \VBF invariant mass \mjjVBF.
 
 % VBF Deta selection cut
 For the cut on \DetaVBF, we exploit the fact that the \VBF jets are expected to be found in the high $|\eta|$ regions of the detector near the endcaps and be roughly anti-parallel to each other.
@@ -424,7 +425,7 @@ To retain a signal efficiency of 40-50\%, we choose a cut of $\DetaVBF>4$.
   \label{fig:detaSB_VBF}
 \end{figure}
 
-% VBF dijet mass selection cut
+% VBF mass selection cut
 The other kinematic cut applied to the \VBF candidate jets is on the invariant mass of the sum of the \VBF jet four vectors, \mjjVBF.
 For this cut, we consider the Punzi significance obtained for a \VBF signal sample as a function of the thresholds of the cuts for \DetaVBF and \mjjVBF.
 The Punzi significance is defined by $\epsilon/(1.5+\sqrt{B})$~\cite{Punzi:2003bu}, where $\epsilon$ is the number of signal events obtained by the cuts assuming an integrated luminosity of $\mathcal{L}_\mathrm{int}=1\unit{pb^{-1}}$ and a cross section of $\sigma=1\unit{pb}$, while the number of background events $B$ is weighted with the total luminosity.
@@ -521,8 +522,8 @@ Second, we exploit the fact that the jets originating from \VorH decays exhibit 
 The analysis is split based on $V$-jet tagging via cuts on the value of the mass-decorrelated $N$-subjettiness ratio \nsubjDDT as described in subsection~\ref{subsec:jetSelect}.
 This defines the following two categories:
 \begin{itemize}
-  \item {\bfseries High Purity (HP):} $\nsubjDDT<0.50$
-  \item {\bfseries Low Purity (LP):} $0.50<\nsubjDDT<0.80$
+  \item {\bfseries High Purity (HP):} $\nsubjDDT\leq0.50$
+  \item {\bfseries Low Purity (LP):} $0.50<\nsubjDDT\leq0.80$
 \end{itemize}
 
 % VBF/non-VBF categories
@@ -530,7 +531,7 @@ Third, to enhance the sensitivity of resonances decaying to \WHtolnubbbar, and t
 \begin{itemize}
   \item {\bfseries \VBF-tagged (vbf):} Two candidate \VBF jets, $\DetaVBF>4$, $\mjjVBF>500\unit{GeV}$
   \item {\bfseries \bbbar-tagged (bb):} $\DoubleB>0.8$, no \VBF tag
-  \item {\bfseries \bbbar-untagged (nobb):} $\DoubleB<0.8$, no \VBF tag
+  \item {\bfseries \bbbar-untagged (nobb):} $\DoubleB\leq0.8$, no \VBF tag
 \end{itemize}
 
 % Dy categories

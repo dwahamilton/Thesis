@@ -6,7 +6,6 @@
 % Results overview
 The results of the search for a new heavy boson resonance are considered in terms of exclusion limits for the benchmark signal models described in this analysis.
 These limits are model-independent, and cover spin-0, spin-1, and spin-2 resonances decaying to \WW, \WZ, and \WH.
-We also consider the observed $p$-values obtained through a profile likelihood fit.
 
 \subsection{Asymptotic Limits and Quantifying Excess}
 
@@ -16,24 +15,10 @@ These limits are obtained by using an asymptotic approximation of the distributi
 
 % Obtaining limits
 The test statistic used is
-%\begin{equation}
-%  \tilde{q}_\mu=\begin{cases}
-%    -2\ln\tilde{\lambda}(\mu) & \hat{\mu}\leq\mu,\\
-%    0 & \hat{\mu}>\mu,
-%  \end{cases}
-%\end{equation}
 \begin{equation}
   \tilde{q}_\mu=-2\ln\frac{\mathcal{L}(\mathrm{data}|\mu,\hat{\vb*{\theta}}_\mu)}{\mathcal{L}(\mathrm{data}|\hat{\mu},\hat{\vb*{\theta}})},\qquad 0\leq\hat{\mu}\leq\mu,
 \end{equation}
 where $\hat{\vb*{\theta}}_\mu$ corresponds to the conditional maximum likelihood estimators of the nuisance parameters $\vb*{\theta}$ for a specified signal strength $\mu$ and data, and $\hat{\mu}$ and $\hat{\vb*{\theta}}$ are the estimators for the global maximum of the likelihood.
-%where the likelihood ratio $\tilde{\lambda}(\mu)$ is defined by
-%\begin{equation}
-%  \tilde{\lambda}(\mu)=\begin{cases}
-%    \frac{\mathcal{L}(\mu,\hat{\hat{\vb*{\vb*{\theta}}}}(\mu))}{\mathcal{L}(\hat{\mu},\hat{\vb*{\vb*{\theta}}})} & \hat{\mu}\geq0,\\
-%    \frac{\mathcal{L}(\mu,\hat{\hat{\vb*{\vb*{\theta}}}}(\mu))}{\mathcal{L}(0,\hat{\hat{\vb*{\vb*{\theta}}}}(0))} & \hat{\mu}<0,
-%  \end{cases}
-%\end{equation}
-%with $\hat{\hat{\vb*{\vb*{\theta}}}}$ corresponding to the conditional maximum likelihood estimators of $\vb*{\vb*{\theta}}$.
 After finding the observed test statistic $\tilde{q}_\mu^\mathrm{obs}$, we obtain the values of the nuisance parameters $\hat{\vb*{\theta}}_0^\mathrm{obs}$ and $\hat{\vb*{\theta}}_\mu^\mathrm{obs}$ to describe the data for the background-only and signal+background hypotheses.
 We then generate toy MCs to construct the corresponding pdfs $f(\tilde{q}_\mu|0,\hat{\vb*{\theta}}_0^\mathrm{obs})$ and $f(\tilde{q}_\mu|\mu,\hat{\vb*{\theta}}_\mu^\mathrm{obs})$.
 These distributions are used to define two $p$-values associated with the background-only and signal+background hypotheses, which are denoted by $p_b$ and $p_\mu$, respectively.
@@ -51,22 +36,10 @@ We then define the confidence-level (CL) upper limit $CL_s$ as
 \end{equation}
 As an example, to obtain a 95\% confidence-level upper limit, we adjust $\mu$ until we obtain a value of $CL_s=0.05$.
 
-% Determining excess
-%For determining signal excess against the background-only hypothesis, a different test statistic is used, which is defined by
-%\begin{equation}
-%  q_0=-2\ln\frac{\mathcal{L}(\mathrm{data}|0,\hat{\vb*{\theta}}_0)}{\mathcal{L}(\mathrm{data}|\hat{\mu},\hat{\vb*{\theta}})},\qquad \hat{\mu}\geq0.
-%\end{equation}
-%The distribution $f(q_0|\hat{\vb*{\theta}}_0^\mathrm{obs})$ is built in a similar manner as described for the confidence-level upper limits by using toy MCs.
-%The $p$-value for $q_0^\mathrm{obs}$ is then
-%\begin{equation}
-%  p_0=P(q_0\geq q_0^\mathrm{obs})=\int_{q_0^\mathrm{obs}}^\infty f(q_0|0,\hat{\vb*{\theta}}_0^\mathrm{obs})\dd{q_0}.
-%\end{equation}
-
 \subsection{Observed Limits}
 
 % Observed limits
 We derive 95\% CL upper limits on the resonance production cross section times branching fraction to \WW, \WZ, or \WH as a function of the mass hypothesis \MX for a narrow resonance, and compare them to expected cross sections from the benchmark models where available.
-%We also obtain the corresponding local $p$-values as a function of \MX.
 The resulting limits are shown in figures~\ref{fig:limits_spin0}, \ref{fig:limits_spin1_neut}, \ref{fig:limits_spin1_char}, and \ref{fig:limits_spin2} for the spin-0, spin-1, and spin-2 signal models.
 These limits are obtained for the combination of all 24 search categories, showing the observed and median expected limits with the 68\% and 95\% expected bands, along with the theoretical cross sections for each of the signal models.
 By comparing the observed limits to the theoretical cross sections, we may set mass exclusion limits for each of the resonance models.
@@ -78,14 +51,11 @@ These deviations occur at $1\unit{TeV}$, with the largest $p$-value occurring in
 Comparing the observed limits to the theoretical cross sections, we find that for spin-0 resonances decaying to \WW, \ggF-produced bulk radions with masses below $3.1\unit{TeV}$ are excluded at 95\% CL.
 For spin-1 resonances of the HVT model B, \DY-produced \ZprtoWW resonances lighter than $4.0\unit{TeV}$, \WprtoWZ resonances lighter than $3.9\unit{TeV}$, and \WprtoWH resonances lighter than $4.0\unit{TeV}$ are all excluded at 95\% CL.
 Finally, for spin-2 resonances decaying to \WW, \ggF-produced bulk gravitons with masses below $1.8\unit{TeV}$ are excluded at 95\% CL.
-%No exclusion limits are obtained for the \VBF-produced signal models due to the observed limits not being sensitive enough.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{fig/results/limits_RadToWW.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_RadToWW.pdf}\\
   \includegraphics[width=0.4\textwidth]{fig/results/limits_VBFRadToWW.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFRadToWW.pdf}
   \caption{
     Exclusion limits for the production cross section times branching fraction for a new neutral spin-0 resonance produced via gluon-gluon fusion (left) or vector boson fusion (right) and decaying to \WW, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a spin-0 Bulk Radion with $\Lambda_{R}=3\unit{TeV}$ and $kl=35$.
     The signal cross section uncertainties are shown as red cross-hatched bands.
@@ -96,9 +66,7 @@ Finally, for spin-2 resonances decaying to \WW, \ggF-produced bulk gravitons wit
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{fig/results/limits_ZprToWW.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_ZprToWW.pdf}\\
   \includegraphics[width=0.4\textwidth]{fig/results/limits_VBFZprToWW.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFZprToWW.pdf}
   \caption{
     Exclusion limits for the production cross section times branching fraction for a new neutral spin-1 resonance produced via Drell-Yan (left) or vector boson fusion (right) and decaying to \WW, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a \Zpr from HVT model B (for \DY) or HVT model C with $c_\mathrm{H}=3$ (for \VBF).
     The signal cross section uncertainties are shown as red cross-hatched bands.
@@ -109,11 +77,8 @@ Finally, for spin-2 resonances decaying to \WW, \ggF-produced bulk gravitons wit
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{fig/results/limits_WprToWH.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_WprToWH.pdf}\\
   \includegraphics[width=0.4\textwidth]{fig/results/limits_WprToWZ.pdf}\\
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_WprToWZ.pdf}\\
   \includegraphics[width=0.4\textwidth]{fig/results/limits_VBFWprToWZ.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFWprToWZ.pdf}\\
   \caption{
     Exclusion limits for the production cross section times branching fraction for a new charged spin-1 resonance produced via Drell-Yan (top left) and decaying to \WH, and for a new charged spin-1 resonance produced via Drell-Yan (top right) or vector boson fusion (bottom) and decaying to \WZ, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a \Wpr from HVT model B (for \DY) or HVT model C with $c_\mathrm{H}=3$ (for \VBF).
     The signal cross section uncertainties are shown as red cross-hatched bands.
@@ -124,9 +89,7 @@ Finally, for spin-2 resonances decaying to \WW, \ggF-produced bulk gravitons wit
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{fig/results/limits_GbuToWW.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_GbuToWW.pdf}\\
   \includegraphics[width=0.4\textwidth]{fig/results/limits_VBFGbuToWW.pdf}
-  %\includegraphics[width=0.33\textwidth]{fig/results/pvalue_VBFGbuToWW.pdf}\\
   \caption{
     Exclusion limits for the production cross section times branching fraction for a new neutral spin-2 resonance produced via gluon-gluon fusion (left) or vector boson fusion (right) and decaying to \WW, as a function of the resonance mass hypothesis \MX, compared with the predicted cross sections for a \GBulk with curvature $\tilde{k}=0.5$.
     The signal cross section uncertainties are shown as red cross-hatched bands.
