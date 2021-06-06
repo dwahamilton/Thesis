@@ -44,14 +44,17 @@ Each elementary particle and antiparticle is associated with a field, individual
 
 % The elementary particles
 The Standard Model describes the interactions between the elementary particles, which are classified by quarks, leptons, gauge bosons, and scalar bosons.
-A table of all particles described by the theory can be seen in figure~\ref{fig:standardModel}, labeled with their masses, charges, and spins~\cite{PhysRevD.98.030001}, with the fermions grouped by generation.
+A table of all particles described by the theory can be seen in figure~\ref{fig:standardModel}, labeled with their masses, charges, and spins, with the fermions grouped by generation.
 Quarks and leptons are classified as fermions since they have half-integer values for their spin, while the scalar and gauge bosons are eponymously named for the fact that they are bosons and therefore have integer values for their spin.
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/standardModel.tex}
-  \caption{
+  \caption[
     Table of all Standard Model particles grouped by generation and type, labeled with mass, charge, and spin.
+    Particle types are colored green for quarks, red for leptons, blue for gauge bosons, and orange for scalar bosons.
+  ]{
+    Table of all Standard Model particles grouped by generation and type, labeled with mass, charge, and spin~\cite{PhysRevD.98.030001}.
     Particle types are colored green for quarks, red for leptons, blue for gauge bosons, and orange for scalar bosons.
   }
   \label{fig:standardModel}
@@ -68,7 +71,7 @@ These are just two of the many different combinations of composite particles tha
 % Combinations of quarks
 There are two main combinations of quarks to consider: mesons and baryons.
 Mesons are composed of one quark and an antiquark, and baryons are composed of three quarks or three antiquarks.
-For example, pions ($\pi^0$/$\pi^\pm$) were the first mesons to be observed, and can be electrically charged when comprised only of up or down quark-antiquark pairs (i.e., a $\pi^+$ is made from the combination $u\bar{d}$, and a $\pi^-$ is made from $d\bar{u}$), or it can be electrically neutral (i.e., a $\pi^0$ is made from $u\bar{u}$ or $d\bar{d}$).
+For example, pions ($\pi^0$/$\pi^\pm$) were the first mesons to be observed, and they can be electrically charged when comprised only of up or down quark-antiquark pairs (i.e., a $\pi^+$ is made from the combination $u\bar{d}$, and a $\pi^-$ is made from $d\bar{u}$), or they can be electrically neutral (i.e., a $\pi^0$ is made from $u\bar{u}$ or $d\bar{d}$).
 On the other hand, protons and neutrons are examples of baryons, as they are each made of three quarks.
 Both baryons and mesons are examples of hadrons: bound states of quarks.
 
@@ -90,21 +93,21 @@ Finally, leptons also include neutrinos, which are extremely light particles tha
 \subsubsection{Gauge Bosons}
 
 % Gauge bosons
-The gauge bosons include the gluon, the photon, and the $W$ and $Z$ bosons.
+The gauge bosons include the gluon, the photon, and the $W^\pm$ and $Z$ bosons.
 Each gauge boson is a spin-1 particle that mediates the three fundamental interactions that the Standard Model describes.
 Gluons are massless particles that mediate the strong nuclear force, and they only interact with quarks since they are the only particles to carry color charge.
 Photons are the most familiar example of the gauge bosons, as we can quite literally see them since light is made of photons.
 They are masses particles that mediate the electromagnetic force, and they interact with any particle that is electrically charged.
-Finally, the $Z$ and $W$ bosons are massive particles that mediate the weak nuclear force, which is responsible for radioactive decay.
+Finally, the $Z$ and $W^\pm$ bosons are massive particles that mediate the weak nuclear force, which is responsible for radioactive decay.
 
 \subsubsection{Scalar Bosons}
 
 % Scalar bosons
 The last category of bosons to consider is the scalar bosons, which are spin-0 particles.
 This family contains only one member: the Higgs boson.
-The need for the Higgs boson arises due to the fact the previously mentioned massive gauge bosons ($W$ and $Z$) do not have intrinsic masses.
+The need for the Higgs boson arises due to the fact the previously mentioned massive gauge bosons ($W^\pm$ and $Z$) do not have intrinsic masses.
 Rather, the Higgs boson is responsible for giving the massive gauge bosons their masses.
-This occurs through the Higgs mechanism, in which spontaneous symmetry breaking and gauge invariance cause the Higgs field to interact with the $W$ and $Z$ fields in the Standard model, thereby imparting the observed masses onto the particles.
+This occurs through the Higgs mechanism, in which spontaneous symmetry breaking and gauge invariance cause the Higgs field to interact with the $W^\pm$ and $Z$ fields in the Standard model, thereby imparting the observed masses onto the particles.
 
 \subsection{Mathematical Structure of the Standard Model}
 
@@ -114,7 +117,7 @@ As the Standard Model is a quantum field theory, it has a Lagrangian density $\m
 The terms present in $\mathcal{L}_\mathrm{SM}$ allow us to compute probability amplitudes for particle production and decay processes through the method of Feynman diagrams.
 The Standard Model is also a non-abelian gauge theory, in which the internal symmetry group is $SU(3)_C\times SU(2)_L\times U(1)_Y$~\cite{Srednicki:1019751}.
 The $SU(3)_C$ symmetry group corresponds to the QCD interactions of the quarks and gluons, while the $SU(2)_L\times U(1)_Y$ group corresponds to the electroweak interactions.
-The symmetries of these groups lead to conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$\footnote{Electric charge $Q$ arises as a linear combination of $T_3$ and $Y_W$ given by $Q=T_3+\frac{1}{2}Y_W$.}.
+The symmetries of these groups lead to conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge\footnote{Electric charge $Q$ arises as a linear combination of $T_3$ and $Y_W$ given by $Q=T_3+\frac{1}{2}Y_W$.} $Y_W$.
 
 \subsubsection{Lagrangian Formalism}
 
@@ -123,7 +126,7 @@ A simple yet illustrative example of a Lagrangian for a quantum field theory is 
 \begin{equation}\label{eq:QED}
   \mathcal{L}_\mathrm{QED}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}+\bar{\psi}(i\gamma^\mu D_\mu-m)\psi.
 \end{equation}
-Here, $\psi$ is a spin-1/2 field, $\bar{\psi}\equiv\psi^\dagger\gamma^0$ is the Dirac adjoint for $\psi$, $F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$ is the electromagnetic field strength tensor, $D_\mu=\partial_\mu+ieA_\mu$ is the gauge covariant derivative, $\gamma^\mu$ is the set of Dirac matrices, and $m$ is the mass of the particle corresponding to the field $\psi$.
+Here, $\psi$ is a spin-1/2 field, $\bar{\psi}\equiv\psi^\dagger\gamma^0$ is the Dirac adjoint for $\psi$, $F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu$ is the electromagnetic field strength tensor, $D_\mu\equiv\partial_\mu+ieA_\mu$ is the gauge covariant derivative, $\gamma^\mu$ is the set of Dirac matrices, and $m$ is the mass of the particle corresponding to the field $\psi$.
 
 % Equations of motion
 The classical equations of motion for the fields can be obtained through the Euler-Lagrange equation for a field $\phi$, which is given by
@@ -185,7 +188,7 @@ which are the inhomogeneous Maxwell equations for the electromagnetic field.
 %  \input{fig/theory/SMverts.tex}
 %  \caption{
 %    Examples of vertices for constructing Feynman diagrams in the Standard Model, where $f$ is any fermion, $f_Q$ is any electrically charged fermion, $\ell$ is any lepton that is not a neutrino, $q_u$ is an up-type quark ($u$, $c$, $t$), and $q_d$ is a down-type quark ($d$, $s$, $b$).
-%    For the quartic electroweak vertex, the two particles interacting with the $W$'s must be chosen such that charge conservation holds.
+%    For the quartic electroweak vertex, the two particles interacting with the $W^\pm$'s must be chosen such that charge conservation holds.
 %  }
 %  \label{fig:SMVert}
 %\end{figure}
@@ -395,7 +398,7 @@ The warped geometry is such that there are two branes in these models: the Tevbr
 % Search for a heavy diboson resonance
 This thesis presents results on the search for a new heavy $X$ resonance, with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
 The decays of interest are \XtoWV and \XtoWH, where $V=W^\pm,Z$ is any of the three massive electroweak vector bosons and $H$ is the Higgs boson discovered at the LHC in 2012.
-We consider semileptonic final event states in which the $W$ decays leptonically via \Wtolnu, where $\ell$ is either an electron or a muon, as this provides a clean experimental signature and an efficient online event selection.
+We consider semileptonic final event states in which the $W^\pm$ decays leptonically via \Wtolnu, where $\ell$ is either an electron or a muon, as this provides a clean experimental signature and an efficient online event selection.
 The other \VorH boson decays hadronically through the process \Vtoqqbarpr or \Htobbbar and is reconstructed as a single massive jet.
 Three production modes are considered based on the benchmark models used: vector boson fusion (\VBF), gluon-gluon fusion (\ggF), and Drell-Yan (\DY) production.
 For \ggF and \DY processes there are no additional objects produced in the event, but for \VBF processes there are two forward-facing jets.
@@ -414,8 +417,8 @@ However, benchmark models based on the BSM theories described in subsection~\ref
 The structure of these events then informs us about making our selection cuts for our search, as will be discussed in chapter~\ref{chap:analysis}.
 This search covers spin-0, spin-1, and spin-2 bosonic resonances, and is based on the following benchmark models:
 \begin{enumerate}
-  \item \textbf{Spin-0 Kaluza-Klein Radion:} A neutral scalar boson appearing in RS models that can decay to the vector bosons $W$ and $Z$ via \RadtoWW and \RadtoZZ~\cite{Goldberger_1999,Goldberger_2000}.
-  \item \textbf{Spin-1 \Wpr/\Zpr Boson:} A heavier version of the spin-1 $W$ and $Z$ bosons that can decay via \WprtoWZ, \WprtoWH, \ZprtoWW, and \ZprtoZH~\cite{Pappadopulo_2014}.
+  \item \textbf{Spin-0 Kaluza-Klein Radion:} A neutral scalar boson appearing in RS models that can decay to the vector bosons $W^\pm$ and $Z$ via \RadtoWW and \RadtoZZ~\cite{Goldberger_1999,Goldberger_2000}.
+  \item \textbf{Spin-1 \Wpr/\Zpr Boson:} A heavier version of the spin-1 $W^\pm$ and $Z$ bosons that can decay via \WprtoWZ, \WprtoWH, \ZprtoWW, and \ZprtoZH~\cite{Pappadopulo_2014}.
   \item \textbf{Spin-2 Bulk Graviton:} A spin-2 resonance from a bulk RS model that decays via \GBulktoWW and \GBulktoZZ~\cite{Fitzpatrick_2007,PhysRevD.76.036006}.
 \end{enumerate}
 
@@ -493,7 +496,7 @@ Examples of Feynman diagrams for all three production processes of an $X$ resona
   \input{fig/theory/productFeyn.tex}
   \caption{
     Feynman diagrams for production via vector boson fusion of a neutral spin-0 resonance $X$ decaying to the final state \lnuqqbarpr (top left), gluon-gluon fusion for a spin-2 resonance $X$ decaying to the final state \lnuqqbarpr (top right), and a Drell-Yan process for a charged spin-1 resonance $X$ decaying to the final state \lnubbbar (bottom).
-    The search for an $X$ boson will involve looking for a final state in which there is a single merged jet from the \VorH boson, a lepton $\ell$ with its corresponding neutrino produced from the $W$ decay, and in the case of \VBF production, two forward-facing jets.
+    The search for an $X$ boson will involve looking for a final state in which there is a single merged jet from the \VorH boson, a lepton $\ell$ with its corresponding neutrino produced from the $W^\pm$ decay, and in the case of \VBF production, two forward-facing jets.
   }
   \label{fig:productFeynman}
 \end{figure}
@@ -503,16 +506,23 @@ Because the expected mass of the bosonic resonance lies in the TeV range, the fi
 The two initial state quarks from the \VBF process in the diagram of figure~\ref{fig:productFeynman} result in two forward-facing jets in the final state that are highly energetic and collimated.
 Meanwhile, the lepton-neutrino pair from the \Wtolnu decay will have momenta opposite to that of the jet that results from the hadronic decay of the \VorH boson.
 The jet from the \Vtoqqbarpr or \Htobbbar decay will also have two-pronged substructure since the decay results in a quark-antiquark pair.
-Lastly, both the lepton-neutrino pair and the jet will be highly collimated since the $W$ and \VorH bosons that produced them will have momenta of several hundred GeV or above.
+Lastly, both the lepton-neutrino pair and the jet will be highly collimated since the $W^\pm$ and \VorH bosons that produced them will have momenta of several hundred GeV or above.
 
 \begin{figure}[htbp]
   \centering
   \input{fig/theory/eventTop.tex}
   \caption{
     Illustration of event topology for collision events of interest in the CMS detector.
-    The semi-leptonic final state produces a $W$ boson that decays via \Wtolnu and produces the lepton-neutrino pair.
+    The semi-leptonic final state produces a $W^\pm$ boson that decays via \Wtolnu and produces the lepton-neutrino pair.
     Opposite to that is a single massive jet with two-pronged substructure that is produced via \Vtoqqbarpr or \Htobbbar.
     Finally, the \VBF production process results in two forward-facing jets, labeled by $q^{(\prime)\prime}$ and $q^{((\prime)\prime)\prime}$, which are colored red.
   }
   \label{fig:eventTop}
 \end{figure}
+
+\section{Conclusion}
+
+% Summary of theory chapter
+A brief overview of the Standard Model of particle physics is presented, with an outline of the mathematical details underlying the theory.
+We explore unsolved problems related to the SM and some Beyond Standard Model theories that potentially address these issues, with relevant models discussed to motivate the search for a heavy diboson resonance.
+The expected event structure for the decay of the bosonic resonance is described, which lays the foundation for the analysis strategy in chapter~\ref{chap:analysis}.

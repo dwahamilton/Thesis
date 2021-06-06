@@ -40,7 +40,7 @@ Thus, the 2D fit has the following advantages compared to the traditional $\alph
   \item The sideband as seen in figure~\ref{fig:2Dfit} is two-dimensional, thereby allowing for a simultaneous fit of the jet mass and resonance sidebands.
   This better constrains the background, which allows for better sensitivity of the search.
   \item The ability to add nuisance parameters that affect jet mass and resonance mass simultaneously, which allows us to account for the mismodeling of the correlation between the variables.
-  \item Being able to use the full jet mass line-shape to extract the signal instead of using jet mass windows, providing better discrimination between $W$ and $Z$ peaks.
+  \item Being able to use the full jet mass line-shape to extract the signal instead of using jet mass windows, providing better discrimination between $W^\pm$ and $Z$ peaks.
   \item Simultaneous fit of all \WV/\WH signals in the jet mass sideband, therefore allowing for easy implementation of exotic models such as heavy vector triplets.
 \end{enumerate}
 
@@ -48,18 +48,18 @@ Thus, the 2D fit has the following advantages compared to the traditional $\alph
 There are three types of shapes to consider for the 2D fit in the \MVV-\MJ plane.
 The first is that of a signal process, for which we expect to see a resonance in both \MVV and \MJ.
 In this case, the correlations are related to the scale and resolution of the jet.
-For a background process in which there is a hadronically decaying $W$, $Z$, or top, we expect to observe a resonance in the \MJ dimension corresponding to the decay (i.e., peaks near the $W$/$Z$ masses and the top mass), but a falling spectrum in the \MVV dimension.
+For a background process in which there is a hadronically decaying $W^\pm$, $Z$, or top, we expect to observe a resonance in the \MJ dimension corresponding to the decay (i.e., peaks near the $W^\pm$/$Z$ masses and the top mass), but a falling spectrum in the \MVV dimension.
 Lastly, if we instead have a \Wjets process or QCD background, there will be broad background distributions in both \MVV and \MJ, for which the shapes are correlated.
 
 % Background types
 As mentioned previously, two main classes of background are considered for this analysis, as classified based on resonant or non-resonant behavior in the \MJ spectrum:
 \begin{itemize}
-  \item \textbf{Resonant (\WVt):} Background events in which the jet mass shape is peaking as a $W$, $Z$, $H$, or $t$ resonance in \MJ with a falling spectrum in \MVV.
+  \item \textbf{Resonant (\WVt):} Background events in which the jet mass shape is peaking as a $W^\pm$, $Z$, $H$, or $t$ resonance in \MJ with a falling spectrum in \MVV.
   The resonant peak in \MJ is due to partially or fully merged top jets and diboson events in which one boosted boson is reconstructed into a jet.
   This background class is therefore defined by requiring that both generated quarks from a hadronic $V$ decay are located within $\Delta R=0.8$ of the selected large-radius jet.
   The main contribution is $t\bar{t}$ events, along with SM diboson and single-top production events.
   \item \textbf{Non-resonant (\Wjets):} Background events in which the jet is produced by the hadronization of one or more partons not originating from a vector boson.
-  The dominant SM contribution is from \Wjets events, but additional contributions come from $t\bar{t}$ events in which the selected large-radius jet corresponds to a random combination of jets from the event rather than a $W$ or a top.
+  The dominant SM contribution is from \Wjets events, but additional contributions come from $t\bar{t}$ events in which the selected large-radius jet corresponds to a random combination of jets from the event rather than a $W^\pm$ or a top.
 \end{itemize}
 
 % Merging samples for Run 2
@@ -462,7 +462,7 @@ To better visualize the differences between each of the categories, figure~\ref{
 \subsubsection{Resonant Background Templates}
 
 % Resonant background templates overview
-%Since the resonant templates contain a merged $W$ or top jet, they are separated from the non-resonant templates in that they require a generated boson in a cone of $\Delta R=0.8$ around the reconstructed merged jet.
+%Since the resonant templates contain a merged $W^\pm$ or top jet, they are separated from the non-resonant templates in that they require a generated boson in a cone of $\Delta R=0.8$ around the reconstructed merged jet.
 The 2D templates in this case are very similar to the non-resonant templates, with a conditional product of the form
 \begin{equation}
   P_{\WVt}(\MVV,\MJ)=\PVV(\MVV|\MJ,\vb*{\theta}_1)\PJ(\MJ|\vb*{\theta}_2).
@@ -472,7 +472,7 @@ As in the non-resonant case, we derive a 1D template for the \MJ distribution $\
 % 2D conditional template
 The 2D conditional template $\PVV(\MVV|\MJ,\vb*{\theta}_1)$ is constructed in a slightly different manner compared to the non-resonant background.
 In this case there is no reweighting of the \MVV spectrum as there was with the non-resonant templates.
-Additionally, while this method also makes use of the kernel method for populating the histograms of the templates, we do not use fine binning for \MJ because the \MVV spectrum for the resonant background templates only depends on whether or not we are in the $W$ peak or the top peak of the \MJ spectrum.
+Additionally, while this method also makes use of the kernel method for populating the histograms of the templates, we do not use fine binning for \MJ because the \MVV spectrum for the resonant background templates only depends on whether or not we are in the $W^\pm$ peak or the top peak of the \MJ spectrum.
 Thus, we perform the resonant template fitting process in only two bins of \MJ for LP categories, and only one bin of \MJ for the HP categories.
 This allows us to overcome the issues that occur due to the low statistics of the top MC samples, and we build 12 templates for the resonant background by only merging the $e$ and $\mu$ categories.
 
@@ -505,7 +505,7 @@ Again we find good agreement between the templates and the MC.
 \end{figure}
 
 % 1D resonant soft drop jet mass templates
-The 1D jet mass templates are constructed to capture the resonant behavior of the $W$ and top peaks in the \MJ spectrum.
+The 1D jet mass templates are constructed to capture the resonant behavior of the $W^\pm$ and top peaks in the \MJ spectrum.
 We use an analytic fit for the interpolation process for all 24 categories of the analysis, with the sum of two DCBs used for the HP categories, and the sum of two DCBs and an exponential for the LP categories.
 The fits obtained for the nobb category can be seen in figure~\ref{fig:fits_res_MJJ_Run2}.
 These fits are then used to populate the histograms for the 1D templates using the desired binning for \MJ.

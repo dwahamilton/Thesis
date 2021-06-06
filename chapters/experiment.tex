@@ -14,7 +14,7 @@ Another is that the projectile type in the beam may be chosen in order to select
 Finally, the interactions take place at a specified location where detectors may be located.
 
 % Fixed-target accelerators
-The center-of-mass energy \ECM\footnote{Sometimes instead written in terms of the Mandelstam variable $s$ as $\sqrt{s}=\ECM$~\cite{Perelstein_2011}.} is a defining feature of an accelerator, as it is a measure of the energy available to produce particles in collision events~\cite{martin2008particle}.
+The center-of-mass energy\footnote{Sometimes instead written in terms of the Mandelstam variable $s$ as $\sqrt{s}=\ECM$~\cite{Perelstein_2011}.} \ECM is a defining feature of an accelerator, as it is a measure of the energy available to produce particles in collision events~\cite{martin2008particle}.
 There are two types of accelerators to consider in this respect: fixed-target and colliders.
 A key distinction between them is how they differ their center-of-mass energies based on the parameters of the accelerator.
 Fixed-target accelerators involve a single beam that is directed to a stationary target in the lab frame, with a center-of-mass energy given by
@@ -83,16 +83,19 @@ where $\sigma_x$ and $\sigma_y$ are the standard deviations in the $x$ and $y$ d
 
 % Discoveries at colliders
 The search for new physics has driven advances in accelerator center-of-mass energies and luminosities that allow for discovering exotic collision events.
-Figure~\ref{fig:ECMplot} shows the constituent center-of-mass energies for various accelerator facilities as a function of the year in which they came online~\cite{Panofsky}.
-These advances have resulted in the discovery of massive particles that the first accelerators in the 1960's were not capable of producing, such as the $W$ and $Z$ bosons, or the top quark. % Check wording
+Figure~\ref{fig:ECMplot} shows the constituent center-of-mass energies for various accelerator facilities as a function of the year in which they came online.
+These advances have resulted in the discovery of massive particles that the first accelerators in the 1960's were not capable of producing, such as the $W^\pm$ and $Z$ bosons, or the top quark. % Check wording
 Even following the success of the Higgs boson discovery in 2012 and the ongoing search for new particles at the LHC, there are still upgrades being installed on the LHC to increase its luminosity, and there are proposals for new accelerator facilities with higher center-of-mass energies~\cite{Bicer_2014}.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{fig/experiment/ecm_livingston.pdf}
-  \caption{
+  \caption[
     Plot of the constituent center-of-mass energies for hadronic and $e^+e^-$ colliders since 1960.
-    The discovery of massive particles such as the $W$ and $Z$ bosons or the top quark was made possible thanks to advances in accelerator technology that allowed for higher center-of-mass energies and luminosities.
+    The discovery of massive particles such as the $W^\pm$ and $Z$ bosons or the top quark was made possible thanks to advances in accelerator technology that allowed for higher center-of-mass energies and luminosities.
+  ]{
+    Plot of the constituent center-of-mass energies for hadronic and $e^+e^-$ colliders since 1960~\cite{Panofsky}.
+    The discovery of massive particles such as the $W^\pm$ and $Z$ bosons or the top quark was made possible thanks to advances in accelerator technology that allowed for higher center-of-mass energies and luminosities.
   }
   \label{fig:ECMplot}
 \end{figure}
@@ -111,21 +114,18 @@ The Large Hadron Collider is a circular collider accelerator facility with two s
 It is the largest and most powerful collider in the world, with plans to extend its service life into the 2030's and 2040's.
 It has a circumference of 26.7 km and was built into an existing tunnel that was used for the Large Electron-Positron (LEP) collider, which was used from 1989 to 2000.
 Four main detectors are used to study collision events and are placed along the beamline, consisting of the ALICE, ATLAS, CMS, and LHCb experiments.
-Figure~\ref{fig:CERN} shows the complete CERN accelerator complex with all of its components~\cite{Mobs:2636343}.
+Figure~\ref{fig:CERN} shows the complete CERN accelerator complex with all of its components.
 The ATLAS and CMS facilities are general-purpose detectors designed for a large physics program, which includes studying the Higgs boson and searching new physics arising from proton collisions, while ALICE is optimized for studying heavy-ion collisions with stripped lead ions (e.g., $^{208}$Pb$^{82+}$) to investigate properties of quark-gluon plasma, and LHCb is designed to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.825\textwidth]{fig/experiment/CCC-v2018-print-v2.pdf}
-  \caption{
+  \caption[
     Layout of the CERN accelerator complex.
     The LHC is one of several accelerators present at the facility, with multiple detectors along the beamline such as ATLAS, CMS, ALICE, and LHCb.
-    %ATLAS and CMS are both general-purpose detectors for studying properties of the Higgs boson and searching for new physics.
-    %ALICE is designed to study heavy-ion collisions with lead ions to investigate quark-gluon plasma.
-    %LHCb is meant to study the physics of bottom quarks and $CP$ violation in $b$-hadron interactions.
-    %The LHC is injected with protons and lead ions through a multi-stage process.
-    %Protons starting at the Linac2 facility, which are then fed through the Proton Synchrotron Booster (PSB), then to the Proton Synchrotron (PS), and then to the Super Proton Synchrotron (SPS) before finally being injected into the LHC itself.
-    %The lead ions undergo a similar process, starting at Linac3 and then being transferred to the Low Energy Ion Ring (LEIR), then going through the PS and SPS before being injected into the LHC.
+  ]{
+    Layout of the CERN accelerator complex~\cite{Mobs:2636343}.
+    The LHC is one of several accelerators present at the facility, with multiple detectors along the beamline such as ATLAS, CMS, ALICE, and LHCb.
   }
   \label{fig:CERN}
 \end{figure}
@@ -145,7 +145,7 @@ It also has a specific expression for the luminosity $\mathcal{L}$ given by
 \end{equation}
 where $N_b$ is the number of particles per bunch, $n_b$ is the number of bunches per beam, $f_\mathrm{rev}$ is the revolution frequency, $\gamma_r$ is the Lorentz factor, $\epsilon_n$ is the normalized transverse beam emittance, $\beta^*$ is the beta function at the collision point, and $F$ is the geometric luminosity reduction factor.
 The LHC is designed to reach a luminosity of $10^{34}\unit{cm^{-2}s^{-1}}$, but surpassed this value in June 2016~\cite{LHClumi}.
-Figure~\ref{fig:CMSlumi} shows the integrated luminosities as a function of time delivered to the CMS detector during Run 2, which ran during the years 2015-2018~\cite{CMSlumi}.
+Figure~\ref{fig:CMSlumi} shows the integrated luminosities as a function of time delivered to the CMS detector during Run 2, which ran during the years 2015-2018.
 Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $41.0\unit{fb^{-1}}$, $49.8\unit{fb^{-1}}$, and $67.9\unit{fb^{-1}}$ delivered\footnote{These numbers differ from the \emph{recorded} value obtained from CMS that used in the analysis for chapter~\ref{chap:analysis}.} to CMS over the Run 2 years of 2016, 2017, and 2018 respectively.
 This corresponds to a total integrated luminosity of $158.7\unit{fb^{-1}}$ at CMS over Run 2.
 
@@ -156,8 +156,11 @@ This corresponds to a total integrated luminosity of $158.7\unit{fb^{-1}}$ at CM
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\textwidth]{fig/experiment/int_lumi_cumulative_pp_2_run2.pdf}
-  \caption{
+  \caption[
     Integrated luminosities delivered to CMS as a function of time for the years 2015-2018.
+    This corresponds to a total integrated luminosity of $158.7\unit{fb^{-1}}$ delivered to CMS during the Run 2 years of 2016-2018.
+  ]{
+    Integrated luminosities delivered to CMS as a function of time for the years 2015-2018~\cite{CMSlumi}.
     This corresponds to a total integrated luminosity of $158.7\unit{fb^{-1}}$ delivered to CMS during the Run 2 years of 2016-2018.
   }
   \label{fig:CMSlumi}
@@ -180,7 +183,7 @@ Muons are ideal for reconstructing collisions due to their relatively long lifet
 This makes muons the most penetrative and easily identifiable charged particles that can be found in collision events. % Check wording
 In addition to identifying muons, the CMS detector also has other subdetectors for identifying electrons, photons, and hadrons.
 These detection systems are designed in order to meet the demands that come with the LHC's high luminosity, as there are more than 50 proton interactions every $25\unit{ns}$, which results in around 1000 particles emerging for each bunch crossing. % Check numbers
-A cutaway diagram of the detector with various components labeled may be seen in figure~\ref{fig:CMScut}~\cite{Sakuma:2665537}.
+A cutaway diagram of the detector with various components labeled may be seen in figure~\ref{fig:CMScut}.
 
 % Subdetectors
 The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
@@ -192,14 +195,12 @@ Finally, the Cerenkov-based forward calorimeter has both an electromagnetic and 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\textwidth]{fig/experiment/cms_cutaway.pdf}
-  \caption{
+  \caption[
     Cutaway diagram of the CMS detector with components labeled as configured in 2018 for Run 2.
     The detector and its components are coaxial with the LHC beam and give wide geometric coverage over the interaction point where the collisions are produced.
-    %The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
-    %Outside of the tracker is the preshower detector that screens neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
-    %The electromagnetic calorimeter (ECAL) is encased by the hadronic calorimeter (HCAL), which detects hadron jets and neutrinos or exotic particles through missing transverse momentum.
-    %Both calorimeters are surrounded by the muon detection chambers embedded within the return yoke that are used to identify muon charges and momenta.
-    %Finally, the Cerenkov-based forward calorimeter has both an electromagnetic and hadronic section, lying just outside of the endcaps for the muon chambers. % Check wording
+  ]{
+    Cutaway diagram of the CMS detector with components labeled as configured in 2018 for Run 2~\cite{Sakuma:2665537}.
+    The detector and its components are coaxial with the LHC beam and give wide geometric coverage over the interaction point where the collisions are produced.
   }
   \label{fig:CMScut}
 \end{figure}
@@ -229,7 +230,7 @@ The pixel detector allows for precise tracking and small impact parameter resolu
 It covers a total area of around $1\unit{m^2}$ and is comprised of 66 million pixels.
 The detector has very high efficiency in the barrel region, with losses in efficiency starting around $|\eta|>2.1$. % Possibly insert efficiency graph here
 Each pixel cell occupies an area of $100\times150\unit{\micro m^2}$, which allows for high track resolution in the $r$-$\phi$ plane and in the $z$ direction.
-Figure~\ref{fig:CMSpixel} shows an illustration of the pixel detector~\cite{Collaboration_2010_pixel}.
+Figure~\ref{fig:CMSpixel} shows an illustration of the pixel detector.
 As charged particles pass through a silicon pixel, they impart energy onto the electrons in the silicon atoms, which ejects the electrons and generates a current that goes into a readout chip attached to the pixel.
 Each pixel consumes about $55\unit{\micro W}$ of power, which results in $3.6\unit{kW}$ of power for the entirety of the pixel detector.
 To avoid overheating from the power consumption, the pixels are mounted on cooling tubes, with 10 for the barrel and 4 for the two end disks.
@@ -237,8 +238,11 @@ To avoid overheating from the power consumption, the pixels are mounted on cooli
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{fig/experiment/cms_pixelTracker.pdf}
-  \caption{
+  \caption[
     Illustration of the CMS pixel detector, with the barrel region colored in blue, and the endcap regions colored in orange.
+    A current is generated as charged particles pass through the pixel cells and eject electrons, which is read by a readout chip attached to each pixel.
+  ]{
+    Illustration of the CMS pixel detector, with the barrel region colored in blue, and the endcap regions colored in orange~\cite{Collaboration_2010_pixel}.
     A current is generated as charged particles pass through the pixel cells and eject electrons, which is read by a readout chip attached to each pixel.
   }
   \label{fig:CMSpixel}
@@ -252,7 +256,7 @@ The strip tracker has 15,148 detector modules in total, spread out among several
 %These strips work in a manner similar to the pixels, with electrons getting knocked out of the material as charged particles pass through them and sending a current to be read out by a sensor.
 These strips consist of $p$-on-$n$ type silicon sensors, which operate with reverse bias to minimize leakage current across the $p$-$n$ junction.
 As charged particles pass through the sensors, electron-hole pairs are created along the particle's trajectory, which generates a drift current that is amplified and read as signal.
-Figure~\ref{fig:CMSsilicon} shows the layout of the strip tracker~\cite{Chatrchyan:1211825}.
+Figure~\ref{fig:CMSsilicon} shows the layout of the strip tracker.
 The Tracker Inner Barrel (TIB) has four inner barrel layers of silicon strips placed between radii of $255.0\unit{mm}$ and $498.0\unit{mm}$, which has a length of $1.4\unit{m}$ along the LHC beamline centered at the interaction point.
 The TIB is closed off by the Tracker Inner Disks (TID), with the two endcaps containing three disks each placed along the $z$ axis between $\pm800\unit{mm}$ and $\pm900\unit{mm}$ from the interaction point.
 The Tracker Outer Barrel (TOB) consists of two double-sided layers of silicon strips just outside the TIB, followed by four single-sided layers, with the layers having radii between $608\unit{mm}$ and $1080\unit{mm}$.
@@ -261,8 +265,12 @@ The TOB is closed off by the Tracker EndCaps (TEC) which extend radially from $2
 \begin{figure}[htbp] % Want a higher quality figure
   \centering
   \includegraphics[width=0.85\textwidth]{fig/experiment/cms_siliconTracker.pdf}
-  \caption{
+  \caption[
     Layout of the CMS silicon strip tracker as seen in the $r$-$z$ plane.
+    The Tracker Inner Barrel (TIB) has four inner barrel layers of silicon strips, which is closed off by the Tracker Inner Disks (TID) containing three disks in both of the endcaps.
+    The Tracker Outer Barrel (TOB) has two double-sided layers of silicon strips outside of the TIB and is closed off by the Tracker EndCaps (TEC).
+  ]{
+    Layout of the CMS silicon strip tracker as seen in the $r$-$z$ plane~\cite{Chatrchyan:1211825}.
     The Tracker Inner Barrel (TIB) has four inner barrel layers of silicon strips, which is closed off by the Tracker Inner Disks (TID) containing three disks in both of the endcaps.
     The Tracker Outer Barrel (TOB) has two double-sided layers of silicon strips outside of the TIB and is closed off by the Tracker EndCaps (TEC).
   }
@@ -284,7 +292,7 @@ Both the ECAL and HCAL are supplemented by the forward calorimeter, which is a C
 
 % The ECAL
 The ECAL consists of 61,200 lead tungstate (PbWO$_4$) crystal scintillators in the barrel region covering the pesudorapidity range $|\eta|<1.479$, with an additional 7,324 crystals in each of the two endcaps to close off the calorimeter.
-Figure~\ref{fig:CMSECAL} shows an illustration of a module of the ECAL in the barrel region~\cite{Sakuma_2014}.
+Figure~\ref{fig:CMSECAL} shows an illustration of a module of the ECAL in the barrel region.
 Scintillators are materials that emit light after absorbing ionizing radiation, which are attached to a photodetector and generate a current via the photoelectric effect.
 These crystals were selected due to their density ($8.28\unit{g/cm^3}$), radiation length ($0.89\unit{cm}$), and Moli\`{e}re radius ($2.2\unit{cm}$), all of which allow for high resolution measurement of electron and photon energies while withstanding the harsh radiation levels of the LHC.
 The photodetectors attached to the scintillators are also specially designed to operate in the $4\unit{T}$ magnetic field generated by the solenoid.
@@ -294,8 +302,11 @@ The crystals measure $22\times22\unit{mm^2}$ at the front face and $26\times26\u
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.55\textwidth]{fig/experiment/20130816_01_EB_module_1.pdf}
-  \caption{
+  \caption[
     Illustration of a module of the CMS ECAL in the barrel showing the layout of the lead tungstate scintillators.
+    The scintillators emit light after absorbing ionizing radiation, each of which are attached to photodetectors and generate a current from the scintillation light.
+  ]{
+    Illustration of a module of the CMS ECAL in the barrel showing the layout of the lead tungstate scintillators~\cite{Sakuma_2014}.
     The scintillators emit light after absorbing ionizing radiation, each of which are attached to photodetectors and generate a current from the scintillation light.
   }
   \label{fig:CMSECAL}
@@ -312,7 +323,7 @@ The detector strips are much finer than that of the ECAL crystals and are $2\uni
 
 % The hadron calorimeter
 Outside of the ECAL lies the various layers of the HCAL, which is divided into four sections.
-Figure~\ref{fig:CMSHCAL} shows the layout of the HCAL~\cite{Collaboration_2010_HCAL}.
+Figure~\ref{fig:CMSHCAL} shows the layout of the HCAL.
 The first of these is the barrel (HB), which covers the pseudorapidity range $|\eta|<1.3$.
 The HB has 36 azimuthal wedges that are constructed out of brass absorber plates bolted together in a staggered geometry.
 Between the layers of brass are tiles of plastic scintillators that cover an area of $0.087\times0.087$ in the $\eta$-$\phi$ plane.
@@ -323,13 +334,17 @@ The outer calorimeter (HO) sits just outside of the vacuum tank of the solenoid,
 The central ring of the HO has two layers of scintillators at radii of $3.82\unit{m}$ and $4.07\unit{m}$, while the other rings only have a single scintillator layer at $4.07\unit{m}$.
 Finally, the forward calorimeter (HF) consists of two detectors that are $11.2\unit{m}$ away from the interaction point on both sides of CMS.
 The HF faces the unique challenge of dealing with intense radiation, as most of the energy from the collisions is directed into the forward regions of the detector.
-For this reason, quartz fibers were used as the scintillation material and the signal is generated by Cherenkov radiation from charged particles passing through the medium.
+For this reason, quartz fibers were used as the scintillation material, and the signal is generated when charged shower particles above the Cherenkov threshold generate Cherenkov light.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.75\textwidth]{fig/experiment/HCAL-HB-HE-HO-HF.pdf}
-  \caption{
+  \caption[
     Layout of the HCAL in the $r$-$z$ plane.
+    The HCAL surrounds the ECAL and has four sections denoted by the barrel (HB), endcaps (HE), outer calorimeter (HO), and forward calorimeter (HF).
+    The scintillation material in the HB, HE, and HO sections is made of plastic, while the HF section uses quarts fibers in order to withstand the intense radiation in the forward region of the detector.
+  ]{
+    Layout of the HCAL in the $r$-$z$ plane~\cite{Collaboration_2010_HCAL}.
     The HCAL surrounds the ECAL and has four sections denoted by the barrel (HB), endcaps (HE), outer calorimeter (HO), and forward calorimeter (HF).
     The scintillation material in the HB, HE, and HO sections is made of plastic, while the HF section uses quarts fibers in order to withstand the intense radiation in the forward region of the detector.
   }
@@ -357,13 +372,19 @@ The outer region of CMS has 250 DTs in the barrel region covering pseudorapiditi
 The RPCs are distributed throughout both regions of CMS, with 480 in the barrel and 576 in the endcaps.
 In total, there are 1846 muon chambers present on the detector, with the chambers distributed among four layers in both the barrel and endcap regions to allow for track reconstruction. % Check numbers
 The barrel region is split up into five concentric wheels that are numbered from $-2$ to $+2$, with wheel 0 centered at the interaction point.
-Figure~\ref{fig:CMScrosssec} shows a cross section of the CMS detector in the $r$-$z$ plane as configured during Run 2, with DTs, CSCs, and RPCs labeled~\cite{Sirunyan_2018_CMS}.
+Figure~\ref{fig:CMScrosssec} shows a cross section of the CMS detector in the $r$-$z$ plane as configured during Run 2, with DTs, CSCs, and RPCs labeled.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\textwidth]{fig/experiment/cms_crosssec.pdf}
-  \caption{
-    cross section of the CMS detector in the $r$-$z$ plane as configured during Run 2.
+  \caption[
+    Cross section of the CMS detector in the $r$-$z$ plane as configured during Run 2.
+    The barrel region contains a combination of drift tubes and resistive plate chambers distributed among five concentric wheels surrounding the detector, covering a pseudorapidity range of $|\eta|<1.2$.
+    The endcaps on either side cover the range $0.9<|\eta|<2.4$, and have combinations of cathode strip chambers and resistive plate chambers present.
+    There are 250 drift tubes and 480 resistive plate chambers in the barrel, and 540 cathode strip chambers and 576 resistive plate chambers in the endcaps, making a total of 1846 muon chambers distributed throughout CMS.
+    Both the barrel and endcaps have four layers of muon chambers to allow for track reconstruction.
+  ]{
+    Cross section of the CMS detector in the $r$-$z$ plane as configured during Run 2~\cite{Sirunyan_2018_CMS}.
     The barrel region contains a combination of drift tubes and resistive plate chambers distributed among five concentric wheels surrounding the detector, covering a pseudorapidity range of $|\eta|<1.2$.
     The endcaps on either side cover the range $0.9<|\eta|<2.4$, and have combinations of cathode strip chambers and resistive plate chambers present.
     There are 250 drift tubes and 480 resistive plate chambers in the barrel, and 540 cathode strip chambers and 576 resistive plate chambers in the endcaps, making a total of 1846 muon chambers distributed throughout CMS.
@@ -378,7 +399,7 @@ Figure~\ref{fig:CMScrosssec} shows a cross section of the CMS detector in the $r
 The DT system in the barrel region is distributed among the four layers present in each wheel surrounding the interaction point, with the layers referred to as stations.
 The stations are numbered according to how close they are to the interaction point, with station 1 being the innermost layer and station 4 being the outermost.
 Each drift tube contains a gaseous mix of Ar (85\%) and CO$_2$ (15\%), with sensitive wires inside of the tubes held at a specified potential.
-An illustration of an individual drift tube cell can be seen in figure~\ref{fig:CMSDTcell}~\cite{Abbiendi_2019}.
+An illustration of an individual drift tube cell can be seen in figure~\ref{fig:CMSDTcell}.
 As muons pass through the gas, they impart enough ionization energy to knock off electrons from the atoms of the argon gas, which are then attracted to the wire and cause a cascade of additional electrons from the gas to be deposited onto the wire and cause a current.
 Meanwhile, the carbon dioxide acts as a quenching gas by absorbing photons that are released from de-exciting electrons in the argon atoms, thereby preventing any further cascades resulting from the release of electrons by the emitted photons.
 The muon's position can then be inferred from where the electrons hit the wire, and how far the muon was from the wire.
@@ -388,8 +409,12 @@ Each DT allows for a position resolution of $0.25\unit{mm}$.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\textwidth]{fig/experiment/cms_DTcell.pdf}
-  \caption{
+  \caption[
     Illustration of a drift tube cell.
+    As muons pass through the cell, they ionize the gas and cause a cascade of electrons that deposit onto the anode wire and generate a current.
+    The current is readout by the detector and allows for measuring muon momentum.
+  ]{
+    Illustration of a drift tube cell~\cite{Abbiendi_2019}.
     As muons pass through the cell, they ionize the gas and cause a cascade of electrons that deposit onto the anode wire and generate a current.
     The current is readout by the detector and allows for measuring muon momentum.
   }
@@ -401,7 +426,7 @@ Each DT allows for a position resolution of $0.25\unit{mm}$.
 % The CSC system
 The CSCs in the endcaps operate under a similar principle to that of the DTs in the barrel region.
 They are made of trapezoidal panels and have a gas mix of Ar (40\%), CO$_2$ (50\%), and CF$_4$ (10\%).
-Figure~\ref{fig:CMSCSC} shows a cut-away diagram of a CSC chamber~\cite{collaboration_2013}.
+Figure~\ref{fig:CMSCSC} shows a cut-away diagram of a CSC chamber.
 Inside of the CSCs are arrays of positively-charged anode wires and negatively-charged cathode copper strips that are perpendicular to each other.
 When muons ionize the gas after passing through the chamber, they cause an avalanche of electrons to deposit onto the wire and generate a current, but they also cause an induced charge on the copper strips.
 This allows for a precise measurement of $\phi$ for the passing muons and a coarse measurement of $r$ from the anode wires, resulting in a $0.2\unit{mm}$ resolution position measurement, as well as a fast time measurement.
@@ -409,8 +434,12 @@ This allows for a precise measurement of $\phi$ for the passing muons and a coar
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.75\textwidth]{fig/experiment/cms_csc.pdf}
-  \caption{
+  \caption[
     Cut-away diagram of a CSC (left) with an illustration of the ionization mechanism (right).
+    As muons ionize the gas, the resulting electron avalanche deposits onto the wires and generate a current, while also inducing a charge onto the cathode strips.
+    This gives a measurement of the muon position for both $\phi$ and $r$.
+  ]{
+    Cut-away diagram of a CSC (left) with an illustration of the ionization mechanism (right)~\cite{collaboration_2013}.
     As muons ionize the gas, the resulting electron avalanche deposits onto the wires and generate a current, while also inducing a charge onto the cathode strips.
     This gives a measurement of the muon position for both $\phi$ and $r$.
   }
@@ -422,7 +451,7 @@ This allows for a precise measurement of $\phi$ for the passing muons and a coar
 % RPCs
 RPCs are used to supplement the DTs in the barrel and the CSCs in the endcaps.
 They are gaseous detectors that consist of two parallel plastic plates with high resistivity, one being a positively-charged anode and the other a negatively-charged cathode.
-Figure~\ref{fig:CMSRPC} shows an example of a double gap RPC design~\cite{kumari2020improvedrpc}.
+Figure~\ref{fig:CMSRPC} shows an example of a double gap RPC design.
 The gaseous mix in the RPCs is C$_2$H$_2$F$_4$ (95.2\%), isoC$_4$H$_{10}$ (4.5\%), and SF$_6$ (0.3\%).
 The electron cascade caused by the ionization of a passing muon generates a signal on external detecting strips, which allows for a coarse spatial measurement, but a very fast time measurement ($1\unit{ns}$) that is shorter than the $25\unit{ns}$ between each bunch crossing.
 Their fast response time is used in the trigger system in order to determine whether or not event data should be saved based on the measured muon momentum.
@@ -430,8 +459,12 @@ Their fast response time is used in the trigger system in order to determine whe
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\textwidth]{fig/experiment/rpc_schema.pdf}
-  \caption{
+  \caption[
     Illustration of a double gap RPC design.
+    The electron cascade generated by the ionization process induces a signal on the readout strips, which gives a coarse spatial measurement.
+    DTs and CSCs are supplemented by RPCs that are used by the trigger system due to their fast response time.
+  ]{
+    Illustration of a double gap RPC design~\cite{kumari2020improvedrpc}.
     The electron cascade generated by the ionization process induces a signal on the readout strips, which gives a coarse spatial measurement.
     DTs and CSCs are supplemented by RPCs that are used by the trigger system due to their fast response time.
   }
@@ -460,7 +493,7 @@ In practice, the L1 Trigger is not operated at its maximum output and instead ru
 \subsubsection{Level-1 Trigger}
 
 % Level 1 trigger
-The architecture of the L1 trigger can be seen in figure~\ref{fig:L1Trigger}~\cite{cmscollaboration2020performance}.
+The architecture of the L1 trigger can be seen in figure~\ref{fig:L1Trigger}.
 At the local level, the L1 Trigger consists of Trigger Primitive Generators (TPG) that are activated by track segments or hit patterns in muon chambers, and energy deposits in the calorimeters.
 The trigger primitives are then used by the Regional Triggers to form trigger objects for candidate particles, such as electrons, photons, and muons.
 These objects have to be ranked and sorted based on their energy, momenta, and quality.
@@ -471,8 +504,12 @@ The allowed latency between the a single bunch crossing and the L1A decision in 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\textwidth]{fig/experiment/cms_L1trigger.pdf}
-  \caption{
+  \caption[
     Illustration of the L1 Trigger architecture as configured during Run 2.
+    The Trigger Primitives (TPs) are generated by track segments or hit patterns in muon chambers, and energy deposits in calorimeters.
+    These objects are ranked and sorted by energy, momenta, and quality, which are then passed onto the Global Trigger to determine whether or not the events will be kept and passed to the HLT.
+  ]{
+    Illustration of the L1 Trigger architecture as configured during Run 2~\cite{cmscollaboration2020performance}.
     The Trigger Primitives (TPs) are generated by track segments or hit patterns in muon chambers, and energy deposits in calorimeters.
     These objects are ranked and sorted by energy, momenta, and quality, which are then passed onto the Global Trigger to determine whether or not the events will be kept and passed to the HLT.
   }
@@ -547,3 +584,10 @@ This process is repeated until all particles have been declared jets, with $d_{i
 \end{align}
 where $\Delta_{ij}^2=(y_i-y_j)^2+(\phi_i-\phi_j)^2$, with $k_{T,i}$ as the transverse momentum for object $i$, $y_i$ the rapidity for object $i$, $\phi_i$ is the azimuthual angle for object $i$, $R$ is the distance parameter for the algorithm, and $p$ is a parameter determined by the jet clustering algorithm.
 For the anti-\kt algorithm, $p=-1$, with other algorithms taking on different values, such as $p=1$ for the \kt algorithm~\cite{Marzani_2019}.
+
+\section{Conclusion}
+
+% Summary of experiment chapter
+The LHC facility and CMS detector are discussed, which were used to obtain the data for the search that this work describes in chapter~\ref{chap:analysis}, and which also concern the novel muon tracking algorithm covered in chapter~\ref{chap:TPS}.
+An overview of the subdetector systems of the CMS experiment is presented, which includes the inner tracking system, calorimeters, muon tracking, and trigger system.
+We also present a brief description of the event reconstruction process, which outlines the main steps of the particle flow algorithm, as well as the anti-\kt algorithm for clustering jets.

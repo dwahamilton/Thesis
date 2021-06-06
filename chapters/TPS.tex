@@ -13,7 +13,7 @@ At the time of this writing, the LHC is in its Long Shutdown 2 (LS2) phase that 
 % The existing BMTF
 In section~\ref{subsec:trigger} of chapter 3, a brief overview of the CMS trigger system was provided, and the basic architecture of the L1 Trigger was described.
 One component of the muon system in the L1 Trigger is the Barrel Muon Track Finder (BMTF), which sorts muon candidates and was commissioned in 2016 for data taking during Run 2~\cite{Ero:2102885}.
-The architecture for the BMTF is based on custom processors mounted onto FPGAs, with the capability of measuring the transverse momenta of muons in the barrel region.
+The architecture for the BMTF is based on custom processors mounted onto FPGAs, with the capability of calculating the transverse momenta of muons in the barrel region.
 It was conceived as a replacement for the legacy Drift Tube Track Finder (DTTF), which only received information from the DTs.
 The BMTF instead receives superprimitives made from a combination of DT and RPC primitives, which provides better resolution and trigger rates compared to the DTTF.
 However, as with other components of the CMS detector, the BMTF is slated to be replaced by newer hardware that offers improvements in performance.
@@ -30,7 +30,7 @@ Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, w
 The High-Luminosity Large Hadron Collider (HL-LHC) is scheduled to come online in 2027, with the Phase-1 period ending in 2024.
 During the Long Shutdown 3 (LS3) period in 2025, the CMS detector will undergo major upgrades to its L1 Trigger system~\cite{CERN-LHCC-2020-004}.
 Such upgrades are necessary in order to take advantage of the large number of collision events that the HL-LHC will offer, as it will aim for a peak luminosity of $7.5\times10^{34}\unit{cm^{-2}s^{-1}}$.
-This will result in up to 200 simultaneous proton-proton collisions per bunch crossing, for which the existing L1 Trigger system is unequipped to handle.
+This will result in up to 200 simultaneous proton-proton collisions per bunch crossing, which the existing L1 Trigger system is unequipped to handle.
 The new L1 Trigger system will have its latency extended from $3.2\unit{\micro s}$ to $12.5\unit{\micro s}$, and it will also have its maximum output bandwidth increased from $100\unit{kHz}$ to $750\unit{kHz}$.
 A unique aspect of these upgrades is that the L1 Trigger system will also take information from the inner tracker as input in addition to the muon and calorimeter systems.
 This will allow for using the new track finder to provide the initial information about particle transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
@@ -56,8 +56,8 @@ The work presented in this chapter instead relies on a novel approach to reconst
 \label{sec:TPS}
 
 % The tracks plus stubs algorithm
-As muons produced in collision events move throughout the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnote{The bending angle $\phi_b$ is only measured in the DTs.} in the chamber for which the stub was created.
-Figure~\ref{fig:CMSslice} shows a slice of the CMS detector in the $r$-$\phi$ plane, with an example of a process in which a muon passes through the DT chambers~\cite{Barney:2120661}.
+As muons produced in collision events move through the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnote{The bending angle $\phi_b$ is only measured in the DTs.} in the chamber for which the stub was created.
+Figure~\ref{fig:CMSslice} shows a slice of the CMS detector in the $r$-$\phi$ plane, with an example of a process in which a muon passes through the DT chambers.
 The Tracks Plus Stubs (TPS) algorithm combines the information from the track trigger and the detection stubs in the chambers to create a candidate track that will later be reconstructed as a muon in the detector.
 By using the initial information from the track trigger, the algorithm propagates the initial muon track to the outer layers of the detector.
 The propagated values for the angular variables $\phi$ and $\phi_b$ are then compared to those as recorded by the stub measurements.
@@ -66,8 +66,12 @@ From this, the algorithm can construct a candidate muon track, which is a combin
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\textwidth]{fig/TPS/CMSslice_whiteBackground.pdf}
-  \caption{
+  \caption[
     Slice of the CMS detector for a process in which a muon is produced.
+    As the muon passes through the silicon tracker and the muon chambers, the electronics obtain measurements of the muon's transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
+    Such information is used by the L1 Trigger to decide whether or not to save an event for analysis.
+  ]{
+    Slice of the CMS detector for a process in which a muon is produced~\cite{Barney:2120661}.
     As the muon passes through the silicon tracker and the muon chambers, the electronics obtain measurements of the muon's transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
     Such information is used by the L1 Trigger to decide whether or not to save an event for analysis.
   }
@@ -116,12 +120,12 @@ which we may rearrange to obtain
 Since the \pt of a muon that passes through the threshold of the detector is high enough such that the radius $R$ is large, $\Delta\phi\equiv\phi-\phi_0$ is small, and hence we may make the approximation that $\tan\phi-\tan\phi_0\approx\phi-\phi_0$.
 Thus, the propagated position angle is
 \begin{equation}\label{eq:phi}
-  \phi_\mathrm{prop}=\frac{x_\mathrm{stub}}{2R}+\phi_0=ck+\phi_0,
+  \phi_\mathrm{prop}=\frac{x_\mathrm{stub}}{2R}+\phi_0=Ck+\phi_0,
 \end{equation}
-where we have used the fact that $k=1/R$ and $c$ is a constant to be determined based on the position of the stub.
+where we have used the fact that $k=1/R$ and $C$ is a constant to be determined based on the position of the stub.
 Furthermore, in figure~\ref{fig:arc}, we can see that due to the symmetry of the circular arc traced by the track of the particle, the bending angle $\phi_b$ must be equal to the change in the position angle $\Delta\phi$, from which we immediately obtain
 \begin{equation}\label{eq:phib}
-  \phi_{b,\mathrm{prop}}=ck.
+  \phi_{b,\mathrm{prop}}=Ck.
 \end{equation}
 
 \begin{figure}[htbp]
@@ -138,18 +142,18 @@ Furthermore, in figure~\ref{fig:arc}, we can see that due to the symmetry of the
 
 % Geometric significance of propagation coefficients
 With equations~\ref{eq:phi} and~\ref{eq:phib} in hand, we may now propagate the tracks based on the initial information about the curvature $k$ and angle $\phi_0$.
-The CMS detector consists of multiple layers of detection chambers, and each chamber requires its own propagation constant $c$.
-The relevant variables to consider for $c$ based on the geometry of the detector are the pseudorapidity of the track $\eta$ and the station depth $d$.
-Thus, the propagation constants $c(\eta,d)$ are functions of these two variables.
+The CMS detector consists of multiple layers of detection chambers, and each chamber requires its own propagation constant $C$.
+The relevant variables to consider for $C$ based on the geometry of the detector are the pseudorapidity of the track $\eta$ and the station depth $d$.
+Thus, the propagation constants $C(\eta,d)$ are functions of these two variables.
 Rather than obtaining these constants analytically, they are obtained by using simulation data. % Elaborate on the simulation samples used later
 
 % Obtaining propagation coefficients
-To do this, we divide the detector into separate $\eta$ regions and depths, as seen in figure~\ref{fig:barrelEta}, and treat each section as a separate detector with its own propagation constant $c(\eta,d)$.
+To do this, we divide the detector into separate $\eta$ regions and depths, as seen in figure~\ref{fig:barrelEta}, and treat each section as a separate detector with its own propagation constant $C(\eta,d)$.
 We then look at two-dimensional histograms of $\Delta\phi$ and $\phi_b$ from simulated detection stubs as functions of $k$ for each section of the detector based on simulated detection stubs.
 An example of this can be seen in figure~\ref{fig:deltaPhiHist}.
 For every bin in curvature $k$, the distribution of $\Delta\phi$ or $\phi_b$ is roughly Gaussian, and hence we fit Gaussians to the vertical slices of these histograms.
 We then consider the mean of these Gaussians and make linear fits for $\Delta\phi$ and $\phi_b$ in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.
-These then define the propagation constants $c(\eta,d)$ for each detector, thereby allowing us to predict where a muon produced at the beamline during a collision event will end up in the detection chambers.
+These then define the propagation constants $C(\eta,d)$ for each detector, thereby allowing us to predict where a muon produced at the beamline during a collision event will end up in the detection chambers.
 
 \begin{figure}[htbp]
   \centering
@@ -167,7 +171,7 @@ These then define the propagation constants $c(\eta,d)$ for each detector, there
   \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_mean.pdf}\\
   \caption{
     Two-dimensional distribution of $\Delta\phi$ from simulated detection stubs as a function of curvature $k$ (left), and linear fit for the mean values of Gaussians fitted to the vertical slices of the two-dimensional histogram (right).
-    Propagation constants $c(\eta,d)$ for $\Delta\phi$ and $\phi_b$ for each section of the detector are obtained through these linear fits, in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.
+    Propagation constants $C(\eta,d)$ for $\Delta\phi$ and $\phi_b$ for each section of the detector are obtained through these linear fits, in accordance with equations~\ref{eq:phi} and~\ref{eq:phib}.
   }
   \label{fig:deltaPhiHist}
 \end{figure}
@@ -192,7 +196,7 @@ Instead, we approximate the position resolution using
 \end{equation}
 where $a$ and $b$ are constants analogous to $\alpha$ and $\beta$.
 Figure~\ref{fig:deltaPhiRes} shows an example of the position resolution from one of the Gaussian fits for $\Delta\phi$ and the fit obtained for equation~\ref{eq:posRes}.
-As with the propagation coefficients $c(\eta,d)$, the position resolution constants $a(\eta,d)$ and $b(\eta,d)$ are also specific to each detector based on the $\eta$ region and depth.
+As with the propagation coefficients $C(\eta,d)$, the position resolution constants $a(\eta,d)$ and $b(\eta,d)$ are also specific to each detector based on the $\eta$ region and depth.
 
 \begin{figure}[htbp] % Need to update figure
   \centering
@@ -262,7 +266,7 @@ The track with the smallest sum $\Delta\phi_{\mathrm{prop,sum}}$ of the deviatio
 
 % Track isolation process
 The TPS algorithm also allows for track isolation when considering muon candidates in order to reduce heavy flavor contributions from QCD processes, which allows for reducing background.
-For each candidate track, the algorithm checks to see if there are any additional tracks whose origin is within $dz<0.2\unit{cm}$ along the beamline of the candidate track's origin, and if these tracks are within a cone of radius $\Delta R$ centered around the candidate track, as seen in figure~\ref{fig:isol}.
+For each candidate track, the algorithm checks to see if there are any additional tracks whose origin is within $|d_z|<0.2\unit{cm}$ along the beamline of the candidate track's origin, and if these tracks are within a cone of radius $\Delta R$ centered around the candidate track, as seen in figure~\ref{fig:isol}.
 The algorithm then evaluates the sum of the individual transverse momenta $p_{\mathrm{T},i}$ given by
 \begin{equation}\label{eq:ptCone}
   p_\mathrm{T,cone}=\sum_{i\in\mathrm{cone}}p_{\mathrm{T},i},
@@ -275,7 +279,7 @@ If $p_\mathrm{T,cone}$ exceeds the threshold set for the algorithm, then the can
   \input{fig/TPS/isol.tex}
   \caption{
     Illustration of the track isolation process used by the algorithm.
-    A cone is defined about the origin of the candidate track TPS $\mu$ and the algorithm checks if there are any adjacent tracks whose origin is within $dz$ of the TPS $\mu$ origin, and if the track is within a cone of radius $\Delta R$ centered about TPS $\mu$.
+    A cone is defined about the origin of the candidate track TPS $\mu$ and the algorithm checks if there are any adjacent tracks whose origin is within $d_z$ of the TPS $\mu$ origin, and if the track is within a cone of radius $\Delta R$ centered about TPS $\mu$.
     Tracks for which $p_\mathrm{T,cone}$ as defined by equation~\ref{eq:ptCone} exceeds the threshold set for the algorithm are discarded.
   }
   \label{fig:isol}
@@ -354,3 +358,10 @@ Figure~\ref{fig:ocean} shows a picture of an assembled OCEAN Blade board being u
   }
   \label{fig:ocean}
 \end{figure}
+
+\section{Conclusion}
+
+% Summary of TPS chapter
+Work towards the TPS algorithm is presented, which is a novel muon tracking algorithm that takes advantage of the new track finder that will be implemented in the L1 Trigger during the LS3 upgrades.
+The algorithm matches tracks from the track finder to detection stubs from the muon trigger, while offering high efficiency and low trigger rates compared to competing algorithms.
+The TPS algorithm will be implemented via firmware onto an FPGA on the OCEAN Blade board.

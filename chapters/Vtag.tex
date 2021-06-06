@@ -8,15 +8,15 @@ As mentioned previously, the top-enriched control region is obtained by invertin
 The region is used to calibrate the performance of the soft drop algorithm and jet substructure variables on merged bosons.
 In particular, the scale factors for the $V$-tagging selection in the HP and LP categories are derived in this region using a dedicated fit of the soft drop jet mass spectrum.
 We also include events with $\nsubjDDT>0.80$ as a separate category denoted by NP to avoid bias resulting from only selecting HP and LP events.
-This allows us to accurately model the $W$ peak for all categories used in the analysis.
+This allows us to accurately model the $W^\pm$ peak for all categories used in the analysis.
 
 \subsection{Fit Model}
 
 % Fit model
 Our fit model relies on two classes of events in the top-enriched region.
-The first corresponds to resonant $W$ events that are the result of a top decay, with the $b$ jet outside of the AK8 jet.
+The first corresponds to resonant $W^\pm$ events that are the result of a top decay, with the $b$ jet outside of the AK8 jet.
 The second class consists of non-resonant events resulting from random combinations of a merged AK8 jet.
-To account for both of these types of events, we employ a fit model that uses a double crystal ball (DCB) for the $W$, another DCB for the partially reconstructed top quark, an exponential, and a uniform distribution.
+To account for both of these types of events, we employ a fit model that uses a double crystal ball (DCB) for the $W^\pm$, another DCB for the partially reconstructed top quark, an exponential, and a uniform distribution.
 Once the fit is performed, we then merge the second DCB, exponential, and uniform distributions to form a single non-resonant shape.
 
 % Crystal ball function
@@ -47,7 +47,7 @@ The explicit form of the fit model $f$ in each category (HP, LP, NP) is given by
   & f(\mathrm{LP})=rSF^\mathrm{LP}N_W^\mathrm{LP}f_W^\mathrm{LP}+N_{NR}^\mathrm{LP}f_{NR}^\mathrm{LP},\label{eq:VtagFit2}\\
   & f(\mathrm{NP})=r\bqty{N_\mathrm{Total}-SF^\mathrm{HP}N_W^\mathrm{HP}-SF^\mathrm{LP}N_W^\mathrm{LP}}f_W^\mathrm{NP}+N_{NR}^\mathrm{NP}+f_{NR}^\mathrm{NP},\label{eq:VtagFit3}
 \end{align}
-where $f_W$ is the resonant distribution for the $W$ jet, $f_{NR}$ is the non-resonant shape, $r$ is a global scale factor accounting for lepton efficiency and luminosity, $N_{W}^\mathrm{HP}$, $N_{W}^\mathrm{LP}$, $N_{W}^\mathrm{NP}$, and $N_\mathrm{Total}$ are the number of expected events in simulation for all three categories and the total number of events, and the $SF$ are scale factors for the HP and LP categories.
+where $f_W$ is the resonant distribution for the $W^\pm$ jet, $f_{NR}$ is the non-resonant shape, $r$ is a global scale factor accounting for lepton efficiency and luminosity, $N_{W}^\mathrm{HP}$, $N_{W}^\mathrm{LP}$, $N_{W}^\mathrm{NP}$, and $N_\mathrm{Total}$ are the number of expected events in simulation for all three categories and the total number of events, and the $SF$ are scale factors for the HP and LP categories.
 This normalization is chosen to account for migration between categories.
 
 \subsection{Fit Results}
@@ -57,7 +57,7 @@ We perform the fit of equations~\ref{eq:VtagFit1}-\ref{eq:VtagFit3} in a jet mas
 The resulting post-fit distributions for all three years and the full Run 2 dataset and MC samples can be seen in figure~\ref{fig:VTag_postfit_Run2}.
 Table~\ref{tab:VTagFactors} shows the $V$-tagging scale factors in the HP and LP categories obtained by the fit for all years and the full Run 2 dataset, and table~\ref{tab:VScaleRes} shows the scale factors for the jet mass scale and resolution again for all years and for the full Run 2 dataset.
 For the analysis we use the Run 2 scale factors in the computation of the expected signal normalizations, and the Run 2 uncertainties are used as a flat systematic uncertainty for the signal normalizations.
-The scale factors for the jet mass scale and resolution are used as corrections to the signal shapes and $W$ peak for the resonant background templates.
+The scale factors for the jet mass scale and resolution are used as corrections to the signal shapes and $W^\pm$ peak for the resonant background templates.
 
 \begin{figure}[htbp]
   \centering

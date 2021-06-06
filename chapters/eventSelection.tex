@@ -13,62 +13,33 @@ This section provides an overview of the cuts that were made in the analysis to 
 
 % Trigger paths
 Multiple HLT trigger paths are used for recording the data that this analysis utilizes.
-%Most of the data are collected from the \texttt{SingleElecton} and \texttt{SingleMuon} triggers, with the remainder coming from the \texttt{SinglePhoton}, \texttt{EGamma}\footnote{This is specific to 2018 and denotes a combined \texttt{SingleElectron} and \texttt{SinglePhoton} dataset.}, and \texttt{MET} triggers.
 Most of the data are collected from the Single Electron and Single Muon HLT paths, with the remainder coming from the MET, Single Photon, and E/Gamma\footnote{This is specific to 2018 and denotes a combined Single Electron and Single Photon HLT path.} paths.
 The use of the Single Photon paths in conjunction with the Single Electron paths in 2017 and 2018 is to recover efficiency losses on the Single Electron path for high \pt electrons, which is necessary for electrons with $\pt>300\unit{GeV}$.
-For each year we use different HLT paths, which are listed in table~\ref{tab:triggers}.%~\ref{tab:triggers2016}, \ref{tab:triggers2017}, and \ref{tab:triggers2018} for the years Run 2, respectively.
+For each year we use different HLT paths, which are listed in table~\ref{tab:triggers}.
 
 \begin{table}[htbp]
   \centering
   \input{tab/eventSelection/triggers.tex}
   \caption{
-    HLT paths used in Run 2 data and MC. Here, `WP' and `ID' refer to working point and identification, respectively.
+    HLT paths used in Run 2 data and MC.
+    Here, `WP' and `ID' refer to working point and identification, respectively.
   }
   \label{tab:triggers}
 \end{table}
 
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/eventSelection/triggers2016.tex}
-%  \caption{
-%    HLT paths used in 2016 data and MC.
-%  }
-%  \label{tab:triggers2016}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/eventSelection/triggers2017.tex}
-%  \caption{
-%    HLT paths used in 2017 data and MC.
-%  }
-%  \label{tab:triggers2017}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/eventSelection/triggers2018.tex}
-%  \caption{
-%    HLT paths used in 2018 data and MC.
-%  }
-%  \label{tab:triggers2018}
-%\end{table}
-
 % Thresholds
 The Single Electron \pt thresholds used are 27, 45, and $115\unit{GeV}$ for 2016, 32, 25, and $115\unit{GeV}$ for 2017, and 25 and $115\unit{GeV}$ for 2018.
-%To overcome some inefficiencies, we apply an OR with \texttt{HLT\_Photon175} in 2016 with an \Et threshold of $175\unit{GeV}$, as well as with \texttt{HLT\_Photon200} in 2017 with $200\unit{GeV}$. % Need to find out what an OR is
-%For Single Muon paths, the main threshold is $50\unit{GeV}$ across all three years, with an OR for \texttt{HLT\_TkMu50} at $50\unit{GeV}$ in 2016, and an OR for \texttt{HLT\_OldMu100} in 2017 and \texttt{HLT\_TkMU100} in 2018 at $100\unit{GeV}$, as recommended by the Muon POG~\cite{MuonHLT_16,MuonHLT_17,MuonHLT_18}.
 For Single Muon paths, the main threshold is $50\unit{GeV}$ across all three years.
 These thresholds are chosen as part of compromises between energy thresholds and isolation tightness, as lower \pt thresholds result in a higher event rate and hence require tighter identification cuts, while higher \pt thresholds allow for looser working points~\cite{MuonPOG}.
 Lastly, the additional MET trigger path recovers some inefficiency in triggering on high \pt muons in the endcaps.
-%The thresholds were applied as recommended by the CMS E/Gamma Physics Object Group (POG)~\cite{MuonPOG}.
 
 % Trigger efficiencies
 For both lepton triggers, the efficiencies for all Run 2 years are measured with respect to offline electron High Energy Electron Pairs (HEEP) requirements, and to muon high-\pt ID and isolation requirements, using a dataset enriched in boosted \Wjets events.
+To correct for differences between modeling in simulation and data, we apply scale factors to account for various effects, which are obtained by taking the ratio of data to MC and applying these ratios to events as weights.
 The efficiencies and resulting data/MC scale factors for 2016 are shown in figures~\ref{fig:eletrigeff2016}-\ref{fig:mettrigeff2016}.
 We also separately measure the efficiencies of the lepton legs and of the MET legs by either triggering on MET and looking at Single Electron or Single Muon paths, or by triggering on one of the lepton paths and looking at the MET path.
 Large uncertainties in the data/MC scale factors for the lepton legs are observed at large \pt and $\eta$ due to the low statistics in those regions.
-The muon channel for the MET efficiencies in figure~\ref{fig:mettrigeff2016} also does not have a turn-on curve since the chosen MET HLT path sees the whole $W$ as \ptmiss in boosted $W\to\mu\nu$ events.
+The muon channel for the MET efficiencies in figure~\ref{fig:mettrigeff2016} also does not have a turn-on curve since the chosen MET HLT path sees the whole $W^\pm$ as \ptmiss in boosted $W\to\mu\nu$ events.
 The resulting event-level scale factor used in this analysis is defined as $S=\epsilon_\mathrm{total}(\mathrm{DATA})/\epsilon_\mathrm{total}(\mathrm{MC})$, where each efficiency $\epsilon$ is estimated as $\epsilon(\mathrm{lepton})+\epsilon(\mathrm{MET})-\epsilon(\mathrm{lepton})\epsilon(\mathrm{MET})$.
 
 \begin{figure}[htbp]
@@ -102,7 +73,7 @@ The resulting event-level scale factor used in this analysis is defined as $S=\e
   \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_MET_eleChannel_2016.pdf}
   \includegraphics[width=0.4\textwidth]{fig/eventSelection/TriggerEff_MET_muChannel_2016.pdf}
   \caption{
-    2016 MET trigger efficiencies and scale factors, in the electron (left) and muon (right) channels.
+    2016 MET trigger efficiencies (top) for data (black) and simulation (red), in the electron (left) and muon (right) channels, with data/MC scale factors (bottom).
   }
   \label{fig:mettrigeff2016}
 \end{figure}
@@ -118,7 +89,7 @@ These interactions are referred to as pileup (PU)~\cite{Perloff_2012}, and the p
 The data samples from all three Run 2 years have different pileup profiles than that of the simulation samples that were used for this analysis.
 In order to account for this, we compute and apply PU weights to our samples and compare distributions for the number of primary vertices both with and without weights to the data.
 Figure~\ref{fig:PUreweight} shows these distributions for Run 2.
-The weights are computed using the recommended minimum bias cross section of $69.2\unit{mb}$. % Citation needed
+The weights are computed using the recommended minimum bias cross section of $69.2\unit{mb}$.
 
 \begin{figure}[htbp]
   \centering
@@ -135,21 +106,21 @@ The weights are computed using the recommended minimum bias cross section of $69
 \label{subsec:muonSelect}
 
 % Muon reconstruction
-Muon reconstruction in CMS is a multi-stage process that involves creating muon objects from various trigger sources~\cite{Sirunyan_2018_CMS,Sirunyan_2020}. %\cite{MuonAnalysis}
+Muon reconstruction in CMS is a multi-stage process that involves creating muon objects from various trigger sources~\cite{Sirunyan_2018_CMS,Sirunyan_2020}.
 This process starts with local reconstruction, in which detection hits in the muon chambers are reconstructed through the trigger system.
 The hits within the chambers are then matched to create track segments, known as track stubs.
 During offline reconstruction, the track stubs are used to create standalone muons, which are muon objects constructed by using the track stubs to estimate the muon transverse momentum using the Kalman filter technique.
 These objects are then used to create global muons, which are objects that combine standalone muon tracks with tracks from the inner tracking system, again using a Kalman filter.
 
 % High-pT muon selection criteria
-When selecting muons for the analysis, they must pass the following high-\pt muon identification criteria~\cite{Sirunyan_2020}. %as provided by the CMS Muon POG:
+When selecting muons for the analysis, they must pass the following high-\pt muon identification criteria~\cite{Sirunyan_2020}.
 \begin{itemize}
   \item The muon is reconstructed as a global muon.
   \item At least one muon hit retained in the global track fit, including the hits of both tracker and standalone muons.
   \item Muon segments in at least two muon stations.
   \item The \pt relative error ($\sigma(\pt)/\pt$) of the muon best track is less than 30\%.
-  \item Its tracker track has transverse impact parameter $d_{xy}<2\unit{mm}$ with respect to the primary vertex.
-  \item The longitudinal distance of the tracker with respect to the primary vertex is $d_z<5\unit{mm}$.
+  \item Its tracker track has transverse impact parameter $|d_{xy}|<2\unit{mm}$ with respect to the primary vertex.
+  \item The longitudinal distance of the tracker with respect to the primary vertex is $|d_z|<5\unit{mm}$.
   \item The muon track has at least one pixel hit.
   \item The muon track has at least six tracker layer hits.
 \end{itemize}
@@ -158,7 +129,7 @@ When selecting muons for the analysis, they must pass the following high-\pt muo
 In addition to the high-\pt muon identification criteria, for this analysis we also require each muon to have $\pt>55\unit{GeV}$ and to be confined to the region $|\eta|<2.4$.
 Any additional muons in the event with $\pt>20\unit{GeV}$ result in a veto for the event.
 We also apply an isolation requirement on the muons in order to further suppress background.
-This is done using the full relative Particle-Flow isolation using $\Delta\beta$ corrections, with the requirement that $I_\mathrm{rel}<0.05$, with $I_\mathrm{rel}$ defined by~\cite{Sirunyan_pf} % Check with PAS
+This is done using the full relative Particle-Flow isolation using $\Delta\beta$ corrections, with the requirement that $I_\mathrm{rel}<0.05$, with $I_\mathrm{rel}$ defined by~\cite{Sirunyan_pf}
 \begin{equation}
   I_\mathrm{rel}=\frac{\sum_{i\in\mathrm{PV}}p_{\mathrm{T},i}+\max\pqty{0,\sum_{j\in\mathrm{NH}}E_{\mathrm{T},j}+\sum_{k\in\mathrm{phot}}E_{\mathrm{T},k}-\Delta\beta\sum_{n\in\mathrm{PU}}p_{\mathrm{T},n}}}{p_{\mathrm{T},\mu}},
 \end{equation}
@@ -345,7 +316,7 @@ We also apply a cut on the M2 operating point of the ``\DoubleB tagger''~\cite{S
 % Scale factors
 Additionally, we apply scale data/MC efficiency scale factors to our signal sample normalizations, while the scale factors for the background are estimated from the data in the control regions.
 We use two sets of scale factors that depend on \ptjet.
-One is for \Htobbbar jets resulting from the \WprtoWHtolnubbbar signal model, and the other is for mistagging $W$ bosons resulting from $t\bar{t}$ events, which are applied to the \GBulktoWWtolnuqqbarpr and \WprtoWZtolnuqqbar signal models.
+One is for \Htobbbar jets resulting from the \WprtoWHtolnubbbar signal model, and the other is for mistagging $W^\pm$ bosons resulting from $t\bar{t}$ events, which are applied to the \GBulktoWWtolnuqqbarpr and \WprtoWZtolnuqqbar signal models.
 These scale factors are applied from method 1a from reference~\cite{bTaggingEff}.
 The weights are calculated by considering the probability of a given configuration of jets in MC and data as
 \begin{align}
@@ -377,16 +348,16 @@ The correction is a propagation of the jet energy corrections (JEC) to \ptmiss, 
 where the first sum is over clustered jets and the second sum is over unclustered particles.
 We require $\ptmissTI>40\unit{GeV}$ if the selected lepton in the event is a muon, and $\ptmissTI>80\unit{GeV}$ if it is an electron.
 
-\subsection{Leptonic $W$ and \WV reconstruction}
+\subsection{Leptonic $W^\pm$ and \WV reconstruction}
 
 % Leptonic reconstruction
-To reconstruct the leptonically decaying $W$ candidate \Wlep, we select the highest \pt lepton in the event and combine it with the \ptmissTI resulting from the neutrino.
-We also apply a $W$ mass constraint to estimate the $z$-component of the missing momentum $p_{\nu,z}$.
+To reconstruct the leptonically decaying $W^\pm$ candidate \Wlep, we select the highest \pt lepton in the event and combine it with the \ptmissTI resulting from the neutrino.
+We also apply a $W^\pm$ mass constraint to estimate the $z$-component of the missing momentum $p_{\nu,z}$.
 This is done by solving a second order equation for $p_{\nu,z}$ given by
 \begin{equation}
   4(E_\ell^2-p_{\ell,z}^2)p_{\nu,z}^2-4(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})p_{\ell,z}p_{\nu,z}+4E_\ell^2(\ptmiss)^2-(m_W^2+2\vb{p}_{\ell,\mathrm{T}}\cdot\vb{p}_{\nu,\mathrm{T}})^2=0,
 \end{equation}
-where $E_\ell$ is the energy of the lepton, $\vb{p}_\ell$ is the momentum of the lepton, $\vb{p}_\nu$ is the momentum of the neutrino, and $m_W$ is the mass of the $W$ boson.
+where $E_\ell$ is the energy of the lepton, $\vb{p}_\ell$ is the momentum of the lepton, $\vb{p}_\nu$ is the momentum of the neutrino, and $m_W$ is the mass of the $W^\pm$ boson.
 When solving for $p_{\nu,z}$ we choose the root with the smaller magnitude, and if the discriminant is imaginary then we select only the real part of $p_{\nu,z}$.
 The resulting \Wlep is then combined with the large-radius \Vhad jet to form a diboson candidate, with mass denoted by \MVV.
 
@@ -494,7 +465,7 @@ The final event selection used in the analysis is defined by the following:
   \item Exactly one charged lepton as defined in subsections~\ref{subsec:muonSelect} and \ref{subsec:elecSelect}.
   \item Lepton veto: no additional loose electron ($\pt>35\unit{GeV}$) or muon ($\pt>20\unit{GeV}$) in the event.
   \item Type-I corrected missing transverse momentum \ptmissTI: events are required to have $\ptmiss>80\unit{GeV}$ for the electron channel and $\ptmiss>40\unit{GeV}$ for the muon channel to suppress contributions from QCD multijet backgrounds.
-  \item Leptonic $W$ \pt: the \pt of the reconstructed \Wlep must satisfy $\pt>200\unit{GeV}$ in order to select a boosted $W$ topology.
+  \item Leptonic $W^\pm$ \pt: the \pt of the reconstructed \Wlep must satisfy $\pt>200\unit{GeV}$ in order to select a boosted $W^\pm$ topology.
   \item Hadronic \VorH \pt: the \pt of the reconstructed \Vhad must satisfy $\pt>200\unit{GeV}$ in order to select a boosted \VorH topology.
   \item Diboson angular separation: the angular distance between the selected lepton and \Vhad is required to be $\Delta R>\pi/2$, the difference in the azimuthal angle between \Vhad and \ptmissTI is required to be $|\Delta\phi|>2$, and the difference in the azimuthal angle between \Vhad and \Wlep is required to be $|\Delta\phi|>2$.
   \item $b$-tag veto: the event is required to have no $b$-tagged standard jets.
