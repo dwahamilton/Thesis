@@ -56,7 +56,7 @@ The work presented in this chapter instead relies on a novel approach to reconst
 \label{sec:TPS}
 
 % The tracks plus stubs algorithm
-As muons produced in collision events move through the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle $\phi_b$\footnote{The bending angle $\phi_b$ is only measured in the DTs.} in the chamber for which the stub was created.
+As muons produced in collision events move through the detector, they create detection stubs in the DTs, RPCs, and CSCs, which are L1 Trigger primitives that contain information about the angular position $\phi$ and the bending angle\footnote{The bending angle $\phi_b$ is only measured in the DTs.} $\phi_b$ in the chamber for which the stub was created.
 Figure~\ref{fig:CMSslice} shows a slice of the CMS detector in the $r$-$\phi$ plane, with an example of a process in which a muon passes through the DT chambers.
 The Tracks Plus Stubs (TPS) algorithm combines the information from the track trigger and the detection stubs in the chambers to create a candidate track that will later be reconstructed as a muon in the detector.
 By using the initial information from the track trigger, the algorithm propagates the initial muon track to the outer layers of the detector.
@@ -165,7 +165,7 @@ These then define the propagation constants $C(\eta,d)$ for each detector, there
   \label{fig:barrelEta}
 \end{figure}
 
-\begin{figure}[htbp] % Need to update figure
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_2D.pdf}
   \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_mean.pdf}\\
@@ -198,7 +198,7 @@ where $a$ and $b$ are constants analogous to $\alpha$ and $\beta$.
 Figure~\ref{fig:deltaPhiRes} shows an example of the position resolution from one of the Gaussian fits for $\Delta\phi$ and the fit obtained for equation~\ref{eq:posRes}.
 As with the propagation coefficients $C(\eta,d)$, the position resolution constants $a(\eta,d)$ and $b(\eta,d)$ are also specific to each detector based on the $\eta$ region and depth.
 
-\begin{figure}[htbp] % Need to update figure
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_res.pdf}
   \caption{
@@ -220,7 +220,7 @@ We then match stubs to tracks by considering the absolute value of the pulls for
 If $|P_\phi|$ for a stub is below a certain threshold for a track, then the stub will be matched to the track.
 Stubs that exceed the threshold for $|P_\phi|$ will instead be discarded.
 
-\begin{figure}[htbp] % Need to update figure
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/deltaPhi_pull.pdf}
   \caption{
@@ -230,8 +230,6 @@ Stubs that exceed the threshold for $|P_\phi|$ will instead be discarded.
   }
   \label{fig:deltaPhiPull}
 \end{figure}
-
-% Put figures and explanation for how the pull distributions are highly correlated with signal and uncorrelated with background
 
 \subsection{Track Cleaning and Isolation}
 \label{subsec:cleaning}
@@ -330,7 +328,7 @@ The TPS algorithm performance is similar to the Track+KBMTF algorithm ($\sim3\un
 Moreover, allowing for track isolation with a maximum $p_\mathrm{T,cone}$ of $5\unit{GeV}$ and a minimum $p_{\mathrm{T,i}}$ of $2\unit{GeV}$ results in a decrease in the rate by a factor of 2 at $20\unit{GeV}$, thereby demonstrating the effectiveness of using track isolation to suppress background.
 These results also show that the TPS algorithm is well-suited for handling background noise while also efficiently matching detection stubs to real muon tracks.
 
-\begin{figure}[htbp] % Need to update figure
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/rateVsPt_TPSIsol.pdf}
   \caption{
@@ -347,9 +345,8 @@ These results also show that the TPS algorithm is well-suited for handling backg
 While initially tested as software, the TPS algorithm will eventually be implemented into the CMS detector through hardware to allow for fast processing.
 As of this writing, the UCLA CMS research group is currently in the process of testing a custom OCEAN Blade board with an FPGA that will allow for the TPS algorithm to be implemented as firmware.
 Figure~\ref{fig:ocean} shows a picture of an assembled OCEAN Blade board being used for testing.
-% More up-to-date information on resource usage and performance results here
 
-\begin{figure}[htbp] % Need to update figure
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/ocean.pdf}
   \caption{

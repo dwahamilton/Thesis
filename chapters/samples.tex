@@ -19,82 +19,10 @@ However, this terminology is now deprecated and is instead replaced by missing t
 These sets are referred to as primary datasets, which are defined as a collection of events that have passed at least one of a set of HLT paths~\cite{Franzoni2016}.
 Such datasets may be overlapping in terms of which specific events are present, as they are constructed around grouping together events that have similar physics content in the final state of the event.
 For example, the Single Muon primary dataset contains events in which the HLT reconstructed a single muon originating from TPs that passed through the L1 trigger, as described in figure~\ref{fig:L1Trigger}.
-%For example, a \texttt{SingleMuon} dataset contains TPs that originated from the muon system described in figure~\ref{fig:L1Trigger}. %, whereas a \texttt{MET} dataset would come from an ECAL TP.
-%The 2016 Rereco (Re-MiniAOD 03Feb2017) set for Run2016B-H with an integrated luminosity of $35.9\unit{fb^{-1}}$ is listed in table~\ref{tab:dataSamples2016}.
-%For 2017, the Rereco (31Mar2018) set for Run2017B-F with $41.5\unit{fb^{-1}}$ is listed in table~\ref{tab:dataSamples2017}.
-%Finally, the 2018 Rereco (17Sep2018 for Run2018A-C, 22Jan2019 for Run2018D) with $59.7\unit{fb^{-1}}$ is listed in table~\ref{tab:dataSamples2018}\footnote{This set excludes the PromptReco for MET 2018D.}.
-%The 2016 Rereco set for Run2016B-H (Re-MiniAOD 03Feb2017), 2017 Rereco set for Run2017B-F (31Mar2018), and 2018 Rereco sets for Run2018A-C (17Sep2018) and Run2018D (22Jan2019), are listed in table~\ref{tab:dataSamples}.
-%The datasets used in the analysis are listed in table~\ref{tab:dataSamples}, and are separated by year and eras within a given year, with eras denoted by letters.
 
 % Data certification
 Data collected by CMS are certified by the Data Quality Management (DQM) group~\cite{CMSData}, which receives information from each subdetector group about the quality of data obtained over each data-taking period.
 The DQM then reviews the information from each subdetector group and certifies the data that is of sufficiently high quality, with relevant certification information released as golden data certificates.
-%The golden data JSON certificates used for the Run 2 data are the following: % Elaborate on this
-%\begin{itemize}
-%  \item[2016:]
-%  \begingroup
-%  \fontsize{9pt}{12pt}
-%  \begin{verbatim}
-%  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/ReReco/Final
-%   /Cert_271036-284044_13TeV_23Sep2016ReReco_Collisions16_JSON.txt
-%  \end{verbatim}
-%  \endgroup
-%  \item[2017:]
-%  \begingroup
-%  \fontsize{9pt}{12pt}
-%  \begin{verbatim}
-%  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/ReReco
-%   /Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt
-%  \end{verbatim}
-%  \endgroup
-%  \item[2018:]
-%  \begingroup
-%  \fontsize{9pt}{12pt}
-%  \begin{verbatim}
-%  /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/ReReco
-%   /Cert_314472-325175_13TeV_17SeptEarlyReReco2018ABC_PromptEraD_Collisions18_JSON.txt
-%  \end{verbatim}
-%  \endgroup
-%\end{itemize}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/dataSamples.tex}
-%  \caption{
-%    Data samples for each year and era for a given year (denoted by letters), with integrated luminosities of $35.9\unit{fb^{-1}}$ in 2016, $41.5\unit{fb^{-1}}$ in 2017, and $59.7\unit{fb^{-1}}$ in 2018.
-%  }
-%  \label{tab:dataSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/data2016Samples.tex}
-%  \caption{
-%    2016 data samples for Run2016B-H with $35.9\unit{fb^{-1}}$.
-%  }
-%  \label{tab:dataSamples2016}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/data2017Samples.tex}
-%  \caption{
-%    2017 data samples for Run2017B-F with $41.5\unit{fb^{-1}}$.
-%  }
-%  \label{tab:dataSamples2017}
-%\end{table}
-%
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/data2018Samples.tex}
-%  \caption{
-%    2018 data samples for Run2018A-C and Run2018D with $59.7\unit{fb^{-1}}$.
-%  }
-%  \label{tab:dataSamples2018}
-%\end{table}
-
-%\subsection{Signal Samples}
-%\label{sec:sigSamples}
 
 \subsection{Simulated Samples}
 \label{sec:simSamples}
@@ -107,21 +35,14 @@ Additionally, we also use MC samples to simulate the background sources that thi
 \subsubsection{Signal Samples}
 
 % Signal samples
-%This analysis makes use of ten benchmark signal models, which are listed in tables~\ref{tab:ggFGBulkToWWSamples}-\ref{tab:VBFZprToWWSamples} with their cross sections and branching fractions where appropriate.
-%The MC samples used to simulate events produced by the narrow resonance models are listed in table~\ref{tab:sigSamples} with their branching fractions where appropriate, while the cross sections for each signal model are displayed in figure~\ref{fig:sigCrossSec} as a function of the resonance mass \MX.
-%The branching fractions only apply to signal samples for which other final states that are not semileptonic are present, whereas samples without a branching fraction listed are entirely restricted to the semileptonic state.
-%The MC samples used to simulate events produced by the narrow resonance models are listed in table~\ref{tab:sigSamples}.
 The \DY\WprtoWH, \DY\WprtoWZ, and \ggF\GBulktoWW samples are restricted to the semileptonic final state, while the other six samples also contain different final states that are not used in this analysis.
 Each signal has different samples with 50,000 events for each year of Run 2, for a total of three sets of samples per signal.
-Furthermore, each signal has separate samples with 50,000 events for the following resonance masses: 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, and $4.5\unit{TeV}$\footnote{The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ sets are the exception to this, lacking mass values below $1.2\unit{TeV}$.}.
+Furthermore, each signal has separate samples with 50,000 events for the following resonance masses\footnote{The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ sets are the exception to this, lacking mass values below $1.2\unit{TeV}$.}: 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, and $4.5\unit{TeV}$.
 The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ samples do not have mass values below $1.2\unit{TeV}$, and some samples have masses that extend from $4.5\unit{TeV}$ to $8\unit{TeV}$ in increments of $0.5\unit{TeV}$.
 Each sample also has a resonance width that is set to 0.1\% of the resonance mass to ensure that the narrow-width approximation is met.
-%These samples were generated as part of the \texttt{RunIISummer16MiniAODv2}, \texttt{RunIIFall17MiniAODv2}, and \texttt{RunIIAutumn18MiniAOD} campaigns.
-%The parameters for each signal model can be found in references~\cite{git:BulkGrav_WW,git:Wpr_WZ,git:Wpr_WH,git:VBFRad_WW}, and are discussed in subsection~\ref{subsec:param}.
 The samples for each benchmark signal were generated at leading-order (LO) in QCD with \texttt{MadGraph5\_aMC@NLO} versions 2.2.2 and 2.4.2~\cite{Alwall_2014}.
 
 % GbulktoWW and RadToWW details
-%The \ggF\GBulktoWW model assumes a curvature of $\tilde{k}=0.5$, and the NLO QCD predicted cross section is taken to be 25 times larger than the number at the following link\footnote{\url{https://github.com/CrossSectionsLHC/WED/blob/master/KKGraviton\_Bulk/GF\_NLO\_13TeV\_ktilda_0p1.txt}}, where $\tilde{k}=0.1$, then multiplied by the branching fraction of \GBulktoWW in the ``$WW$'' column of this link\footnote{\url{https://github.com/CrossSectionsLHC/WED/blob/master/KKGraviton\_Bulk/Decay\_long.txt}}. % Links don't work
 The \ggF/\VBF\GBulktoWW model assumes a curvature of $\tilde{k}=0.5$ to ensure that the natural width of the graviton is negligible with respect to the experimental resolution, and the cross sections for \ggF\GBulktoWW are next-to-leading-order (NLO), while those of the \VBF process are LO.
 For the \ggF/\VBF\RadtoWW model, the samples are produced assuming $\Lambda_{R}=3\unit{TeV}$ and $k\pi r_c=35$, with NLO cross sections used for the \ggF process.
 The \VBF process does not have any theoretical cross sections available for the bulk scenario, but we use cross sections from a separate RS model.
@@ -129,25 +50,8 @@ The \VBF process does not have any theoretical cross sections available for the 
 % ZprtoWW, WprtoWZ, and WprtoWH details
 The LO cross sections in the HVT model B are used for \DY\ZprtoWW, \DY\WprtoWZ, and \DY\WprtoWH, with coupling constants given by $g_V=3$, $c_H=-0.98$, and $c_F=1.02$.
 In this model, the resonances have large branching fractions to vector boson pairs, with fermionic couplings suppressed.
-%The LO cross sections in the Heavy Vector Triplet (HVT) model B\footnote{As discussed in reference~\cite{Pappadopulo_2014}.} are used for \DY\ZprtoWW, \DY\WprtoWZ, and \DY\WprtoWH.% from this link\footnote{\url{https://github.com/jngadiub/Cross\_Sections\_HVT/blob/master/13TeV.txt}} are used. % Link doesn't work
-%For the \Zpr cross section, we use the values from the ``CX0(pb)'' column and multiply them with the branching fraction to $WW$ in the ``BRWW'' column.
-%The \Wpr cross section values are obtained by taking the sum of the numbers from the ``CX+(pb)'' and ``CX-(pb)'' columns and multiplying the result by the branching fraction to either $WZ$ or $WH$, which are found in the ``BRZW'' and ``BRWh'' columns.
-Meanwhile, the \VBF\ZprtoWW and \DY\WprtoWZ samples use cross sections from the HVT model C, with $g_V\approx1$, $c_H\approx1$, and $c_F=0$. %, which are taken from this reference\footnote{\url{https://github.com/zucchett/HVT/blob/master/dataframe.csv}}.
+Meanwhile, the \VBF\ZprtoWW and \DY\WprtoWZ samples use cross sections from the HVT model C, with $g_V\approx1$, $c_H\approx1$, and $c_F=0$.
 For model C, the HVT resonances are only produced via \VBF and decay to pairs of SM bosons because the fermionic couplings are zero.
-%The \Zpr cross section is obtained from the ``Zprim\_cH3'' column and multiplied with the branching fraction to $WW$ in the ``BrZprimeToWW'' column.
-%Similarly for the \Wpr cross section, we take the values from the ``Wprime\_cH3'' column and multiply them with the branching fraction to $WW$ in the ``BrWprimeToWZ'' column.
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/sigSamples.tex}
-%  \caption{
-    %Samples for each of the nine benchmark signals with branching fractions where appropriate.
-    %The samples without branching fractions are already restricted to the semileptonic final state.
-%    Samples for each of the nine benchmark signals.
-%    Here, ``\texttt{[MASS]}'' refers to the mass points for \MX, while ``\texttt{[SUFFIX]}'' refers to various tags denoting the campaign in which the samples were made, such as \texttt{13TeV-madgraph} or \texttt{TuneCP5\_13TeV-madgraph-pythia8}.
-%  }
-%  \label{tab:sigSamples}
-%\end{table}
 
 \begin{figure}[htbp]
   \centering
@@ -158,114 +62,11 @@ For model C, the HVT resonances are only produced via \VBF and decay to pairs of
   \label{fig:sigCrossSec}
 \end{figure}
 
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/ggFGBulkToWWSamples.tex}
-%  \caption{
-%    Samples for the \ggF\GBulktoWW signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph} for the Summer16 campaign, and \texttt{TuneCP5\_13TeV-madgraph-pythia8} for Fall17 and Autumn18.
-%  }
-%  \label{tab:ggFGBulkToWWSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/VBFGBulkToWWSamples.tex}
-%  \caption{
-%    Samples for the \VBF\GBulktoWW signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph-pythia8} for the Summer16 campaign, \texttt{TuneCP5\_13TeV-madgraph} for Fall17, and \texttt{TuneCP5\_PSweights\_13TeV-madgraph} for Autumn18.
-%    For Summer16, the prefix is \texttt{VBF\_BulkGravToWWinclusive}.
-%  }
-%  \label{tab:VBFGBulkToWWSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/ggFRadToWWSamples.tex}
-%  \caption{
-%    Samples for the \ggF\RadtoWW signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph} for the Summer16 campaign, and \texttt{TuneCP5\_13TeV-madgraph} for Fall17 and Autumn18.
-%  }
-%  \label{tab:ggFRadToWWSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/VBFRadToWWSamples.tex}
-%  \caption{
-%    Samples for the \VBF\RadtoWW signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph} for the Summer16 campaign, \texttt{TuneCP5\_13TeV-madgraph} for Fall17, and \texttt{TuneCP5\_PSweights\_13TeV-madgraph} for Autumn18.
-%  }
-%  \label{tab:VBFRadToWWSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/DYWprToWZSamples.tex}
-%  \caption{
-%    Samples for the \DY\WprtoWZ signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph} for the Summer16 campaign, and \texttt{TuneCP5\_13TeV-madgraph-pythia8} for Fall17 and Autumn18.
-%  }
-%  \label{tab:DYWprToWZSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/VBFWprToWZSamples.tex}
-%  \caption{
-%    Samples for the \VBF\WprtoWZ signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph-pythia8} for the Summer16 campaign, \texttt{TuneCP5\_13TeV-madgraph} for Fall17, and \texttt{TuneCP5\_PSweights\_13TeV-madgraph} for Autumn18.
-%    For Summer16, the prefix is \texttt{VBF\_WprimeToWZinclusive}.
-%  }
-%  \label{tab:VBFWprToWZSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/DYWprToWHSamples.tex}
-%  \caption{
-%    Samples for the \DY\WprtoWH signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{TuneCUETP8M2T4\_13TeV-madgraph-pythia8} for the Summer16 campaign, and \texttt{TuneCP5\_13TeV-madgraph-pythia8} for Fall17 and Autumn18.
-%  }
-%  \label{tab:DYWprToWHSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/VBFWprToWHSamples.tex}
-%  \caption{
-%    Samples for the \VBF\WprtoWH signal with cross sections and branching fractions.
-%  }
-%  \label{tab:VBFWprToWHSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/DYZprToWWSamples.tex}
-%  \caption{
-%    Samples for the \DY\ZprtoWW signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph} for the Summer16 campaign, and \texttt{TuneCP5\_13TeV-madgraph} for Fall17 and Autumn18.
-%  }
-%  \label{tab:DYZprToWWSamples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/VBFZprToWWSamples.tex}
-%  \caption{
-%    Samples for the \VBF\ZprtoWW signal with cross sections and branching fractions.
-%    ``\texttt{[SUFFIX]}'' is \texttt{13TeV-madgraph-pythia8} for the Summer16 campaign, \texttt{TuneCP5\_13TeV-madgraph} for Fall17, and \texttt{TuneCP5\_PSweights\_13TeV-madgraph} for Autumn18.
-%    For Summer16, the prefix is \texttt{VBF\_ZprimeToWWinclusive}.
-%  }
-%  \label{tab:VBFZprToWWSamples}
-%\end{table}
-
 \subsubsection{Background Samples}
 
 % Background samples
-The MC samples used to simulate SM background contributions listed in table~\ref{tab:bkgSamples} along with their cross sections where available. %~\ref{tab:bkg2016Samples} and \ref{tab:bkg2017Samples} along with their cross sections.
+The MC samples used to simulate SM background contributions listed in table~\ref{tab:bkgSamples} along with their cross sections where available.
 These include the previously mentioned background processes described in the introduction, consisting of $W$+jets, DY+jets, SM diboson, \bbbar, $t\bar{t}$, single-$t$, and QCD production samples.
-%The background samples were generated in the same \texttt{RunIISummer16MiniAODv2}, \texttt{RunIIFall17MiniAODv2}, and \texttt{RunIIAutumn18MiniAOD} campaigns as for the signal samples.
 The \Wjets process is produced to LO in QCD with \texttt{MadGraph5\_aMC@NLO}.
 For the $t\bar{t}$ events, we use samples produced from \texttt{POWHEG} v2~\cite{Nason_2004,Frixione_2007,Alioli_2010,Alioli_2012}, which are rescaled to the NNLO cross section value computed with \texttt{Top++} v2.0~\cite{Czakon_2014}.
 The single-$t$ events are generated in the $t$-channel and tW-channel at NLO with \texttt{POWHEG}~\cite{Alioli_2009,Re_2011}.
@@ -276,26 +77,6 @@ Finally, the SM diboson processes are produced at NLO with \texttt{MadGraph5\_aM
   \input{tab/samples/bkgSamples.tex}
   \caption{
     Classes of background samples used for Run 2 with total cross sections for each sample used where available.
-    %Here, ``\texttt{[RANGE]}'' refers to the range of the \texttt{HT} variable, which is the scalar sum of the transverse momenta of all jets in the sample, while ``\texttt{[SUFFIX]}'' refers to various tags denoting the campaign in which the samples were made, such as \texttt{13TeV-madgraph} or \texttt{TuneCP5\_13TeV-madgraph-pythia8}.
-    %The $W$+jets and \DY+jets samples have \texttt{HT} greater than $100\unit{GeV}$ in several bins, and the QCD samples have \texttt{HT} greater than $500\unit{GeV}$.
   }
   \label{tab:bkgSamples}
 \end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/bkg2016Samples.tex}
-%  \caption{
-%    Background samples used for 2016 with cross sections.
-%  }
-%  \label{tab:bkg2016Samples}
-%\end{table}
-
-%\begin{table}[htbp]
-%  \centering
-%  \input{tab/samples/bkg2017Samples.tex}
-%  \caption{
-%    Background samples used for 2017 and 2018 with cross sections.
-%  }
-%  \label{tab:bkg2017Samples}
-%\end{table}

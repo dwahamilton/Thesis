@@ -35,19 +35,11 @@ Thus, colliders have the advantage that they depend linearly on beam energy and 
 
 % Linear vs circular accelerators
 There are also two different types of accelerator geometries: linear and circular.
-Linear accelerators have charged particles pass in a straight line through a series of metal pipes known as drift tubes, with the tubes connected to a radio frequency (RF) oscillator that generates the accelerating electric field in the tubes. % Citation
-%The electric fields alternate in such a way that charged particles passing through the tubes are accelerated both as they pass through the tube and as they emerge from the other side, ensuring that they are continuously accelerated.
+Linear accelerators have charged particles pass in a straight line through a series of metal pipes known as drift tubes, with the tubes connected to a radio frequency (RF) oscillator that generates the accelerating electric field in the tubes.
 While linear accelerators operate on simpler design principles compared to circular accelerators, they have to be very long in order to reach high center-of-mass energies.
-On the other hand, circular colliders accelerate particles along a circular trajectory using electromagnets, which allows for continuously accelerating particles along the beamline to achieve similar collision energies despite being smaller than linear accelerators. % Citation
-%Because of the circular geometry, the particles may be continually accelerated along the beamline, which means circular accelerators can be much smaller than linear accelerators and still achieve similar center-of-mass energies.
+On the other hand, circular colliders accelerate particles along a circular trajectory using electromagnets, which allows for continuously accelerating particles along the beamline to achieve similar collision energies despite being smaller than linear accelerators.
 However, circular accelerators are more difficult to operate because of the need to maintain the circular orbit of the particles.
 They are also limited by the amount of power needed to compensate for the energy losses of the particles due to synchrotron radiation.
-%Furthermore, any charged particle with mass $m$ and charge $q$ moving in a circular trajectory emits synchrotron radiation, with an energy loss per turn described by
-%\begin{equation}
-%  \Delta E=\frac{4\pi q^2\beta^3\gamma^4}{3\epsilon_0r},
-%\end{equation}
-%where $\beta\equiv v/c$, $\gamma\equiv(1-\beta^2)^{-1/2}$, $v$ is the particle's velocity, and $r$ is the radius of the particle's orbit~\cite{Jackson:100964}.
-%Thus, circular accelerators are limited by the amount of power needed to compensate for the energy losses of the particles.
 
 % Lepton vs hadron colliders
 Another consideration is the type of particle used in collisions, as accelerators may be made to collide either leptons or hadrons.
@@ -64,7 +56,7 @@ Given a cross section $\sigma$ for a process, and a rate at which events occur $
 \begin{equation}\label{eq:evtRate}
   R=\mathcal{L}\sigma,
 \end{equation}
-where $\mathcal{L}$ has units of cm$^{-2}$s$^{-1}$. % Check how to stylize units
+where $\mathcal{L}$ has units of cm$^{-2}$s$^{-1}$.
 In some cases it is useful to instead consider the time integral of the luminosity $\mathcal{L}_\mathrm{int}$, which is given by
 \begin{equation}
   \mathcal{L}_\mathrm{int}=\int\mathcal{L}\dd{t}.
@@ -74,7 +66,7 @@ This can then be used with equation~\ref{eq:evtRate} to obtain the number of col
   N_\mathrm{event}=\mathcal{L}_\mathrm{int}\sigma.
 \end{equation}
 Thus, by increasing the luminosity (and hence the integrated luminosity), we may increase the number of expected collision events of interest for a given process.
-The luminosity may also be expressed in terms of parameters relevant to the beam, as it is essentially an instantaneous measure of particle flux. % Check wording
+The luminosity may also be expressed in terms of parameters relevant to the beam, as it is essentially an instantaneous measure of particle flux.
 For example, given the number of particles per bunch for two Gaussian beams $N_1$ and $N_2$, revolution frequency $f$, and number of bunches $N_b$, the luminosity is
 \begin{equation}
   \mathcal{L}=f\frac{N_1N_2N_b}{4\pi\sigma_x\sigma_y},
@@ -84,7 +76,7 @@ where $\sigma_x$ and $\sigma_y$ are the standard deviations in the $x$ and $y$ d
 % Discoveries at colliders
 The search for new physics has driven advances in accelerator center-of-mass energies and luminosities that allow for discovering exotic collision events.
 Figure~\ref{fig:ECMplot} shows the constituent center-of-mass energies for various accelerator facilities as a function of the year in which they came online.
-These advances have resulted in the discovery of massive particles that the first accelerators in the 1960's were not capable of producing, such as the $W^\pm$ and $Z$ bosons, or the top quark. % Check wording
+These advances have resulted in the discovery of massive particles that the first accelerators in the 1960's were not capable of producing, such as the $W^\pm$ and $Z$ bosons, or the top quark.
 Even following the success of the Higgs boson discovery in 2012 and the ongoing search for new particles at the LHC, there are still upgrades being installed on the LHC to increase its luminosity, and there are proposals for new accelerator facilities with higher center-of-mass energies~\cite{Bicer_2014}.
 
 \begin{figure}[htbp]
@@ -149,10 +141,6 @@ Figure~\ref{fig:CMSlumi} shows the integrated luminosities as a function of time
 Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $41.0\unit{fb^{-1}}$, $49.8\unit{fb^{-1}}$, and $67.9\unit{fb^{-1}}$ delivered\footnote{These numbers differ from the \emph{recorded} value obtained from CMS that used in the analysis for chapter~\ref{chap:analysis}.} to CMS over the Run 2 years of 2016, 2017, and 2018 respectively.
 This corresponds to a total integrated luminosity of $158.7\unit{fb^{-1}}$ at CMS over Run 2.
 
-% Need to check where luminosity figures used in analysis come from
-%Both ATLAS and CMS are the main high luminosity experiments, with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$ recorded at CMS over the Run 2 years 2016, 2017, and 2018 respectively.
-%This corresponds to a total integrated luminosity of $137.1\unit{fb^{-1}}$ at CMS over Run 2.
-
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\textwidth]{fig/experiment/int_lumi_cumulative_pp_2_run2.pdf}
@@ -180,17 +168,16 @@ The polar angle $\theta$ is defined with respect to the $z$-axis, but in practic
 % Function and design overview
 One of its primary functions is to accurately identify the charge and momentum of muons emerging from collision events as their trajectories are bent through the magnetic field.
 Muons are ideal for reconstructing collisions due to their relatively long lifetime ($\tau_\mu=2.2\unit{\micro s}$), large mass ($m_\mu=105.7\unit{MeV/\clight^2}$), and low radiation losses when propagating through matter~\cite{peskin2019}.
-This makes muons the most penetrative and easily identifiable charged particles that can be found in collision events. % Check wording
+This makes muons the most penetrative and easily identifiable charged particles that can be found in collision events.
 In addition to identifying muons, the CMS detector also has other subdetectors for identifying electrons, photons, and hadrons.
-These detection systems are designed in order to meet the demands that come with the LHC's high luminosity, as there are more than 50 proton interactions every $25\unit{ns}$, which results in around 1000 particles emerging for each bunch crossing. % Check numbers
+These detection systems are designed in order to meet the demands that come with the LHC's high luminosity, as there are more than 50 proton interactions every $25\unit{ns}$, which results in around 1000 particles emerging for each bunch crossing.
 A cutaway diagram of the detector with various components labeled may be seen in figure~\ref{fig:CMScut}.
 
 % Subdetectors
 The silicon tracker is used to measure the initial trajectories of charged particles emerging from collisions.
-%Outside of the tracker is the preshower detector that screens neutral pions and the electromagnetic calorimeter for detecting electrons and photons.
 The electromagnetic calorimeter (ECAL) is encased by the hadronic calorimeter (HCAL), which detects hadron jets and neutrinos or exotic particles through missing transverse momentum.
 Both calorimeters are surrounded by the muon detection chambers embedded within the return yoke that are used to identify muon charges and momenta.
-Finally, the Cerenkov-based forward calorimeter has both an electromagnetic and hadronic section, lying just outside of the endcaps for the muon chambers.
+Finally, the Cherenkov-based forward calorimeter has both an electromagnetic and hadronic section, lying just outside of the endcaps for the muon chambers.
 
 \begin{figure}[htbp]
   \centering
@@ -216,19 +203,18 @@ There are five wheels and two endcaps that comprise this return yoke, with four 
 
 % The inner tracker
 The inner tracking system measures the momenta of charged particles emerging from collisions and is used to reconstruct secondary vertices for events.
-One of the key aspects of the tracking system is the need to choose a design that results in minimal energy loss in charged particles passing through the detector, as this is needed to retain an accurate measurement of their trajectories. % Check wording
+One of the key aspects of the tracking system is the need to choose a design that results in minimal energy loss in charged particles passing through the detector, as this is needed to retain an accurate measurement of their trajectories.
 Additionally, in order to meet the demands that come with the severe radiation damage that occurs from the large particle flux, the need for efficient cooling, and the level of granularity necessary to measure the tracks of charged particles, the tracking system is based entirely on silicon detectors.
 The tracker is $5.8\unit{m}$ long and has a diameter of $2.5\unit{m}$, surrounding the interaction point where collisions occur.
 It has a pixel detector with three barrel layers that span radii from $4.4\unit{cm}$ to $10.2\unit{cm}$, as well as a silicon strip tracker with ten layers that extends to a radius of about $1.1\unit{m}$.
 Both the pixel detector and silicon strip tracker have endcaps that allow for an acceptance of $|\eta|<2.5$.
-% Possibly elaborate
 
 \subsubsection{The Pixel Detector}
 
 % The pixel detector
 The pixel detector allows for precise tracking and small impact parameter resolution, which is crucial for secondary vertex reconstruction.
 It covers a total area of around $1\unit{m^2}$ and is comprised of 66 million pixels.
-The detector has very high efficiency in the barrel region, with losses in efficiency starting around $|\eta|>2.1$. % Possibly insert efficiency graph here
+The detector has very high efficiency in the barrel region, with losses in efficiency starting around $|\eta|>2.1$.
 Each pixel cell occupies an area of $100\times150\unit{\micro m^2}$, which allows for high track resolution in the $r$-$\phi$ plane and in the $z$ direction.
 Figure~\ref{fig:CMSpixel} shows an illustration of the pixel detector.
 As charged particles pass through a silicon pixel, they impart energy onto the electrons in the silicon atoms, which ejects the electrons and generates a current that goes into a readout chip attached to the pixel.
@@ -253,7 +239,6 @@ To avoid overheating from the power consumption, the pixels are mounted on cooli
 % The silicon strip tracker
 Once particles pass through the three layers of the pixel detector, they then go through the silicon strip tracker.
 The strip tracker has 15,148 detector modules in total, spread out among several layers, with each module containing 24,244 silicon sensors along with electronic readouts supported by a carbon fiber or graphite frame~\cite{TRK-11-001,Phase1Pixel}.
-%These strips work in a manner similar to the pixels, with electrons getting knocked out of the material as charged particles pass through them and sending a current to be read out by a sensor.
 These strips consist of $p$-on-$n$ type silicon sensors, which operate with reverse bias to minimize leakage current across the $p$-$n$ junction.
 As charged particles pass through the sensors, electron-hole pairs are created along the particle's trajectory, which generates a drift current that is amplified and read as signal.
 Figure~\ref{fig:CMSsilicon} shows the layout of the strip tracker.
@@ -262,7 +247,7 @@ The TIB is closed off by the Tracker Inner Disks (TID), with the two endcaps con
 The Tracker Outer Barrel (TOB) consists of two double-sided layers of silicon strips just outside the TIB, followed by four single-sided layers, with the layers having radii between $608\unit{mm}$ and $1080\unit{mm}$.
 The TOB is closed off by the Tracker EndCaps (TEC) which extend radially from $220\unit{mm}$ to $1135\unit{mm}$ and from $\pm1240\unit{mm}$ to $\pm2800\unit{mm}$ along the beamline.
 
-\begin{figure}[htbp] % Want a higher quality figure
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\textwidth]{fig/experiment/cms_siliconTracker.pdf}
   \caption[
@@ -285,8 +270,8 @@ The CMS detector is equipped with various calorimeters that are designed to meas
 Unlike the inner tracking system, the calorimeters are designed to abruptly halt any particles passing through them and record the energies of the stopped particles.
 The electromagnetic calorimeter (ECAL) and preshower detector lie just outside of the silicon tracker and are designed to detect photons and electrons.
 These are both encased by the hadron calorimeter (HCAL), which is used to measure hadron jets.
-Because of the good hermiticity of the HCAL, it is also capable of measuring missing transverse momentum resulting from neutrinos or exotic particles. %(MET\footnote{Transverse energy is typically written as \Et, which is why missing \Et is abbreviated as MET rather than MTE.}).
-Both the ECAL and HCAL are supplemented by the forward calorimeter, which is a Cerenkov-based detector that has electromagnetic and hadronic sections. % Check wording
+Because of the good hermiticity of the HCAL, it is also capable of measuring missing transverse momentum resulting from neutrinos or exotic particles.
+Both the ECAL and HCAL are supplemented by the forward calorimeter, which is a Cherenkov-based detector that has electromagnetic and hadronic sections.
 
 \subsubsection{Electromagnetic Calorimeter}
 
@@ -370,7 +355,7 @@ The detection hits in the layers of the muon chambers then allow for reconstruct
 There are three kinds of gaseous detection chambers that are used to identify and measure muons: drift tubes (DTs), cathode strip chambers (CSCs), and resistive plate chambers (RPCs).
 The outer region of CMS has 250 DTs in the barrel region covering pseudorapidities of $|\eta|<1.2$, while the endcaps on both ends of CMS have 540 CSCs covering the region $0.9<|\eta|<2.4$.
 The RPCs are distributed throughout both regions of CMS, with 480 in the barrel and 576 in the endcaps.
-In total, there are 1846 muon chambers present on the detector, with the chambers distributed among four layers in both the barrel and endcap regions to allow for track reconstruction. % Check numbers
+In total, there are 1846 muon chambers present on the detector, with the chambers distributed among four layers in both the barrel and endcap regions to allow for track reconstruction.
 The barrel region is split up into five concentric wheels that are numbered from $-2$ to $+2$, with wheel 0 centered at the interaction point.
 Figure~\ref{fig:CMScrosssec} shows a cross section of the CMS detector in the $r$-$z$ plane as configured during Run 2, with DTs, CSCs, and RPCs labeled.
 
@@ -484,7 +469,6 @@ Thus, the trigger system is needed in order to select for high-energy events of 
 
 % Trigger system overview
 The trigger system has two levels, consisting of a Level-1 (L1) Trigger, and a High-Level Trigger (HLT)~\cite{CMStrigger}.
-%The L1 Trigger is hardware-based and is comprised of custom-designed electronics that uses data from the calorimeters and muon system.
 The L1 Trigger is hardware-based and is comprised of custom-designed processors, featuring large Field Programmable Gate Arrays (FPGAs) that use data from the calorimeters and muon system.
 The HLT is software-based and consists of a conventional CPU farm, which has access to a complete readout from the L1 Trigger and is able to perform more advanced calculations with the data.
 The trigger system as whole reduces the rate by a factor of $10^6$, with the L1 Trigger designed to have an output rate of 100 kHz.
@@ -567,7 +551,7 @@ After the PF candidates are obtained, they are then used for various tasks in an
 
 % Jet clustering overview
 In hadronic collisions, the scattering of partons (the quarks and gluons that make up hadrons) gives rise to collimated showers of particles known as jets.
-These showers arise due to the fact that quarks and gluons do not exist in isolation long enough to be observed, as they immediately hadronize into other particles that have no QCD flavor charge. % Check wording
+These showers arise due to the fact that quarks and gluons do not exist in isolation long enough to be observed, as they immediately hadronize into other particles that have no QCD flavor charge.
 It is therefore not possible to directly observe the quarks and gluons that give rise to jets, and their presence must instead be inferred from reconstructing jets and determining the total jet momentum.
 Once PF objects are identified, jets may be identified by using a clustering algorithm that groups together particles from a candidate jet.
 

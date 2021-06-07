@@ -138,7 +138,6 @@ The factor $\Delta\beta=0.5$ corresponds approximately to the ratio of neutral p
 Isolation is performed within a cone of size $\Delta R=0.3$ centered around the $p_{\mathrm{T},\mu}$ axis, where $\Delta R\equiv\sqrt{\Delta\eta^2+\Delta\phi^2}$.
 
 % Muon scale factors
-%Scale factors for muon identification as provided by the Muon POG are also applied~\cite{MuonPAGs}.
 Scale factors for muon identification are also applied to correct for the differences between muon identification in data and simulation~\cite{Sirunyan_2020,MuonPAGs}.
 These scale factors are defined as the ratio of data-to-simulation efficiency, given by
 \begin{equation}
@@ -163,12 +162,11 @@ This scale factor was derived on top of muon high-\pt identification, in boosted
 \label{subsec:elecSelect}
 
 % Electron reconstruction
-%The electrons that are reconstructed from trigger primitives in the ECAL are required to pass the ``HEEP v7.0'' identification requirements as prescribed by the E/Gamma POG. %\cite{HEEPV70}
 The electrons that are reconstructed from trigger primitives in the ECAL are required to pass identification requirements designed for energetic electrons.
 These requirements are chosen specifically to optimize the identification of high energy electrons.
 The identification requirements ensure that the reconstructed electrons from the ECAL energy deposits are paired with a high quality track from the inner tracker and have a shape consistent with an electromagnetic shower in the calorimeter.
 These requirements are listed in table~\ref{tab:HEEPV70} in terms of identification variables~\cite{CMSe}.
-For our analysis, we also require the electrons to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$. % Unsure why this range is excluded
+For our analysis, we also require the electrons to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$.
 We also exclude events for which there are additional electrons with $\pt>35\unit{GeV}$.
 We also apply scale factors for the HEEP identification requirements along with RECO scale factors~\cite{EgammaScale}.
 
@@ -285,12 +283,7 @@ We also later use \nsubjDDT for event categorization to split the analysis into 
 
 \subsubsection{$b$-tagging}
 
-% CHS approach
-%While the boosted jets resulting from the \Vhad decay are identified and groomed using algorithms such as the anti-\kt and PUPPI algorithms, the candidate four vector for the $X$ boson is estimated using jet energy scale corrections and charged hadron subtraction (CHS).
-%The CHS approach is used in order to suppress background contribution from top quark production, which results in the production of jets from $b$ decays.
-
 % b-tagging overview
-%Decays resulting from $b$ quarks are of particular importance due to the fact that they often originate from heavier particles, such as top quarks or Higgs boson.
 Jets produced from $b$ quarks have unique characteristics that distinguish them from other hadronic decays.
 Because of the relatively long lifetime of hadrons that contain $b$ quarks, the secondary vertices (SV) corresponding to the location of the decay tend to have displacements on the order of a few millimeters away from the primary vertex.
 Another distinguishing property is that decays from $b$ hadrons result in a boosted jet topology, as the products that $b$ quarks decay into are much lighter.
@@ -301,7 +294,7 @@ The techniques used to identify such jets are referred to as $b$-tagging.
 For this analysis, we use $b$-tagging to suppress background contributions by removing events with at least one $b$-tagged standard jet, as these events are dominated by processes containing top quark decays, such as $t\bar{t}$ events.
 We also use $b$-tagged jets for defining the top-enriched control region, which is discussed in section~\ref{sec:comp}.
 Jets in the region $|\eta|<2.5$ are $b$-tagged if they pass the \texttt{medium} working point of the Combined Secondary Vertex (CSV) or DeepCSV algorithms~\cite{Sirunyan_jet}.
-The \texttt{medium} working point for CSV is 0.8484 in 2016, and for DeepCSV the working points are 0.4941 and 0.4184 for 2017 and 2018, respectively. %\cite{bTagging2016,bTagging2017,bTagging2018}
+The \texttt{medium} working point for CSV is 0.8484 in 2016, and for DeepCSV the working points are 0.4941 and 0.4184 for 2017 and 2018, respectively.
 We also apply $b$-tagging scale factors and weights that depend on the jet \pt, $\eta$, and value of the $b$-tagging discriminant~\cite{bTaggingEff,bTaggingSF}.
 
 \subsubsection{\bbbar-tagging}
@@ -311,7 +304,7 @@ The $V$-tagging methods previously described account for identifying and groomin
 Such a jet signifies the decay \Htobbbar in the final state and hence a \WH resonance, which allows for discriminating against background with light jet flavors.
 Furthermore, a unique feature of the topology of \bbbar jets is the fact that the constituent $b$ quarks have secondary vertices that are displaced from the PV of the jet.
 To identify such \bbbar jets, we therefore use a $b$-tagging discriminator to identify Higgs boson jet candidates that uses information from displaced tracks and secondary vertices~\cite{CMS-PAS-BTV-15-002}.
-We also apply a cut on the M2 operating point of the ``\DoubleB tagger''~\cite{Sirunyan_jet} to categorize events in subsection~\ref{subsec:eventCat}, for which the threshold is 0.8 for Run 2. % according to references~\cite{bTagging2016,bTagging2017,bTagging2018}.
+We also apply a cut on the M2 operating point of the ``\DoubleB tagger''~\cite{Sirunyan_jet} to categorize events in subsection~\ref{subsec:eventCat}, for which the threshold is 0.8 for Run 2.
 
 % Scale factors
 Additionally, we apply scale data/MC efficiency scale factors to our signal sample normalizations, while the scale factors for the background are estimated from the data in the control regions.
@@ -340,7 +333,7 @@ while for the \bbbar-untagged category, we instead use
 \subsection{Missing Transverse Momentum}
 
 % Missing pt
-For this analysis, we use type-I corrected Particle-Flow missing transverse energy (PFMET) to account for the energy of the neutrino from the \Wlep decay, where PFMET is defined as the magnitude of the negative vector sum of all transverse momenta from Particle-Flow objects~\cite{Sirunyan:2019kia}. %\cite{PFMET}
+For this analysis, we use type-I corrected Particle-Flow missing transverse energy (PFMET) to account for the energy of the neutrino from the \Wlep decay, where PFMET is defined as the magnitude of the negative vector sum of all transverse momenta from Particle-Flow objects~\cite{Sirunyan:2019kia}.
 The correction is a propagation of the jet energy corrections (JEC) to \ptmiss, which is given by
 \begin{equation}
   \ptmissTI=\vqty{-\sum_\mathrm{jet}\vb{p}_\mathrm{T,jet}^\mathrm{JEC}-\sum_{i\in\mathrm{uncl.}}\vb{p}_{\mathrm{T},i}},
@@ -372,7 +365,6 @@ Finally, the third requirement is that the difference in the azimuthal angle bet
 
 % VBF signature
 The defining signature of the \VBF production process is the presence of two boosted jets in the forward and backward regions of the detector, along with the decay products in the central region of the detector resulting from the \Wlep and \Vhad resonances.
-%The analysis therefore requires additional kinematic constraints in order to categorize \VBF-produced events, which take into account properties of the forward-facing \VBF jets such as their combined mass and separation in $\eta$.
 The analysis therefore exploits the specific event topology of \VBF events to define a \VBF-tagged category that is sensitive to \VBF-produced resonances, as defined in subsection~\ref{subsec:eventCat}.
 
 % VBF jet selection
@@ -400,18 +392,8 @@ To retain a signal efficiency of 40-50\%, we choose a cut of $\DetaVBF>4$.
 The other kinematic cut applied to the \VBF candidate jets is on the invariant mass of the sum of the \VBF jet four vectors, \mjjVBF.
 For this cut, we consider the Punzi significance obtained for a \VBF signal sample as a function of the thresholds of the cuts for \DetaVBF and \mjjVBF.
 The Punzi significance is defined by $\epsilon/(1.5+\sqrt{B})$~\cite{Punzi:2003bu}, where $\epsilon$ is the number of signal events obtained by the cuts assuming an integrated luminosity of $\mathcal{L}_\mathrm{int}=1\unit{pb^{-1}}$ and a cross section of $\sigma=1\unit{pb}$, while the number of background events $B$ is weighted with the total luminosity.
-%Figure~\ref{fig:detaMjjSB_VBF} shows the Punzi significance for the \VBF\RadtoWW signal sample in the plane spanned by the thresholds for the \DetaVBF and \mjjVBF cuts.
 We again require that the selection cut on \mjjVBF retains 40-50\% signal efficiency, as we did for \DetaVBF.
 This leads to a cut of $\mjjVBF>500\unit{GeV}$.
-
-%\begin{figure}[htbp] % May need to remove
-%  \centering
-%  \includegraphics[width=0.5\textwidth]{fig/eventSelection/detaMjjSB.pdf}
-%  \caption{
-%    Two-dimensional Punzi significance of the \VBF\RadtoWW signal in the plane of the two thresholds of the cuts on \DetaVBF and \mjjVBF.
-%  }
-%  \label{fig:detaMjjSB_VBF}
-%\end{figure}
 
 \subsection{Spin Polarization and Boson Rapidities}
 \label{subsec:spinPol}
