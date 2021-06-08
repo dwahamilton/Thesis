@@ -30,7 +30,7 @@ For each year we use different HLT paths, which are listed in table~\ref{tab:tri
 % Thresholds
 The Single Electron \pt thresholds used are 27, 45, and $115\unit{GeV}$ for 2016, 32, 25, and $115\unit{GeV}$ for 2017, and 25 and $115\unit{GeV}$ for 2018.
 For Single Muon paths, the main threshold is $50\unit{GeV}$ across all three years.
-These thresholds are chosen as part of compromises between energy thresholds and isolation tightness, as lower \pt thresholds result in a higher event rate and hence require tighter identification cuts, while higher \pt thresholds allow for looser working points~\cite{MuonPOG}.
+These thresholds are chosen as part of compromises between energy thresholds and isolation tightness, as lower \pt thresholds result in a higher event rate and hence require tighter identification cuts, while higher \pt thresholds allow for looser working points.
 Lastly, the additional MET trigger path recovers some inefficiency in triggering on high \pt muons in the endcaps.
 
 % Trigger efficiencies
@@ -40,7 +40,11 @@ The efficiencies and resulting data/MC scale factors for 2016 are shown in figur
 We also separately measure the efficiencies of the lepton legs and of the MET legs by either triggering on MET and looking at Single Electron or Single Muon paths, or by triggering on one of the lepton paths and looking at the MET path.
 Large uncertainties in the data/MC scale factors for the lepton legs are observed at large \pt and $\eta$ due to the low statistics in those regions.
 The muon channel for the MET efficiencies in figure~\ref{fig:mettrigeff2016} also does not have a turn-on curve since the chosen MET HLT path sees the whole $W^\pm$ as \ptmiss in boosted $W\to\mu\nu$ events.
-The resulting event-level scale factor used in this analysis is defined as $S=\epsilon_\mathrm{total}(\mathrm{DATA})/\epsilon_\mathrm{total}(\mathrm{MC})$, where each efficiency $\epsilon$ is estimated as $\epsilon(\mathrm{lepton})+\epsilon(\mathrm{MET})-\epsilon(\mathrm{lepton})\epsilon(\mathrm{MET})$.
+The resulting event-level scale factor used in this analysis is defined as
+\begin{equation}
+  S_\mathrm{lep}=\frac{\epsilon_\mathrm{total}(\mathrm{data})}{\epsilon_\mathrm{total}(\mathrm{MC})},
+\end{equation}
+where each efficiency $\epsilon$ is estimated as $\epsilon(\mathrm{lepton})+\epsilon(\mathrm{MET})-\epsilon(\mathrm{lepton})\epsilon(\mathrm{MET})$.
 
 \begin{figure}[htbp]
   \centering
@@ -138,10 +142,10 @@ The factor $\Delta\beta=0.5$ corresponds approximately to the ratio of neutral p
 Isolation is performed within a cone of size $\Delta R=0.3$ centered around the $p_{\mathrm{T},\mu}$ axis, where $\Delta R\equiv\sqrt{\Delta\eta^2+\Delta\phi^2}$.
 
 % Muon scale factors
-Scale factors for muon identification are also applied to correct for the differences between muon identification in data and simulation~\cite{Sirunyan_2020,MuonPAGs}.
+Scale factors for muon identification are also applied to correct for the differences between muon identification in data and simulation~\cite{Sirunyan_2020}.
 These scale factors are defined as the ratio of data-to-simulation efficiency, given by
 \begin{equation}
-  SF=\frac{\epsilon_\mu(\mathrm{DATA})}{\epsilon_\mu(\mathrm{MC})},
+  S_\mu=\frac{\epsilon_\mu(\mathrm{data})}{\epsilon_\mu(\mathrm{MC})},
 \end{equation}
 where $\epsilon_\mu=\epsilon_\mathrm{track}\epsilon_\mathrm{ID}\epsilon_\mathrm{reco}\epsilon_\mathrm{trig}$ is the total muon efficiency, and $\epsilon_\mathrm{track}$, $\epsilon_\mathrm{ID}$, $\epsilon_\mathrm{reco}$, and $\epsilon_\mathrm{trig}$ are the individual efficiencies for the track reconstruction, muon identification, muon reconstruction, and muon trigger, respectively.
 These scale factors are derived separately based on muon \pt, $\eta$ region, and identification requirements, and are applied to the number of events as a weighting factor.
@@ -165,17 +169,23 @@ This scale factor was derived on top of muon high-\pt identification, in boosted
 The electrons that are reconstructed from trigger primitives in the ECAL are required to pass identification requirements designed for energetic electrons.
 These requirements are chosen specifically to optimize the identification of high energy electrons.
 The identification requirements ensure that the reconstructed electrons from the ECAL energy deposits are paired with a high quality track from the inner tracker and have a shape consistent with an electromagnetic shower in the calorimeter.
-These requirements are listed in table~\ref{tab:HEEPV70} in terms of identification variables~\cite{CMSe}.
+These requirements are listed in table~\ref{tab:HEEPV70} in terms of identification variables.
 For our analysis, we also require the electrons to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$.
 We also exclude events for which there are additional electrons with $\pt>35\unit{GeV}$.
-We also apply scale factors for the HEEP identification requirements along with RECO scale factors~\cite{EgammaScale}.
 
 \begin{table}[htbp]
   \centering
   \input{tab/eventSelection/HEEPV70.tex}
-  \caption{
+  \caption[
     Definitions of HEEP identification V7.0 selections.
-    Here, the $SC$ subscript denotes ``supercluster'', which corresponds to a collection of arrays of ECAL crystals.
+    Here, the ``SC'' subscript denotes a supercluster, which corresponds to a collection of arrays of ECAL crystals.
+    Quantities with an ``in'' subscript correspond to the point of closest approach to the beam spot, while the ``seed'' superscript denotes a quantity related to a seed crystal, which is the crystal containing the largest amount of energy from a deposit.
+    $H/E$ denotes the ratio of the sum of the HCAL tower energies to the supercluster energies within a cone of $\Delta R=0.15$ around the electron.
+    The shower-shape variable is denoted by $\sigma_{i\eta i\eta}$.
+    Finally, the cluster energies $E_{n\times m}$ correspond to the energy deposited within an $n\times m$ grid of ECAL crystals.
+  ]{
+    Definitions of HEEP identification V7.0 selections~\cite{CMSe}.
+    Here, the ``SC'' subscript denotes a supercluster, which corresponds to a collection of arrays of ECAL crystals.
     Quantities with an ``in'' subscript correspond to the point of closest approach to the beam spot, while the ``seed'' superscript denotes a quantity related to a seed crystal, which is the crystal containing the largest amount of energy from a deposit.
     $H/E$ denotes the ratio of the sum of the HCAL tower energies to the supercluster energies within a cone of $\Delta R=0.15$ around the electron.
     The shower-shape variable is denoted by $\sigma_{i\eta i\eta}$.
@@ -197,9 +207,9 @@ This analysis therefore categorizes candidate jets into the two following types:
 \end{itemize}
 
 % Jet selection
-For both types of jets, we use tight identification jets~\cite{jetID2016,jetID2017,jetID2018}.
+For both types of jets, we use tight identification jets.
 These jets are required to pass identification requirements based on quantities such as the neutral hadron fraction, neutral EM fraction, number of constituents, and number of neutral particles.
-We also apply jet energy corrections for data and MC prescribed by the Jet Energy Resolution and Corrections (JERC) subgroup~\cite{JetEnergyScale}.
+We also apply jet energy corrections for data and MC prescribed by the Jet Energy Resolution and Corrections (JERC) subgroup~\cite{Khachatryan:2016kdb}.
 
 % Hadronic jet selection
 The hadronic jet resulting from the \VorH decay is selected by taking the jet with the highest \pt from the large-radius jets, with a minimum threshold of $\pt>200\unit{GeV}$ and a pseudorapidity range of $|\eta|<2.5$.
@@ -224,7 +234,7 @@ For a jet with radius $R$ with two constituents, the soft drop algorithm removes
 where the $p_{\mathrm{T},i}$ are the transverse momenta of the jet constituents, $\Delta R_{12}$ is the separation between the constituents in the $y$-$\phi$ plane, $R$ is the characteristic radius, $z$ is the soft drop threshold, and $\beta$ is the angular exponent.
 For this analysis, we use $z=0.1$ based on theoretical considerations of the jet mass from QCD~\cite{Dasgupta_2013,Dasgupta_2013_2}.
 We also use an angular exponent of $\beta=0$ and a characteristic radius of $R=0.8$.
-The soft drop mass is denoted by \MJ, and apply recommended corrections~\cite{WZ-tagging}.
+The soft drop mass is denoted by \MJ, and apply recommended corrections~\cite{Butterworth:2008iy}.
 
 % N-subjettiness
 To determine the degree to which the jet has substructure, we use the ``$N$-subjettiness'' as a measure of how many subjets are present in the jet~\cite{Thaler_2011,Thaler_2012}.
@@ -295,7 +305,7 @@ For this analysis, we use $b$-tagging to suppress background contributions by re
 We also use $b$-tagged jets for defining the top-enriched control region, which is discussed in section~\ref{sec:comp}.
 Jets in the region $|\eta|<2.5$ are $b$-tagged if they pass the \texttt{medium} working point of the Combined Secondary Vertex (CSV) or DeepCSV algorithms~\cite{Sirunyan_jet}.
 The \texttt{medium} working point for CSV is 0.8484 in 2016, and for DeepCSV the working points are 0.4941 and 0.4184 for 2017 and 2018, respectively.
-We also apply $b$-tagging scale factors and weights that depend on the jet \pt, $\eta$, and value of the $b$-tagging discriminant~\cite{bTaggingEff,bTaggingSF}.
+We also apply $b$-tagging scale factors and weights that depend on the jet \pt, $\eta$, and value of the $b$-tagging discriminant.
 
 \subsubsection{\bbbar-tagging}
 
@@ -313,21 +323,21 @@ One is for \Htobbbar jets resulting from the \WprtoWHtolnubbbar signal model, an
 These scale factors are applied from method 1a from reference~\cite{bTaggingEff}.
 The weights are calculated by considering the probability of a given configuration of jets in MC and data as
 \begin{align}
-  & P(\mathrm{MC})=\prod_{i=\text{tagged}}\epsilon_i\prod_{j=\text{not tagged}}(1-\epsilon_j),\\
-  & P(\mathrm{DATA})=\prod_{i=\text{tagged}}\mathrm{SF}_i\epsilon_i\prod_{j=\text{not tagged}}(1-\mathrm{SF}_j\epsilon_j),
+  & P(\mathrm{MC})=\prod_{i=\text{tagged}}\epsilon_{\bbbar,i}\prod_{j=\text{not tagged}}(1-\epsilon_{\bbbar,j}),\\
+  & P(\mathrm{data})=\prod_{i=\text{tagged}}S_i\epsilon_{\bbbar,i}\prod_{j=\text{not tagged}}(1-S_j\epsilon_{\bbbar,j}),
 \end{align}
-where $\epsilon_i$ is the $b$-tagging efficiency in MC, and the scale factors $\mathrm{SF}_i$ and $\epsilon_i$ are functions of the jet flavor, \pt, and $\eta$.
+where $\epsilon_{\bbbar,i}$ is the $b$-tagging efficiency in MC, and the scale factors $S_i$ and $\epsilon_{\bbbar,i}$ are functions of the jet flavor, \pt, and $\eta$.
 The weight is then calculated as
 \begin{equation}
-  w=\frac{P(\mathrm{DATA})}{P(\mathrm{MC})}.
+  w=\frac{P(\mathrm{data})}{P(\mathrm{MC})}.
 \end{equation}
-For this analysis, first we measure the MC \bbbar-tagging efficiencies $\epsilon$, then apply the event weights for the \bbbar-tagged category as
+For this analysis, first we measure the MC \bbbar-tagging efficiencies $\epsilon_{\bbbar}$, then apply the event weights for the \bbbar-tagged category as
 \begin{equation}
-  w^{\bbbar}(\pt)=\frac{\mathrm{SF}(\pt)\epsilon(\pt)}{\epsilon(\pt)}=\mathrm{SF}(\pt),
+  w^{\bbbar}(\pt)=\frac{S(\pt)\epsilon_{\bbbar}(\pt)}{\epsilon_{\bbbar}(\pt)}=S(\pt),
 \end{equation}
 while for the \bbbar-untagged category, we instead use
 \begin{equation}
-  w^{\mathrm{no}\bbbar}(\pt)=\frac{1-\mathrm{SF}(\pt)\epsilon(\pt)}{1-\epsilon(\pt)}.
+  w^{\mathrm{no}\bbbar}(\pt)=\frac{1-S(\pt)\epsilon_{\bbbar}(\pt)}{1-\epsilon_{\bbbar}(\pt)}.
 \end{equation}
 
 \subsection{Missing Transverse Momentum}
