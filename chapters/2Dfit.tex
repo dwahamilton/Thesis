@@ -14,7 +14,7 @@ The transfer function $\alpha_\mathrm{MC}$ is defined by
 where $F(\MVV)$ is the probability density function used to model the \MVV spectrum in the signal and sideband regions.
 For both regions, the parameterization of the background takes the form $F(x)\propto e^{c_0x+c_1/x}$.
 The \Wjets background distribution in the signal region is then obtained by rescaling $F_\mathrm{Data,SB}^{\Wjets}(\MVV)$ by $\alpha_\mathrm{MC}(\MVV)$.
-The resonant background contributions from \WVt are then added on top of the obtained \Wjets background in the signal region.
+The resonant background contributions from \WVt are added on top of the obtained \Wjets background in the signal region.
 We then associate an uncertainty to the background prediction and select it to be large so that it covers the known differences between data and simulation, while also leaving it floating in the fitting process.
 Such differences are related to modeling effects that affect the known dependence of jet mass and jet \pt, as the ungroomed jet mass $m_j$ follows the relation $\ev{m_j^2}\propto\pt^2R^2$, with jet radius $R$~\cite{shelton2013tasi}.
 
@@ -38,10 +38,10 @@ Since the search region as defined in section~\ref{subsec:eventSelect} is the sa
 Thus, the 2D fit has the following advantages compared to the traditional $\alpha$ method previously used:
 \begin{enumerate}
   \item The sideband as seen in figure~\ref{fig:2Dfit} is two-dimensional, thereby allowing for a simultaneous fit of the jet mass and resonance sidebands.
-  This better constrains the background, which allows for better sensitivity of the search.
+  This better constrains the background, which allows for improved sensitivity of the search.
   \item The ability to add nuisance parameters that affect jet mass and resonance mass simultaneously, which allows us to account for the mismodeling of the correlation between the variables.
   \item Being able to use the full jet mass line-shape to extract the signal instead of using jet mass windows, providing better discrimination between $W^\pm$ and $Z$ peaks.
-  \item Simultaneous fit of all \WV/\WH signals in the jet mass sideband, therefore allowing for easy implementation of exotic models such as heavy vector triplets.
+  \item Simultaneous fitting of all \WV/\WH signals in the jet mass sideband, therefore allowing for easy implementation of exotic models such as Heavy Vector Triplets.
 \end{enumerate}
 
 % Types of shapes in 2D fit
@@ -57,7 +57,7 @@ As mentioned previously, two main classes of background are considered for this 
   \item \textbf{Resonant (\WVt):} Background events in which the jet mass shape is peaking as a $W^\pm$, $Z$, $H$, or $t$ resonance in \MJ with a falling spectrum in \MVV.
   The resonant peak in \MJ is due to partially or fully merged top jets and diboson events in which one boosted boson is reconstructed into a jet.
   This background class is therefore defined by requiring that both generated quarks from a hadronic $V$ decay are located within $\Delta R=0.8$ of the selected large-radius jet.
-  The main contribution is $t\bar{t}$ events, along with SM diboson and single-top production events.
+  The main contribution is $t\bar{t}$ events, along with SM diboson and single-$t$ production events.
   \item \textbf{Non-resonant (\Wjets):} Background events in which the jet is produced by the hadronization of one or more partons not originating from a vector boson.
   The dominant SM contribution is from \Wjets events, but additional contributions come from $t\bar{t}$ events in which the selected large-radius jet corresponds to a random combination of jets from the event rather than a $W^\pm$ or a top.
 \end{itemize}
@@ -72,21 +72,21 @@ This has the benefit of providing better modeling of templates in categories wit
 \label{sec:sig}
 
 % Signal overview
-Because the MC samples for the various signals used in the analysis only sample several points for the resonance mass \MX, we employ interpolation methods to model the signal for any arbitrary resonance mass \MX within the range 0.8-$4.5\unit{TeV}$.
-To do so, we derive the each of the parameters for the signal shapes as functions of \MX, as well as the signal yield per pb of cross section as a function of \MX.
+Because the MC samples for the various signals used in this analysis only sample several points for the resonance mass \MX, we employ interpolation methods to model the signal for any arbitrary resonance mass \MX within the range 0.8-$4.5\unit{TeV}$.
+To do so, we derive each of the parameters for the signal shapes as functions of \MX, as well as the signal yield per pb of cross section as a function of \MX.
 
 \subsubsection{Signal Shapes}
 
 % Signal shapes
-Each signal model takes the same functional form in the two-dimensional \MJ-\MVV space.
-The signals are parameterized in 2D as the product of the two 1D \MJ and \MVV shapes for the jet mass and the resonance mass given by
+Each signal model takes the same functional form in the two-dimensional \MVV-\MJ space.
+The signals are parameterized in 2D as the product of the two 1D \MVV and \MJ shapes for the jet mass and the resonance mass given by
 \begin{equation}
   P_\mathrm{sig}(\MVV,\MJ|\MX)=\PVV(\MVV|\MX,\vb*{\theta}_1)\PJ(\MJ|\MX,\vb*{\theta}_2),
 \end{equation}
 where $\vb*{\theta}_1$ and $\vb*{\theta}_2$ are the nuisance parameters.
 In principle, the signal shape parameters depend on the resonance mass \MX.
 Both shapes are modeled separately based on the jet purity (HP/LP), rapidity (HDy/LDy), and bb/nobb/vbf categories.
-However, the $e$ and $\mu$ categories are merged for the signal modeling process.
+However, the e and mu categories are merged for the signal modeling process.
 To parameterize the shapes, we perform separate fits for the 1D shapes in the \MVV and \MJ spectra, then interpolate the parameters for each shape as a function of \MX to obtain $P_\mathrm{sig}(\MVV,\MJ|\MX)$ for arbitrary \MX between 1 and $4.5\unit{TeV}$ using uncorrelated polynomial functions.
 A DCB shape is used for $\PVV(\MVV|\MX,\vb*{\theta}_1)$ for all categories, while the jet resonance shape $\PJ(\MJ|\MX,\vb*{\theta}_2)$ uses a DCB for the HP categories, and the sum of a DCB and an exponential for the LP categories to properly capture the behavior of the low-mass tail of the distribution.
 
@@ -97,7 +97,7 @@ The DCB parameters for the \MJ shapes are shown in figure~\ref{fig:MJJShapeParam
 % Signal shape substitutions
 In some categories there are not enough events present that result in a smooth fit for the parameters of $\PVV(\MVV|\MX,\vb*{\theta}_1)$ or $\PJ(\MJ|\MX,\vb*{\theta}_2)$.
 For example, signals that are \VBF-produced will not have a sufficient number of events present for the bb/nobb categories.
-Because the signal parameters do not vary significantly between production modes, we allow for substituting non-\VBF signal shapes with \VBF shapes, and \VBF signal shapes with non-\VBF shapes:
+Because the signal parameters do not vary significantly between production modes, we allow for substituting non-\VBF signal shapes with \VBF shapes, and vice versa:
 \begin{itemize}
   \item \DY\WprtoWZ shapes are used for \VBF\WprtoWZ in the LP-bb-LDy (for \MJ) and LP-nobb-HDy (for \MVV) categories.
   \item \VBF\WprtoWZ shapes are used for \DY\WprtoWZ in the LP-vbf-HDy (for \MJ) and LP-bb-HDy (for \MVV) categories.
@@ -113,7 +113,7 @@ Figure~\ref{fig:MVVShapes_NonVBF_LDy_Run2} shows the \MVV signal shapes for non-
 For figure~\ref{fig:MVVShapes_VBF_LDy_Run2}, we show the \MVV signal shapes for the \VBF signals.
 In figure~\ref{fig:MJJShapes_NonVBF_LDy_Run2}, the \MJ signal shapes are shown for the non-\VBF signals.
 Finally, figure~\ref{fig:MJJShapes_VBF_LDy_Run2} shows the \MJ signal shapes for the \VBF signals.
-We also perform a closure test by converting the \MVV and \MJ projections of the $2\unit{TeV}$ version of the template of each signal model into 1D histograms and compare them with the corresponding weighted MC distributions.
+We also perform a closure test by converting the \MVV and \MJ projections of the $\MX=2\unit{TeV}$ version of the template of each signal model into 1D histograms, and compare them with the corresponding weighted MC distributions.
 An example of this is presented in figure~\ref{fig:1dtemplateVsReco_GbuToWW2000_Run2} with the \DY\GBulktoWW signal.
 
 \begin{figure}[htbp]
@@ -309,14 +309,14 @@ We derive a 1D template for the \MJ distribution $\PJ(\MJ|\vb*{\theta}_2)$, whic
 % 2D conditional template
 For the 2D \MVV shape, we use a specialized Gaussian kernel method in order overcome the low statistics encountered for the background MC events.
 Standard Gaussian methods were found to be ineffective at capturing peaks in the 2D plane, as they would result in a smearing of the peaks from reconstructed simulation events.
-To remedy this, we employ a method in which we use a partially generated diboson invariant mass \MVVpart, which is defined as the four vector sum of the reconstructed \Wlep, and a generated jet.
-The generated jet is made by clustering generated particle candidates with $\Delta R<1.2$ around reconstructed jets using the anti-\kt algorithm with a distance parameter of $R=0.8$.
+To remedy this, we employ a method in which we use a partially generated diboson invariant mass \MVVpart, which is defined as the four-vector sum of the reconstructed \Wlep, and a generated jet.
+The generated jet is made by clustering generated particle candidates with $\Delta R<1.2$ around reconstructed jets using the anti-\kt algorithm, with a distance parameter of $R=0.8$.
 
 % Response function
 Because the generated jets are used in place of the reconstructed \Vhad, we must make use of a detector response function to accurately model reconstruction of the simulated jets.
-This is done in simulation by estimating the Gaussian mean and sigma of the resolution of $\MVV/\MVVpart$ in bins of generator jet \pt, which can be seen in figure~\ref{fig:nonResScaleResMVV}.
+This is done in simulation by estimating the Gaussian mean and deviation of the resolution of $\MVV/\MVVpart$ in bins of the generated jet \pt, which can be seen in figure~\ref{fig:nonResScaleResMVV}.
 We then begin generating the template by populating the \MJ spectrum using a coarse binning, with 16 bins used in \MJ.
-For each event in a slice of the \MJ spectrum, we add a 1D Gaussian onto the partial mass with scale shifted by the detector response and width equal to the Gaussian resolution as defined by
+For each event in a slice of the \MJ spectrum, we add a 1D Gaussian onto the partial mass with scale shifted by the detector response and width equal to the Gaussian resolution, as defined by
 \begin{equation}\label{eq:Pplus}
   P_i(\MVV)=\frac{w_i}{\sqrt{2\pi}\sigma}\exp\bqty{-\frac{1}{2}\pqty{\frac{\MVV-s\cdot\MVVpart}{\sigma}}^2},
 \end{equation}
@@ -346,9 +346,9 @@ As a final step, we normalize each \MJ slice again to ensure the conditionality 
 Ideally, this process of generating the 2D conditional templates would be done for all 24 categories as defined in subsection~\ref{subsec:eventCat}.
 However, this is met with more difficulties due to the low statistics provided by the MC samples.
 To resolve this issue, we merge categories together based on whether or not they exhibit similar behavior.
-We consider various metrics of behavior between categories, such as the correlation between \MJ and \MVV, as well as the average jet \pt as a function of the jet mass, which is shown in figure~\ref{fig:nonRes2DCorr} between the four combinations of HP/LP and nobb/bb categories.
+We consider various metrics of behavior between categories, such as the correlation between \MVV and \MJ, as well as the average jet \pt as a function of the jet mass, which is shown in figure~\ref{fig:nonRes2DCorr} between the four combinations of HP/LP and nobb/bb categories.
 The behavior is similar enough between the categories that they may be considered for merging.
-For this analysis, we merge the $e$/$\mu$ and bb/nobb/vbf categories while keeping the HP/LP and HDy/LDy categories separate, for a total of four 2D conditional templates.
+For this analysis, we merge the e/mu and bb/nobb/vbf categories while keeping the HP/LP and HDy/LDy categories separate, for a total of four 2D conditional non-resonant templates.
 
 \begin{figure}[htbp]
   \centering
@@ -361,7 +361,7 @@ For this analysis, we merge the $e$/$\mu$ and bb/nobb/vbf categories while keepi
 
 % Reweighting templates
 Prior to creating the 2D conditional templates, a reweighting procedure is applied in the jet mass sideband region for the \MVV spectrum in order to ensure that the templates accurately capture the behavior of the background events.
-We again merge the $e$ and $\mu$ categories for this process due to their similar behavior, but for other categories such as nobb/bb/vbf, we derive separate weighting functions for the \MVV spectrum.
+We again merge the e and mu categories for this process due to their similar behavior, but for other categories such as nobb/bb/vbf, we derive separate weighting functions for the \MVV spectrum.
 The categories are then merged to create the four conditional 2D templates after the weighting process.
 The reweighting function takes the form $f(\MVV)=a+b/\MVV$ to ensure that the weights behave as expected in the asymptotic limit, and the fit coefficients are derived by fitting the function to the ratio of data to MC.
 From this we obtain the weights $w_i$ of equation~\ref{eq:Pplus}.
@@ -374,8 +374,8 @@ Figure~\ref{fig:nonResMvvSpectrumReweighting} shows the \MVV distributions from 
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/slopesSB_b1_allL_HP_nobb_HDy_Run2_mWV_1OverX.pdf}
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/slopesSB_b1_allL_LP_nobb_HDy_Run2_mWV_1OverX.pdf}\\
   \caption{
-    Plots of the \MVV spectra for the full Run 2 data and MC samples in the jet mass sideband for the nobb category, with the $e$ and $\mu$ categories merged.
-    After merging the $e$ and $\mu$ categories, the remaining categories are kept separate and the ratio of data to MC is fitted with a function of the form $f(\MVV)=a+b/\MVV$.
+    Plots of the \MVV spectra for the full Run 2 data and MC samples in the jet mass sideband for the nobb category, with the e and mu categories merged.
+    After merging the e and mu categories, the remaining categories are kept separate and the ratio of data to MC is fitted with a function of the form $f(\MVV)=a+b/\MVV$.
     The resulting weights for each event $w_i$ are then used in equation~\ref{eq:Pplus} when building the conditional 2D templates.
     Left to right: HP-LDy-nobb, LP-LDy-nobb, HP-HDy-nobb, LP-HDy-nobb.
   }
@@ -401,10 +401,10 @@ Figure~\ref{fig:condTemplateVscondReco_nonRes_MVV_Run2} shows the resulting comp
 
 % 1D non-resonant soft drop jet mass templates
 The remaining step to complete the conditional product $P_{\Wjets}(\MVV,\MJ)$ is to obtain the 1D template for $\PJ(\MJ|\vb*{\theta}_2)$.
-Rather than using a kernel method as with the 2D conditional template, we instead use a coarsely binned histogram of weighted MC events for \MJ, and then fit the result with a spline.
+Rather than using a kernel method as with the 2D conditional template, we instead use a coarsely binned histogram of weighted MC events for \MJ, and fit the result with a spline.
 The spline is then used to interpolate the $\PJ(\MJ|\vb*{\theta}_2)$ template with the final \MJ binning.
 In this case, we also do not merge any of the 24 categories and keep the templates separate.
-Figure~\ref{fig:1dtemplateVsReco_nonRes_MJ_Run2} shows the resulting 1D templates for the nobb compared to the weighted MC distributions used to obtain them.
+Figure~\ref{fig:1dtemplateVsReco_nonRes_MJ_Run2} shows the resulting 1D templates for the nobb category compared to the weighted MC distributions used to obtain them.
 
 \begin{figure}[htbp]
   \centering
@@ -454,7 +454,7 @@ To better visualize the differences between each of the categories, figure~\ref{
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/compTemplate_nonRes_mu_MVV_log.pdf}
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/compTemplate_nonRes_mu_MJJ.pdf}\\
   \caption{
-    Comparisons of projections of the 2D non-resonant templates onto the \MVV (left) and \MJ (right) spectra, separated by $e$ (top) and $\mu$ (bottom) contributions for each category.
+    Comparisons of projections of the 2D non-resonant templates onto the \MVV (left) and \MJ (right) spectra, separated by e (top) and mu (bottom) contributions for each category.
   }
   \label{fig:compTemplate_nonRes}
 \end{figure}
@@ -470,10 +470,10 @@ As in the non-resonant case, we derive a 1D template for the \MJ distribution $\
 
 % 2D conditional template
 The 2D conditional template $\PVV(\MVV|\MJ,\vb*{\theta}_1)$ is constructed in a slightly different manner compared to the non-resonant background.
-In this case there is no reweighting of the \MVV spectrum as there was with the non-resonant templates.
+In this case, there is no reweighting of the \MVV spectrum as there was with the non-resonant templates.
 Additionally, while this method also makes use of the kernel method for populating the histograms of the templates, we do not use fine binning for \MJ because the \MVV spectrum for the resonant background templates only depends on whether or not we are in the $W^\pm$ peak or the top peak of the \MJ spectrum.
 Thus, we perform the resonant template fitting process in only two bins of \MJ for LP categories, and only one bin of \MJ for the HP categories.
-This allows us to overcome the issues that occur due to the low statistics of the top MC samples, and we build 12 templates for the resonant background by only merging the $e$ and $\mu$ categories.
+This allows us to overcome the issues that occur due to the low statistics of the top MC samples, and we build 12 templates for the resonant background by only merging the e and mu categories.
 
 % Resonant template smoothing
 As with the non-resonant background, we smooth the high-\MVV tails by refitting the tail of the \MVV shape in each \MJ bin using a power-law function.
@@ -482,8 +482,8 @@ We use $1.1\unit{TeV}$ for the HP-vbf-LDy and LP-vbf-LDy categories, $1.2\unit{T
 
 % Resonant closure test
 We perform a closure test similar to the one done on the non-resonant background templates, in which we compare the \MVV projection of the conditional templates against the MC events used to derive them.
-Figure~\ref{fig:condTemplateVscondReco_res_MVV_Run2} shows the comparisons between the 2D resonant conditional templates for the nobb category (with $e$ and $\mu$ separated) versus the MC samples.
-Again we find good agreement between the templates and the MC.
+Figure~\ref{fig:condTemplateVscondReco_res_MVV_Run2} shows the comparisons between the 2D resonant conditional templates for the nobb category (with e and mu separated) versus the MC samples.
+As in the non-resonant case, we find good agreement between the templates and the MC.
 
 \begin{figure}[htbp]
   \centering
@@ -575,7 +575,7 @@ As was done with the non-resonant templates, figure~\ref{fig:compTemplate_res} s
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/compTemplate_res_mu_MVV_log.pdf}
   \includegraphics[width=0.45\textwidth]{fig/2Dfit/compTemplate_res_mu_MJJ.pdf}\\
   \caption{
-    Comparisons of projections of the 2D resonant templates onto the \MVV (left) and \MJ (right) spectra, separated by $e$ (top) and $\mu$ (bottom) contributions for each category.
+    Comparisons of projections of the 2D resonant templates onto the \MVV (left) and \MJ (right) spectra, separated by e (top) and mu (bottom) contributions for each category.
   }
   \label{fig:compTemplate_res}
 \end{figure}

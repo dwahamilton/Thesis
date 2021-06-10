@@ -22,7 +22,7 @@ For each year we use different HLT paths, which are listed in table~\ref{tab:tri
   \input{tab/eventSelection/triggers.tex}
   \caption{
     HLT paths used in Run 2 data and MC.
-    Here, `WP' and `ID' refer to working point and identification, respectively.
+    Here, ``WP'' and `ID'' refer to working point and identification, respectively.
   }
   \label{tab:triggers}
 \end{table}
@@ -86,12 +86,12 @@ where each efficiency $\epsilon$ is estimated as $\epsilon(\mathrm{lepton})+\eps
 
 % Pileup explanation
 For a given collision event in the analysis, we are concerned with the hard-scatter event that takes place at the primary vertex (PV).
-However, additional proton-proton interactions may take place in locations other than the PV along the beamline during a single bunch crossing.
+However, additional proton interactions may take place in locations other than the PV along the beamline during a single bunch crossing.
 These interactions are referred to as pileup (PU)~\cite{Perloff_2012}, and the presence of the additional PU energy requires corrective measures to be taken in order to accurately reconstruct jets in an event.
 
 % Pileup reweighting
 The data samples from all three Run 2 years have different pileup profiles than that of the simulation samples that were used for this analysis.
-In order to account for this, we compute and apply PU weights to our samples and compare distributions for the number of primary vertices both with and without weights to the data.
+In order to account for this, we compute and apply PU weights to our samples and compare distributions for the number of primary vertices, both with and without weights to the data.
 Figure~\ref{fig:PUreweight} shows these distributions for Run 2.
 The weights are computed using the recommended minimum bias cross section of $69.2\unit{mb}$.
 
@@ -138,7 +138,7 @@ This is done using the full relative Particle-Flow isolation using $\Delta\beta$
   I_\mathrm{rel}=\frac{\sum_{i\in\mathrm{PV}}p_{\mathrm{T},i}+\max\pqty{0,\sum_{j\in\mathrm{NH}}E_{\mathrm{T},j}+\sum_{k\in\mathrm{phot}}E_{\mathrm{T},k}-\Delta\beta\sum_{n\in\mathrm{PU}}p_{\mathrm{T},n}}}{p_{\mathrm{T},\mu}},
 \end{equation}
 where $\mathrm{PV}$ denotes the set of charged hadrons from the primary vertex, $\mathrm{NH}$ is the set of neutral hadrons, $\mathrm{phot}$ is the set of photons, $\mathrm{PU}$ denotes the set of charged hadrons from pileup, and $p_\mathrm{T,\mu}$ is the transverse momentum of the muon for which the isolation is being performed.
-The factor $\Delta\beta=0.5$ corresponds approximately to the ratio of neutral particle to charged hadron production in inelastic proton-proton collisions, which is estimated from simulation.
+The factor $\Delta\beta=0.5$ corresponds approximately to the ratio of neutral particle to charged hadron production in inelastic proton collisions, which is estimated from simulation.
 Isolation is performed within a cone of size $\Delta R=0.3$ centered around the $p_{\mathrm{T},\mu}$ axis, where $\Delta R\equiv\sqrt{\Delta\eta^2+\Delta\phi^2}$.
 
 % Muon scale factors
@@ -157,7 +157,7 @@ This scale factor was derived on top of muon high-\pt identification, in boosted
   \centering
   \includegraphics[width=0.65\textwidth]{fig/eventSelection/muonFullIsoSF.pdf}
   \caption{
-    Efficiency in data and simulation and data/MC scale factor for muon isolation requirement.
+    Efficiency in data and simulation (top) and data/MC scale factor (bottom) for muon isolation requirement.
   }
   \label{fig:muonIsoSF}
 \end{figure}
@@ -167,7 +167,7 @@ This scale factor was derived on top of muon high-\pt identification, in boosted
 
 % Electron reconstruction
 The electrons that are reconstructed from trigger primitives in the ECAL are required to pass identification requirements designed for energetic electrons.
-These requirements are chosen specifically to optimize the identification of high energy electrons.
+These requirements are chosen specifically to optimize the identification of high-energy electrons.
 The identification requirements ensure that the reconstructed electrons from the ECAL energy deposits are paired with a high quality track from the inner tracker and have a shape consistent with an electromagnetic shower in the calorimeter.
 These requirements are listed in table~\ref{tab:HEEPV70} in terms of identification variables.
 For our analysis, we also require the electrons to have $\pt>55\unit{GeV}$ and be within the pseudorapidity range $|\eta|<2.5$, except for the region $[1.4442,1.566]$.
@@ -208,7 +208,7 @@ This analysis therefore categorizes candidate jets into the two following types:
 
 % Jet selection
 For both types of jets, we use tight identification jets.
-These jets are required to pass identification requirements based on quantities such as the neutral hadron fraction, neutral EM fraction, number of constituents, and number of neutral particles.
+These jets are required to pass identification requirements based on quantities such as the neutral hadron fraction, neutral EM fraction, number of constituents, and number of neutral particles~\cite{CMS-PAS-JME-16-003}.
 We also apply jet energy corrections for data and MC prescribed by the Jet Energy Resolution and Corrections (JERC) subgroup~\cite{Khachatryan:2016kdb}.
 
 % Hadronic jet selection
@@ -222,10 +222,10 @@ For the standard jets, we require that $\pt>30\unit{GeV}$, and we discard any je
 A central component of the analysis is the ability to accurately identify and reconstruct the hadronically decaying \VorH boson, which we shall refer to as \Vhad.
 Once the jets in the final state are identified, algorithms must be applied to determine the substructure of the jets.
 This analysis makes use of the Pileup Per Particle Identification (PUPPI) algorithm, which takes Particle-Flow object candidates and assigns weights to each particle based energy shape profiles~\cite{Bertolini_2014}.
-The resulting reweighted candidates are then put into substructure algorithms for further analysis.
+The resulting reweighted candidates are put into substructure algorithms for further analysis.
 
 % Jet grooming
-The jets obtained from the PUPPI algorithm are then groomed by using the ``soft drop'' algorithm~\cite{Larkoski_2014}, which removes soft wide-angle radiation from jets.
+The jets obtained from the PUPPI algorithm are groomed by using the ``soft drop'' algorithm~\cite{Larkoski_2014}, which removes soft wide-angle radiation from jets.
 The soft drop algorithm starts by using the Cambridge-Aachen algorithm~\cite{Dokshitzer_1997,Wobisch:393035} to recluster the constituents of a given jet.
 For a jet with radius $R$ with two constituents, the soft drop algorithm removes the softer constituent if it does not satisfy the condition
 \begin{equation}
@@ -234,12 +234,12 @@ For a jet with radius $R$ with two constituents, the soft drop algorithm removes
 where the $p_{\mathrm{T},i}$ are the transverse momenta of the jet constituents, $\Delta R_{12}$ is the separation between the constituents in the $y$-$\phi$ plane, $R$ is the characteristic radius, $z$ is the soft drop threshold, and $\beta$ is the angular exponent.
 For this analysis, we use $z=0.1$ based on theoretical considerations of the jet mass from QCD~\cite{Dasgupta_2013,Dasgupta_2013_2}.
 We also use an angular exponent of $\beta=0$ and a characteristic radius of $R=0.8$.
-The soft drop mass is denoted by \MJ, and apply recommended corrections~\cite{Butterworth:2008iy}.
+The soft drop mass is denoted by \MJ, and we apply recommended corrections~\cite{Butterworth:2008iy}.
 
 % N-subjettiness
 To determine the degree to which the jet has substructure, we use the ``$N$-subjettiness'' as a measure of how many subjets are present in the jet~\cite{Thaler_2011,Thaler_2012}.
 It is designed to identify boosted hadronic objects based on the angular distances of jet constituents relative to their nearest subjet axis.
-Figure~\ref{fig:jetSubstruct} shows an example of a jet with two subjects defined by axes $\vu{n}_1$ and $\vu{n}_2$, which is the two-pronged structure expected to be observed by the \Vhad boson decay.
+Figure~\ref{fig:jetSubstruct} shows an example of a jet with two subjects defined by axes $\vu{n}_1$ and $\vu{n}_2$, which exhibits the two-pronged structure expected to be observed by the \Vhad boson decay.
 We proceed by reclustering the jets with the \kt algorithm until $N$ jets remain, then compute the $N$-subjettiness defined by
 \begin{equation}
   \tau_N=\frac{1}{d_0}\sum_kp_{\mathrm{T},k}\min\pqty{\Delta R_{1,k},\Delta R_{2,k},\ldots,\Delta R_{N,k}},
@@ -266,7 +266,8 @@ For example, in this analysis we consider the ratio $\tau_{21}$, defined by
 \begin{equation}
   \tau_{21}\equiv\frac{\tau_2}{\tau_1}=\frac{\sum_kp_{\mathrm{T},k}\min\pqty{\Delta R_{1,k},\Delta R_{2,k}}}{\sum_kp_{\mathrm{T},k}\Delta R_{1,k}}.
 \end{equation}
-which is a measure of whether or not the jet exhibits the properties we would expect from a jet with 2 subjets versus a single jet with no substructure.
+which is a measure of whether or not the jet exhibits the properties we would expect from a jet with two subjets versus a single jet with no substructure.
+The smaller $\tau_{21}$ is, the more likely the jet is two-pronged.
 This allows for separating jets originating from boosted vector bosons versus jets that are produced from quarks and gluons, thereby allowing further background suppression.
 This analysis uses a modified version of the $N$-subjettiness ratio that reduces the dependency of \nsubj on the jet mass, which is denoted by the designed decorrelated tagger (DDT) $N$-subjettiness \nsubjDDT~\cite{Dolen_2016}.
 It is defined by
@@ -295,7 +296,7 @@ We also later use \nsubjDDT for event categorization to split the analysis into 
 
 % b-tagging overview
 Jets produced from $b$ quarks have unique characteristics that distinguish them from other hadronic decays.
-Because of the relatively long lifetime of hadrons that contain $b$ quarks, the secondary vertices (SV) corresponding to the location of the decay tend to have displacements on the order of a few millimeters away from the primary vertex.
+Because of the relatively long lifetime of hadrons that contain $b$ quarks, the secondary vertices (SVs) corresponding to the location of the decay tend to have displacements on the order of a few millimeters away from the primary vertex.
 Another distinguishing property is that decays from $b$ hadrons result in a boosted jet topology, as the products that $b$ quarks decay into are much lighter.
 Finally, the heavy hadrons containing $b$ quarks tend to favor semileptonic decays, resulting in soft leptons present in the jet.
 The techniques used to identify such jets are referred to as $b$-tagging.
@@ -317,7 +318,7 @@ To identify such \bbbar jets, we therefore use a $b$-tagging discriminator to id
 We also apply a cut on the M2 operating point of the ``\DoubleB tagger''~\cite{Sirunyan_jet} to categorize events in subsection~\ref{subsec:eventCat}, for which the threshold is 0.8 for Run 2.
 
 % Scale factors
-Additionally, we apply scale data/MC efficiency scale factors to our signal sample normalizations, while the scale factors for the background are estimated from the data in the control regions.
+Additionally, we apply data/MC efficiency scale factors to our signal sample normalizations, while the scale factors for the background are estimated from the data in the control regions.
 We use two sets of scale factors that depend on \ptjet.
 One is for \Htobbbar jets resulting from the \WprtoWHtolnubbbar signal model, and the other is for mistagging $W^\pm$ bosons resulting from $t\bar{t}$ events, which are applied to the \GBulktoWWtolnuqqbarpr and \WprtoWZtolnuqqbar signal models.
 The weights are calculated by considering the probability of a given configuration of jets in MC and data as
@@ -336,7 +337,7 @@ For this analysis, first we measure the MC \bbbar-tagging efficiencies $\epsilon
 \end{equation}
 while for the \bbbar-untagged category, we instead use
 \begin{equation}
-  w^{\mathrm{no}\bbbar}(\pt)=\frac{1-S(\pt)\epsilon_{\bbbar}(\pt)}{1-\epsilon_{\bbbar}(\pt)}.
+  w^{\text{non-}\bbbar}(\pt)=\frac{1-S(\pt)\epsilon_{\bbbar}(\pt)}{1-\epsilon_{\bbbar}(\pt)}.
 \end{equation}
 
 \subsection{Missing Transverse Momentum}
@@ -373,12 +374,12 @@ Finally, the third requirement is that the difference in the azimuthal angle bet
 \label{subsec:VBFjets}
 
 % VBF signature
-The defining signature of the \VBF production process is the presence of two boosted jets in the forward and backward regions of the detector, along with the decay products in the central region of the detector resulting from the \Wlep and \Vhad resonances.
+The defining signature of the \VBF production process is the presence of two boosted jets in the forward regions of the detector, along with the decay products in the central region resulting from the \Wlep and \Vhad resonances.
 The analysis therefore exploits the specific event topology of \VBF events to define a \VBF-tagged category that is sensitive to \VBF-produced resonances, as defined in subsection~\ref{subsec:eventCat}.
 
 % VBF jet selection
 We select candidate \VBF jets from the two highest \pt standard AK4 jets as defined in subsection~\ref{subsec:jetSelect}.
-This requires that the \VBF jets pass $\pt>30\unit{GeV}$, and that they do not overlap with the selected lepton and large-radius jet.
+This requires that the \VBF jets satisfy $\pt>30\unit{GeV}$, and that they do not overlap with the selected lepton and large-radius jet.
 We then apply selection cuts to the two candidate \VBF jets based on their separation in pseudorapidity \DetaVBF and \VBF invariant mass \mjjVBF.
 
 % VBF Deta selection cut
@@ -398,7 +399,7 @@ To retain a signal efficiency of 40-50\%, we choose a cut of $\DetaVBF>4$.
 \end{figure}
 
 % VBF mass selection cut
-The other kinematic cut applied to the \VBF candidate jets is on the invariant mass of the sum of the \VBF jet four vectors, \mjjVBF.
+The other kinematic cut applied to the \VBF candidate jets is on the invariant mass of the sum of the \VBF jet four-vectors, \mjjVBF.
 For this cut, we consider the Punzi significance obtained for a \VBF signal sample as a function of the thresholds of the cuts for \DetaVBF and \mjjVBF.
 The Punzi significance is defined by $\epsilon/(1.5+\sqrt{B})$~\cite{Punzi:2003bu}, where $\epsilon$ is the number of signal events obtained by the cuts assuming an integrated luminosity of $\mathcal{L}_\mathrm{int}=1\unit{pb^{-1}}$ and a cross section of $\sigma=1\unit{pb}$, while the number of background events $B$ is weighted with the total luminosity.
 We again require that the selection cut on \mjjVBF retains 40-50\% signal efficiency, as we did for \DetaVBF.
@@ -410,7 +411,7 @@ This leads to a cut of $\mjjVBF>500\unit{GeV}$.
 % Spin polarization from VBF production
 The \VBF production process has another distinctive feature in which some kinematic variables are sensitive to the spin of the $X$ resonance, thereby providing the ability to distinguish between signal models.
 This effect can be seen in the distributions for the separation in rapidity between the \Vhad and \Wlep diboson system, which we denote by \Dy.
-Figure~\ref{fig:DyComp} shows the shape discrepancies between the MC signals and backgrounds in \Dy, separated by non-\VBF (left) and \VBF-produced signals.
+Figure~\ref{fig:DyComp} shows the shape discrepancies between the MC signals and backgrounds in \Dy, separated by non-\VBF and \VBF-produced signals.
 
 \begin{figure}[htbp]
   \centering
@@ -418,9 +419,9 @@ Figure~\ref{fig:DyComp} shows the shape discrepancies between the MC signals and
   \includegraphics[width=0.45\textwidth]{fig/eventSelection/SR_b1_allL_allP_allC_vbf_lo_Run2_Dy.pdf}
   \caption{
     Shape comparison of the angular separation \Dy between the two reconstructed bosons for simulated background and signals, in the signal region.
-    Backgrounds distributions are stacked and normalized to the expected luminosity for the full Run-2, while signal distributions are overlaid, all arbitrarily normalized to the same integral as the sum of backgrounds.
+    Background distributions are stacked and normalized to the expected luminosity for the full Run 2 set, while signal distributions are overlaid, all arbitrarily normalized to the same integral as the sum of backgrounds.
     Non-\VBF (left) and \VBF (right) signals are shown separately.
-    The shape differences between signals is most apparent in the case of \VBF production, allowing for distinguishing between spin-0, spin-1, and spin-2 signals.
+    The shape differences between signals are most apparent in the case of \VBF production, allowing for distinguishing between spin-0, spin-1, and spin-2 signals.
     This defines a new layer of categorization for the analysis.
   }
   \label{fig:DyComp}
@@ -445,7 +446,7 @@ Originally a 3-category scheme was considered for the analysis, but it was found
 \label{subsec:eventSelect}
 
 % Event selection and categorization
-For this analysis, we made a final event selection in order to select events that exhibit the expected behavior of the final state described in subsection~\ref{subsec:expEvent} and optimize the search potential for a semileptonically decaying heavy $X$ resonance produced via \ggF, \DY, or \VBF.
+For this analysis, we make a final event selection in order to select events that exhibit the expected behavior of the final state described in subsection~\ref{subsec:expEvent} and optimize the search potential for a semileptonically decaying heavy $X$ resonance produced via \ggF, \DY, or \VBF.
 We then divide the analysis into disjoint categories in order to enhance the search sensitivity.
 
 \subsubsection{Final Event Selection}
@@ -455,12 +456,12 @@ The final event selection used in the analysis is defined by the following:
 \begin{enumerate}
   \item Exactly one charged lepton as defined in subsections~\ref{subsec:muonSelect} and \ref{subsec:elecSelect}.
   \item Lepton veto: no additional loose electron ($\pt>35\unit{GeV}$) or muon ($\pt>20\unit{GeV}$) in the event.
-  \item Type-I corrected missing transverse momentum \ptmissTI: events are required to have $\ptmiss>80\unit{GeV}$ for the electron channel and $\ptmiss>40\unit{GeV}$ for the muon channel to suppress contributions from QCD multijet backgrounds.
+  \item Type-I corrected missing transverse momentum \ptmissTI: events are required to have $\ptmissTI>80\unit{GeV}$ for the electron channel and $\ptmissTI>40\unit{GeV}$ for the muon channel to suppress contributions from QCD multijet backgrounds.
   \item Leptonic $W^\pm$ \pt: the \pt of the reconstructed \Wlep must satisfy $\pt>200\unit{GeV}$ in order to select a boosted $W^\pm$ topology.
   \item Hadronic \VorH \pt: the \pt of the reconstructed \Vhad must satisfy $\pt>200\unit{GeV}$ in order to select a boosted \VorH topology.
   \item Diboson angular separation: the angular distance between the selected lepton and \Vhad is required to be $\Delta R>\pi/2$, the difference in the azimuthal angle between \Vhad and \ptmissTI is required to be $|\Delta\phi|>2$, and the difference in the azimuthal angle between \Vhad and \Wlep is required to be $|\Delta\phi|>2$.
   \item $b$-tag veto: the event is required to have no $b$-tagged standard jets.
-  \item \ZH veto: to ensure that the selection is disjoint from the $X\to\ZH\to\ell\ell\bbbar$ search~\cite{CMS-PAS-B2G-19-006}, which uses a different electron and muon identification, we explicitly veto events where a \ZH candidate is selected with their criteria.
+  \item \ZH veto: to ensure that the selection is disjoint from the $X\to\ZH\to\ell\ell\bbbar$ search~\cite{CMS-PAS-B2G-19-006}, which uses different electron and muon identification selections, we explicitly veto events where a \ZH candidate is selected with their criteria.
   \item Search region: the search region is defined as $0.7<\MVV<6.0\unit{TeV}$ and $20<\MJ<210\unit{GeV}$.
 \end{enumerate}
 
@@ -481,26 +482,26 @@ First, we split the event sample based on the lepton flavor of the reconstructed
 
 % Jet purity
 Second, we exploit the fact that the jets originating from \VorH decays exhibit a two-pronged structure.
-The analysis is split based on $V$-jet tagging via cuts on the value of the mass-decorrelated $N$-subjettiness ratio \nsubjDDT as described in subsection~\ref{subsec:jetSelect}.
+The analysis is split based on $V$ jet tagging via cuts on the value of the mass-decorrelated $N$-subjettiness ratio \nsubjDDT as described in subsection~\ref{subsec:jetSelect}.
 This defines the following two categories:
 \begin{itemize}
-  \item {\bfseries High Purity (HP):} $\nsubjDDT\leq0.50$
-  \item {\bfseries Low Purity (LP):} $0.50<\nsubjDDT\leq0.80$
+  \item {\bfseries High Purity (HP):} $\nsubjDDT\leq0.50$.
+  \item {\bfseries Low Purity (LP):} $0.50<\nsubjDDT\leq0.80$.
 \end{itemize}
 
 % VBF/non-VBF categories
 Third, to enhance the sensitivity of resonances decaying to \WHtolnubbbar, and to separate events consistent with \VBF production, we split the sample three-way based on the value of the \DoubleB tagger (as described in subsection~\ref{subsec:jetSelect}) and the presence of \VBF-compatible jet candidates described in subsection~\ref{subsec:VBFjets}:
 \begin{itemize}
-  \item {\bfseries \VBF-tagged (vbf):} Two candidate \VBF jets, $\DetaVBF>4$, $\mjjVBF>500\unit{GeV}$
-  \item {\bfseries \bbbar-tagged (bb):} $\DoubleB>0.8$, no \VBF tag
-  \item {\bfseries \bbbar-untagged (nobb):} $\DoubleB\leq0.8$, no \VBF tag
+  \item {\bfseries \VBF-tagged (vbf):} Two candidate \VBF jets, $\DetaVBF>4$, $\mjjVBF>500\unit{GeV}$.
+  \item {\bfseries \bbbar-tagged (bb):} $\DoubleB>0.8$, no \VBF tag.
+  \item {\bfseries \bbbar-untagged (nobb):} $\DoubleB\leq0.8$, no \VBF tag.
 \end{itemize}
 
 % Dy categories
 Fourth, to further discriminate all signals against background and distinguish between \VBF-produced signals of different spins, we split the sample using the diboson rapidity separation \Dy between the \Wlep and \Vhad as discussed in subsection~\ref{subsec:spinPol}:
 \begin{itemize}
-  \item {\bfseries Low \Dy (LDy):} $\Dy<1.0$
-  \item {\bfseries High \Dy (HDy):} $\Dy\geq1.0$
+  \item {\bfseries Low \Dy (LDy):} $\Dy<1.0$.
+  \item {\bfseries High \Dy (HDy):} $\Dy\geq1.0$.
 \end{itemize}
 
 % Category format

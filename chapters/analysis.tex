@@ -7,7 +7,7 @@
 
 % Motivation of analysis from theory chapter
 In chapter~\ref{chap:theory}, we explored some of the motivation behind BSM searches and examples of BSM theories that predict exotic new particles that may be found in collision events at accelerator facilities.
-We also enumerated some of the benchmark models from BSM theories, which were the spin-0 Kaluza-Klein Radion, spin-1 \Wpr/\Zpr boson, and spin-2 Bulk Graviton.
+We also enumerated some of the benchmark models from BSM theories, which were the spin-0 Bulk Radion, spin-1 \Wpr and \Zpr bosons, and the spin-2 Bulk Graviton.
 Additionally, we discussed the three production modes that this work focuses on (\VBF, \ggF, and \DY), and the final state that is produced.
 
 % Previous searches
@@ -18,19 +18,19 @@ As mentioned in section~\ref{sec:search}, this analysis is itself a continuation
 % Details of reconstructing events
 In subsection~\ref{subsec:expEvent} we discussed the expected event structure for the decay events of interest, in which the leptonic decay of the $W^\pm$ boson results in an $e\nu$ or $\mu\nu$ pair with large missing transverse momentum from the neutrino, the hadronic decay of the \VorH boson results in a single, large-radius jet with substructure, and \VBF processes produce forward-facing jets.
 The boosted topology is a result of the fact that the resonances considered have masses in the TeV range, which causes the $W^\pm$ and \VorH bosons to have transverse momenta on the order of several hundred GeV.
-This requires the use of specialized techniques to identify and reconstruct the individual boosted $W^\pm$ and \VorH bosons based on information from the reconstructed lepton, missing transverse momentum of the neutrino, two-pronged substructure of the jet, and in the case of $H$ jets, substructure of the resulting \bbbar jets such as secondary vertices.
+This requires the use of specialized techniques to identify and reconstruct the individual boosted $W^\pm$ and \VorH bosons based on information from the reconstructed lepton, missing transverse momentum of the neutrino, two-pronged substructure of the jet, and in the case of $H$ jets, substructure of the resulting \bbbar jets, such as secondary vertices.
 Additionally, the signal models used for the analysis assume that the resonance width is narrow, meaning that the decay width of the resonance in the \WV/\WH diboson mass spectrum is smaller than the experimental resolution.
 
 % Details on modeling background
-The sources of SM background for this analysis include $W$+jets, \DY+jets, SM diboson, \bbbar, $t\bar{t}$, single-$t$, and QCD processes.
+The sources of SM background for this analysis include $W$+jets, SM diboson, $t\bar{t}$, single-$t$ processes.
 One aspect of the previous analysis that this work inherits is a novel signal extraction method, in which the SM background contributions are estimated from the data using a two-dimensional (2D) maximum likelihood fit.
 Taking the correlations between variables into account, this process is performed in the plane formed by the mass of the jet from the \VorH decay \MJ, and the invariant mass of the \WV/\WH diboson system \MVV.
 To perform the background modeling, we group the SM background sources into two classes of backgrounds.
 The first is a background class that is resonant in the \MJ spectrum denoted by \WVt, and the second consists of contributions that are non-resonant in \MJ that are referred to as \Wjets.
 The \WVt background includes SM diboson events, while the \Wjets class consists of $W$+jets events, with $t\bar{t}$ and single-$t$ events being shared across both classes of background depending on whether or not they are resonant in the \MJ spectrum.
 Figure~\ref{fig:bkgFeynman} shows example Feynman diagrams for each of these two classes of background.
-One advantage of using a 2D fit is the ability to retain more events for modeling background in the sideband regions within the 2D \MJ-\MVV plane, as opposed to a 1D search for a resonance in the \MVV spectrum.
-This also allows for conducting a simultaneous search of \WW, \WZ, and \WH resonances as opposed to performing separate analyses in pre-defined \MJ windows.
+One advantage of using a 2D fit is the ability to retain more events for modeling background in the sideband regions within the 2D \MVV-\MJ plane, as opposed to a 1D search for a resonance in the \MVV spectrum.
+This also allows for conducting a simultaneous search of \WW, \WZ, and \WH resonances, as opposed to performing separate analyses in pre-defined \MJ windows.
 
 \begin{figure}[htbp]
   \centering
@@ -48,7 +48,7 @@ For this chapter, we examine the complete analysis process of the search for a d
 The data used in this analysis were collected over Run 2 with integrated luminosities of $35.9\unit{fb^{-1}}$, $41.5\unit{fb^{-1}}$, and $59.7\unit{fb^{-1}}$ in 2016, 2017, and 2018, respectively.
 Section~\ref{sec:samples} provides an overview of the data and Monte Carlo (MC) simulation samples that were used for the analysis.
 In section~\ref{sec:events}, we discuss the selection cuts used to determine which events are used from the data and simulation samples, and we enumerate the event categories that are used in the analysis.
-For section~\ref{sec:comp}, we check how well the variables used in our event selection and categorization are modeled by comparing the data versus our MC samples in the control regions of the analysis.
+For section~\ref{sec:comp}, we check how well the variables used in our event selections and categorizations are modeled by comparing the data versus our MC samples in the control regions of the analysis.
 We then discuss the process of modeling the peak from the leptonically decaying $W^\pm$ using corrections to MC samples obtained from data in section~\ref{sec:vTag}.
 The two-dimensional signal extraction method is described in section~\ref{sec:2Dfit}, after which we go over the systematic uncertainties in section~\ref{sec:uncert}.
-Finally, the fit validation and bias testing procedures are described in section~\ref{sec:bias}, which are followed by the results of the search in section~\ref{sec:results} and the conclusion of the chapter in section~\ref{sec:conclusion}.
+Finally, the fit validation and bias testing procedures are described in section~\ref{sec:bias}, which are followed by the results of the search in section~\ref{sec:results}.

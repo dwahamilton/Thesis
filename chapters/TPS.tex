@@ -20,7 +20,7 @@ However, as with other components of the CMS detector, the BMTF is slated to be 
 
 % Chapter overview
 In this chapter, we present work towards the implementation of a novel algorithm for reconstructing muon tracks in real time at the LHC.
-In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector for Phase 2 that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
+In section~\ref{sec:CMSUpgrade}, we discuss future upgrades to the CMS detector for Phase-2 that will allow for improvements in muon detection in conjunction with the high luminosity upgrades to the LHC.
 Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, which will allow for the reconstruction of muon tracks in real time at the L1 Trigger level.
 
 \section{Future Upgrades to CMS}
@@ -30,7 +30,7 @@ Later, in section~\ref{sec:TPS}, we introduce the Tracks Plus Stubs algorithm, w
 The High-Luminosity Large Hadron Collider (HL-LHC) is scheduled to come online in 2027, with the Phase-1 period ending in 2024.
 During the Long Shutdown 3 (LS3) period in 2025, the CMS detector will undergo major upgrades to its L1 Trigger system~\cite{CERN-LHCC-2020-004}.
 Such upgrades are necessary in order to take advantage of the large number of collision events that the HL-LHC will offer, as it will aim for a peak luminosity of $7.5\times10^{34}\unit{cm^{-2}s^{-1}}$.
-This will result in up to 200 simultaneous proton-proton collisions per bunch crossing, which the existing L1 Trigger system is unequipped to handle.
+This will result in up to 200 simultaneous proton collisions per bunch crossing, which the existing L1 Trigger system is unequipped to handle.
 The new L1 Trigger system will have its latency extended from $3.2\unit{\micro s}$ to $12.5\unit{\micro s}$, and it will also have its maximum output bandwidth increased from $100\unit{kHz}$ to $750\unit{kHz}$.
 A unique aspect of these upgrades is that the L1 Trigger system will also take information from the inner tracker as input in addition to the muon and calorimeter systems.
 This will allow for using the new track finder to provide the initial information about particle transverse momentum \pt, angular position $\phi$, pseudorapidity $\eta$, and charge $q$.
@@ -50,7 +50,7 @@ Figure~\ref{fig:P2L1trigger} shows the new architecture of the L1 Trigger that i
 The prospect of more interactions per bunch crossing is also met with the demand for improvements to muon track reconstruction and resolution.
 New algorithms are being developed in order to take advantage of the higher maximum bandwidth and the new track finder in the L1 Trigger.
 Some make use of techniques such as Kalman Filters, with an algorithm that can be implemented onto FPGAs for the track trigger~\cite{Amstutz:2194514}, or another for the muon trigger known as the Kalman Barrel Muon Track Finder (KBMTF)~\cite{Bachtis:2648953}.
-The work presented in this chapter instead relies on a novel approach to reconstructing muon tracks that uses both the track finder and the muon trigger.
+The work presented in this chapter instead relies on a novel approach for reconstructing muon tracks that uses both the track finder and the muon trigger.
 
 \section{The Tracks Plus Stubs Algorithm}
 \label{sec:TPS}
@@ -132,10 +132,10 @@ Furthermore, in figure~\ref{fig:arc}, we can see that due to the symmetry of the
   \centering
   \input{fig/TPS/arc.tex}
   \caption{
-    Illustration of the circular trajectory taken by a particle with charge $q$ positioned at $(x_\mathrm{stub},y_\mathrm{stub})$ in a uniform magnetic field.
+    Illustration of the circular trajectory taken by a particle with charge $q$ positioned at $(x_\mathrm{stub},y_\mathrm{stub})$ in a uniform magnetic field, with orbit radius $R$.
     The track starts at the origin with an initial angle $\phi_0$ tangent to the track of the particle, and ends with a final angle of $\phi$ for a total change in angle $\Delta\phi\equiv\phi-\phi_0$.
     The charged particle covers a radial distance $L$ with respect to the origin of the track, and the perpendicular distance between the mid-point of the track and the radial line $L$ is denoted by the sagitta $s$.
-    The vector corresponding to the \pt of the charge is labeled, with the bending angle $\phi_b$ drawn with respect to the radial line $L$.
+    The vector corresponding to the \pt of the charge is labeled, with the bending angle $\phi_b$ drawn with respect to $L$.
   }
   \label{fig:arc}
 \end{figure}
@@ -180,7 +180,7 @@ These then define the propagation constants $C(\eta,d)$ for each detector, there
 \label{subsec:pulls}
 
 % Position resolution
-Once the propagation constants are obtained, the information for a candidate muon obtained from the track trigger can be used to predict where the muon detection stubs will be found in the detector based on the initial information about the curvature of the track $k$ and the initial angle $\phi_0$.
+Once the propagation constants are obtained, the information for a candidate muon obtained from the track trigger can be used to predict where the muon detection stubs will be found based on the initial information about the curvature of the track $k$ and the initial angle $\phi_0$.
 One of the main considerations in matching a track to detection stubs is the position resolution for the stub measurements.
 The standard deviation of the Gaussian fits for $\Delta\phi$ and $\phi_b$ as described in the previous subsection corresponds to the position resolution of the measurements, and has a quadratic form
 \begin{equation}
@@ -244,12 +244,12 @@ There are two cases that are considered during the cleaning process.
 The first is case 1 in figure~\ref{fig:clean}, in which two or more tracks share one or more detection stubs.
 In this case, the track with the most detection stubs is retained and all others are discarded.
 For case 2, if two tracks have the same number of stubs, we instead consider the difference in the propagated values of $\phi$ versus the values as measured by the detection stubs.
-We evaluate the sum of the difference in these values by evaluating
+We check the sum of the difference in these values by evaluating
 \begin{equation}\label{eq:phiDev}
   \Delta\phi_{\mathrm{prop,sum}}=\sum_i|\phi_{\mathrm{prop},i}-\phi_{\mathrm{stub},i}|,
 \end{equation}
 where $i$ denotes the depth in the detector, for each candidate track.
-The track with the smallest sum $\Delta\phi_{\mathrm{prop,sum}}$ of the deviation in $\phi$ between the propagated and stub measured value is retained, while all others are discarded.
+The track with the smallest sum $\Delta\phi_{\mathrm{prop,sum}}$ of the deviation in $\phi$ between the propagated and stub measured values is retained, while all others are discarded.
 
 \begin{figure}[htbp]
   \centering
@@ -277,7 +277,7 @@ If $p_\mathrm{T,cone}$ exceeds the threshold set for the algorithm, then the can
   \input{fig/TPS/isol.tex}
   \caption{
     Illustration of the track isolation process used by the algorithm.
-    A cone is defined about the origin of the candidate track TPS $\mu$ and the algorithm checks if there are any adjacent tracks whose origin is within $d_z$ of the TPS $\mu$ origin, and if the track is within a cone of radius $\Delta R$ centered about TPS $\mu$.
+    A cone is defined about the origin of the candidate track TPS $\mu$, and the algorithm checks if there are any adjacent tracks whose origin is within $|d_z|$ of the TPS $\mu$ origin, and if the track is within a cone of radius $\Delta R$ centered about TPS $\mu$.
     Tracks for which $p_\mathrm{T,cone}$ as defined by equation~\ref{eq:ptCone} exceeds the threshold set for the algorithm are discarded.
   }
   \label{fig:isol}
@@ -287,19 +287,19 @@ If $p_\mathrm{T,cone}$ exceeds the threshold set for the algorithm, then the can
 \label{subsec:effRates}
 
 % Trigger efficiency definition
-To assess the effectiveness in the algorithm, efficiency studies were performed to see how well the algorithm matches stubs to real muon tracks in simulation.
+To assess the effectiveness of the algorithm, efficiency studies were performed to see how well the algorithm matches stubs to real muon tracks in simulation.
 For a given event, the efficiency is defined by
 \begin{equation}\label{eq:eff}
   \epsilon=\frac{N_\mathrm{TPS}}{N_\mathrm{gen}},
 \end{equation}
 where $N_\mathrm{TPS}$ is the number of TPS tracks obtained by the algorithm, and $N_\mathrm{gen}$ is the number of real muons generated in the simulation event.
-Figure~\ref{fig:eff} shows the results obtained when evaluating the efficiency for all events in a simulation sample of muons passing through the detector as a function of muon $\eta$ (left) and \pt (right).
-The performance of the TPS algorithm is compared to the existing KBMT, and to an algorithm which matches tracks to KBMTF muons referred to as Track+KBMTF.
+Figure~\ref{fig:eff} shows the results obtained when evaluating the efficiency for all events in a simulation sample of muons passing through the detector as a function of muon $\eta$ and \pt.
+The performance of the TPS algorithm is compared to the existing KBMTF, and to an algorithm which matches tracks to KBMTF muons referred to as Track+KBMTF.
 For these efficiency studies, we required that a TPS track has at least two stubs.
 A notable feature of the TPS algorithm is its performance in the gap region of $|\eta|\in[0.15,0.35]$ between wheels 1 and $-1$.
-While other algorithms suffer significant losses in efficiency in the gap region, the TPS algorithm performs especially well by comparison on this region.
+While other algorithms suffer significant losses in efficiency in the gap region, the TPS algorithm performs especially well by comparison in this region.
 
-\begin{figure}[htbp] % Need to update figure
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/effVsEta_5_TPS.pdf}
   \includegraphics[width=0.45\textwidth]{fig/TPS/effVsPt_20_TPS.pdf}
@@ -320,7 +320,7 @@ The trigger rates $R_\mathrm{trig}$ are computed using the fraction of events in
 \begin{equation}
   R_\mathrm{trig}(\ptthresh)=\frac{f_\mathrm{orbit}N_\mathrm{bunch}}{N_\mathrm{event}}\int_{\ptthresh}^\infty f(p_\mathrm{T,max})\dd{p_\mathrm{T,max}},
 \end{equation}
-where $f_\mathrm{orbit}=11.2456\unit{kHz}$ is the LHC revolution frequency, $N_\mathrm{bunch}=2760$ is the number of proton bunches at the interaction point, $N_\mathrm{event}$ is the number of events in simulation, and $f(p_\mathrm{T,max})$ is a histogram populated with the maximum \pt of the matched tracks in a given event, which is populated over the full number of simulation events.
+where $f_\mathrm{orbit}=11.2456\unit{kHz}$ is the LHC revolution frequency, $N_\mathrm{bunch}=2760$ is the number of proton bunches crossing the interaction point, $N_\mathrm{event}$ is the number of events in simulation, and $f(p_\mathrm{T,max})$ is a pdf populated with the maximum \pt of the matched tracks in a given event, which is populated over the full number of simulation events.
 
 % Trigger rates comparison
 A comparison of the trigger rate at different trigger thresholds can be see in figure~\ref{fig:rates}.
@@ -332,7 +332,7 @@ These results also show that the TPS algorithm is well-suited for handling backg
   \centering
   \includegraphics[width=0.45\textwidth]{fig/TPS/rateVsPt_TPSIsol.pdf}
   \caption{
-    Comparison of the trigger rates at different \pt thresholds for TPS (with and without track isolation) and Track+KBMTF algorithms when running on a background-only sample in which there are no muons present.
+    Comparison of the trigger rates at different \pt thresholds for the TPS (with and without track isolation) and Track+KBMTF algorithms when running on a background-only simulation sample in which there are no muons present.
     The TPS algorithm with isolation results in lower overall trigger rates compared to the Track+KBMTF algorithm.
   }
   \label{fig:rates}

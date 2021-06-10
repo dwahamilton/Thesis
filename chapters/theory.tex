@@ -6,13 +6,13 @@
 \section{Introduction}
 
 % History of QFT
-Prior to the development of the Standard Model, attempts to reconcile quantum mechanics with special relativity resulted in the foundations for quantum field theory.
+Prior to the development of the Standard Model, attempts to reconcile quantum mechanics with special relativity resulted in the foundations of quantum field theory.
 The first example of a successful quantum field theory is quantum electrodynamics (QED), which was principally developed by Richard Feynman and Julian Schwinger.
 For their work in QED, they shared the 1965 Nobel Prize along with Sin-Itiro Tomonaga~\cite{NobelPrize:1965-Physics}.
 To this day, it stands as one of the most precisely tested theories of physics, with quantities such as the anomalous magnetic dipole moment of the electron $a_e$ as predicted by QED agreeing with experiment by more than 10 significant digits~\cite{Aoyama_2015}.
 
 % Development of the SM
-However, while QED on its own is successful within its own domain of modeling electromagnetic interactions, it does not concern itself with the other two interactions of the Standard Model: the strong and weak nuclear forces.
+However, while QED on its own is successful within its domain of modeling electromagnetic interactions, it does not concern itself with the other two interactions of the Standard Model: the strong and weak nuclear forces.
 The description of these two forces proved to be more mathematically complicated than QED, and the development of the quantum field theories that describe them did not come about until the 1960's and 1970's with the electroweak (EW) theory of Weinberg, Glashow, and Salam, and the theory of quantum chromodynamics (QCD) of Gell-Mann and Zweig.
 EW theory and QCD also have their roots in Yang-Mills theory developed by Chen Ning Yang and Robert Mills in the 1950's~\cite{1954PhRv...96..191Y}, as they are both examples of non-abelian gauge theories.
 The Standard Model is the resulting theory that came about by combining EW theory with QCD\footnote{While the theory itself began development in the 1960's, the term ``Standard Model'' was coined by Pais and Treiman in 1975~\cite{CaoFieldTheory}.}.
@@ -22,11 +22,11 @@ Today, the Standard Model remains as the dominant theory describing three of the
 The theory itself stands as one of the most well-tested models of physics in history, and all elementary particles predicted by the theory have been found, with the Higgs boson completing the family after being discovered in the summer of 2012.
 However, despite the success of this theory, many fundamental questions of physics still remain unanswered.
 As previously mentioned in chapter~\ref{chap:intro}, the theory does not include gravity, as it only accounts for the electromagnetic, strong, and weak nuclear forces.
-It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory currently is incapable of addressing, such as the hierarchy problem~\cite{krippendorf2010cambridge}.
+It also does not account for the existence of Dark Matter or Dark Energy, and there are long-standing issues that the theory is currently incapable of addressing, such as the hierarchy problem~\cite{krippendorf2010cambridge}.
 The theory is therefore regarded as incomplete, and efforts to find physics beyond the Standard Model are ongoing.
 
 % Chapter overview
-In this chapter, we briefly explore the main aspects of the Standard Model in section~\ref{sec:SM}, looking at the fundamental particles that it describes and some of its mathematical foundations.
+In this chapter, we briefly explore the main aspects of the Standard Model in section~\ref{sec:SM}, looking at the fundamental particles that it describes, and some of its mathematical foundations.
 Later, in section~\ref{sec:search}, we describe the theoretical background relevant to the search for a new fundamental particle beyond the Standard Model that this work presents.
 
 \section{The Standard Model of Particle Physics}
@@ -36,16 +36,16 @@ Later, in section~\ref{sec:search}, we describe the theoretical background relev
 The Standard Model is the prevailing theory in particle physics that classifies all known elementary particles, and describes how they interact with each other via the electromagnetic, weak, and strong forces.
 Mathematically, the Standard Model is a gauge quantum field theory resulting from the combination of both EW theory and QCD.
 Attempts at simply quantizing relativistic particles in the same way that nonrelativistic particles were quantized gives rise to problems such as negative-energy states and violations of causality~\cite{Peskin:257493}.
-The need for the field description therefore arises from requiring that our theory obeys causality in the context of relativity, and that our theory allows for the creation and annihilation of particles.
+The need for the field description therefore arises from requiring that our theory obeys causality in the context of special relativity, and that our theory allows for the creation and annihilation of particles.
 Each elementary particle and antiparticle is associated with a field, individual particles are treated as excitations of the field, and the interactions between each of the different fields allow for the creation and annihilation of particles.
 
 \subsection{The Elementary Particles}
 \label{subsec:particles}
 
 % The elementary particles
-The Standard Model describes the interactions between the elementary particles, which are classified by quarks, leptons, gauge bosons, and scalar bosons.
-A table of all particles described by the theory can be seen in figure~\ref{fig:standardModel}, labeled with their masses, charges, and spins, with the fermions grouped by generation.
+The Standard Model describes the interactions between the elementary particles, which are classified as quarks, leptons, gauge bosons, and scalar bosons.
 Quarks and leptons are classified as fermions since they have half-integer values for their spin, while the scalar and gauge bosons are eponymously named for the fact that they are bosons and therefore have integer values for their spin.
+A table of all particles described by the theory can be seen in figure~\ref{fig:standardModel}, labeled with their masses, charges, and spins, with the fermions grouped by generation.
 
 \begin{figure}[htbp]
   \centering
@@ -97,7 +97,7 @@ The gauge bosons include the gluon, the photon, and the $W^\pm$ and $Z$ bosons.
 Each gauge boson is a spin-1 particle that mediates the three fundamental interactions that the Standard Model describes.
 Gluons are massless particles that mediate the strong nuclear force, and they only interact with quarks since they are the only particles to carry color charge.
 Photons are the most familiar example of the gauge bosons, as we can quite literally see them since light is made of photons.
-They are masses particles that mediate the electromagnetic force, and they interact with any particle that is electrically charged.
+They are massless particles that mediate the electromagnetic force, and they interact with any particle that is electrically charged.
 Finally, the $Z$ and $W^\pm$ bosons are massive particles that mediate the weak nuclear force, which is responsible for radioactive decay.
 
 \subsubsection{Scalar Bosons}
@@ -112,7 +112,7 @@ This occurs through the Higgs mechanism, in which spontaneous symmetry breaking 
 \subsection{Mathematical Structure of the Standard Model}
 
 % The mathematical structure of the standard model
-As the Standard Model is a quantum field theory, it has a Lagrangian density $\mathcal{L}_\mathrm{SM}$ that contains all the information about the fields corresponding to each particle and how they interact with each other.
+As the Standard Model is a quantum field theory, it has a Lagrangian density\footnote{It is typical in particle physics to simply refer to a Lagrangian density as a Lagrangian.} $\mathcal{L}_\mathrm{SM}$ that contains all the information about the fields corresponding to each particle and how they interact with each other.
 The terms present in $\mathcal{L}_\mathrm{SM}$ allow us to compute probability amplitudes for particle production and decay processes through the method of Feynman diagrams.
 The Standard Model is also a non-abelian gauge theory, in which the internal symmetry group is $SU(3)_C\times SU(2)_L\times U(1)_Y$~\cite{Srednicki:1019751}.
 The $SU(3)_C$ symmetry group corresponds to the QCD interactions of the quarks and gluons, while the $SU(2)_L\times U(1)_Y$ group corresponds to the electroweak interactions.
@@ -139,16 +139,16 @@ Applying equation~\ref{eq:EL} to the spin-1/2 field $\psi$ yields
 which is the Dirac equation with the gauge covariant derivative in place of the usual partial derivative.
 On the other hand, for $A^\mu$, we get
 \begin{equation}
-  \partial_\mu F^{\mu\nu}=e\bar{\psi}\gamma^\mu\psi,
+  \partial_\mu F^{\mu\nu}=e\bar{\psi}\gamma^\nu\psi=J^\nu,
 \end{equation}
-which are the inhomogeneous Maxwell equations for the electromagnetic field.
+which are the inhomogeneous Maxwell equations for the electromagnetic field with four-vector current $J^\nu\equiv e\bar{\psi}\gamma^\nu\psi$.
 
 \subsubsection{Gauge Theory}
 
 % Gauge theory
 One of the most foundational aspects of the Standard Model is the notion of gauge invariance, which means that the Lagrangian $\mathcal{L}$ remains invariant under a set of transformations.
 The invariance of the Lagrangian under these transformations leads to conservation laws as a consequence of Noether's theorem.
-This is at the heart of the Standard Model and why it is a $SU(3)_C\times SU(2)_L\times U(1)_Y$ gauge theory.
+This is at the heart of the Standard Model and why it is an $SU(3)_C\times SU(2)_L\times U(1)_Y$ gauge theory.
 
 % Example with Dirac Lagrangian
 To see this, consider the Dirac Lagrangian for a spin-1/2 field given by
@@ -162,7 +162,7 @@ However, if we insist on a local $U(1)$ transformation such that $\psi\to e^{i\a
 \end{equation}
 
 % Introducing the gauge field
-The symmetry can be restored by adding an interaction term with a gauge field $A_\mu$ in the Lagrangian and demanding that it transform along with $\psi$, and by adding interaction term $\mathcal{L}_\mathrm{int}$:
+The symmetry can be restored by adding an interaction term with a gauge field $A_\mu$ in the Lagrangian and demanding that it transform along with $\psi$, and by adding an interaction term $\mathcal{L}_\mathrm{int}$:
 \begin{equation}
   A_\mu\to A_\mu-\frac{1}{e}\partial_\mu\alpha(x),\qquad \mathcal{L}_\mathrm{int}=-e\bar{\psi}\gamma^\mu A_\mu\psi.
 \end{equation}
@@ -173,7 +173,7 @@ Then the full Lagrangian is now
 \end{equation}
 where $D_\mu=\partial_\mu+ieA_\mu$ is the gauge covariant derivative.
 This is in fact the QED Lagrangian of equation~\ref{eq:QED}.
-Thus, $\mathcal{L}_\mathrm{QED}$ is exhibits a local $U(1)$ symmetry, and applying Noether's theorem to the $U(1)$ gauge transformations reveals that the conserved quantity under this symmetry is electric charge.
+Thus, $\mathcal{L}_\mathrm{QED}$ is exhibits a local $U(1)$ symmetry, and applying Noether's theorem to the $U(1)$ gauge transformations reveals that the conserved quantity under this symmetry is electric charge $Q$.
 
 % Gauge theory applied to the standard model
 This same process can be applied to the overall $SU(3)_C\times SU(2)_L\times U(1)_Y$ gauge group to obtain conservation of color charge $C$, weak isospin $T_3$, and weak hypercharge $Y_W$.
@@ -246,13 +246,13 @@ Meanwhile, the fermions gain their masses through a Yukawa interaction with the 
 
 % Overview of BSM
 The incompleteness of the Standard Model has driven theoretical developments of alternative models that resolve its shortcomings~\cite{2010arXiv1005.1676L}.
-A few examples are Grand Unified Theories, supersymmetry (SUSY), and models based on extra spatial dimensions.
+A few examples are Grand Unified Theories, supersymmetry, and models based on extra spatial dimensions.
 While such theories are currently of high interest due to the prospect of superseding the Standard Model, some are based on developments that predate the Standard Model itself.
 
 \subsubsection{The Hierarchy Problem}
 
 % The hierarchy problem
-One major outstanding issue of interest relevant to this work is the inability of the Standard Model to deal with the hierarchy problem.
+One major outstanding issue relevant to this work is the inability of the Standard Model to deal with the hierarchy problem.
 Using three fundamental constants, one may define the Planck mass as
 \begin{equation}
   m_P=\sqrt{\frac{\hbar c}{G}}\approx1.22\times10^{19}\unit{MeV/\clight^2},
@@ -276,7 +276,8 @@ Figure~\ref{fig:hierarchy} shows the comparison between the Planck scale, the el
 The issues caused by the hierarchy problem are more apparent when considering the mass corrections to the Higgs boson.
 The Higgs boson mass $m_H$ is corrected through one-loop Feynman diagrams that are proportional to $m_H^2$~\cite{Martin_1998}, two examples of which can be seen in figure~\ref{fig:higgsFeyn}.
 Such corrections require a momentum cutoff $\Lambda$ when evaluating the loop integrals obtained from the diagrams, and if the cutoff is on the same order as $m_P$, the correction to $m_H^2$ ends up being far larger than the required value.
-While this effect only directly applies to $m_H^2$, the rest of the massive SM particles are indirectly sensitive to the cutoff $\Lambda$ due to the fact that they gain their masses through the vacuum expectation value of the Higgs field $\ev{H}$, meaning that the mass spectrum of the SM is sensitive to $\Lambda$.
+While this effect only directly applies to $m_H^2$, the rest of the massive SM particles are indirectly sensitive to the cutoff $\Lambda$ due to the fact that they gain their masses through the vacuum expectation value of the Higgs field $\ev{H}$.
+This means that the mass spectrum of the SM is sensitive to $\Lambda$.
 It also does not suffice to simply pick a sufficiently small cutoff, as this requires new physics at the energy scale of $\Lambda$ to change the behavior of the propagators in the one-loop mass correction terms.
 
 \begin{figure}[htbp]
@@ -311,7 +312,7 @@ Grand Unified Theories are largely inspired by the success of the electroweak un
 In the same way that the electromagnetic and weak forces become a single interaction at a particular energy scale, GUTs aim to unify the strong force with the other two forces of the Standard Model.
 This requires a symmetry group that contains the $SU(3)_C\times SU(2)_L\times U(1)_Y$ group as a subgroup.
 The first example of a GUT was the Georgi-Glashow model that was based on the $SU(5)$ group~\cite{PhysRevLett.32.438}.
-A unique aspect of such theories is that they often predict that the proton is unstable and can decay due to new gauge bosons that couple quarks to leptons\footnote{Such particles are often called `leptoquarks'~\cite{Diaz_2017}.}.
+A unique aspect of such theories is that they often predict that the proton is unstable and can decay due to new gauge bosons that couple quarks to leptons\footnote{Such bosons are often called `leptoquarks'~\cite{Diaz_2017}.}.
 However, proton decay has not been observed~\cite{PhysRevLett.81.3319}, and the current lower bound for the lifetime of the proton is inconsistent with the Georgi-Glashow model.
 Despite this, there are still other models based on more complex groups, such as $E_6$~\cite{Hewett1989193} or $SO(10)$~\cite{Cveti__1997}, that are candidates for further investigation.
 
@@ -334,17 +335,17 @@ The warped geometry is such that there are two branes in these models: the Tevbr
 \label{sec:search}
 
 % Search for a heavy diboson resonance
-This thesis presents results on the search for a new heavy $X$ resonance, with the resonance then decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
+This thesis presents results on the search for a new heavy $X$ resonance decaying into a pair of bosons as part of efforts to explore BSM physics at the LHC.
 The decays of interest are \XtoWV and \XtoWH, where $V=W^\pm,Z$ is any of the three massive electroweak vector bosons and $H$ is the Higgs boson discovered at the LHC in 2012.
 We consider semileptonic final event states in which the $W^\pm$ decays leptonically via \Wtolnu, where $\ell$ is either an electron or a muon, as this provides a clean experimental signature and an efficient online event selection.
 The other \VorH boson decays hadronically through the process \Vtoqqbarpr or \Htobbbar and is reconstructed as a single massive jet.
 Three production modes are considered based on the benchmark models used: vector boson fusion (\VBF), gluon-gluon fusion (\ggF), and Drell-Yan (\DY) production.
-For \ggF and \DY processes there are no additional objects produced in the event, but for \VBF processes there are two forward-facing jets.
+For \ggF and \DY processes there are no additional objects produced in the event, but for \VBF processes there are two forward-facing jets, which are narrow cones of hadrons and other particles produced by the hadronization of a quark.
 
 % Previous work
 This work is motivated in part by models such as those mentioned in subsection~\ref{subsec:BSM}, and is a continuation of a previous search using the 2016 data collected by the LHC during Run 2~\cite{Sirunyan_18}.
 The previous analysis was conducted using only two benchmark signal models, and it was agnostic to the method of production for an $X$ resonance.
-This work instead uses four benchmark signal models and considers multiple production methods.
+This work instead uses multiple benchmark signal models and considers three production methods.
 
 \subsection{Narrow Resonance Models}
 \label{subsec:benchmark}
@@ -355,8 +356,8 @@ However, benchmark models based on the BSM theories described in subsection~\ref
 The structure of these events then informs us about making our selection cuts for our search, as will be discussed in chapter~\ref{chap:analysis}.
 This search covers spin-0, spin-1, and spin-2 bosonic resonances, and is based on the following benchmark models:
 \begin{enumerate}
-  \item \textbf{Spin-0 Kaluza-Klein Radion:} A neutral scalar boson appearing in RS models that can decay to the vector bosons $W^\pm$ and $Z$ via \RadtoWW and \RadtoZZ~\cite{Goldberger_1999,Goldberger_2000}.
-  \item \textbf{Spin-1 \Wpr/\Zpr Boson:} A heavier version of the spin-1 $W^\pm$ and $Z$ bosons that can decay via \WprtoWZ, \WprtoWH, \ZprtoWW, and \ZprtoZH~\cite{Pappadopulo_2014}.
+  \item \textbf{Spin-0 Bulk Radion:} A neutral scalar boson appearing in RS models that can decay to the vector bosons $W^\pm$ and $Z$ via \RadtoWW and \RadtoZZ~\cite{Goldberger_1999,Goldberger_2000}.
+  \item \textbf{Spin-1 \Wpr/\Zpr Boson:} Heavier versions of the spin-1 $W^\pm$ and $Z$ bosons that can decay via \WprtoWZ, \WprtoWH, \ZprtoWW, and \ZprtoZH~\cite{Pappadopulo_2014}.
   \item \textbf{Spin-2 Bulk Graviton:} A spin-2 resonance from a bulk RS model that decays via \GBulktoWW and \GBulktoZZ~\cite{Fitzpatrick_2007,PhysRevD.76.036006}.
 \end{enumerate}
 
@@ -370,7 +371,7 @@ Furthermore, based on previous searches that have been conducted, they are all e
 \label{subsec:param}
 
 % Bulk graviton parameters
-The Kaluza-Klein Radion and Bulk Graviton benchmark models make use of common parameters because they are both based on RS theories.
+The Bulk Radion and Bulk Graviton benchmark models make use of common parameters because they are both based on RS theories.
 In particular, the metric considered with the extra spatial dimension $\varphi$ is given by~\cite{carvalho2018gravity}
 \begin{equation}
   \dd{s}^2=e^{-2kr_c\varphi}\eta_{\mu\nu}\dd{x}^\mu\dd{x}^\nu+r_c^2\dd{\varphi}^2,
@@ -380,7 +381,7 @@ where $0\leq\varphi\leq\pi$, $r_c$ is the finite size of the $\varphi$ dimension
   k\equiv\sqrt{\frac{-\Lambda}{24M_5^2}}.
 \end{equation}
 Here, $\Lambda$ is the vacuum energy density on the branes/bulk, and $M_5$ is the 5D Planck mass.
-The Bulk Graviton model used for this analysis is parameterized in terms of the dimensionless curvature given by $\tilde{k}\equiv{k/\overline{M}_P}$, where $\overline{M}_P^2=\frac{M_5^3}{k}(1-e^{2\pi kr_c})$ is the 4D Planck mass obtained by integrating out the extra dimension $\varphi$.
+The Bulk Graviton model used for this analysis is parameterized in terms of the dimensionless curvature given by $\tilde{k}\equiv{k/\overline{M}_P}$, where $\overline{M}_P^2=\frac{M_5^3}{k}\pqty{1-e^{2\pi kr_c}}$ is the 4D Planck mass obtained by integrating out the extra dimension $\varphi$.
 
 % Radion parameters
 For the Radion model, there are two parameters that are considered.
@@ -402,7 +403,7 @@ The model introduces a spin-1 field $\rho_\mu$ that transforms under the $SO(4)$
   \mathcal{L}_\rho=-\frac{1}{4\hat{g}'^2}(B_{\mu\nu})^2-\frac{1}{4\hat{g}^2}(W_{\mu\nu}^a)^2+\frac{f^2}{4}d_\mu^id^{\mu i}-\frac{1}{4g_\rho^2}(\rho_{\mu\nu}^a)^2+\frac{m_\rho^2}{2g_\rho^2}(p_\mu^a-e_\mu^a)^2.
 \end{equation}
 The field strength tensor for $\rho$ is $\rho_{\mu\nu}^a=D_{[\mu}V_{\nu]}^a-\epsilon^{abc}V_\mu^bV_\nu^c-W_{\mu\nu}^a$, where $V_\mu^a\equiv\rho_\mu^a+W_\mu^a$ is the vector triplet for which the model is named.
-Meanwhile, the $d_\mu^i$ and $e_\mu^a$ terms contain interactions between the Higgs fields and other fields, $f$ is the Goldstone-Boson-Higgs decay constant, and $g_\rho$, $\hat{g}$, and $\hat{g}'$ are coupling constants.
+Meanwhile, the $d_\mu^i$ and $e_\mu^a$ terms contain interactions between the Higgs field and other fields, $f$ is the Goldstone-Boson-Higgs decay constant, and $g_\rho$, $\hat{g}$, and $\hat{g}'$ are coupling constants.
 For the parameters of the models, it is convenient to instead rewrite the coupling constants as
 \begin{equation}
   g_V=g_\rho,\qquad \frac{1}{g^2}=\frac{1}{\hat{g}^2}+\frac{1}{\hat{g}_\rho^2},\qquad g'=\hat{g}'.
@@ -422,10 +423,10 @@ For model B, $g_V\leq4\pi$, $c_H\approx1$, and $c_F\approx1$, while for model C 
 The decay processes \XtoWVtolnuqqbarpr and \XtoWHtolnubbbar were chosen due to the fact that one-lepton events are ideal for such an analysis, as the final states that are generated provide a clean signal that suppresses background.
 Furthermore, the semileptonic final state is also a good compromise for search sensitivity since it is cleaner than an all-hadronic final state, and it produces more expected signal than an all-leptonic state.
 The \ggF and \DY production modes produce only the \lnuqqbarprp and \lnubbbar semileptonic final states resulting from the decay of the $X$ resonance.
-Meanwhile, while the \VBF production channel is rarer than the \ggF and \DY production modes by a factor of 10 to 100, its particular event signature further suppresses background events and uniquely results in forward-facing jets~\cite{rauch2016vectorboson}.
+Meanwhile, although the \VBF production channel is rarer than the \ggF and \DY production modes by a factor of 10 to 100, its particular event signature further suppresses background events and uniquely results in forward-facing jets~\cite{rauch2016vectorboson}.
 All benchmark models used in this analysis are capable of this production mechanism.
 Such a process has been used in the past as one of the discovery channels for the Higgs boson, and it remains an important class of events at the LHC.
-The spin-0 Kaluza-Klein Radion and spin-2 Bulk Graviton models both have \ggF production modes, while the spin-1 \Wpr and \Zpr models can be produced via a \DY process.
+The spin-0 Bulk Radion and spin-2 Bulk Graviton models both have \ggF production modes, while the spin-1 \Wpr and \Zpr models can be produced via a \DY process.
 Examples of Feynman diagrams for all three production processes of an $X$ resonance with the resulting final states can be seen in figure~\ref{fig:productFeynman}.
 
 \begin{figure}[htbp]

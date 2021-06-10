@@ -15,7 +15,7 @@ In this section, we discuss the nuisance parameters that are applied to the sign
 The signal normalization uncertainties are 100\% correlated between search categories unless otherwise stated.
 \begin{itemize}
   \item {\bfseries Luminosity:} Normalization uncertainty of 1.8\%~\cite{CMS-LUM-17-003,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002}.
-  \item {\bfseries PDF:} Normalization uncertainty of 1\%.
+  \item {\bfseries Parton Distribution Function (PDF):} Normalization uncertainty of 1\%.
   The scale uncertainties were evaluated as prescribed by references~\cite{Cacciari_2004,Catani_2003}.
   For the PDF uncertainties, we follow the recommendations from the NNPDF 3.0 PDF set~\cite{Ball2011296}.
   The uncertainties obtained in acceptance were found to be less than 0.1\% for the scale variation, and 0.1-0.9\% for the PDF evaluation.
@@ -23,7 +23,7 @@ The signal normalization uncertainties are 100\% correlated between search categ
   \item {\bfseries Lepton identification and trigger efficiency:} Normalization uncertainty of 5\% for the electron and muon channels separately.
   This is 100\% correlated to a parameter for the resonant background, but uncorrelated with a similar parameter for the non-resonant background.
   \item {\bfseries $b$-tag fake rate:} Normalization uncertainty of 2\% accounting for modeling the no-$b$ tag requirement.
-  \item {\bfseries $V$-tagging efficiency:} Normalization uncertainty for the scale factors $S^{\mathrm{HP}/\mathrm{LP}}$ for the efficiency of the \nsubjDDT selection, with $\pm4\%$ in HP and $\mp4\%$ in LP\footnote{The HP and LP uncertainties have opposite signs due to the fact that they are anti-correlated}.
+  \item {\bfseries $V$-tagging efficiency:} Normalization uncertainty for the scale factors $S^\mathrm{HP}$ and $S^\mathrm{LP}$ for the efficiency of the \nsubjDDT selection, with $\pm4\%$ in HP and $\mp4\%$ in LP\footnote{The uncertainties here and elsewhere have opposite signs due to the fact that they are anti-correlated}.
   \item {\bfseries Momentum dependence of the $V$-tagging efficiency:} Normalization uncertainty arising from the extrapolation of the $V$-tagging efficiency scale factors.
   We fit the \MX dependence of the $V$-tagging efficiency as seen in figure~\ref{fig:VTag_massdep_summary} (right) and subtract the efficiency at $650\unit{GeV}$ to obtain an \MX-dependent uncertainty for the HP and LP categories given by:
   \begin{itemize}
@@ -39,7 +39,7 @@ The signal normalization uncertainties are 100\% correlated between search categ
   \end{itemize}
   \item {\bfseries \Dy cut efficiency:} Normalization uncertainty for the efficiency of the cut at $\Dy=1.0$ separating the LDy and HDy categories.
   This is estimated by fitting a linear function to the data/MC ratio for the distribution of \Dy in the top-enriched control region, then linearly reweighing the signal distribution of \Dy for each signal model, using the slope obtained from the data/MC fit and using a $y$-intercept that keeps the total integral of the signal distribution constant.
-  Taking the signal efficiency in LDy and HDy as the 1-$\sigma$ up uncertainty, we obtain the following:
+  Taking the signal efficiency in LDy and HDy as the 1$\sigma$ up uncertainty, we obtain the following:
   \begin{itemize}
     \item $+4\%$ (HDy) / $-1.5\%$ (LDy) for \ggF\GBulktoWW.
     \item $+4\%$ (HDy) / $-3.5\%$ (LDy) for \ggF and \VBF\RadtoWW, and \DY\ZprtoWW.
@@ -62,7 +62,7 @@ Each of the following $\MVV$ shape parameters are 100\% correlated across the ca
 
 % MJ signal shape
 The \MJ signal shape is affected by the uncertainty on the scale and resolution for the soft drop mass.
-To obtain these uncertainties, we correct the central values of the \MJ scale and resolution parameters with the factors of 0.989 and 1.08 obtained for Run 2 in table~\ref{tab:VScaleRes}.
+To obtain these uncertainties, we correct the central values of the \MJ scale and resolution parameters with the factors of 0.990 and 1.08 obtained for Run 2 in table~\ref{tab:VScaleRes}.
 The soft drop mass scale and resolution uncertainties obtained are the following:
 \begin{itemize}
   \item {\bfseries Soft drop mass scale and resolution:} 1\% for the scale and 8\% for the resolution.
@@ -110,20 +110,20 @@ The projections of the nominal and $\pm3\sigma$ alternative 2D shapes onto the \
 \end{figure}
 
 % Non-resonant jet shape variation
-For the \MJ, we define two shape variations as well in order to account for hadronization-related effects:
+For the \MJ spectrum, we define two shape variations in order to account for hadronization-related effects:
 \begin{itemize}
-  \item {\bfseries LogWeight:} A reweighting of events based on the difference in the hadronization behavior in data versus MC using the hadronization-sensitive variable $\ln(\MJ^2/\pt)$.
+  \item {\bfseries Log weight:} A reweighting of events based on the difference in the hadronization behavior in data versus MC using the hadronization-sensitive variable $\ln(\MJ^2/\pt)$.
   The weight is obtained by fitting the ratio of the data to MC in the $\ln(\MJ^2/\pt)$ distribution seen in figure~\ref{fig:logWeight} in the region dominated by \Wjets.
   This region is fitted with a function consisting of a Gaussian plus a constant term, with the reweighting of the events based on the fitted function.
-  \item {\bfseries Soft drop mass scale:} Shift of the \MJ scale.
+  \item {\bfseries Soft drop mass scale:} Plain shift of the \MJ scale.
 \end{itemize}
-These nuisance parameters are also left uncorrelated across categories, with figure~\ref{fig:systNonResMJ_logWeight_Scale} showing the nominal and $\pm3\sigma$ alternative shapes for the nobb category projected onto the \MJ dimension for the logWeight and soft drop mass scale uncertainties.
+These nuisance parameters are also left uncorrelated across categories, with figure~\ref{fig:systNonResMJ_logWeight_Scale} showing the nominal and $\pm3\sigma$ alternative shapes projected onto the \MJ dimension for the log weight and soft drop mass scale uncertainties for the nobb category in the electron channel.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{fig/uncertainties/logWeight.pdf}
   \caption{
-    Comparison between the Run 2 data and MC of the distributions for $\ln(\MJ^2/\pt)$ with all categories merged.
+    Comparison between the Run 2 data and MC distributions for $\ln(\MJ^2/\pt)$ with all categories merged.
   }
   \label{fig:logWeight}
 \end{figure}
@@ -139,7 +139,7 @@ These nuisance parameters are also left uncorrelated across categories, with fig
   \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_nonRes_e_HP_nobb_HDy_MJJScale_ProjY.pdf}
   \includegraphics[width=0.21\textwidth]{fig/uncertainties/systs_nonRes_e_LP_nobb_HDy_MJJScale_ProjY.pdf}\\
   \caption{
-    Projections of the nominal and alternative shapes of the non-resonant background onto the \MJ dimension obtained from applying $\pm3\sigma$ variations of the logWeight uncertainties (top), and the \MJ scale uncertainties (bottom), for the electron channel in the nobb category.
+    Projections of the nominal and alternative shapes of the non-resonant background onto the \MJ dimension obtained from applying $\pm3\sigma$ variations of the log weight uncertainties (top), and the \MJ scale uncertainties (bottom), for the electron channel in the nobb category.
     Left to right: HP-LDy, LP-LDy, HP-HDy, LP-HDy.
   }
   \label{fig:systNonResMJ_logWeight_Scale}
@@ -152,7 +152,7 @@ As with the non-resonant background shapes, we apply a jet \pt spectrum related 
 The HP categories use only one \MJ bin, hence they only have one set of nuisance parameters.
 We also apply an uncertainty in the exponent of the power-law function used to populate the high-\MVV region of the template for each category.
 These nuisance parameters are also uncorrelated between categories and are uncorrelated between the resonant and non-resonant backgrounds.
-Figure~\ref{fig:systResMVV_MVVScale_Tail} shows the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MVV dimension for the jet \pt spectrum related and the \MVV power-law exponent uncertainties in the nobb category.
+Figure~\ref{fig:systResMVV_MVVScale_Tail} shows the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MVV dimension for the jet \pt spectrum uncertainties and the \MVV power-law exponent uncertainties in the nobb category for the electron channel.
 
 \begin{figure}[htbp]
   \centering
@@ -177,7 +177,7 @@ The first two are uncorrelated and modify the mean and width of the fitted DCB f
 Meanwhile, the last set of parameters determine the relative normalization of the $W^\pm$ and top peaks:
 \begin{itemize}
   \item {\bfseries $W^\pm$ peak scale and resolution:} 1\% for the scale and 8\% for the resolution.
-  We also correct the central values of the scale and resolution for the $W^\pm$ peak with factors of 0.989 and 1.08 using the Run 2 values of table~\ref{tab:VScaleRes}.
+  We also correct the central values of the scale and resolution for the $W^\pm$ peak with factors of 0.990 and 1.08 using the Run 2 values of table~\ref{tab:VScaleRes}.
   The nuisance parameters are uncorrelated between HP and LP categories, but 100\% correlated between the electron and muon channels, the bb, nobb, and vbf categories, and the LDy and HDy categories.
   They are also 100\% correlated to the \MJ scale and resolution parameters of the signal models.
   \item {\bfseries Top peak scale and resolution:} 1\% for the scale and 8\% for the resolution.
@@ -185,7 +185,7 @@ Meanwhile, the last set of parameters determine the relative normalization of th
   \item {\bfseries $W^\pm$/top relative normalization:} Fraction of the $W^\pm$ peak normalization divided by the sum of the $W^\pm$ and top peaks defined such that $\pm40\%$ corresponds to a $\pm3\sigma$ shift.
   These parameters are uncorrelated between categories.
 \end{itemize}
-Figures~\ref{fig:systResMJ_scaleWY_resWY} shows the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MJ dimension for the $W^\pm$ peak and scale uncertainties in the nobb category.
+Figure~\ref{fig:systResMJ_scaleWY_resWY} shows the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MJ dimension for the $W^\pm$ peak and scale uncertainties in the nobb category.
 Meanwhile, figure~\ref{fig:systResMJ_scaleTopY_resTopY} shows the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MJ dimension for the top peak and scale uncertainties in the nobb category.
 Finally, figure~\ref{fig:systResMJ_fractionY} shows the nominal and $\pm3\sigma$ alternative 2D shapes projected onto the \MJ dimension for the $W^\pm$ and top relative normalization uncertainty in the nobb category.
 

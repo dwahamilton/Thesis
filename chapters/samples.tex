@@ -4,7 +4,7 @@
 \label{sec:samples}
 
 % The need for simulation samples of signal and background
-This search uses the proton-proton collision data collected by the CMS detector during Run 2.
+This search uses the proton collision data collected by the CMS detector during Run 2.
 The data are collected and stored for analysis after events generate trigger primitives in the detector subsystems and are selected by the L1 Trigger and HLT as described in chapter~\ref{chap:exp}.
 We also list the MC signal samples used in the analysis that are based on the BSM models of subsection~\ref{subsec:benchmark}.
 Additionally, we list the MC samples that model SM background contributions to the search.
@@ -37,8 +37,10 @@ Additionally, we also use MC samples to simulate the background sources that thi
 % Signal samples
 The \DY\WprtoWH, \DY\WprtoWZ, and \ggF\GBulktoWW samples are restricted to the semileptonic final state, while the other six samples also contain different final states that are not used in this analysis.
 Each signal has different samples with 50,000 events for each year of Run 2, for a total of three sets of samples per signal.
-Furthermore, each signal has separate samples with 50,000 events for the following resonance masses\footnote{The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ sets are the exception to this, lacking mass values below $1.2\unit{TeV}$.}: 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, and $4.5\unit{TeV}$.
-The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ samples do not have mass values below $1.2\unit{TeV}$, and some samples have masses that extend from $4.5\unit{TeV}$ to $8\unit{TeV}$ in increments of $0.5\unit{TeV}$.
+Furthermore, each signal has separate samples with 50,000 events for the following resonance masses: 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, and $4.5\unit{TeV}$.
+The 2016 \VBF\ZprtoWW and 2016 \VBF\WprtoWZ sets are the exception to this, lacking mass values below $1.2\unit{TeV}$.
+Some samples also have masses that extend from $4.5\unit{TeV}$ to $8\unit{TeV}$ in increments of $0.5\unit{TeV}$, though they are not used for this analysis.
+Figure~\ref{fig:sigCrossSec} shows the cross sections multiplied by branching fractions for each benchmark signal model as a function of the resonance mass \MX.
 Each sample also has a resonance width that is set to 0.1\% of the resonance mass to ensure that the narrow-width approximation is met.
 The samples for each benchmark signal were generated at leading-order (LO) in QCD with \texttt{MadGraph5\_aMC@NLO} versions 2.2.2 and 2.4.2~\cite{Alwall_2014}.
 
