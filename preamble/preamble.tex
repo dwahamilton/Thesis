@@ -20,7 +20,6 @@
 \usepackage{xcolor} % Color extensions for LaTeX and pdfLaTeX
 \usepackage{listings} % Typeset text in WYSIWYG style and source code listings
 \usepackage{fancyvrb} % Sophisticated verbatim text
-%\usepackage{inconsolata} % Changes monospace font to inconsolata
 \usepackage{lastpage} % Reference last page for Page N of M type footers
 \usepackage[percent]{overpic} % Combine LaTeX commands over included graphics
 \usepackage{empheq} % Emphasizing equations
@@ -43,6 +42,9 @@
 % Configure captions
 \captionsetup[table]{font={stretch=1.5}}
 \captionsetup[figure]{font={stretch=1.5}}
+
+% Configure itemize layers
+\renewcommand{\labelitemii}{\ensuremath{\circ}}
 
 % Enable bold math in section titles
 \makeatletter
